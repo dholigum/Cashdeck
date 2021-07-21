@@ -1,0 +1,701 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2F764DAC26A7C254005B0513 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F764DAB26A7C254005B0513 /* Tests_iOS.swift */; };
+		2F764DB726A7C254005B0513 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F764DB626A7C254005B0513 /* Tests_macOS.swift */; };
+		2F764DB926A7C254005B0513 /* CashdeskApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F764D9026A7C252005B0513 /* CashdeskApp.swift */; };
+		2F764DBA26A7C254005B0513 /* CashdeskApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F764D9026A7C252005B0513 /* CashdeskApp.swift */; };
+		2F764DBB26A7C254005B0513 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F764D9126A7C252005B0513 /* ContentView.swift */; };
+		2F764DBC26A7C254005B0513 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F764D9126A7C252005B0513 /* ContentView.swift */; };
+		2F764DBD26A7C254005B0513 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F764D9226A7C254005B0513 /* Assets.xcassets */; };
+		2F764DBE26A7C254005B0513 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F764D9226A7C254005B0513 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2F764DA826A7C254005B0513 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2F764D8B26A7C251005B0513 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2F764D9626A7C254005B0513;
+			remoteInfo = "Cashdesk (iOS)";
+		};
+		2F764DB326A7C254005B0513 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2F764D8B26A7C251005B0513 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2F764D9E26A7C254005B0513;
+			remoteInfo = "Cashdesk (macOS)";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2F764D9026A7C252005B0513 /* CashdeskApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashdeskApp.swift; sourceTree = "<group>"; };
+		2F764D9126A7C252005B0513 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2F764D9226A7C254005B0513 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2F764D9726A7C254005B0513 /* Cashdesk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cashdesk.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F764D9A26A7C254005B0513 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F764D9F26A7C254005B0513 /* Cashdesk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cashdesk.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F764DA126A7C254005B0513 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F764DA226A7C254005B0513 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		2F764DA726A7C254005B0513 /* Tests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F764DAB26A7C254005B0513 /* Tests_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_iOS.swift; sourceTree = "<group>"; };
+		2F764DAD26A7C254005B0513 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F764DB226A7C254005B0513 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F764DB626A7C254005B0513 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
+		2F764DB826A7C254005B0513 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2F764D9426A7C254005B0513 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F764D9C26A7C254005B0513 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F764DA426A7C254005B0513 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F764DAF26A7C254005B0513 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2F764D8A26A7C251005B0513 = {
+			isa = PBXGroup;
+			children = (
+				2F764D8F26A7C252005B0513 /* Shared */,
+				2F764D9926A7C254005B0513 /* iOS */,
+				2F764DA026A7C254005B0513 /* macOS */,
+				2F764DAA26A7C254005B0513 /* Tests iOS */,
+				2F764DB526A7C254005B0513 /* Tests macOS */,
+				2F764D9826A7C254005B0513 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2F764D8F26A7C252005B0513 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				2F764D9026A7C252005B0513 /* CashdeskApp.swift */,
+				2F764D9126A7C252005B0513 /* ContentView.swift */,
+				2F764D9226A7C254005B0513 /* Assets.xcassets */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		2F764D9826A7C254005B0513 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2F764D9726A7C254005B0513 /* Cashdesk.app */,
+				2F764D9F26A7C254005B0513 /* Cashdesk.app */,
+				2F764DA726A7C254005B0513 /* Tests iOS.xctest */,
+				2F764DB226A7C254005B0513 /* Tests macOS.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2F764D9926A7C254005B0513 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				2F764D9A26A7C254005B0513 /* Info.plist */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		2F764DA026A7C254005B0513 /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				2F764DA126A7C254005B0513 /* Info.plist */,
+				2F764DA226A7C254005B0513 /* macOS.entitlements */,
+			);
+			path = macOS;
+			sourceTree = "<group>";
+		};
+		2F764DAA26A7C254005B0513 /* Tests iOS */ = {
+			isa = PBXGroup;
+			children = (
+				2F764DAB26A7C254005B0513 /* Tests_iOS.swift */,
+				2F764DAD26A7C254005B0513 /* Info.plist */,
+			);
+			path = "Tests iOS";
+			sourceTree = "<group>";
+		};
+		2F764DB526A7C254005B0513 /* Tests macOS */ = {
+			isa = PBXGroup;
+			children = (
+				2F764DB626A7C254005B0513 /* Tests_macOS.swift */,
+				2F764DB826A7C254005B0513 /* Info.plist */,
+			);
+			path = "Tests macOS";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2F764D9626A7C254005B0513 /* Cashdesk (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F764DC126A7C254005B0513 /* Build configuration list for PBXNativeTarget "Cashdesk (iOS)" */;
+			buildPhases = (
+				2F764D9326A7C254005B0513 /* Sources */,
+				2F764D9426A7C254005B0513 /* Frameworks */,
+				2F764D9526A7C254005B0513 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Cashdesk (iOS)";
+			productName = "Cashdesk (iOS)";
+			productReference = 2F764D9726A7C254005B0513 /* Cashdesk.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2F764D9E26A7C254005B0513 /* Cashdesk (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F764DC426A7C254005B0513 /* Build configuration list for PBXNativeTarget "Cashdesk (macOS)" */;
+			buildPhases = (
+				2F764D9B26A7C254005B0513 /* Sources */,
+				2F764D9C26A7C254005B0513 /* Frameworks */,
+				2F764D9D26A7C254005B0513 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Cashdesk (macOS)";
+			productName = "Cashdesk (macOS)";
+			productReference = 2F764D9F26A7C254005B0513 /* Cashdesk.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2F764DA626A7C254005B0513 /* Tests iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F764DC726A7C254005B0513 /* Build configuration list for PBXNativeTarget "Tests iOS" */;
+			buildPhases = (
+				2F764DA326A7C254005B0513 /* Sources */,
+				2F764DA426A7C254005B0513 /* Frameworks */,
+				2F764DA526A7C254005B0513 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2F764DA926A7C254005B0513 /* PBXTargetDependency */,
+			);
+			name = "Tests iOS";
+			productName = "Tests iOS";
+			productReference = 2F764DA726A7C254005B0513 /* Tests iOS.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		2F764DB126A7C254005B0513 /* Tests macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F764DCA26A7C254005B0513 /* Build configuration list for PBXNativeTarget "Tests macOS" */;
+			buildPhases = (
+				2F764DAE26A7C254005B0513 /* Sources */,
+				2F764DAF26A7C254005B0513 /* Frameworks */,
+				2F764DB026A7C254005B0513 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2F764DB426A7C254005B0513 /* PBXTargetDependency */,
+			);
+			name = "Tests macOS";
+			productName = "Tests macOS";
+			productReference = 2F764DB226A7C254005B0513 /* Tests macOS.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2F764D8B26A7C251005B0513 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					2F764D9626A7C254005B0513 = {
+						CreatedOnToolsVersion = 12.5;
+					};
+					2F764D9E26A7C254005B0513 = {
+						CreatedOnToolsVersion = 12.5;
+					};
+					2F764DA626A7C254005B0513 = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = 2F764D9626A7C254005B0513;
+					};
+					2F764DB126A7C254005B0513 = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = 2F764D9E26A7C254005B0513;
+					};
+				};
+			};
+			buildConfigurationList = 2F764D8E26A7C251005B0513 /* Build configuration list for PBXProject "Cashdesk" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2F764D8A26A7C251005B0513;
+			productRefGroup = 2F764D9826A7C254005B0513 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2F764D9626A7C254005B0513 /* Cashdesk (iOS) */,
+				2F764D9E26A7C254005B0513 /* Cashdesk (macOS) */,
+				2F764DA626A7C254005B0513 /* Tests iOS */,
+				2F764DB126A7C254005B0513 /* Tests macOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2F764D9526A7C254005B0513 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F764DBD26A7C254005B0513 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F764D9D26A7C254005B0513 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F764DBE26A7C254005B0513 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F764DA526A7C254005B0513 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F764DB026A7C254005B0513 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2F764D9326A7C254005B0513 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F764DBB26A7C254005B0513 /* ContentView.swift in Sources */,
+				2F764DB926A7C254005B0513 /* CashdeskApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F764D9B26A7C254005B0513 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F764DBC26A7C254005B0513 /* ContentView.swift in Sources */,
+				2F764DBA26A7C254005B0513 /* CashdeskApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F764DA326A7C254005B0513 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F764DAC26A7C254005B0513 /* Tests_iOS.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F764DAE26A7C254005B0513 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F764DB726A7C254005B0513 /* Tests_macOS.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2F764DA926A7C254005B0513 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2F764D9626A7C254005B0513 /* Cashdesk (iOS) */;
+			targetProxy = 2F764DA826A7C254005B0513 /* PBXContainerItemProxy */;
+		};
+		2F764DB426A7C254005B0513 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2F764D9E26A7C254005B0513 /* Cashdesk (macOS) */;
+			targetProxy = 2F764DB326A7C254005B0513 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2F764DBF26A7C254005B0513 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2F764DC026A7C254005B0513 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		2F764DC226A7C254005B0513 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UFNNYX499Q;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.team-kon10.Cashdesk";
+				PRODUCT_NAME = Cashdesk;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2F764DC326A7C254005B0513 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UFNNYX499Q;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.team-kon10.Cashdesk";
+				PRODUCT_NAME = Cashdesk;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2F764DC526A7C254005B0513 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = UFNNYX499Q;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.team-kon10.Cashdesk";
+				PRODUCT_NAME = Cashdesk;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		2F764DC626A7C254005B0513 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = UFNNYX499Q;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.team-kon10.Cashdesk";
+				PRODUCT_NAME = Cashdesk;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		2F764DC826A7C254005B0513 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UFNNYX499Q;
+				INFOPLIST_FILE = "Tests iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.team-kon10.Tests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Cashdesk (iOS)";
+			};
+			name = Debug;
+		};
+		2F764DC926A7C254005B0513 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UFNNYX499Q;
+				INFOPLIST_FILE = "Tests iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.team-kon10.Tests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Cashdesk (iOS)";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2F764DCB26A7C254005B0513 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = UFNNYX499Q;
+				INFOPLIST_FILE = "Tests macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.team-kon10.Tests-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "Cashdesk (macOS)";
+			};
+			name = Debug;
+		};
+		2F764DCC26A7C254005B0513 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = UFNNYX499Q;
+				INFOPLIST_FILE = "Tests macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.team-kon10.Tests-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "Cashdesk (macOS)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2F764D8E26A7C251005B0513 /* Build configuration list for PBXProject "Cashdesk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F764DBF26A7C254005B0513 /* Debug */,
+				2F764DC026A7C254005B0513 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2F764DC126A7C254005B0513 /* Build configuration list for PBXNativeTarget "Cashdesk (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F764DC226A7C254005B0513 /* Debug */,
+				2F764DC326A7C254005B0513 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2F764DC426A7C254005B0513 /* Build configuration list for PBXNativeTarget "Cashdesk (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F764DC526A7C254005B0513 /* Debug */,
+				2F764DC626A7C254005B0513 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2F764DC726A7C254005B0513 /* Build configuration list for PBXNativeTarget "Tests iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F764DC826A7C254005B0513 /* Debug */,
+				2F764DC926A7C254005B0513 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2F764DCA26A7C254005B0513 /* Build configuration list for PBXNativeTarget "Tests macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F764DCB26A7C254005B0513 /* Debug */,
+				2F764DCC26A7C254005B0513 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2F764D8B26A7C251005B0513 /* Project object */;
+}
