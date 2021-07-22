@@ -15,6 +15,12 @@
 		2F764DBC26A7C254005B0513 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F764D9126A7C252005B0513 /* ContentView.swift */; };
 		2F764DBD26A7C254005B0513 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F764D9226A7C254005B0513 /* Assets.xcassets */; };
 		2F764DBE26A7C254005B0513 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F764D9226A7C254005B0513 /* Assets.xcassets */; };
+		2F764DD526A91FD4005B0513 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F764DD426A91FD4005B0513 /* Home.swift */; };
+		2F764DD626A91FD9005B0513 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F764DD426A91FD4005B0513 /* Home.swift */; };
+		2F764DD926A92152005B0513 /* BlurWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F764DD826A92152005B0513 /* BlurWindow.swift */; };
+		2F764DDA26A921A3005B0513 /* BlurWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F764DD826A92152005B0513 /* BlurWindow.swift */; };
+		2F764DDD26A925F7005B0513 /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F764DDC26A925F7005B0513 /* TabButton.swift */; };
+		2F764DDE26A925F7005B0513 /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F764DDC26A925F7005B0513 /* TabButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,9 @@
 		2F764DB226A7C254005B0513 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F764DB626A7C254005B0513 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		2F764DB826A7C254005B0513 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F764DD426A91FD4005B0513 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		2F764DD826A92152005B0513 /* BlurWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurWindow.swift; sourceTree = "<group>"; };
+		2F764DDC26A925F7005B0513 /* TabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +107,8 @@
 		2F764D8F26A7C252005B0513 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				2F764DD326A91FCA005B0513 /* View */,
+				2F764DD726A9213E005B0513 /* Helper */,
 				2F764D9026A7C252005B0513 /* CashdeckApp.swift */,
 				2F764D9126A7C252005B0513 /* ContentView.swift */,
 				2F764D9226A7C254005B0513 /* Assets.xcassets */,
@@ -149,6 +160,31 @@
 				2F764DB826A7C254005B0513 /* Info.plist */,
 			);
 			path = "Tests macOS";
+			sourceTree = "<group>";
+		};
+		2F764DD326A91FCA005B0513 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2F764DDB26A925E6005B0513 /* Component */,
+				2F764DD426A91FD4005B0513 /* Home.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2F764DD726A9213E005B0513 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				2F764DD826A92152005B0513 /* BlurWindow.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		2F764DDB26A925E6005B0513 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				2F764DDC26A925F7005B0513 /* TabButton.swift */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,7 +344,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F764DD926A92152005B0513 /* BlurWindow.swift in Sources */,
 				2F764DBB26A7C254005B0513 /* ContentView.swift in Sources */,
+				2F764DD526A91FD4005B0513 /* Home.swift in Sources */,
+				2F764DDD26A925F7005B0513 /* TabButton.swift in Sources */,
 				2F764DB926A7C254005B0513 /* CashdeckApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -317,7 +356,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F764DDA26A921A3005B0513 /* BlurWindow.swift in Sources */,
 				2F764DBC26A7C254005B0513 /* ContentView.swift in Sources */,
+				2F764DD626A91FD9005B0513 /* Home.swift in Sources */,
+				2F764DDE26A925F7005B0513 /* TabButton.swift in Sources */,
 				2F764DBA26A7C254005B0513 /* CashdeckApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
