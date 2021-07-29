@@ -7,20 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F18857D26B252370067E82D /* MiddleBarMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F18857C26B252370067E82D /* MiddleBarMenu.swift */; };
+		2F18857E26B252370067E82D /* MiddleBarMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F18857C26B252370067E82D /* MiddleBarMenu.swift */; };
+		2F18858026B252560067E82D /* SampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F18857F26B252560067E82D /* SampleView.swift */; };
+		2F18858126B252560067E82D /* SampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F18857F26B252560067E82D /* SampleView.swift */; };
 		2F764DAC26A7C254005B0513 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F764DAB26A7C254005B0513 /* Tests_iOS.swift */; };
 		2F764DB726A7C254005B0513 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F764DB626A7C254005B0513 /* Tests_macOS.swift */; };
 		2F764DB926A7C254005B0513 /* CashdeckApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F764D9026A7C252005B0513 /* CashdeckApp.swift */; };
 		2F764DBA26A7C254005B0513 /* CashdeckApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F764D9026A7C252005B0513 /* CashdeckApp.swift */; };
-		2F764DBB26A7C254005B0513 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F764D9126A7C252005B0513 /* ContentView.swift */; };
-		2F764DBC26A7C254005B0513 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F764D9126A7C252005B0513 /* ContentView.swift */; };
 		2F764DBD26A7C254005B0513 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F764D9226A7C254005B0513 /* Assets.xcassets */; };
 		2F764DBE26A7C254005B0513 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F764D9226A7C254005B0513 /* Assets.xcassets */; };
-		2F764DD526A91FD4005B0513 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F764DD426A91FD4005B0513 /* Home.swift */; };
-		2F764DD626A91FD9005B0513 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F764DD426A91FD4005B0513 /* Home.swift */; };
 		2F764DD926A92152005B0513 /* BlurWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F764DD826A92152005B0513 /* BlurWindow.swift */; };
 		2F764DDA26A921A3005B0513 /* BlurWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F764DD826A92152005B0513 /* BlurWindow.swift */; };
-		2F764DDD26A925F7005B0513 /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F764DDC26A925F7005B0513 /* TabButton.swift */; };
-		2F764DDE26A925F7005B0513 /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F764DDC26A925F7005B0513 /* TabButton.swift */; };
+		2F832EF726B271EA00426643 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F832EF626B271EA00426643 /* MainView.swift */; };
+		2F832EF826B271EA00426643 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F832EF626B271EA00426643 /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,8 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F18857C26B252370067E82D /* MiddleBarMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiddleBarMenu.swift; sourceTree = "<group>"; };
+		2F18857F26B252560067E82D /* SampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleView.swift; sourceTree = "<group>"; };
 		2F764D9026A7C252005B0513 /* CashdeckApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashdeckApp.swift; sourceTree = "<group>"; };
-		2F764D9126A7C252005B0513 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2F764D9226A7C254005B0513 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F764D9726A7C254005B0513 /* Cashdeck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cashdeck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F764D9A26A7C254005B0513 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -55,9 +56,8 @@
 		2F764DB226A7C254005B0513 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F764DB626A7C254005B0513 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		2F764DB826A7C254005B0513 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2F764DD426A91FD4005B0513 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		2F764DD826A92152005B0513 /* BlurWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurWindow.swift; sourceTree = "<group>"; };
-		2F764DDC26A925F7005B0513 /* TabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButton.swift; sourceTree = "<group>"; };
+		2F832EF626B271EA00426643 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +92,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F18857226B250E40067E82D /* Income */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Income;
+			sourceTree = "<group>";
+		};
+		2F18857326B250E90067E82D /* Expense */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Expense;
+			sourceTree = "<group>";
+		};
+		2F18857726B251DD0067E82D /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				2F18857C26B252370067E82D /* MiddleBarMenu.swift */,
+				2F832EF626B271EA00426643 /* MainView.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
 		2F764D8A26A7C251005B0513 = {
 			isa = PBXGroup;
 			children = (
@@ -107,10 +130,6 @@
 		2F764D8F26A7C252005B0513 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				2F764DD326A91FCA005B0513 /* View */,
-				2F764DD726A9213E005B0513 /* Helper */,
-				2F764D9026A7C252005B0513 /* CashdeckApp.swift */,
-				2F764D9126A7C252005B0513 /* ContentView.swift */,
 				2F764D9226A7C254005B0513 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -138,6 +157,12 @@
 		2F764DA026A7C254005B0513 /* macOS */ = {
 			isa = PBXGroup;
 			children = (
+				2F18857726B251DD0067E82D /* Navigation */,
+				2F18857326B250E90067E82D /* Expense */,
+				2F18857226B250E40067E82D /* Income */,
+				2FEF63C626AC6C5C0073CE75 /* Dashboard */,
+				2F764DD726A9213E005B0513 /* Helper */,
+				2F764D9026A7C252005B0513 /* CashdeckApp.swift */,
 				2F764DA126A7C254005B0513 /* Info.plist */,
 				2F764DA226A7C254005B0513 /* macOS.entitlements */,
 			);
@@ -165,8 +190,6 @@
 		2F764DD326A91FCA005B0513 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2F764DDB26A925E6005B0513 /* Component */,
-				2F764DD426A91FD4005B0513 /* Home.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -175,16 +198,25 @@
 			isa = PBXGroup;
 			children = (
 				2F764DD826A92152005B0513 /* BlurWindow.swift */,
+				2F18857F26B252560067E82D /* SampleView.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
 		};
-		2F764DDB26A925E6005B0513 /* Component */ = {
+		2FEF63C626AC6C5C0073CE75 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
-				2F764DDC26A925F7005B0513 /* TabButton.swift */,
+				2FEF63C726AC6C7D0073CE75 /* Model */,
+				2F764DD326A91FCA005B0513 /* View */,
 			);
-			path = Component;
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		2FEF63C726AC6C7D0073CE75 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -345,9 +377,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F764DD926A92152005B0513 /* BlurWindow.swift in Sources */,
-				2F764DBB26A7C254005B0513 /* ContentView.swift in Sources */,
-				2F764DD526A91FD4005B0513 /* Home.swift in Sources */,
-				2F764DDD26A925F7005B0513 /* TabButton.swift in Sources */,
+				2F832EF726B271EA00426643 /* MainView.swift in Sources */,
+				2F18858026B252560067E82D /* SampleView.swift in Sources */,
+				2F18857D26B252370067E82D /* MiddleBarMenu.swift in Sources */,
 				2F764DB926A7C254005B0513 /* CashdeckApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,9 +389,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F764DDA26A921A3005B0513 /* BlurWindow.swift in Sources */,
-				2F764DBC26A7C254005B0513 /* ContentView.swift in Sources */,
-				2F764DD626A91FD9005B0513 /* Home.swift in Sources */,
-				2F764DDE26A925F7005B0513 /* TabButton.swift in Sources */,
+				2F832EF826B271EA00426643 /* MainView.swift in Sources */,
+				2F18858126B252560067E82D /* SampleView.swift in Sources */,
+				2F18857E26B252370067E82D /* MiddleBarMenu.swift in Sources */,
 				2F764DBA26A7C254005B0513 /* CashdeckApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

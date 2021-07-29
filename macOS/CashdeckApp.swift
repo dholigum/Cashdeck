@@ -9,10 +9,11 @@ import SwiftUI
 
 @main
 struct CashdeckApp: App {
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
+                .background(Color("MainColor"))
         }
-        .windowStyle(HiddenTitleBarWindowStyle())
     }
 }
