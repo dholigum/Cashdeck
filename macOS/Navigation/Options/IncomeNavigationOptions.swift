@@ -10,10 +10,10 @@ import SwiftUI
 struct IncomeNavigationOptions {
     
     enum OptionType { case tokopedia, shopee }
-    typealias Option = (id: UUID, value: String, type: Self.OptionType)
+    typealias Option = (id: UUID, value: String, image: String, type: Self.OptionType)
     static var options: [Option] = [
-        (UUID(), "Tokopedia", .tokopedia),
-        (UUID(), "Shopee", .shopee)
+        (UUID(), "Tokopedia", "tokopedia", .tokopedia),
+        (UUID(), "Shopee", "shopee", .shopee)
     ]
 
     static func buildView(for option: Option) -> some View {

@@ -11,9 +11,10 @@ struct MiddleBarMenu: View {
     
     var seletedBar: String
     
-    @State private var homeOption: HomeNavigationOptions.Option = (id:UUID(), "", .overview)
-    @State private var incomeOption: IncomeNavigationOptions.Option = (id:UUID(), "", .tokopedia)
-    @State private var expenseOption: ExpenseNavigationOptions.Option = (id:UUID(), "", .overview)
+    @State private var selectedMenu: String = ""
+    @State private var homeOption: HomeNavigationOptions.Option = (id:UUID(), "Overview", "home-overview", .overview)
+    @State private var incomeOption: IncomeNavigationOptions.Option = (id:UUID(), "Tokopedia", "tokopedia", .tokopedia)
+    @State private var expenseOption: ExpenseNavigationOptions.Option = (id:UUID(), "Overview", "expense-overview", .overview)
     @State private var showDetail: Bool = false
     
     var body: some View {
@@ -29,8 +30,9 @@ struct MiddleBarMenu: View {
                             .foregroundColor(Color("AccentColor2"))
 
                         ForEach(HomeNavigationOptions.options, id: \.id) { option in
-                            CardMenuButton(title: option.value)
+                            CardMenuButton(title: option.value, imageName: option.image, selectedMenu: $selectedMenu)
                                 .onTapGesture {
+                                    selectedMenu = option.value
                                     homeOption = option
                                     showDetail = true
                                 }
@@ -56,8 +58,9 @@ struct MiddleBarMenu: View {
                             .foregroundColor(Color("AccentColor2"))
 
                         ForEach(IncomeNavigationOptions.options, id: \.id) { option in
-                            CardMenuButton(title: option.value)
+                            CardMenuButton(title: option.value, imageName: option.image, selectedMenu: $selectedMenu)
                                 .onTapGesture {
+                                    selectedMenu = option.value
                                     incomeOption = option
                                     showDetail = true
                                 }
@@ -83,8 +86,9 @@ struct MiddleBarMenu: View {
                             .foregroundColor(Color("AccentColor2"))
 
                         ForEach(ExpenseNavigationOptions.options, id: \.id) { option in
-                            CardMenuButton(title: option.value)
+                            CardMenuButton(title: option.value, imageName: option.image, selectedMenu: $selectedMenu)
                                 .onTapGesture {
+                                    selectedMenu = option.value
                                     expenseOption = option
                                     showDetail = true
                                 }
