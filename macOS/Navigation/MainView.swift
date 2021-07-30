@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct MainView: View {
+    
+    @State var selectedTabButton: String = ""
+    
     var body: some View {
         NavigationView {
             List {
@@ -16,15 +19,17 @@ struct MainView: View {
                     .padding(.vertical)
                     .foregroundColor(Color("AccentColor2"))
                 
-                NavigationLink(destination: MiddleBarMenu(seletedBar: "Home")) {
-                    Label("Home", systemImage: "house")
-                } // NAVIGATIONLINK
-                NavigationLink(destination: MiddleBarMenu(seletedBar: "Income")) {
-                    Label("Income", systemImage: "scroll")
-                } // NAVIGATIONLINK
-                NavigationLink(destination: MiddleBarMenu(seletedBar: "Expense")) {
-                    Label("Expense", systemImage: "dollarsign.circle")
-                } // NAVIGATIONLINK
+                NavigationLink(destination: MiddleBarMenu(seletedBar: "Home")
+                                .onAppear() { selectedTabButton = "Home" }) {
+                    SideBarButton(iconImg: "house", title: "Home", selectedTabButton: $selectedTabButton) }
+                
+                NavigationLink(destination: MiddleBarMenu(seletedBar: "Income")
+                                .onAppear() { selectedTabButton = "Income" }) {
+                    SideBarButton(iconImg: "scroll", title: "Income", selectedTabButton: $selectedTabButton) }
+                
+                NavigationLink(destination: MiddleBarMenu(seletedBar: "Expense")
+                                .onAppear() { selectedTabButton = "Expense" }) {
+                    SideBarButton(iconImg: "dollarsign.circle", title: "Expense", selectedTabButton: $selectedTabButton) }
             }
             .listStyle(SidebarListStyle())
             .background(Color("AccentColor"))

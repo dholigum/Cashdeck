@@ -29,6 +29,8 @@
 		2F832F0E26B3E6FA00426643 /* IncomeNavigationOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F832F0C26B3E6FA00426643 /* IncomeNavigationOptions.swift */; };
 		2F832F1026B3E70500426643 /* ExpenseNavigationOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F832F0F26B3E70500426643 /* ExpenseNavigationOptions.swift */; };
 		2F832F1126B3E70500426643 /* ExpenseNavigationOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F832F0F26B3E70500426643 /* ExpenseNavigationOptions.swift */; };
+		2F832F1426B4439400426643 /* SideBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F832F1326B4439400426643 /* SideBarButton.swift */; };
+		2F832F1526B4439400426643 /* SideBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F832F1326B4439400426643 /* SideBarButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,7 @@
 		2F832F0926B3E6F000426643 /* HomeNavigationOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationOptions.swift; sourceTree = "<group>"; };
 		2F832F0C26B3E6FA00426643 /* IncomeNavigationOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeNavigationOptions.swift; sourceTree = "<group>"; };
 		2F832F0F26B3E70500426643 /* ExpenseNavigationOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseNavigationOptions.swift; sourceTree = "<group>"; };
+		2F832F1326B4439400426643 /* SideBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				2F832EFF26B31A6800426643 /* CardMenuButton.swift */,
+				2F832F1326B4439400426643 /* SideBarButton.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -408,6 +412,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F832F1426B4439400426643 /* SideBarButton.swift in Sources */,
 				2F764DD926A92152005B0513 /* BlurWindow.swift in Sources */,
 				2F832F0D26B3E6FA00426643 /* IncomeNavigationOptions.swift in Sources */,
 				2F832EF726B271EA00426643 /* MainView.swift in Sources */,
@@ -424,6 +429,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F832F1526B4439400426643 /* SideBarButton.swift in Sources */,
 				2F764DDA26A921A3005B0513 /* BlurWindow.swift in Sources */,
 				2F832F0E26B3E6FA00426643 /* IncomeNavigationOptions.swift in Sources */,
 				2F832EF826B271EA00426643 /* MainView.swift in Sources */,
