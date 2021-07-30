@@ -15,5 +15,6 @@ struct CashdeckApp: App {
             MainView()
                 .background(Color("MainColor"))
         }
+        .windowStyle(HiddenTitleBarWindowStyle())
     }
 }

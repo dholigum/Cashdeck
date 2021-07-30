@@ -12,21 +12,23 @@ struct MainView: View {
         NavigationView {
             List {
                 Text("CashDeck")
-                    .font(Font.title2.weight(.heavy))
-                    .padding(.top)
-                NavigationLink(destination: MiddleBarMenu(seletedBar: "Books")) {
+                    .font(Font.title.weight(.heavy))
+                    .padding(.vertical)
+                    .foregroundColor(Color("AccentColor2"))
+                
+                NavigationLink(destination: MiddleBarMenu(seletedBar: "Home")) {
                     Label("Home", systemImage: "house")
                 } // NAVIGATIONLINK
-                NavigationLink(destination: MiddleBarMenu(seletedBar: "Tutorials")) {
+                NavigationLink(destination: MiddleBarMenu(seletedBar: "Income")) {
                     Label("Income", systemImage: "scroll")
                 } // NAVIGATIONLINK
-                NavigationLink(destination: MiddleBarMenu(seletedBar: "Video Tutorials")) {
+                NavigationLink(destination: MiddleBarMenu(seletedBar: "Expense")) {
                     Label("Expense", systemImage: "dollarsign.circle")
                 } // NAVIGATIONLINK
             }
             .listStyle(SidebarListStyle())
             .background(Color("AccentColor"))
-            .frame(minWidth: 186)
+            .frame(width: 186)
         }
         .background(Color("MainColor"))
         .frame(minWidth: 1440, minHeight: 900)

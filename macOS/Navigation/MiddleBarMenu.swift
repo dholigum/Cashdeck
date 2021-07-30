@@ -11,42 +11,92 @@ struct MiddleBarMenu: View {
     
     var seletedBar: String
     
+    @State private var homeOption: HomeNavigationOptions.Option = (id:UUID(), "", .overview)
+    @State private var incomeOption: IncomeNavigationOptions.Option = (id:UUID(), "", .tokopedia)
+    @State private var expenseOption: ExpenseNavigationOptions.Option = (id:UUID(), "", .overview)
+    @State private var showDetail: Bool = false
+    
     var body: some View {
-        if seletedBar == "Books" {
+        if seletedBar == "Home" {
             NavigationView {
-                List {
-                    NavigationLink(destination: SampleView(content: "Books")) {
-                        Label("Books", systemImage: "book.closed")
-                    } // NAVIGATIONLINK
-                    NavigationLink(destination: SampleView(content: "Tutorials")) {
-                        Label("Tutorials", systemImage: "list.bullet.rectangle")
-                    } // NAVIGATIONLINK
-                    NavigationLink(destination: SampleView(content: "Video Tutorials")) {
-                        Label("Video Tutorials", systemImage: "tv")
-                    } // NAVIGATIONLINK
-                    NavigationLink(destination: SampleView(content: "Contacts")) {
-                        Label("Contacts", systemImage: "mail.stack")
-                    } // NAVIGATIONLINK
-                    NavigationLink(destination: SampleView(content: "Search")) {
-                        Label("Search", systemImage: "magnifyingglass")
-                    } // NAVIGATIONLINK
+                ScrollView{
+                    VStack (alignment:.leading) {
+                        Text(seletedBar)
+                            .font(Font.title.weight(.heavy))
+                            .padding(.top, 19)
+                            .padding(.bottom, 14)
+                            .padding(.leading)
+                            .foregroundColor(Color("AccentColor2"))
+
+                        ForEach(HomeNavigationOptions.options, id: \.id) { option in
+                            CardMenuButton(title: option.value)
+                                .onTapGesture {
+                                    homeOption = option
+                                    showDetail = true
+                                }
+                                .buttonStyle(PlainButtonStyle())
+                        }
+                        Spacer()
+                        NavigationLink("", destination: HomeNavigationOptions.buildView(for: homeOption), isActive: $showDetail)
+                            .opacity(0)
+                    }
                 }
-                .listStyle(SidebarListStyle())
+                // INITIAL DETAIL VIEW
+                Text("Select option from the left")
+            }
+        } else if seletedBar == "Income" {
+            NavigationView {
+                ScrollView{
+                    VStack (alignment:.leading) {
+                        Text(seletedBar)
+                            .font(Font.title.weight(.heavy))
+                            .padding(.top, 19)
+                            .padding(.bottom, 14)
+                            .padding(.leading)
+                            .foregroundColor(Color("AccentColor2"))
+
+                        ForEach(IncomeNavigationOptions.options, id: \.id) { option in
+                            CardMenuButton(title: option.value)
+                                .onTapGesture {
+                                    incomeOption = option
+                                    showDetail = true
+                                }
+                                .buttonStyle(PlainButtonStyle())
+                        }
+                        Spacer()
+                        NavigationLink("", destination: IncomeNavigationOptions.buildView(for: incomeOption), isActive: $showDetail)
+                            .opacity(0)
+                    }
+                }
+                // INITIAL DETAIL VIEW
+                Text("Select option from the left")
             }
         } else {
             NavigationView {
-                List {
-                    NavigationLink(destination: SampleView(content: "Tutorials")) {
-                        Label("Tutorials", systemImage: "list.bullet.rectangle")
-                    } // NAVIGATIONLINK
-                    NavigationLink(destination: SampleView(content: "Video Tutorials")) {
-                        Label("Video Tutorials", systemImage: "tv")
-                    } // NAVIGATIONLINK
-                    NavigationLink(destination: SampleView(content: "Contacts")) {
-                        Label("Contacts", systemImage: "mail.stack")
-                    } // NAVIGATIONLINK
+                ScrollView{
+                    VStack (alignment:.leading) {
+                        Text(seletedBar)
+                            .font(Font.title.weight(.heavy))
+                            .padding(.top, 19)
+                            .padding(.bottom, 14)
+                            .padding(.leading)
+                            .foregroundColor(Color("AccentColor2"))
+
+                        ForEach(ExpenseNavigationOptions.options, id: \.id) { option in
+                            CardMenuButton(title: option.value)
+                                .onTapGesture {
+                                    expenseOption = option
+                                    showDetail = true
+                                }
+                                .buttonStyle(PlainButtonStyle())
+                        }
+                        Spacer()
+                        NavigationLink("", destination: ExpenseNavigationOptions.buildView(for: expenseOption), isActive: $showDetail)
+                            .opacity(0)
+                    }
                 }
-                .listStyle(SidebarListStyle())
+                // INITIAL DETAIL VIEW
+                Text("Select option from the left")
             }
         }
     }
