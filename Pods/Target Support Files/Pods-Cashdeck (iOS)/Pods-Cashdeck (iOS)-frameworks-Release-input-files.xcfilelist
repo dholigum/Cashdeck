@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-Cashdeck (iOS)/Pods-Cashdeck (iOS)-frameworks.sh
+${BUILT_PRODUCTS_DIR}/CoreXLSX-iOS/CoreXLSX.framework
+${BUILT_PRODUCTS_DIR}/XMLCoder-iOS/XMLCoder.framework
+${BUILT_PRODUCTS_DIR}/ZIPFoundation-iOS/ZIPFoundation.framework

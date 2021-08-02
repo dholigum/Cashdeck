@@ -1,0 +1,2095 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		029A2ADEE5BEFC8F1C1A658107D3E01E /* XMLReferencingEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8C2B173BDDADE227D003B1EF3CD91C /* XMLReferencingEncoder.swift */; };
+		0389BB9EF9F7867B314229B1C3A44FF3 /* KeyedStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29985745D6F8AAEFB7C8B0051978F136 /* KeyedStorage.swift */; };
+		062D39D6FCC89AD4A49B202C1A683F55 /* UIntBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D71C75DF511E1D3B867359260C496A0 /* UIntBox.swift */; };
+		07EEB83799921706357DE574F3C745C9 /* Pods-Cashdeck (iOS)-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 964C10BBA11C2259C4199FD0114C30EB /* Pods-Cashdeck (iOS)-dummy.m */; };
+		0B0A55334D541B31D6EB20C52D8E17C1 /* KeyedBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = F118D849C4CAE6AC0B3EBB4AC902146A /* KeyedBox.swift */; };
+		0BAD0982257C5BC49A270543516030C2 /* XMLCoder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00FABF3AF62B1F6CE60630547AF2B450 /* XMLCoder.framework */; };
+		0C804AFF4DAC88809724D32BE8544060 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB2C83C78D8AC6245CB8564B7EBE14C /* Foundation.framework */; };
+		0CE8A09B03BEE04FC35F0CF2AB8D2B9B /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07935A0631DB98F428BD8225831FB057 /* Path.swift */; };
+		0E95551E0CCF4B7A47288D47ADF51F53 /* FloatBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3B19AA47CB00C3C845FA769CF33D48 /* FloatBox.swift */; };
+		0F73A826C95CC0EDBD42592B9B382BBA /* StringBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F306F9B86FAB21C40D32148FE47FE7C /* StringBox.swift */; };
+		12CBF09DE261088863E70A824EF3545C /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7F64A773FC65122DF0C88ED0B08735 /* Entry.swift */; };
+		17E4F9D61E258BA5F55227E20191E487 /* DataBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F938D7C012BBE2473A7FD648AEBB47 /* DataBox.swift */; };
+		18549E547C17B0DBB4DE7BB85420C0A8 /* XMLCoder-iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F5B5300F6D4531857EAE27DFB81E852 /* XMLCoder-iOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		18677D9BA494C8A65AD733E7733165C2 /* KeyedBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = F118D849C4CAE6AC0B3EBB4AC902146A /* KeyedBox.swift */; };
+		1C5E8E4791BA2B231B9D173582126C20 /* DecodingErrorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B28B11CD99ED754394468AE414580A /* DecodingErrorExtension.swift */; };
+		220720AA199F29D4AEFA33B11D497FB7 /* XMLDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8509789395732EF9BE13CF5247BBA2B9 /* XMLDecoder.swift */; };
+		222A30CCE97D26CBF5E5218609296185 /* XMLCoder-macOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 66C5C67D3440A58BF673184A10C18F00 /* XMLCoder-macOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		222D626E56C5D6795CEC9CE7DF8D2C91 /* CoreXLSX-iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2694798F6ED89C643EB184CB04D3DB /* CoreXLSX-iOS-dummy.m */; };
+		226E61ABF2FF5F0574B07785F0ED9EE4 /* ZIPFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20301528321486EFEDECA1C55E9E3A7E /* ZIPFoundation.framework */; };
+		23BE4A9BBBA7AABF8CF10CDCB10E26E9 /* FileManager+ZIP.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3FC2BD85999339E4FF0C383F80AD4A /* FileManager+ZIP.swift */; };
+		2457ADD44DC6AE0C46241096F9937D60 /* CoreXLSX-macOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F3474F18B5D6C3FA2363E840724C715 /* CoreXLSX-macOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2569940D5623585BA7BDD28B1785746E /* Data+Compression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4767A4F5C0A1D35AADE4A2F764D32B /* Data+Compression.swift */; };
+		26D5F63221E4BEF8278477793D2B0218 /* Comments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A963ACF00F496362CF0843DE40F5C0 /* Comments.swift */; };
+		2845A0854A7B9E0F2CA3E0F79ADCA9B7 /* XMLKeyedEncodingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BCDF8BA223AC910C4D0AE5FA06BF5E /* XMLKeyedEncodingContainer.swift */; };
+		2A4C051449BE790E77681F6923C34F2C /* DecodingErrorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B28B11CD99ED754394468AE414580A /* DecodingErrorExtension.swift */; };
+		2D94C5DCE0C74A79752E488DE9F3FF4A /* SingleKeyedBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1A1C6B7F4AD13DA785C57A5370C82D /* SingleKeyedBox.swift */; };
+		2DEDAA6A6397BE86BBCB1F554B8C93AB /* XMLCoder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00FABF3AF62B1F6CE60630547AF2B450 /* XMLCoder.framework */; };
+		2E3F7441F1B5BAE0C3A1D32097669353 /* CoreXLSX-iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C12B932B5C894D8C7E971984ED723C43 /* CoreXLSX-iOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		306F134DE8DE1163D71D77F88806A01F /* XMLEncodingStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614583DF3D0862698396F68BBF5B9131 /* XMLEncodingStorage.swift */; };
+		31E46109DE2FF2FBCCA5085736D68FB0 /* UIntBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D71C75DF511E1D3B867359260C496A0 /* UIntBox.swift */; };
+		34E35B84DBEEA342DE38BF0FEB2A636C /* XMLCoderElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED419F79484EE8B553CF33AF734EB476 /* XMLCoderElement.swift */; };
+		35138DA85C10421DFA2E7C5F58E345AB /* EncodingErrorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB81C2265988C8F6C93075AC046B2061 /* EncodingErrorExtension.swift */; };
+		363CD46F947A53ED2112B6D447AE3F40 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBEABEF8E1752F2DA1FCE00F9B80768 /* String+Extensions.swift */; };
+		38DB633FD3D0DCA176FB2A034E17EF11 /* CellReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79C17728A3CB22672E381923EC972F8 /* CellReference.swift */; };
+		397DD8DFB8F86112AAA00A3892322144 /* SharedBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55530CA5713F4F98E0D58A91CE06893 /* SharedBox.swift */; };
+		3A4C560DB76D9A1C440D5134F19E15F1 /* SingleKeyedBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1A1C6B7F4AD13DA785C57A5370C82D /* SingleKeyedBox.swift */; };
+		3C8B85D74CCB64E27984FD8D445317F6 /* Archive+MemoryFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA15E5CF2AB75AFB0586942B633E3D7 /* Archive+MemoryFile.swift */; };
+		3D65EE1272D022AF86D065170396B46E /* SharedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5E3BA9A6DFF0D1906EB0A328911297 /* SharedStrings.swift */; };
+		3E897E75A2C0D59864295D28A9F843BB /* ColumnReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69B3509418C4B7021B639D4BF214A79 /* ColumnReference.swift */; };
+		4053E2B8FA05EA761BFC67893A9F762E /* DoubleBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB034EE6179E6E1A2FAC89A5F72F439 /* DoubleBox.swift */; };
+		41B88CC5F9BB060E9365699E1C6161AF /* XMLEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8183A6D7DA7417B11987884749B48641 /* XMLEncoder.swift */; };
+		43BAC32BEE81C344E51A443DC892635A /* Relationships.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6190959047ADCCCEEE3645825C42A381 /* Relationships.swift */; };
+		43F063979CBF466A30CA53D84EAE37D7 /* ChoiceBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799E4EB452C97FE200D52FE4B0FA31B4 /* ChoiceBox.swift */; };
+		445C2ECFBC03D955DA25C58634FE9476 /* XMLKeyedDecodingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0E157D0A8CD7FB70EB87B1615ED53B /* XMLKeyedDecodingContainer.swift */; };
+		4523E9B1640968E32DB408A8C8B00309 /* CellQueries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60525AC1F121660AE3D66AD55CE80A58 /* CellQueries.swift */; };
+		462B0568A85D26B8A49076204769CF87 /* DynamicNodeDecoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9858F7BECF865E8ABB8670168A3A7317 /* DynamicNodeDecoding.swift */; };
+		4647F71F5ADF70F6B3640655EBDE84A6 /* XMLDecodingStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2042F2309BF3BB8A433708BC76390D4 /* XMLDecodingStorage.swift */; };
+		47F2A91415B2C6EEB482B22BBFCE05A0 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBEABEF8E1752F2DA1FCE00F9B80768 /* String+Extensions.swift */; };
+		4846CA1ADE3D58B75E4401D19BB97975 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8F5CECEE3EC700263A5EE7EE146C6B /* Styles.swift */; };
+		494AE33D4D9859FC118F969EE63D337F /* ISO8601DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21151E675B5C46B28CC51CF67AA861E /* ISO8601DateFormatter.swift */; };
+		49E57CBAC3FE9409B8652008D6DADA93 /* XMLStackParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B5F74265D98AAE16C4B46C57C243BA /* XMLStackParser.swift */; };
+		4A712120870FC07DD43CEB2C4F725E58 /* XMLKeyedDecodingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0E157D0A8CD7FB70EB87B1615ED53B /* XMLKeyedDecodingContainer.swift */; };
+		4EE4F29C075609028E74595E36C4A727 /* ZIPFoundation-iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC1AF7848C973370FB6CBC563CB091E /* ZIPFoundation-iOS-dummy.m */; };
+		501E212E6D820A8F925794199A25704C /* Pods-Cashdeck (macOS)-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E655949975A1FBED24ADC75BEDC63799 /* Pods-Cashdeck (macOS)-dummy.m */; };
+		53A64612D1899389998D0D5C53B7E893 /* Pods-Cashdeck (macOS)-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5891D7F20F8F549B76971D318D7050CE /* Pods-Cashdeck (macOS)-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		55816A1A6771D4BDD3967492B4A85C60 /* SharedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5E3BA9A6DFF0D1906EB0A328911297 /* SharedStrings.swift */; };
+		56060D1ECA7917994F665CDFDC5F6E39 /* Archive+MemoryFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA15E5CF2AB75AFB0586942B633E3D7 /* Archive+MemoryFile.swift */; };
+		5634EF6C94AE9054758A43CA8281F478 /* DataBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F938D7C012BBE2473A7FD648AEBB47 /* DataBox.swift */; };
+		57D3711672395A1717A890CC83D88F5B /* XMLChoiceDecodingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0575CAE68A763ECD1EE9BAE7A5DC0A9F /* XMLChoiceDecodingContainer.swift */; };
+		590351F1712FEAE547BE7FE0A694F242 /* Data+Compression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4767A4F5C0A1D35AADE4A2F764D32B /* Data+Compression.swift */; };
+		5E695DF71F88F7F92560C10BA6699C26 /* Comments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A963ACF00F496362CF0843DE40F5C0 /* Comments.swift */; };
+		5EF80DD135422434F0E8B222A2ADAF78 /* DateBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4933B82F48D99FA80E1D6810ACBE6F81 /* DateBox.swift */; };
+		61752CF2993F48C7485B8B9029459538 /* XMLReferencingEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8C2B173BDDADE227D003B1EF3CD91C /* XMLReferencingEncoder.swift */; };
+		62FE62704ACEE5C7E80AF7FC42ED44F3 /* DecimalBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FEDFB3E4724520584F4D45FCEB69AA /* DecimalBox.swift */; };
+		6389099B342B656448024385EC87C7FA /* XMLEncoderImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC3D31C068241D930B6F43EB55D2A70 /* XMLEncoderImplementation.swift */; };
+		63F61133024496194F681A11654E2D20 /* Metatypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7046FF8CC7D9ED11FFD5824A17160BB /* Metatypes.swift */; };
+		65900922FA9B77C5FE9A3D2F268C5403 /* Archive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCB644CCF0E0A3A7D93E2CDA022587C /* Archive.swift */; };
+		678132739BD8215BBC14D0D50970039D /* IntBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116CF11DD45DC654CEF49B5E94EBFDBB /* IntBox.swift */; };
+		6B4E1BD77FE4BCB6745706A564433F7B /* XMLEncodingStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614583DF3D0862698396F68BBF5B9131 /* XMLEncodingStorage.swift */; };
+		6CCA8C4BC76887FBAC7BAE8FF0BDDDDA /* XMLChoiceCodingKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB1B91002D4F5CB0EA15F8FFB17859E /* XMLChoiceCodingKey.swift */; };
+		6D6C5583A4C76C1117E3F349823ABB65 /* DoubleBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB034EE6179E6E1A2FAC89A5F72F439 /* DoubleBox.swift */; };
+		6ED990485786DE8FE1FA18470A6A3B7A /* XMLDecoderImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E51EFFEF481F37BD2C5BCE32751F48 /* XMLDecoderImplementation.swift */; };
+		70F0D4F42715622B94428A58FB4107A0 /* DynamicNodeEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1E82C9F5D95BB8C4DFBA8BCA7A6678 /* DynamicNodeEncoding.swift */; };
+		74929905CF9C410E439D591BE3DDDF78 /* SharedBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55530CA5713F4F98E0D58A91CE06893 /* SharedBox.swift */; };
+		74ED466EEF411BCA24638B27B3501894 /* Worksheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291AEEF8583A2236C8C2B5CD435C1E77 /* Worksheet.swift */; };
+		758395FF36E1386E8A9073AD737CD924 /* XMLHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04848883292CDA06BAC259AB29249CD6 /* XMLHeader.swift */; };
+		7756E6982F241F69A9BCB5B8492CA022 /* XMLHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04848883292CDA06BAC259AB29249CD6 /* XMLHeader.swift */; };
+		7763B632F7098805F7384559D7D11DB0 /* SingleValueEncodingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C3EE8742A2D0C8E5E69D7121193662 /* SingleValueEncodingContainer.swift */; };
+		7AA6F96F1B371E4F7FBBC0F11600FE78 /* SingleValueDecodingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD28E666E04402E1B8636B7AE962C3F /* SingleValueDecodingContainer.swift */; };
+		7BBC96DBF7C3FE4D7F5EF2BF3F05F520 /* XMLKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6CEBA726BE3716DE65DD2F0832A49D /* XMLKey.swift */; };
+		7BEDA45322E9769E92D2BEE6F231D928 /* BoolBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E20F093470D7299F939668A519B015 /* BoolBox.swift */; };
+		7C47D0B2F4A31E59150CAC296A6A2BAF /* Data+Serialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F05A648320D9ECC2D419BDD353490B0 /* Data+Serialization.swift */; };
+		80989DF0FBF05E965395E7E0E3AE4286 /* ZIPFoundation-iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 428830E4AD500B0D7AFAFD17355FA1BF /* ZIPFoundation-iOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8132900BC30C6E69C4C43C294B08A952 /* ISO8601DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21151E675B5C46B28CC51CF67AA861E /* ISO8601DateFormatter.swift */; };
+		8180A471012E94F6D182353C1B8FA1B9 /* XMLDecoderImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E51EFFEF481F37BD2C5BCE32751F48 /* XMLDecoderImplementation.swift */; };
+		8322F7D593D7E2DD0779F0D5A4F01E38 /* Worksheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291AEEF8583A2236C8C2B5CD435C1E77 /* Worksheet.swift */; };
+		84036695F460E463BA1B1277288AC41F /* CellReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79C17728A3CB22672E381923EC972F8 /* CellReference.swift */; };
+		8421B8E9627A91CFBFC3684834F3136C /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8F5CECEE3EC700263A5EE7EE146C6B /* Styles.swift */; };
+		84D3AFD62A3F455BD8FDC487037AE0BC /* XMLUnkeyedEncodingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD57A9CBEA69F1C629767143170D4C3 /* XMLUnkeyedEncodingContainer.swift */; };
+		855B11C9A7B1B9366819126D66ABA21A /* Workbook.swift in Sources */ = {isa = PBXBuildFile; fileRef = C021B79CC7B762895912E1E7EB1E6621 /* Workbook.swift */; };
+		872F6CB76739F2EBD6BEAB220016B046 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9938D44C9FD3881736317828D59F6A7 /* Cocoa.framework */; };
+		8739EF363777943047CDEF02FACE9371 /* XMLKeyedEncodingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BCDF8BA223AC910C4D0AE5FA06BF5E /* XMLKeyedEncodingContainer.swift */; };
+		873F931C87C00A5CA634D7CA927C1CAF /* XMLChoiceEncodingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F75D45E03AA661848C011DA5D4B902 /* XMLChoiceEncodingContainer.swift */; };
+		8A2AFA7D2E6DC6E63D68085AFAF60E43 /* XMLDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8509789395732EF9BE13CF5247BBA2B9 /* XMLDecoder.swift */; };
+		8ADA192270FF9F986F496A38A7820C0F /* ValueBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CA86C953E89B6CC42F546DF24C15AC /* ValueBox.swift */; };
+		8AE211EF6B0820D50EC5CC07B4A5E2EA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB2C83C78D8AC6245CB8564B7EBE14C /* Foundation.framework */; };
+		8AF6A3E91DD42A6DFB60FBA587B5648C /* Metatypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7046FF8CC7D9ED11FFD5824A17160BB /* Metatypes.swift */; };
+		8E77C3D1FE57D7D978F968159DB92398 /* KeyedStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29985745D6F8AAEFB7C8B0051978F136 /* KeyedStorage.swift */; };
+		8F29E66CF903D4F9ACCD64CA89F1B7A7 /* SingleValueEncodingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C3EE8742A2D0C8E5E69D7121193662 /* SingleValueEncodingContainer.swift */; };
+		909BA99CFFF5E945F0C76E49056B1912 /* ZIPFoundation-macOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 991499EF6E4B4375608EC2EBC4D5E0A0 /* ZIPFoundation-macOS-dummy.m */; };
+		910108C73CF8607B3FD24C8FA3D19907 /* XMLKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6CEBA726BE3716DE65DD2F0832A49D /* XMLKey.swift */; };
+		918EFC180938F1D2DE69E2542823DC39 /* XLSXFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE9B6732D0841633C9D271351338D6F /* XLSXFile.swift */; };
+		957766FCC34CA434846F81B1EAC430F4 /* XMLChoiceCodingKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB1B91002D4F5CB0EA15F8FFB17859E /* XMLChoiceCodingKey.swift */; };
+		99ED2A89A591C943C52F3DABCF5F3955 /* BoolBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E20F093470D7299F939668A519B015 /* BoolBox.swift */; };
+		9C98F3E644F5F346CE5D0D965D36F707 /* UnkeyedBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED05539112DEEC198F86F0FA063BE51 /* UnkeyedBox.swift */; };
+		9DAF88DB5EFAFC1ED7F073CBFCF1D2FB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9938D44C9FD3881736317828D59F6A7 /* Cocoa.framework */; };
+		9DC8CF6CB0788C7C75CC10252C03A733 /* URLBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304155B399F59B4AE28E2DFC7E157D54 /* URLBox.swift */; };
+		9E29258B4D0BB6D426CA883E10FD419A /* Archive+Reading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C8DF55CFAE105716CD4B12BB652EF5 /* Archive+Reading.swift */; };
+		A3FCC47FCE129C088356BF20CC4ACA0A /* EncodingErrorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB81C2265988C8F6C93075AC046B2061 /* EncodingErrorExtension.swift */; };
+		A64891644932CFFFFD60CC9FBDB473E6 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E28F33D80C15A83A897FBFFCD0464C /* Box.swift */; };
+		A6A86E67D2AA799361925B9C3A7C303A /* SingleValueDecodingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD28E666E04402E1B8636B7AE962C3F /* SingleValueDecodingContainer.swift */; };
+		A6D86C6DCB937C80F3D64E97FE8E5F72 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9938D44C9FD3881736317828D59F6A7 /* Cocoa.framework */; };
+		A8A70760F3E9EF71D6CF4070C74C33F0 /* XMLEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8183A6D7DA7417B11987884749B48641 /* XMLEncoder.swift */; };
+		A965544FF6AB982F6536F5FCBD59C176 /* XMLEncoderImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC3D31C068241D930B6F43EB55D2A70 /* XMLEncoderImplementation.swift */; };
+		AC579CA642F31FD6A4DF27B633EC4D8A /* DynamicNodeEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1E82C9F5D95BB8C4DFBA8BCA7A6678 /* DynamicNodeEncoding.swift */; };
+		AF3DA00935370F97D8079B404454600C /* Archive+Writing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B7779D25137ADDC8C8DD49B9735F04 /* Archive+Writing.swift */; };
+		B029FF7CDE63E08831A2E529ED49FA1D /* DecimalBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FEDFB3E4724520584F4D45FCEB69AA /* DecimalBox.swift */; };
+		B13BFC8198DCB3627C9E97FCA0497C94 /* NullBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B08FB9A37DB9684B79915E7E9FB7A64 /* NullBox.swift */; };
+		B35E47BD49E2CB9AF26B62848B7F6A1B /* Data+Serialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F05A648320D9ECC2D419BDD353490B0 /* Data+Serialization.swift */; };
+		B737E76FD48E4BA86C71C08006D1E6D5 /* ColumnReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69B3509418C4B7021B639D4BF214A79 /* ColumnReference.swift */; };
+		BAEB1F5B460DB568BDD983507A70C0EA /* XMLUnkeyedDecodingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DCBDD31F7B0997AE96B59B2833469F /* XMLUnkeyedDecodingContainer.swift */; };
+		BC39A17CAA2E9A4BB14B9D880652A5F3 /* Relationships.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6190959047ADCCCEEE3645825C42A381 /* Relationships.swift */; };
+		BC8365F5649156C27C2E189014AF388C /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BF33D333D3EDDC2262ABC136B29952 /* Cell.swift */; };
+		C1EB31A30107608EA802FFC2482B34B7 /* XMLUnkeyedEncodingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD57A9CBEA69F1C629767143170D4C3 /* XMLUnkeyedEncodingContainer.swift */; };
+		C41755AE688E27B09E30FCDEEF18D4E6 /* XLSXFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE9B6732D0841633C9D271351338D6F /* XLSXFile.swift */; };
+		C41DE44BDDBB83B8E35BECF3F2E145BE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB2C83C78D8AC6245CB8564B7EBE14C /* Foundation.framework */; };
+		C5A515D8CA8384540904919983311B13 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E28F33D80C15A83A897FBFFCD0464C /* Box.swift */; };
+		C9BA9F80471D4EEE60F8A145C017285D /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BF33D333D3EDDC2262ABC136B29952 /* Cell.swift */; };
+		C9FDEAA592C1F01DA963267CEF6E331B /* XMLChoiceDecodingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0575CAE68A763ECD1EE9BAE7A5DC0A9F /* XMLChoiceDecodingContainer.swift */; };
+		CC80618BC621508B7134B47A384829D6 /* FileManager+ZIP.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3FC2BD85999339E4FF0C383F80AD4A /* FileManager+ZIP.swift */; };
+		CED7AED644C540A2E9796CC5B8536B19 /* ZIPFoundation-macOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7ADD0751D9F3CD204087ED1BDFDA393E /* ZIPFoundation-macOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D146E8C0508479861ABAD51047424E18 /* Archive+Writing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B7779D25137ADDC8C8DD49B9735F04 /* Archive+Writing.swift */; };
+		D147221C9A37A9E8D19F8C66C8F34B2B /* CellQueries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60525AC1F121660AE3D66AD55CE80A58 /* CellQueries.swift */; };
+		D19284EF0B2BC0BDCAFD9918F87D32A8 /* XMLChoiceEncodingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F75D45E03AA661848C011DA5D4B902 /* XMLChoiceEncodingContainer.swift */; };
+		D5128CCC97CC4CCCF3FA1EBF9A6FBFC3 /* XMLStackParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B5F74265D98AAE16C4B46C57C243BA /* XMLStackParser.swift */; };
+		D5739204AC9348120417CB8DAE0F3BDA /* Pods-Cashdeck (iOS)-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2ED9BB5AF72120AFA15B608F14C27B15 /* Pods-Cashdeck (iOS)-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D6EDE2601B729E6A250EEBA88E20DBC1 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7F64A773FC65122DF0C88ED0B08735 /* Entry.swift */; };
+		DAC1491F9F81C9FB0F214FE7E984AD43 /* XMLCoder-macOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 346AC9904F962B6ED78AEB5FB1F884CA /* XMLCoder-macOS-dummy.m */; };
+		DBF547E6EE13F9B7EEAC8DC32CA9856C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9938D44C9FD3881736317828D59F6A7 /* Cocoa.framework */; };
+		DD7991F4DDB891F4764BF2263DD70B91 /* ValueBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CA86C953E89B6CC42F546DF24C15AC /* ValueBox.swift */; };
+		DE8330D360E028B859CBFE23B00EE79F /* XMLDecodingStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2042F2309BF3BB8A433708BC76390D4 /* XMLDecodingStorage.swift */; };
+		DE86AB0B60261B2B69682080DC9F800F /* CoreXLSX-macOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E11477E215CABD2FE3C6AA51F1E896 /* CoreXLSX-macOS-dummy.m */; };
+		DE87952407E0F24F86FEAFB34D968AA3 /* XMLUnkeyedDecodingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DCBDD31F7B0997AE96B59B2833469F /* XMLUnkeyedDecodingContainer.swift */; };
+		E1F9688554FCBF57E07B3AAC02788E5C /* ChoiceBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799E4EB452C97FE200D52FE4B0FA31B4 /* ChoiceBox.swift */; };
+		E211F0318796A9949296338E113E93D9 /* DateBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4933B82F48D99FA80E1D6810ACBE6F81 /* DateBox.swift */; };
+		E3F2AF5BA40278BC0FA7FCA13DEDB9FA /* NullBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B08FB9A37DB9684B79915E7E9FB7A64 /* NullBox.swift */; };
+		E4187DB5239472D3ED3791FC7C005FF1 /* XMLCoderElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED419F79484EE8B553CF33AF734EB476 /* XMLCoderElement.swift */; };
+		E5E72D087FBD67E1C6934FFEB004B9FB /* Archive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCB644CCF0E0A3A7D93E2CDA022587C /* Archive.swift */; };
+		E600C0B75284A7409BAEB56ED4A423D7 /* XMLCoder-iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E12AE26124BCCE8F57E12DAE37F50B39 /* XMLCoder-iOS-dummy.m */; };
+		EBD7807059C0DD9D4D03B0D8A0731A3E /* URLBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304155B399F59B4AE28E2DFC7E157D54 /* URLBox.swift */; };
+		F0F2E7EC0457B8CE1EE604179CDA4328 /* UnkeyedBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED05539112DEEC198F86F0FA063BE51 /* UnkeyedBox.swift */; };
+		F2F1559D9F68EDBFDB64D0791326D106 /* StringBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F306F9B86FAB21C40D32148FE47FE7C /* StringBox.swift */; };
+		F39262B1B48B5F172219AAC5DFA99C75 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07935A0631DB98F428BD8225831FB057 /* Path.swift */; };
+		F864AE0C6EE086EFD459DAC5D1A09240 /* Workbook.swift in Sources */ = {isa = PBXBuildFile; fileRef = C021B79CC7B762895912E1E7EB1E6621 /* Workbook.swift */; };
+		F973B64B96BEEBFEC7B7A70E3BABB02A /* FloatBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3B19AA47CB00C3C845FA769CF33D48 /* FloatBox.swift */; };
+		F9B21F601E9BAC57A57B7269DAD94A58 /* IntBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116CF11DD45DC654CEF49B5E94EBFDBB /* IntBox.swift */; };
+		FA8854DB46965D556C1DA3C5C98E16DF /* ZIPFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20301528321486EFEDECA1C55E9E3A7E /* ZIPFoundation.framework */; };
+		FC3C09CA188518A591E1094557B89F46 /* DynamicNodeDecoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9858F7BECF865E8ABB8670168A3A7317 /* DynamicNodeDecoding.swift */; };
+		FC8E3F6843C57FF2179A1503E4CEA0B7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB2C83C78D8AC6245CB8564B7EBE14C /* Foundation.framework */; };
+		FE81FA5CEB486D9CF30D64B46D35573C /* Archive+Reading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C8DF55CFAE105716CD4B12BB652EF5 /* Archive+Reading.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		09D29B629CA227A646AFCA5533F8B32D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B3E80B54A6FF4B9682C69A8A5963B885;
+			remoteInfo = "XMLCoder-macOS";
+		};
+		1752D26E2F802F24B8B8CC0196EB8085 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8B5BB2050078EFCACBEDC5B4195B80CD;
+			remoteInfo = "ZIPFoundation-macOS";
+		};
+		3156527D92668280EA4472C17749654A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B3E80B54A6FF4B9682C69A8A5963B885;
+			remoteInfo = "XMLCoder-macOS";
+		};
+		357C683243C9B2A6DFEA4887EF651946 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 97CD805195BA153A66F6EE105BD6C304;
+			remoteInfo = "XMLCoder-iOS";
+		};
+		4285CEC9B722C944491D09BEDA63AF70 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8B5BB2050078EFCACBEDC5B4195B80CD;
+			remoteInfo = "ZIPFoundation-macOS";
+		};
+		96963B867F1A84D10C8E28B6E3B1D0C0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9AF8AE8821E967844EEF26BBB341564D;
+			remoteInfo = "ZIPFoundation-iOS";
+		};
+		9DAF82156A0C010C47A62F6001307B9F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9AF8AE8821E967844EEF26BBB341564D;
+			remoteInfo = "ZIPFoundation-iOS";
+		};
+		BAB10C01D6C3F4CD6FA01E0406A301B0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 34015EC3EA98B490B182112CF9BB3338;
+			remoteInfo = "CoreXLSX-iOS";
+		};
+		CE2FFDC378905F43CC163C103AC5FECB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 73888679F6089EB3B1E9848F3411DC28;
+			remoteInfo = "CoreXLSX-macOS";
+		};
+		D1324AAE5F8F84A34485D4BB6D93E478 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 97CD805195BA153A66F6EE105BD6C304;
+			remoteInfo = "XMLCoder-iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00FABF3AF62B1F6CE60630547AF2B450 /* XMLCoder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XMLCoder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		04848883292CDA06BAC259AB29249CD6 /* XMLHeader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XMLHeader.swift; path = Sources/XMLCoder/Auxiliaries/XMLHeader.swift; sourceTree = "<group>"; };
+		05532EE7DE19579EB280B7A76FFB0869 /* Pods-Cashdeck (iOS)-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Cashdeck (iOS)-Info.plist"; sourceTree = "<group>"; };
+		0575CAE68A763ECD1EE9BAE7A5DC0A9F /* XMLChoiceDecodingContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XMLChoiceDecodingContainer.swift; path = Sources/XMLCoder/Decoder/XMLChoiceDecodingContainer.swift; sourceTree = "<group>"; };
+		0744972B463DDA874EE1DD86995EF928 /* Pods-Cashdeck (iOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Cashdeck (iOS).release.xcconfig"; sourceTree = "<group>"; };
+		07935A0631DB98F428BD8225831FB057 /* Path.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Path.swift; path = Sources/CoreXLSX/Path.swift; sourceTree = "<group>"; };
+		0D71C75DF511E1D3B867359260C496A0 /* UIntBox.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIntBox.swift; path = Sources/XMLCoder/Auxiliaries/Box/UIntBox.swift; sourceTree = "<group>"; };
+		112BA7485CBAFC1C8C1F83245733EAC7 /* XMLCoder-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "XMLCoder-macOS.debug.xcconfig"; path = "../XMLCoder-macOS/XMLCoder-macOS.debug.xcconfig"; sourceTree = "<group>"; };
+		116CF11DD45DC654CEF49B5E94EBFDBB /* IntBox.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IntBox.swift; path = Sources/XMLCoder/Auxiliaries/Box/IntBox.swift; sourceTree = "<group>"; };
+		11C4F292FC5B2C795C6F5DD6DC4A3DFA /* CoreXLSX-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "CoreXLSX-iOS.modulemap"; sourceTree = "<group>"; };
+		196E814F69948E25B90A879717A6CA59 /* ZIPFoundation-iOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ZIPFoundation-iOS-Info.plist"; sourceTree = "<group>"; };
+		1AA15E5CF2AB75AFB0586942B633E3D7 /* Archive+MemoryFile.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Archive+MemoryFile.swift"; path = "Sources/ZIPFoundation/Archive+MemoryFile.swift"; sourceTree = "<group>"; };
+		1B0E157D0A8CD7FB70EB87B1615ED53B /* XMLKeyedDecodingContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XMLKeyedDecodingContainer.swift; path = Sources/XMLCoder/Decoder/XMLKeyedDecodingContainer.swift; sourceTree = "<group>"; };
+		1D6CEBA726BE3716DE65DD2F0832A49D /* XMLKey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XMLKey.swift; path = Sources/XMLCoder/Auxiliaries/XMLKey.swift; sourceTree = "<group>"; };
+		1DCB644CCF0E0A3A7D93E2CDA022587C /* Archive.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Archive.swift; path = Sources/ZIPFoundation/Archive.swift; sourceTree = "<group>"; };
+		20301528321486EFEDECA1C55E9E3A7E /* ZIPFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ZIPFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		227818AE0BB56B73378EF98F73B72792 /* ZIPFoundation-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "ZIPFoundation-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		28B5F74265D98AAE16C4B46C57C243BA /* XMLStackParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XMLStackParser.swift; path = Sources/XMLCoder/Auxiliaries/XMLStackParser.swift; sourceTree = "<group>"; };
+		28C3EE8742A2D0C8E5E69D7121193662 /* SingleValueEncodingContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SingleValueEncodingContainer.swift; path = Sources/XMLCoder/Encoder/SingleValueEncodingContainer.swift; sourceTree = "<group>"; };
+		291AEEF8583A2236C8C2B5CD435C1E77 /* Worksheet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Worksheet.swift; path = Sources/CoreXLSX/Worksheet/Worksheet.swift; sourceTree = "<group>"; };
+		29985745D6F8AAEFB7C8B0051978F136 /* KeyedStorage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyedStorage.swift; path = Sources/XMLCoder/Auxiliaries/KeyedStorage.swift; sourceTree = "<group>"; };
+		2A4767A4F5C0A1D35AADE4A2F764D32B /* Data+Compression.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Data+Compression.swift"; path = "Sources/ZIPFoundation/Data+Compression.swift"; sourceTree = "<group>"; };
+		2B3B19AA47CB00C3C845FA769CF33D48 /* FloatBox.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FloatBox.swift; path = Sources/XMLCoder/Auxiliaries/Box/FloatBox.swift; sourceTree = "<group>"; };
+		2B7F64A773FC65122DF0C88ED0B08735 /* Entry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Entry.swift; path = Sources/ZIPFoundation/Entry.swift; sourceTree = "<group>"; };
+		2C2694798F6ED89C643EB184CB04D3DB /* CoreXLSX-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CoreXLSX-iOS-dummy.m"; sourceTree = "<group>"; };
+		2C6421C23C34161E806DB9E62511F207 /* CoreXLSX-iOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CoreXLSX-iOS-Info.plist"; sourceTree = "<group>"; };
+		2ED9BB5AF72120AFA15B608F14C27B15 /* Pods-Cashdeck (iOS)-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Cashdeck (iOS)-umbrella.h"; sourceTree = "<group>"; };
+		2F1A1C6B7F4AD13DA785C57A5370C82D /* SingleKeyedBox.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SingleKeyedBox.swift; path = Sources/XMLCoder/Auxiliaries/Box/SingleKeyedBox.swift; sourceTree = "<group>"; };
+		2F89B778D50EEB22F0FA934A46970044 /* ZIPFoundation-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "ZIPFoundation-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		304155B399F59B4AE28E2DFC7E157D54 /* URLBox.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLBox.swift; path = Sources/XMLCoder/Auxiliaries/Box/URLBox.swift; sourceTree = "<group>"; };
+		31AB2A321AF3700D68A9EE7086D1266E /* Pods-Cashdeck (macOS).modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Cashdeck (macOS).modulemap"; sourceTree = "<group>"; };
+		346AC9904F962B6ED78AEB5FB1F884CA /* XMLCoder-macOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "XMLCoder-macOS-dummy.m"; path = "../XMLCoder-macOS/XMLCoder-macOS-dummy.m"; sourceTree = "<group>"; };
+		3996DB14C5C2F58A1FF8F4144D6AB121 /* Pods-Cashdeck (iOS).modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Cashdeck (iOS).modulemap"; sourceTree = "<group>"; };
+		3AD57A9CBEA69F1C629767143170D4C3 /* XMLUnkeyedEncodingContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XMLUnkeyedEncodingContainer.swift; path = Sources/XMLCoder/Encoder/XMLUnkeyedEncodingContainer.swift; sourceTree = "<group>"; };
+		3F9D4119C773026CB584F54C1673C66C /* CoreXLSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CoreXLSX.framework; path = "CoreXLSX-macOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		41EC447AC9FB99508B79E9AE6DABE2FE /* Pods-Cashdeck (iOS)-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Cashdeck (iOS)-acknowledgements.markdown"; sourceTree = "<group>"; };
+		428830E4AD500B0D7AFAFD17355FA1BF /* ZIPFoundation-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ZIPFoundation-iOS-umbrella.h"; sourceTree = "<group>"; };
+		48D4890987D1377E76FCB4FE009EBE34 /* ZIPFoundation-macOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; name = "ZIPFoundation-macOS.modulemap"; path = "../ZIPFoundation-macOS/ZIPFoundation-macOS.modulemap"; sourceTree = "<group>"; };
+		4933B82F48D99FA80E1D6810ACBE6F81 /* DateBox.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateBox.swift; path = Sources/XMLCoder/Auxiliaries/Box/DateBox.swift; sourceTree = "<group>"; };
+		4A337CBA5FE4696FB5D18C6EA82CFD8F /* CoreXLSX-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "CoreXLSX-macOS.debug.xcconfig"; path = "../CoreXLSX-macOS/CoreXLSX-macOS.debug.xcconfig"; sourceTree = "<group>"; };
+		4E5E3BA9A6DFF0D1906EB0A328911297 /* SharedStrings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SharedStrings.swift; path = Sources/CoreXLSX/SharedStrings.swift; sourceTree = "<group>"; };
+		4F3474F18B5D6C3FA2363E840724C715 /* CoreXLSX-macOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CoreXLSX-macOS-umbrella.h"; path = "../CoreXLSX-macOS/CoreXLSX-macOS-umbrella.h"; sourceTree = "<group>"; };
+		4F5B5300F6D4531857EAE27DFB81E852 /* XMLCoder-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "XMLCoder-iOS-umbrella.h"; sourceTree = "<group>"; };
+		55FEDFB3E4724520584F4D45FCEB69AA /* DecimalBox.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DecimalBox.swift; path = Sources/XMLCoder/Auxiliaries/Box/DecimalBox.swift; sourceTree = "<group>"; };
+		5674C13B4AA647881F3BBB36DC9B252F /* XMLCoder-iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "XMLCoder-iOS-prefix.pch"; sourceTree = "<group>"; };
+		5891D7F20F8F549B76971D318D7050CE /* Pods-Cashdeck (macOS)-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Cashdeck (macOS)-umbrella.h"; sourceTree = "<group>"; };
+		59C8DF55CFAE105716CD4B12BB652EF5 /* Archive+Reading.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Archive+Reading.swift"; path = "Sources/ZIPFoundation/Archive+Reading.swift"; sourceTree = "<group>"; };
+		5A1E82C9F5D95BB8C4DFBA8BCA7A6678 /* DynamicNodeEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicNodeEncoding.swift; path = Sources/XMLCoder/Encoder/DynamicNodeEncoding.swift; sourceTree = "<group>"; };
+		5AAE88BB5521EBA18E7044E28A91A3CF /* ZIPFoundation-macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "ZIPFoundation-macOS.release.xcconfig"; path = "../ZIPFoundation-macOS/ZIPFoundation-macOS.release.xcconfig"; sourceTree = "<group>"; };
+		5ED05539112DEEC198F86F0FA063BE51 /* UnkeyedBox.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UnkeyedBox.swift; path = Sources/XMLCoder/Auxiliaries/Box/UnkeyedBox.swift; sourceTree = "<group>"; };
+		5F306F9B86FAB21C40D32148FE47FE7C /* StringBox.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StringBox.swift; path = Sources/XMLCoder/Auxiliaries/Box/StringBox.swift; sourceTree = "<group>"; };
+		60525AC1F121660AE3D66AD55CE80A58 /* CellQueries.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CellQueries.swift; path = Sources/CoreXLSX/Worksheet/CellQueries.swift; sourceTree = "<group>"; };
+		611FD337D92100C01900DC0BCA2F5168 /* ZIPFoundation-iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ZIPFoundation-iOS-prefix.pch"; sourceTree = "<group>"; };
+		614583DF3D0862698396F68BBF5B9131 /* XMLEncodingStorage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XMLEncodingStorage.swift; path = Sources/XMLCoder/Encoder/XMLEncodingStorage.swift; sourceTree = "<group>"; };
+		6190959047ADCCCEEE3645825C42A381 /* Relationships.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Relationships.swift; path = Sources/CoreXLSX/Relationships.swift; sourceTree = "<group>"; };
+		61B7779D25137ADDC8C8DD49B9735F04 /* Archive+Writing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Archive+Writing.swift"; path = "Sources/ZIPFoundation/Archive+Writing.swift"; sourceTree = "<group>"; };
+		66C5C67D3440A58BF673184A10C18F00 /* XMLCoder-macOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "XMLCoder-macOS-umbrella.h"; path = "../XMLCoder-macOS/XMLCoder-macOS-umbrella.h"; sourceTree = "<group>"; };
+		678EE3DAAC857946F61A7DECD98F2B62 /* XMLCoder-macOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; name = "XMLCoder-macOS.modulemap"; path = "../XMLCoder-macOS/XMLCoder-macOS.modulemap"; sourceTree = "<group>"; };
+		68D8718E576BAA7BEAAACC0E30A52E27 /* ZIPFoundation-macOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ZIPFoundation-macOS-prefix.pch"; path = "../ZIPFoundation-macOS/ZIPFoundation-macOS-prefix.pch"; sourceTree = "<group>"; };
+		6ECD9550B2CFDE5DFD83C7489F2CA58D /* ZIPFoundation-macOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = "ZIPFoundation-macOS-Info.plist"; path = "../ZIPFoundation-macOS/ZIPFoundation-macOS-Info.plist"; sourceTree = "<group>"; };
+		6F05A648320D9ECC2D419BDD353490B0 /* Data+Serialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Data+Serialization.swift"; path = "Sources/ZIPFoundation/Data+Serialization.swift"; sourceTree = "<group>"; };
+		73E28F33D80C15A83A897FBFFCD0464C /* Box.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Box.swift; path = Sources/XMLCoder/Auxiliaries/Box/Box.swift; sourceTree = "<group>"; };
+		76A963ACF00F496362CF0843DE40F5C0 /* Comments.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Comments.swift; path = Sources/CoreXLSX/Comments.swift; sourceTree = "<group>"; };
+		799E4EB452C97FE200D52FE4B0FA31B4 /* ChoiceBox.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChoiceBox.swift; path = Sources/XMLCoder/Auxiliaries/Box/ChoiceBox.swift; sourceTree = "<group>"; };
+		7ADD0751D9F3CD204087ED1BDFDA393E /* ZIPFoundation-macOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ZIPFoundation-macOS-umbrella.h"; path = "../ZIPFoundation-macOS/ZIPFoundation-macOS-umbrella.h"; sourceTree = "<group>"; };
+		7BB034EE6179E6E1A2FAC89A5F72F439 /* DoubleBox.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DoubleBox.swift; path = Sources/XMLCoder/Auxiliaries/Box/DoubleBox.swift; sourceTree = "<group>"; };
+		7EBEABEF8E1752F2DA1FCE00F9B80768 /* String+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+Extensions.swift"; path = "Sources/XMLCoder/Auxiliaries/String+Extensions.swift"; sourceTree = "<group>"; };
+		808A2F197AEAC5A8FB6F0800AF949CD2 /* XMLCoder-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "XMLCoder-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		8183A6D7DA7417B11987884749B48641 /* XMLEncoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XMLEncoder.swift; path = Sources/XMLCoder/Encoder/XMLEncoder.swift; sourceTree = "<group>"; };
+		842A81C9A441FF5EC625224D6B305187 /* CoreXLSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CoreXLSX.framework; path = "CoreXLSX-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8509789395732EF9BE13CF5247BBA2B9 /* XMLDecoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XMLDecoder.swift; path = Sources/XMLCoder/Decoder/XMLDecoder.swift; sourceTree = "<group>"; };
+		86E20F093470D7299F939668A519B015 /* BoolBox.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BoolBox.swift; path = Sources/XMLCoder/Auxiliaries/Box/BoolBox.swift; sourceTree = "<group>"; };
+		8B08FB9A37DB9684B79915E7E9FB7A64 /* NullBox.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NullBox.swift; path = Sources/XMLCoder/Auxiliaries/Box/NullBox.swift; sourceTree = "<group>"; };
+		8D8C2B173BDDADE227D003B1EF3CD91C /* XMLReferencingEncoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XMLReferencingEncoder.swift; path = Sources/XMLCoder/Encoder/XMLReferencingEncoder.swift; sourceTree = "<group>"; };
+		8DD28E666E04402E1B8636B7AE962C3F /* SingleValueDecodingContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SingleValueDecodingContainer.swift; path = Sources/XMLCoder/Decoder/SingleValueDecodingContainer.swift; sourceTree = "<group>"; };
+		90F938D7C012BBE2473A7FD648AEBB47 /* DataBox.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataBox.swift; path = Sources/XMLCoder/Auxiliaries/Box/DataBox.swift; sourceTree = "<group>"; };
+		92E11477E215CABD2FE3C6AA51F1E896 /* CoreXLSX-macOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "CoreXLSX-macOS-dummy.m"; path = "../CoreXLSX-macOS/CoreXLSX-macOS-dummy.m"; sourceTree = "<group>"; };
+		93E1ACCAA4FD4C46F20D1ED3D6588985 /* Pods-Cashdeck (macOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Cashdeck (macOS).release.xcconfig"; sourceTree = "<group>"; };
+		964C10BBA11C2259C4199FD0114C30EB /* Pods-Cashdeck (iOS)-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Cashdeck (iOS)-dummy.m"; sourceTree = "<group>"; };
+		96963C8EE9AC04423393095BEBB32F27 /* CoreXLSX-iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CoreXLSX-iOS-prefix.pch"; sourceTree = "<group>"; };
+		97F75D45E03AA661848C011DA5D4B902 /* XMLChoiceEncodingContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XMLChoiceEncodingContainer.swift; path = Sources/XMLCoder/Encoder/XMLChoiceEncodingContainer.swift; sourceTree = "<group>"; };
+		9858F7BECF865E8ABB8670168A3A7317 /* DynamicNodeDecoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DynamicNodeDecoding.swift; path = Sources/XMLCoder/Decoder/DynamicNodeDecoding.swift; sourceTree = "<group>"; };
+		98BF33D333D3EDDC2262ABC136B29952 /* Cell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Cell.swift; path = Sources/CoreXLSX/Worksheet/Cell.swift; sourceTree = "<group>"; };
+		991499EF6E4B4375608EC2EBC4D5E0A0 /* ZIPFoundation-macOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "ZIPFoundation-macOS-dummy.m"; path = "../ZIPFoundation-macOS/ZIPFoundation-macOS-dummy.m"; sourceTree = "<group>"; };
+		99B15D55CC0CEB7136BD4CED86815D90 /* Pods-Cashdeck (macOS)-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Cashdeck (macOS)-acknowledgements.markdown"; sourceTree = "<group>"; };
+		9A96E0AC27709BA3C21470163044A0C5 /* Pods_Cashdeck__iOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Cashdeck__iOS_.framework; path = "Pods-Cashdeck (iOS).framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B8F5CECEE3EC700263A5EE7EE146C6B /* Styles.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Styles.swift; path = Sources/CoreXLSX/Styles.swift; sourceTree = "<group>"; };
+		9BC1F246F7EF310C62A17B761E63BACE /* ZIPFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ZIPFoundation.framework; path = "ZIPFoundation-macOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CF7DFDA561FE801948F9FB7E45BE1B4 /* ZIPFoundation-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "ZIPFoundation-iOS.modulemap"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9EF83BCCEFAE08B31095A9B245E76A58 /* ZIPFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ZIPFoundation.framework; path = "ZIPFoundation-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F2075EC46C7A06BA630E37CDFBA9BAF /* XMLCoder-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "XMLCoder-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		A0BC266D14133B1750C844CE8C0A1EB3 /* Pods_Cashdeck__macOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Cashdeck__macOS_.framework; path = "Pods-Cashdeck (macOS).framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A15C2A2B48B5449C5F785B6B869F35A1 /* XMLCoder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = XMLCoder.framework; path = "XMLCoder-macOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2B28B11CD99ED754394468AE414580A /* DecodingErrorExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DecodingErrorExtension.swift; path = Sources/XMLCoder/Decoder/DecodingErrorExtension.swift; sourceTree = "<group>"; };
+		A6E51EFFEF481F37BD2C5BCE32751F48 /* XMLDecoderImplementation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XMLDecoderImplementation.swift; path = Sources/XMLCoder/Decoder/XMLDecoderImplementation.swift; sourceTree = "<group>"; };
+		A7C90B4DCA4C490F2DB15FC366F4C866 /* XMLCoder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = XMLCoder.framework; path = "XMLCoder-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE133A87E1B0699A2169DFCF9FC9D9C1 /* CoreXLSX-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "CoreXLSX-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		B06B2A05EA25A575B4CC4EAE9CB207ED /* CoreXLSX-macOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = "CoreXLSX-macOS-Info.plist"; path = "../CoreXLSX-macOS/CoreXLSX-macOS-Info.plist"; sourceTree = "<group>"; };
+		B2BCDF8BA223AC910C4D0AE5FA06BF5E /* XMLKeyedEncodingContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XMLKeyedEncodingContainer.swift; path = Sources/XMLCoder/Encoder/XMLKeyedEncodingContainer.swift; sourceTree = "<group>"; };
+		B429D9ABFCAFB008CACA9C09B6BE489B /* XMLCoder-iOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "XMLCoder-iOS-Info.plist"; sourceTree = "<group>"; };
+		B7046FF8CC7D9ED11FFD5824A17160BB /* Metatypes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Metatypes.swift; path = Sources/XMLCoder/Auxiliaries/Metatypes.swift; sourceTree = "<group>"; };
+		B9938D44C9FD3881736317828D59F6A7 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		B999A443ED09ADE6E8F52E28661FF6E1 /* Pods-Cashdeck (macOS)-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Cashdeck (macOS)-Info.plist"; sourceTree = "<group>"; };
+		BEC1AF7848C973370FB6CBC563CB091E /* ZIPFoundation-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ZIPFoundation-iOS-dummy.m"; sourceTree = "<group>"; };
+		C021B79CC7B762895912E1E7EB1E6621 /* Workbook.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Workbook.swift; path = Sources/CoreXLSX/Workbook.swift; sourceTree = "<group>"; };
+		C12B932B5C894D8C7E971984ED723C43 /* CoreXLSX-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CoreXLSX-iOS-umbrella.h"; sourceTree = "<group>"; };
+		C2042F2309BF3BB8A433708BC76390D4 /* XMLDecodingStorage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XMLDecodingStorage.swift; path = Sources/XMLCoder/Decoder/XMLDecodingStorage.swift; sourceTree = "<group>"; };
+		C22E5C5AA41D84CD074B326DA326A94B /* CoreXLSX-macOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CoreXLSX-macOS-prefix.pch"; path = "../CoreXLSX-macOS/CoreXLSX-macOS-prefix.pch"; sourceTree = "<group>"; };
+		C2DCBDD31F7B0997AE96B59B2833469F /* XMLUnkeyedDecodingContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XMLUnkeyedDecodingContainer.swift; path = Sources/XMLCoder/Decoder/XMLUnkeyedDecodingContainer.swift; sourceTree = "<group>"; };
+		C34CFEF8D773C9A51C9E690C10EF1EF5 /* XMLCoder-macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "XMLCoder-macOS.release.xcconfig"; path = "../XMLCoder-macOS/XMLCoder-macOS.release.xcconfig"; sourceTree = "<group>"; };
+		C541CA2EB3EA9FADF8864182CE0694D3 /* XMLCoder-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "XMLCoder-iOS.modulemap"; sourceTree = "<group>"; };
+		C65CB3805E586B98CEE24CA7369641B2 /* Pods-Cashdeck (macOS)-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Cashdeck (macOS)-acknowledgements.plist"; sourceTree = "<group>"; };
+		C79C17728A3CB22672E381923EC972F8 /* CellReference.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CellReference.swift; path = Sources/CoreXLSX/Worksheet/CellReference.swift; sourceTree = "<group>"; };
+		CB516FA306D0396D0D352BF50DB3BEB6 /* Pods-Cashdeck (iOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Cashdeck (iOS).debug.xcconfig"; sourceTree = "<group>"; };
+		CC40C3C183A810CCAB1A6A4319636957 /* Pods-Cashdeck (iOS)-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Cashdeck (iOS)-acknowledgements.plist"; sourceTree = "<group>"; };
+		CFB1B91002D4F5CB0EA15F8FFB17859E /* XMLChoiceCodingKey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XMLChoiceCodingKey.swift; path = Sources/XMLCoder/Auxiliaries/XMLChoiceCodingKey.swift; sourceTree = "<group>"; };
+		D8DA5B9E23AAAACBEAE93DC9536E76DD /* CoreXLSX-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "CoreXLSX-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		DA9099890293C576D3CC019561C05344 /* CoreXLSX-macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "CoreXLSX-macOS.release.xcconfig"; path = "../CoreXLSX-macOS/CoreXLSX-macOS.release.xcconfig"; sourceTree = "<group>"; };
+		DB81C2265988C8F6C93075AC046B2061 /* EncodingErrorExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EncodingErrorExtension.swift; path = Sources/XMLCoder/Encoder/EncodingErrorExtension.swift; sourceTree = "<group>"; };
+		DD3FC89AF865FEDC51EC2CE2C8360FAB /* Pods-Cashdeck (iOS)-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Cashdeck (iOS)-frameworks.sh"; sourceTree = "<group>"; };
+		DDB2C83C78D8AC6245CB8564B7EBE14C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		E12AE26124BCCE8F57E12DAE37F50B39 /* XMLCoder-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "XMLCoder-iOS-dummy.m"; sourceTree = "<group>"; };
+		E5168303B8BF37FCDC7797D99CA4A150 /* Pods-Cashdeck (macOS)-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Cashdeck (macOS)-frameworks.sh"; sourceTree = "<group>"; };
+		E55530CA5713F4F98E0D58A91CE06893 /* SharedBox.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SharedBox.swift; path = Sources/XMLCoder/Auxiliaries/Box/SharedBox.swift; sourceTree = "<group>"; };
+		E655949975A1FBED24ADC75BEDC63799 /* Pods-Cashdeck (macOS)-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Cashdeck (macOS)-dummy.m"; sourceTree = "<group>"; };
+		E871529720208C1F4C3ADEE8191FABB0 /* CoreXLSX-macOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; name = "CoreXLSX-macOS.modulemap"; path = "../CoreXLSX-macOS/CoreXLSX-macOS.modulemap"; sourceTree = "<group>"; };
+		E9F94CF4AA4227400047767306CEE739 /* ZIPFoundation-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "ZIPFoundation-macOS.debug.xcconfig"; path = "../ZIPFoundation-macOS/ZIPFoundation-macOS.debug.xcconfig"; sourceTree = "<group>"; };
+		EAE08FBD558841FFA36B54A4708E87E5 /* XMLCoder-macOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "XMLCoder-macOS-prefix.pch"; path = "../XMLCoder-macOS/XMLCoder-macOS-prefix.pch"; sourceTree = "<group>"; };
+		EC3FC2BD85999339E4FF0C383F80AD4A /* FileManager+ZIP.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "FileManager+ZIP.swift"; path = "Sources/ZIPFoundation/FileManager+ZIP.swift"; sourceTree = "<group>"; };
+		ECC3D31C068241D930B6F43EB55D2A70 /* XMLEncoderImplementation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XMLEncoderImplementation.swift; path = Sources/XMLCoder/Encoder/XMLEncoderImplementation.swift; sourceTree = "<group>"; };
+		ED419F79484EE8B553CF33AF734EB476 /* XMLCoderElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XMLCoderElement.swift; path = Sources/XMLCoder/Auxiliaries/XMLCoderElement.swift; sourceTree = "<group>"; };
+		EF02C86E249FE8519842D7ED9B73ACFB /* XMLCoder-macOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = "XMLCoder-macOS-Info.plist"; path = "../XMLCoder-macOS/XMLCoder-macOS-Info.plist"; sourceTree = "<group>"; };
+		F118D849C4CAE6AC0B3EBB4AC902146A /* KeyedBox.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyedBox.swift; path = Sources/XMLCoder/Auxiliaries/Box/KeyedBox.swift; sourceTree = "<group>"; };
+		F1CA86C953E89B6CC42F546DF24C15AC /* ValueBox.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ValueBox.swift; path = Sources/XMLCoder/Auxiliaries/Box/ValueBox.swift; sourceTree = "<group>"; };
+		F21151E675B5C46B28CC51CF67AA861E /* ISO8601DateFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ISO8601DateFormatter.swift; path = Sources/XMLCoder/Auxiliaries/ISO8601DateFormatter.swift; sourceTree = "<group>"; };
+		F51063B0213E7889DAC7763976871DA0 /* Pods-Cashdeck (macOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Cashdeck (macOS).debug.xcconfig"; sourceTree = "<group>"; };
+		F69B3509418C4B7021B639D4BF214A79 /* ColumnReference.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColumnReference.swift; path = Sources/CoreXLSX/Worksheet/ColumnReference.swift; sourceTree = "<group>"; };
+		FEE9B6732D0841633C9D271351338D6F /* XLSXFile.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XLSXFile.swift; path = Sources/CoreXLSX/XLSXFile.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		00E2F29F775D60D1C6741DFE2253BE80 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DAF88DB5EFAFC1ED7F073CBFCF1D2FB /* Cocoa.framework in Frameworks */,
+				2DEDAA6A6397BE86BBCB1F554B8C93AB /* XMLCoder.framework in Frameworks */,
+				226E61ABF2FF5F0574B07785F0ED9EE4 /* ZIPFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C2EF70CBE2323C020E3E7BAFDCA07C2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBF547E6EE13F9B7EEAC8DC32CA9856C /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4BE3AF13814594BB07316F9C901C86CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6D86C6DCB937C80F3D64E97FE8E5F72 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7940BC40C9B6015E92D6EC9C310338D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C804AFF4DAC88809724D32BE8544060 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA93F5DBAA57F4B0DB33046D165BED1C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C41DE44BDDBB83B8E35BECF3F2E145BE /* Foundation.framework in Frameworks */,
+				0BAD0982257C5BC49A270543516030C2 /* XMLCoder.framework in Frameworks */,
+				FA8854DB46965D556C1DA3C5C98E16DF /* ZIPFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB87B75B37602CA755CAA39C0A86FD2D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8AE211EF6B0820D50EC5CC07B4A5E2EA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2F707C1B04E575A017D0FF57BB076B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC8E3F6843C57FF2179A1503E4CEA0B7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3B3BECDBE5C642A553C4D8A20B131A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				872F6CB76739F2EBD6BEAB220016B046 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0478228C129D8132F8DDE7B2BA689D3E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				9CF7DFDA561FE801948F9FB7E45BE1B4 /* ZIPFoundation-iOS.modulemap */,
+				BEC1AF7848C973370FB6CBC563CB091E /* ZIPFoundation-iOS-dummy.m */,
+				196E814F69948E25B90A879717A6CA59 /* ZIPFoundation-iOS-Info.plist */,
+				611FD337D92100C01900DC0BCA2F5168 /* ZIPFoundation-iOS-prefix.pch */,
+				428830E4AD500B0D7AFAFD17355FA1BF /* ZIPFoundation-iOS-umbrella.h */,
+				227818AE0BB56B73378EF98F73B72792 /* ZIPFoundation-iOS.debug.xcconfig */,
+				2F89B778D50EEB22F0FA934A46970044 /* ZIPFoundation-iOS.release.xcconfig */,
+				48D4890987D1377E76FCB4FE009EBE34 /* ZIPFoundation-macOS.modulemap */,
+				991499EF6E4B4375608EC2EBC4D5E0A0 /* ZIPFoundation-macOS-dummy.m */,
+				6ECD9550B2CFDE5DFD83C7489F2CA58D /* ZIPFoundation-macOS-Info.plist */,
+				68D8718E576BAA7BEAAACC0E30A52E27 /* ZIPFoundation-macOS-prefix.pch */,
+				7ADD0751D9F3CD204087ED1BDFDA393E /* ZIPFoundation-macOS-umbrella.h */,
+				E9F94CF4AA4227400047767306CEE739 /* ZIPFoundation-macOS.debug.xcconfig */,
+				5AAE88BB5521EBA18E7044E28A91A3CF /* ZIPFoundation-macOS.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/ZIPFoundation-iOS";
+			sourceTree = "<group>";
+		};
+		25AFF7F330AC913292D2E5146FA2EDA7 /* CoreXLSX */ = {
+			isa = PBXGroup;
+			children = (
+				98BF33D333D3EDDC2262ABC136B29952 /* Cell.swift */,
+				60525AC1F121660AE3D66AD55CE80A58 /* CellQueries.swift */,
+				C79C17728A3CB22672E381923EC972F8 /* CellReference.swift */,
+				F69B3509418C4B7021B639D4BF214A79 /* ColumnReference.swift */,
+				76A963ACF00F496362CF0843DE40F5C0 /* Comments.swift */,
+				07935A0631DB98F428BD8225831FB057 /* Path.swift */,
+				6190959047ADCCCEEE3645825C42A381 /* Relationships.swift */,
+				4E5E3BA9A6DFF0D1906EB0A328911297 /* SharedStrings.swift */,
+				9B8F5CECEE3EC700263A5EE7EE146C6B /* Styles.swift */,
+				C021B79CC7B762895912E1E7EB1E6621 /* Workbook.swift */,
+				291AEEF8583A2236C8C2B5CD435C1E77 /* Worksheet.swift */,
+				FEE9B6732D0841633C9D271351338D6F /* XLSXFile.swift */,
+				93615E985680B3754814738452D1A045 /* Support Files */,
+			);
+			name = CoreXLSX;
+			path = CoreXLSX;
+			sourceTree = "<group>";
+		};
+		350D5894FE45B8B9E07B001BE1F5D356 /* ZIPFoundation */ = {
+			isa = PBXGroup;
+			children = (
+				1DCB644CCF0E0A3A7D93E2CDA022587C /* Archive.swift */,
+				1AA15E5CF2AB75AFB0586942B633E3D7 /* Archive+MemoryFile.swift */,
+				59C8DF55CFAE105716CD4B12BB652EF5 /* Archive+Reading.swift */,
+				61B7779D25137ADDC8C8DD49B9735F04 /* Archive+Writing.swift */,
+				2A4767A4F5C0A1D35AADE4A2F764D32B /* Data+Compression.swift */,
+				6F05A648320D9ECC2D419BDD353490B0 /* Data+Serialization.swift */,
+				2B7F64A773FC65122DF0C88ED0B08735 /* Entry.swift */,
+				EC3FC2BD85999339E4FF0C383F80AD4A /* FileManager+ZIP.swift */,
+				0478228C129D8132F8DDE7B2BA689D3E /* Support Files */,
+			);
+			name = ZIPFoundation;
+			path = ZIPFoundation;
+			sourceTree = "<group>";
+		};
+		4A2884C35BD129070345B673AB276482 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				25AFF7F330AC913292D2E5146FA2EDA7 /* CoreXLSX */,
+				F750257230A4C1BF845363BC1B33ADF5 /* XMLCoder */,
+				350D5894FE45B8B9E07B001BE1F5D356 /* ZIPFoundation */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		52695A4E3AF5DA49BB227DF9921DCAAE /* OS X */ = {
+			isa = PBXGroup;
+			children = (
+				B9938D44C9FD3881736317828D59F6A7 /* Cocoa.framework */,
+			);
+			name = "OS X";
+			sourceTree = "<group>";
+		};
+		6F116AFF1A9C644D9A76409540402FE5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3F9D4119C773026CB584F54C1673C66C /* CoreXLSX.framework */,
+				842A81C9A441FF5EC625224D6B305187 /* CoreXLSX.framework */,
+				9A96E0AC27709BA3C21470163044A0C5 /* Pods_Cashdeck__iOS_.framework */,
+				A0BC266D14133B1750C844CE8C0A1EB3 /* Pods_Cashdeck__macOS_.framework */,
+				A15C2A2B48B5449C5F785B6B869F35A1 /* XMLCoder.framework */,
+				A7C90B4DCA4C490F2DB15FC366F4C866 /* XMLCoder.framework */,
+				9EF83BCCEFAE08B31095A9B245E76A58 /* ZIPFoundation.framework */,
+				9BC1F246F7EF310C62A17B761E63BACE /* ZIPFoundation.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		746D6442C28C007ABF1216BD97D3E184 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				75F3E9DD5E675F4E96DFA6A0ED8A5D82 /* Pods-Cashdeck (iOS) */,
+				7B8800DB117DE79AA9C6D8673AC687D4 /* Pods-Cashdeck (macOS) */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		75F3E9DD5E675F4E96DFA6A0ED8A5D82 /* Pods-Cashdeck (iOS) */ = {
+			isa = PBXGroup;
+			children = (
+				3996DB14C5C2F58A1FF8F4144D6AB121 /* Pods-Cashdeck (iOS).modulemap */,
+				41EC447AC9FB99508B79E9AE6DABE2FE /* Pods-Cashdeck (iOS)-acknowledgements.markdown */,
+				CC40C3C183A810CCAB1A6A4319636957 /* Pods-Cashdeck (iOS)-acknowledgements.plist */,
+				964C10BBA11C2259C4199FD0114C30EB /* Pods-Cashdeck (iOS)-dummy.m */,
+				DD3FC89AF865FEDC51EC2CE2C8360FAB /* Pods-Cashdeck (iOS)-frameworks.sh */,
+				05532EE7DE19579EB280B7A76FFB0869 /* Pods-Cashdeck (iOS)-Info.plist */,
+				2ED9BB5AF72120AFA15B608F14C27B15 /* Pods-Cashdeck (iOS)-umbrella.h */,
+				CB516FA306D0396D0D352BF50DB3BEB6 /* Pods-Cashdeck (iOS).debug.xcconfig */,
+				0744972B463DDA874EE1DD86995EF928 /* Pods-Cashdeck (iOS).release.xcconfig */,
+			);
+			name = "Pods-Cashdeck (iOS)";
+			path = "Target Support Files/Pods-Cashdeck (iOS)";
+			sourceTree = "<group>";
+		};
+		7B8800DB117DE79AA9C6D8673AC687D4 /* Pods-Cashdeck (macOS) */ = {
+			isa = PBXGroup;
+			children = (
+				31AB2A321AF3700D68A9EE7086D1266E /* Pods-Cashdeck (macOS).modulemap */,
+				99B15D55CC0CEB7136BD4CED86815D90 /* Pods-Cashdeck (macOS)-acknowledgements.markdown */,
+				C65CB3805E586B98CEE24CA7369641B2 /* Pods-Cashdeck (macOS)-acknowledgements.plist */,
+				E655949975A1FBED24ADC75BEDC63799 /* Pods-Cashdeck (macOS)-dummy.m */,
+				E5168303B8BF37FCDC7797D99CA4A150 /* Pods-Cashdeck (macOS)-frameworks.sh */,
+				B999A443ED09ADE6E8F52E28661FF6E1 /* Pods-Cashdeck (macOS)-Info.plist */,
+				5891D7F20F8F549B76971D318D7050CE /* Pods-Cashdeck (macOS)-umbrella.h */,
+				F51063B0213E7889DAC7763976871DA0 /* Pods-Cashdeck (macOS).debug.xcconfig */,
+				93E1ACCAA4FD4C46F20D1ED3D6588985 /* Pods-Cashdeck (macOS).release.xcconfig */,
+			);
+			name = "Pods-Cashdeck (macOS)";
+			path = "Target Support Files/Pods-Cashdeck (macOS)";
+			sourceTree = "<group>";
+		};
+		8CC2E107D31D3A005375C04E92080A22 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				00FABF3AF62B1F6CE60630547AF2B450 /* XMLCoder.framework */,
+				20301528321486EFEDECA1C55E9E3A7E /* ZIPFoundation.framework */,
+				CC4E4A72D0E2CA5922550E2ED6065F75 /* iOS */,
+				52695A4E3AF5DA49BB227DF9921DCAAE /* OS X */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		93615E985680B3754814738452D1A045 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				11C4F292FC5B2C795C6F5DD6DC4A3DFA /* CoreXLSX-iOS.modulemap */,
+				2C2694798F6ED89C643EB184CB04D3DB /* CoreXLSX-iOS-dummy.m */,
+				2C6421C23C34161E806DB9E62511F207 /* CoreXLSX-iOS-Info.plist */,
+				96963C8EE9AC04423393095BEBB32F27 /* CoreXLSX-iOS-prefix.pch */,
+				C12B932B5C894D8C7E971984ED723C43 /* CoreXLSX-iOS-umbrella.h */,
+				D8DA5B9E23AAAACBEAE93DC9536E76DD /* CoreXLSX-iOS.debug.xcconfig */,
+				AE133A87E1B0699A2169DFCF9FC9D9C1 /* CoreXLSX-iOS.release.xcconfig */,
+				E871529720208C1F4C3ADEE8191FABB0 /* CoreXLSX-macOS.modulemap */,
+				92E11477E215CABD2FE3C6AA51F1E896 /* CoreXLSX-macOS-dummy.m */,
+				B06B2A05EA25A575B4CC4EAE9CB207ED /* CoreXLSX-macOS-Info.plist */,
+				C22E5C5AA41D84CD074B326DA326A94B /* CoreXLSX-macOS-prefix.pch */,
+				4F3474F18B5D6C3FA2363E840724C715 /* CoreXLSX-macOS-umbrella.h */,
+				4A337CBA5FE4696FB5D18C6EA82CFD8F /* CoreXLSX-macOS.debug.xcconfig */,
+				DA9099890293C576D3CC019561C05344 /* CoreXLSX-macOS.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/CoreXLSX-iOS";
+			sourceTree = "<group>";
+		};
+		A6758F146FD5BBE0B88479D206DDFAE0 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C541CA2EB3EA9FADF8864182CE0694D3 /* XMLCoder-iOS.modulemap */,
+				E12AE26124BCCE8F57E12DAE37F50B39 /* XMLCoder-iOS-dummy.m */,
+				B429D9ABFCAFB008CACA9C09B6BE489B /* XMLCoder-iOS-Info.plist */,
+				5674C13B4AA647881F3BBB36DC9B252F /* XMLCoder-iOS-prefix.pch */,
+				4F5B5300F6D4531857EAE27DFB81E852 /* XMLCoder-iOS-umbrella.h */,
+				9F2075EC46C7A06BA630E37CDFBA9BAF /* XMLCoder-iOS.debug.xcconfig */,
+				808A2F197AEAC5A8FB6F0800AF949CD2 /* XMLCoder-iOS.release.xcconfig */,
+				678EE3DAAC857946F61A7DECD98F2B62 /* XMLCoder-macOS.modulemap */,
+				346AC9904F962B6ED78AEB5FB1F884CA /* XMLCoder-macOS-dummy.m */,
+				EF02C86E249FE8519842D7ED9B73ACFB /* XMLCoder-macOS-Info.plist */,
+				EAE08FBD558841FFA36B54A4708E87E5 /* XMLCoder-macOS-prefix.pch */,
+				66C5C67D3440A58BF673184A10C18F00 /* XMLCoder-macOS-umbrella.h */,
+				112BA7485CBAFC1C8C1F83245733EAC7 /* XMLCoder-macOS.debug.xcconfig */,
+				C34CFEF8D773C9A51C9E690C10EF1EF5 /* XMLCoder-macOS.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/XMLCoder-iOS";
+			sourceTree = "<group>";
+		};
+		CC4E4A72D0E2CA5922550E2ED6065F75 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				DDB2C83C78D8AC6245CB8564B7EBE14C /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				8CC2E107D31D3A005375C04E92080A22 /* Frameworks */,
+				4A2884C35BD129070345B673AB276482 /* Pods */,
+				6F116AFF1A9C644D9A76409540402FE5 /* Products */,
+				746D6442C28C007ABF1216BD97D3E184 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		F750257230A4C1BF845363BC1B33ADF5 /* XMLCoder */ = {
+			isa = PBXGroup;
+			children = (
+				86E20F093470D7299F939668A519B015 /* BoolBox.swift */,
+				73E28F33D80C15A83A897FBFFCD0464C /* Box.swift */,
+				799E4EB452C97FE200D52FE4B0FA31B4 /* ChoiceBox.swift */,
+				90F938D7C012BBE2473A7FD648AEBB47 /* DataBox.swift */,
+				4933B82F48D99FA80E1D6810ACBE6F81 /* DateBox.swift */,
+				55FEDFB3E4724520584F4D45FCEB69AA /* DecimalBox.swift */,
+				A2B28B11CD99ED754394468AE414580A /* DecodingErrorExtension.swift */,
+				7BB034EE6179E6E1A2FAC89A5F72F439 /* DoubleBox.swift */,
+				9858F7BECF865E8ABB8670168A3A7317 /* DynamicNodeDecoding.swift */,
+				5A1E82C9F5D95BB8C4DFBA8BCA7A6678 /* DynamicNodeEncoding.swift */,
+				DB81C2265988C8F6C93075AC046B2061 /* EncodingErrorExtension.swift */,
+				2B3B19AA47CB00C3C845FA769CF33D48 /* FloatBox.swift */,
+				116CF11DD45DC654CEF49B5E94EBFDBB /* IntBox.swift */,
+				F21151E675B5C46B28CC51CF67AA861E /* ISO8601DateFormatter.swift */,
+				F118D849C4CAE6AC0B3EBB4AC902146A /* KeyedBox.swift */,
+				29985745D6F8AAEFB7C8B0051978F136 /* KeyedStorage.swift */,
+				B7046FF8CC7D9ED11FFD5824A17160BB /* Metatypes.swift */,
+				8B08FB9A37DB9684B79915E7E9FB7A64 /* NullBox.swift */,
+				E55530CA5713F4F98E0D58A91CE06893 /* SharedBox.swift */,
+				2F1A1C6B7F4AD13DA785C57A5370C82D /* SingleKeyedBox.swift */,
+				8DD28E666E04402E1B8636B7AE962C3F /* SingleValueDecodingContainer.swift */,
+				28C3EE8742A2D0C8E5E69D7121193662 /* SingleValueEncodingContainer.swift */,
+				7EBEABEF8E1752F2DA1FCE00F9B80768 /* String+Extensions.swift */,
+				5F306F9B86FAB21C40D32148FE47FE7C /* StringBox.swift */,
+				0D71C75DF511E1D3B867359260C496A0 /* UIntBox.swift */,
+				5ED05539112DEEC198F86F0FA063BE51 /* UnkeyedBox.swift */,
+				304155B399F59B4AE28E2DFC7E157D54 /* URLBox.swift */,
+				F1CA86C953E89B6CC42F546DF24C15AC /* ValueBox.swift */,
+				CFB1B91002D4F5CB0EA15F8FFB17859E /* XMLChoiceCodingKey.swift */,
+				0575CAE68A763ECD1EE9BAE7A5DC0A9F /* XMLChoiceDecodingContainer.swift */,
+				97F75D45E03AA661848C011DA5D4B902 /* XMLChoiceEncodingContainer.swift */,
+				ED419F79484EE8B553CF33AF734EB476 /* XMLCoderElement.swift */,
+				8509789395732EF9BE13CF5247BBA2B9 /* XMLDecoder.swift */,
+				A6E51EFFEF481F37BD2C5BCE32751F48 /* XMLDecoderImplementation.swift */,
+				C2042F2309BF3BB8A433708BC76390D4 /* XMLDecodingStorage.swift */,
+				8183A6D7DA7417B11987884749B48641 /* XMLEncoder.swift */,
+				ECC3D31C068241D930B6F43EB55D2A70 /* XMLEncoderImplementation.swift */,
+				614583DF3D0862698396F68BBF5B9131 /* XMLEncodingStorage.swift */,
+				04848883292CDA06BAC259AB29249CD6 /* XMLHeader.swift */,
+				1D6CEBA726BE3716DE65DD2F0832A49D /* XMLKey.swift */,
+				1B0E157D0A8CD7FB70EB87B1615ED53B /* XMLKeyedDecodingContainer.swift */,
+				B2BCDF8BA223AC910C4D0AE5FA06BF5E /* XMLKeyedEncodingContainer.swift */,
+				8D8C2B173BDDADE227D003B1EF3CD91C /* XMLReferencingEncoder.swift */,
+				28B5F74265D98AAE16C4B46C57C243BA /* XMLStackParser.swift */,
+				C2DCBDD31F7B0997AE96B59B2833469F /* XMLUnkeyedDecodingContainer.swift */,
+				3AD57A9CBEA69F1C629767143170D4C3 /* XMLUnkeyedEncodingContainer.swift */,
+				A6758F146FD5BBE0B88479D206DDFAE0 /* Support Files */,
+			);
+			name = XMLCoder;
+			path = XMLCoder;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		41194B1CB4647E1901144DCD1A7460A7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18549E547C17B0DBB4DE7BB85420C0A8 /* XMLCoder-iOS-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41D1E6D555DB7266B63ABA7981C2DCD6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53A64612D1899389998D0D5C53B7E893 /* Pods-Cashdeck (macOS)-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4EC85250677A607BD353AE779CEB7CB4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2457ADD44DC6AE0C46241096F9937D60 /* CoreXLSX-macOS-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B37E358441C7E088BB86B69E954F0B3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				222A30CCE97D26CBF5E5218609296185 /* XMLCoder-macOS-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65683CA57783D7AA8F5E44C9504101CA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80989DF0FBF05E965395E7E0E3AE4286 /* ZIPFoundation-iOS-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C21C0F6A34A1AFF66F85A6F50ED1090 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E3F7441F1B5BAE0C3A1D32097669353 /* CoreXLSX-iOS-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		936D4639878FE21D0C02412E703EC2E6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5739204AC9348120417CB8DAE0F3BDA /* Pods-Cashdeck (iOS)-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F9946EB1F5DCDC9A25019179C2B3990D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CED7AED644C540A2E9796CC5B8536B19 /* ZIPFoundation-macOS-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		34015EC3EA98B490B182112CF9BB3338 /* CoreXLSX-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 68486CA99DE3250D9B739F5D6E9E1BD0 /* Build configuration list for PBXNativeTarget "CoreXLSX-iOS" */;
+			buildPhases = (
+				6C21C0F6A34A1AFF66F85A6F50ED1090 /* Headers */,
+				931CB3272851FF0CCADECAB2A3DAB99C /* Sources */,
+				AA93F5DBAA57F4B0DB33046D165BED1C /* Frameworks */,
+				042B14F677FADAFF1725E19D10DEC0AD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8E71ECF76284BE285E4B90FF3030CA4E /* PBXTargetDependency */,
+				575FED75010714A1F6A8DA20FB495713 /* PBXTargetDependency */,
+			);
+			name = "CoreXLSX-iOS";
+			productName = "CoreXLSX-iOS";
+			productReference = 842A81C9A441FF5EC625224D6B305187 /* CoreXLSX.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		464AF10D34119C0EC5ADE92C3E56369E /* Pods-Cashdeck (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C8DB6241DCE748337064697CDB0DEA9 /* Build configuration list for PBXNativeTarget "Pods-Cashdeck (iOS)" */;
+			buildPhases = (
+				936D4639878FE21D0C02412E703EC2E6 /* Headers */,
+				A38331143AFF29851910078EE0A953C1 /* Sources */,
+				B2F707C1B04E575A017D0FF57BB076B8 /* Frameworks */,
+				E41BA280B25819938F90F651B48030D3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3C040BEC8D3BF0A9178CC372415108D5 /* PBXTargetDependency */,
+				D77C3EA77CAA85F0B6FEF92DB8C9E279 /* PBXTargetDependency */,
+				32FD0384624A3162BCA672A391E0ED7B /* PBXTargetDependency */,
+			);
+			name = "Pods-Cashdeck (iOS)";
+			productName = "Pods-Cashdeck (iOS)";
+			productReference = 9A96E0AC27709BA3C21470163044A0C5 /* Pods_Cashdeck__iOS_.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		51DC733FDA52DAB24EC963D21B241183 /* Pods-Cashdeck (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F055930C4633EFB9FDA94C9014799904 /* Build configuration list for PBXNativeTarget "Pods-Cashdeck (macOS)" */;
+			buildPhases = (
+				41D1E6D555DB7266B63ABA7981C2DCD6 /* Headers */,
+				1B92E9334328B18A2E4A2E793C47B233 /* Sources */,
+				2C2EF70CBE2323C020E3E7BAFDCA07C2 /* Frameworks */,
+				056ADC9018E05E721A42021A89D90F63 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3C4F810A461B5BADEC110B7F3CFB433B /* PBXTargetDependency */,
+				BE8D6606F58B0CBA18F5B2A23043C217 /* PBXTargetDependency */,
+				DBED577855B45388DE9F67F574D16586 /* PBXTargetDependency */,
+			);
+			name = "Pods-Cashdeck (macOS)";
+			productName = "Pods-Cashdeck (macOS)";
+			productReference = A0BC266D14133B1750C844CE8C0A1EB3 /* Pods_Cashdeck__macOS_.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		73888679F6089EB3B1E9848F3411DC28 /* CoreXLSX-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF23ED9CF3E8D600683119FD910435D5 /* Build configuration list for PBXNativeTarget "CoreXLSX-macOS" */;
+			buildPhases = (
+				4EC85250677A607BD353AE779CEB7CB4 /* Headers */,
+				A42200420306EEDC25C0B4FE25007588 /* Sources */,
+				00E2F29F775D60D1C6741DFE2253BE80 /* Frameworks */,
+				29ED4D9E39D93848D68A53729FA971D0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D89B8FB06BFAA1BA260A39B52742D056 /* PBXTargetDependency */,
+				5953962E6B6765F1BC7775BC857AD89E /* PBXTargetDependency */,
+			);
+			name = "CoreXLSX-macOS";
+			productName = "CoreXLSX-macOS";
+			productReference = 3F9D4119C773026CB584F54C1673C66C /* CoreXLSX.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		8B5BB2050078EFCACBEDC5B4195B80CD /* ZIPFoundation-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 43A27971E953B161C84C8E5422008A29 /* Build configuration list for PBXNativeTarget "ZIPFoundation-macOS" */;
+			buildPhases = (
+				F9946EB1F5DCDC9A25019179C2B3990D /* Headers */,
+				126A05CAB39574A54A0355F152CAC4E8 /* Sources */,
+				F3B3BECDBE5C642A553C4D8A20B131A1 /* Frameworks */,
+				8C9CF6C15A2F167077F0C75433FDA22E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ZIPFoundation-macOS";
+			productName = "ZIPFoundation-macOS";
+			productReference = 9BC1F246F7EF310C62A17B761E63BACE /* ZIPFoundation.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		97CD805195BA153A66F6EE105BD6C304 /* XMLCoder-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26F9F74C6A1640D6E786545F4A6C5775 /* Build configuration list for PBXNativeTarget "XMLCoder-iOS" */;
+			buildPhases = (
+				41194B1CB4647E1901144DCD1A7460A7 /* Headers */,
+				137287FB74FE36194BD8C9D127005D5A /* Sources */,
+				7940BC40C9B6015E92D6EC9C310338D4 /* Frameworks */,
+				8DA962DACD8B6D5D05B147FD742550F6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "XMLCoder-iOS";
+			productName = "XMLCoder-iOS";
+			productReference = A7C90B4DCA4C490F2DB15FC366F4C866 /* XMLCoder.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		9AF8AE8821E967844EEF26BBB341564D /* ZIPFoundation-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FEA64812D752AF4D9302E8F9D4130039 /* Build configuration list for PBXNativeTarget "ZIPFoundation-iOS" */;
+			buildPhases = (
+				65683CA57783D7AA8F5E44C9504101CA /* Headers */,
+				DA6F381508E988D12324755EF4AAF51B /* Sources */,
+				AB87B75B37602CA755CAA39C0A86FD2D /* Frameworks */,
+				87CF36AEE9E24C94172E79AAAB1FE955 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ZIPFoundation-iOS";
+			productName = "ZIPFoundation-iOS";
+			productReference = 9EF83BCCEFAE08B31095A9B245E76A58 /* ZIPFoundation.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B3E80B54A6FF4B9682C69A8A5963B885 /* XMLCoder-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3255ECE7FFCD3E780509FB472B67783C /* Build configuration list for PBXNativeTarget "XMLCoder-macOS" */;
+			buildPhases = (
+				5B37E358441C7E088BB86B69E954F0B3 /* Headers */,
+				104D5361041EA84F8C05BCBFE6F3AB40 /* Sources */,
+				4BE3AF13814594BB07316F9C901C86CA /* Frameworks */,
+				A44CB7A3EF85CB12CFAFAF27D25CE6CA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "XMLCoder-macOS";
+			productName = "XMLCoder-macOS";
+			productReference = A15C2A2B48B5449C5F785B6B869F35A1 /* XMLCoder.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 6F116AFF1A9C644D9A76409540402FE5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				34015EC3EA98B490B182112CF9BB3338 /* CoreXLSX-iOS */,
+				73888679F6089EB3B1E9848F3411DC28 /* CoreXLSX-macOS */,
+				464AF10D34119C0EC5ADE92C3E56369E /* Pods-Cashdeck (iOS) */,
+				51DC733FDA52DAB24EC963D21B241183 /* Pods-Cashdeck (macOS) */,
+				97CD805195BA153A66F6EE105BD6C304 /* XMLCoder-iOS */,
+				B3E80B54A6FF4B9682C69A8A5963B885 /* XMLCoder-macOS */,
+				9AF8AE8821E967844EEF26BBB341564D /* ZIPFoundation-iOS */,
+				8B5BB2050078EFCACBEDC5B4195B80CD /* ZIPFoundation-macOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		042B14F677FADAFF1725E19D10DEC0AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		056ADC9018E05E721A42021A89D90F63 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29ED4D9E39D93848D68A53729FA971D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87CF36AEE9E24C94172E79AAAB1FE955 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8C9CF6C15A2F167077F0C75433FDA22E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DA962DACD8B6D5D05B147FD742550F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A44CB7A3EF85CB12CFAFAF27D25CE6CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E41BA280B25819938F90F651B48030D3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		104D5361041EA84F8C05BCBFE6F3AB40 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99ED2A89A591C943C52F3DABCF5F3955 /* BoolBox.swift in Sources */,
+				A64891644932CFFFFD60CC9FBDB473E6 /* Box.swift in Sources */,
+				43F063979CBF466A30CA53D84EAE37D7 /* ChoiceBox.swift in Sources */,
+				17E4F9D61E258BA5F55227E20191E487 /* DataBox.swift in Sources */,
+				E211F0318796A9949296338E113E93D9 /* DateBox.swift in Sources */,
+				62FE62704ACEE5C7E80AF7FC42ED44F3 /* DecimalBox.swift in Sources */,
+				2A4C051449BE790E77681F6923C34F2C /* DecodingErrorExtension.swift in Sources */,
+				6D6C5583A4C76C1117E3F349823ABB65 /* DoubleBox.swift in Sources */,
+				FC3C09CA188518A591E1094557B89F46 /* DynamicNodeDecoding.swift in Sources */,
+				70F0D4F42715622B94428A58FB4107A0 /* DynamicNodeEncoding.swift in Sources */,
+				35138DA85C10421DFA2E7C5F58E345AB /* EncodingErrorExtension.swift in Sources */,
+				0E95551E0CCF4B7A47288D47ADF51F53 /* FloatBox.swift in Sources */,
+				F9B21F601E9BAC57A57B7269DAD94A58 /* IntBox.swift in Sources */,
+				8132900BC30C6E69C4C43C294B08A952 /* ISO8601DateFormatter.swift in Sources */,
+				18677D9BA494C8A65AD733E7733165C2 /* KeyedBox.swift in Sources */,
+				8E77C3D1FE57D7D978F968159DB92398 /* KeyedStorage.swift in Sources */,
+				63F61133024496194F681A11654E2D20 /* Metatypes.swift in Sources */,
+				B13BFC8198DCB3627C9E97FCA0497C94 /* NullBox.swift in Sources */,
+				397DD8DFB8F86112AAA00A3892322144 /* SharedBox.swift in Sources */,
+				3A4C560DB76D9A1C440D5134F19E15F1 /* SingleKeyedBox.swift in Sources */,
+				7AA6F96F1B371E4F7FBBC0F11600FE78 /* SingleValueDecodingContainer.swift in Sources */,
+				8F29E66CF903D4F9ACCD64CA89F1B7A7 /* SingleValueEncodingContainer.swift in Sources */,
+				47F2A91415B2C6EEB482B22BBFCE05A0 /* String+Extensions.swift in Sources */,
+				0F73A826C95CC0EDBD42592B9B382BBA /* StringBox.swift in Sources */,
+				31E46109DE2FF2FBCCA5085736D68FB0 /* UIntBox.swift in Sources */,
+				9C98F3E644F5F346CE5D0D965D36F707 /* UnkeyedBox.swift in Sources */,
+				9DC8CF6CB0788C7C75CC10252C03A733 /* URLBox.swift in Sources */,
+				DD7991F4DDB891F4764BF2263DD70B91 /* ValueBox.swift in Sources */,
+				6CCA8C4BC76887FBAC7BAE8FF0BDDDDA /* XMLChoiceCodingKey.swift in Sources */,
+				C9FDEAA592C1F01DA963267CEF6E331B /* XMLChoiceDecodingContainer.swift in Sources */,
+				873F931C87C00A5CA634D7CA927C1CAF /* XMLChoiceEncodingContainer.swift in Sources */,
+				DAC1491F9F81C9FB0F214FE7E984AD43 /* XMLCoder-macOS-dummy.m in Sources */,
+				E4187DB5239472D3ED3791FC7C005FF1 /* XMLCoderElement.swift in Sources */,
+				8A2AFA7D2E6DC6E63D68085AFAF60E43 /* XMLDecoder.swift in Sources */,
+				6ED990485786DE8FE1FA18470A6A3B7A /* XMLDecoderImplementation.swift in Sources */,
+				4647F71F5ADF70F6B3640655EBDE84A6 /* XMLDecodingStorage.swift in Sources */,
+				A8A70760F3E9EF71D6CF4070C74C33F0 /* XMLEncoder.swift in Sources */,
+				6389099B342B656448024385EC87C7FA /* XMLEncoderImplementation.swift in Sources */,
+				6B4E1BD77FE4BCB6745706A564433F7B /* XMLEncodingStorage.swift in Sources */,
+				758395FF36E1386E8A9073AD737CD924 /* XMLHeader.swift in Sources */,
+				7BBC96DBF7C3FE4D7F5EF2BF3F05F520 /* XMLKey.swift in Sources */,
+				445C2ECFBC03D955DA25C58634FE9476 /* XMLKeyedDecodingContainer.swift in Sources */,
+				8739EF363777943047CDEF02FACE9371 /* XMLKeyedEncodingContainer.swift in Sources */,
+				61752CF2993F48C7485B8B9029459538 /* XMLReferencingEncoder.swift in Sources */,
+				49E57CBAC3FE9409B8652008D6DADA93 /* XMLStackParser.swift in Sources */,
+				DE87952407E0F24F86FEAFB34D968AA3 /* XMLUnkeyedDecodingContainer.swift in Sources */,
+				84D3AFD62A3F455BD8FDC487037AE0BC /* XMLUnkeyedEncodingContainer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		126A05CAB39574A54A0355F152CAC4E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56060D1ECA7917994F665CDFDC5F6E39 /* Archive+MemoryFile.swift in Sources */,
+				FE81FA5CEB486D9CF30D64B46D35573C /* Archive+Reading.swift in Sources */,
+				D146E8C0508479861ABAD51047424E18 /* Archive+Writing.swift in Sources */,
+				65900922FA9B77C5FE9A3D2F268C5403 /* Archive.swift in Sources */,
+				590351F1712FEAE547BE7FE0A694F242 /* Data+Compression.swift in Sources */,
+				7C47D0B2F4A31E59150CAC296A6A2BAF /* Data+Serialization.swift in Sources */,
+				D6EDE2601B729E6A250EEBA88E20DBC1 /* Entry.swift in Sources */,
+				CC80618BC621508B7134B47A384829D6 /* FileManager+ZIP.swift in Sources */,
+				909BA99CFFF5E945F0C76E49056B1912 /* ZIPFoundation-macOS-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		137287FB74FE36194BD8C9D127005D5A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7BEDA45322E9769E92D2BEE6F231D928 /* BoolBox.swift in Sources */,
+				C5A515D8CA8384540904919983311B13 /* Box.swift in Sources */,
+				E1F9688554FCBF57E07B3AAC02788E5C /* ChoiceBox.swift in Sources */,
+				5634EF6C94AE9054758A43CA8281F478 /* DataBox.swift in Sources */,
+				5EF80DD135422434F0E8B222A2ADAF78 /* DateBox.swift in Sources */,
+				B029FF7CDE63E08831A2E529ED49FA1D /* DecimalBox.swift in Sources */,
+				1C5E8E4791BA2B231B9D173582126C20 /* DecodingErrorExtension.swift in Sources */,
+				4053E2B8FA05EA761BFC67893A9F762E /* DoubleBox.swift in Sources */,
+				462B0568A85D26B8A49076204769CF87 /* DynamicNodeDecoding.swift in Sources */,
+				AC579CA642F31FD6A4DF27B633EC4D8A /* DynamicNodeEncoding.swift in Sources */,
+				A3FCC47FCE129C088356BF20CC4ACA0A /* EncodingErrorExtension.swift in Sources */,
+				F973B64B96BEEBFEC7B7A70E3BABB02A /* FloatBox.swift in Sources */,
+				678132739BD8215BBC14D0D50970039D /* IntBox.swift in Sources */,
+				494AE33D4D9859FC118F969EE63D337F /* ISO8601DateFormatter.swift in Sources */,
+				0B0A55334D541B31D6EB20C52D8E17C1 /* KeyedBox.swift in Sources */,
+				0389BB9EF9F7867B314229B1C3A44FF3 /* KeyedStorage.swift in Sources */,
+				8AF6A3E91DD42A6DFB60FBA587B5648C /* Metatypes.swift in Sources */,
+				E3F2AF5BA40278BC0FA7FCA13DEDB9FA /* NullBox.swift in Sources */,
+				74929905CF9C410E439D591BE3DDDF78 /* SharedBox.swift in Sources */,
+				2D94C5DCE0C74A79752E488DE9F3FF4A /* SingleKeyedBox.swift in Sources */,
+				A6A86E67D2AA799361925B9C3A7C303A /* SingleValueDecodingContainer.swift in Sources */,
+				7763B632F7098805F7384559D7D11DB0 /* SingleValueEncodingContainer.swift in Sources */,
+				363CD46F947A53ED2112B6D447AE3F40 /* String+Extensions.swift in Sources */,
+				F2F1559D9F68EDBFDB64D0791326D106 /* StringBox.swift in Sources */,
+				062D39D6FCC89AD4A49B202C1A683F55 /* UIntBox.swift in Sources */,
+				F0F2E7EC0457B8CE1EE604179CDA4328 /* UnkeyedBox.swift in Sources */,
+				EBD7807059C0DD9D4D03B0D8A0731A3E /* URLBox.swift in Sources */,
+				8ADA192270FF9F986F496A38A7820C0F /* ValueBox.swift in Sources */,
+				957766FCC34CA434846F81B1EAC430F4 /* XMLChoiceCodingKey.swift in Sources */,
+				57D3711672395A1717A890CC83D88F5B /* XMLChoiceDecodingContainer.swift in Sources */,
+				D19284EF0B2BC0BDCAFD9918F87D32A8 /* XMLChoiceEncodingContainer.swift in Sources */,
+				E600C0B75284A7409BAEB56ED4A423D7 /* XMLCoder-iOS-dummy.m in Sources */,
+				34E35B84DBEEA342DE38BF0FEB2A636C /* XMLCoderElement.swift in Sources */,
+				220720AA199F29D4AEFA33B11D497FB7 /* XMLDecoder.swift in Sources */,
+				8180A471012E94F6D182353C1B8FA1B9 /* XMLDecoderImplementation.swift in Sources */,
+				DE8330D360E028B859CBFE23B00EE79F /* XMLDecodingStorage.swift in Sources */,
+				41B88CC5F9BB060E9365699E1C6161AF /* XMLEncoder.swift in Sources */,
+				A965544FF6AB982F6536F5FCBD59C176 /* XMLEncoderImplementation.swift in Sources */,
+				306F134DE8DE1163D71D77F88806A01F /* XMLEncodingStorage.swift in Sources */,
+				7756E6982F241F69A9BCB5B8492CA022 /* XMLHeader.swift in Sources */,
+				910108C73CF8607B3FD24C8FA3D19907 /* XMLKey.swift in Sources */,
+				4A712120870FC07DD43CEB2C4F725E58 /* XMLKeyedDecodingContainer.swift in Sources */,
+				2845A0854A7B9E0F2CA3E0F79ADCA9B7 /* XMLKeyedEncodingContainer.swift in Sources */,
+				029A2ADEE5BEFC8F1C1A658107D3E01E /* XMLReferencingEncoder.swift in Sources */,
+				D5128CCC97CC4CCCF3FA1EBF9A6FBFC3 /* XMLStackParser.swift in Sources */,
+				BAEB1F5B460DB568BDD983507A70C0EA /* XMLUnkeyedDecodingContainer.swift in Sources */,
+				C1EB31A30107608EA802FFC2482B34B7 /* XMLUnkeyedEncodingContainer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B92E9334328B18A2E4A2E793C47B233 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				501E212E6D820A8F925794199A25704C /* Pods-Cashdeck (macOS)-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		931CB3272851FF0CCADECAB2A3DAB99C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC8365F5649156C27C2E189014AF388C /* Cell.swift in Sources */,
+				4523E9B1640968E32DB408A8C8B00309 /* CellQueries.swift in Sources */,
+				38DB633FD3D0DCA176FB2A034E17EF11 /* CellReference.swift in Sources */,
+				B737E76FD48E4BA86C71C08006D1E6D5 /* ColumnReference.swift in Sources */,
+				26D5F63221E4BEF8278477793D2B0218 /* Comments.swift in Sources */,
+				222D626E56C5D6795CEC9CE7DF8D2C91 /* CoreXLSX-iOS-dummy.m in Sources */,
+				F39262B1B48B5F172219AAC5DFA99C75 /* Path.swift in Sources */,
+				43BAC32BEE81C344E51A443DC892635A /* Relationships.swift in Sources */,
+				55816A1A6771D4BDD3967492B4A85C60 /* SharedStrings.swift in Sources */,
+				4846CA1ADE3D58B75E4401D19BB97975 /* Styles.swift in Sources */,
+				F864AE0C6EE086EFD459DAC5D1A09240 /* Workbook.swift in Sources */,
+				74ED466EEF411BCA24638B27B3501894 /* Worksheet.swift in Sources */,
+				C41755AE688E27B09E30FCDEEF18D4E6 /* XLSXFile.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A38331143AFF29851910078EE0A953C1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07EEB83799921706357DE574F3C745C9 /* Pods-Cashdeck (iOS)-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A42200420306EEDC25C0B4FE25007588 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9BA9F80471D4EEE60F8A145C017285D /* Cell.swift in Sources */,
+				D147221C9A37A9E8D19F8C66C8F34B2B /* CellQueries.swift in Sources */,
+				84036695F460E463BA1B1277288AC41F /* CellReference.swift in Sources */,
+				3E897E75A2C0D59864295D28A9F843BB /* ColumnReference.swift in Sources */,
+				5E695DF71F88F7F92560C10BA6699C26 /* Comments.swift in Sources */,
+				DE86AB0B60261B2B69682080DC9F800F /* CoreXLSX-macOS-dummy.m in Sources */,
+				0CE8A09B03BEE04FC35F0CF2AB8D2B9B /* Path.swift in Sources */,
+				BC39A17CAA2E9A4BB14B9D880652A5F3 /* Relationships.swift in Sources */,
+				3D65EE1272D022AF86D065170396B46E /* SharedStrings.swift in Sources */,
+				8421B8E9627A91CFBFC3684834F3136C /* Styles.swift in Sources */,
+				855B11C9A7B1B9366819126D66ABA21A /* Workbook.swift in Sources */,
+				8322F7D593D7E2DD0779F0D5A4F01E38 /* Worksheet.swift in Sources */,
+				918EFC180938F1D2DE69E2542823DC39 /* XLSXFile.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA6F381508E988D12324755EF4AAF51B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C8B85D74CCB64E27984FD8D445317F6 /* Archive+MemoryFile.swift in Sources */,
+				9E29258B4D0BB6D426CA883E10FD419A /* Archive+Reading.swift in Sources */,
+				AF3DA00935370F97D8079B404454600C /* Archive+Writing.swift in Sources */,
+				E5E72D087FBD67E1C6934FFEB004B9FB /* Archive.swift in Sources */,
+				2569940D5623585BA7BDD28B1785746E /* Data+Compression.swift in Sources */,
+				B35E47BD49E2CB9AF26B62848B7F6A1B /* Data+Serialization.swift in Sources */,
+				12CBF09DE261088863E70A824EF3545C /* Entry.swift in Sources */,
+				23BE4A9BBBA7AABF8CF10CDCB10E26E9 /* FileManager+ZIP.swift in Sources */,
+				4EE4F29C075609028E74595E36C4A727 /* ZIPFoundation-iOS-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		32FD0384624A3162BCA672A391E0ED7B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "ZIPFoundation-iOS";
+			target = 9AF8AE8821E967844EEF26BBB341564D /* ZIPFoundation-iOS */;
+			targetProxy = 9DAF82156A0C010C47A62F6001307B9F /* PBXContainerItemProxy */;
+		};
+		3C040BEC8D3BF0A9178CC372415108D5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "CoreXLSX-iOS";
+			target = 34015EC3EA98B490B182112CF9BB3338 /* CoreXLSX-iOS */;
+			targetProxy = BAB10C01D6C3F4CD6FA01E0406A301B0 /* PBXContainerItemProxy */;
+		};
+		3C4F810A461B5BADEC110B7F3CFB433B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "CoreXLSX-macOS";
+			target = 73888679F6089EB3B1E9848F3411DC28 /* CoreXLSX-macOS */;
+			targetProxy = CE2FFDC378905F43CC163C103AC5FECB /* PBXContainerItemProxy */;
+		};
+		575FED75010714A1F6A8DA20FB495713 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "ZIPFoundation-iOS";
+			target = 9AF8AE8821E967844EEF26BBB341564D /* ZIPFoundation-iOS */;
+			targetProxy = 96963B867F1A84D10C8E28B6E3B1D0C0 /* PBXContainerItemProxy */;
+		};
+		5953962E6B6765F1BC7775BC857AD89E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "ZIPFoundation-macOS";
+			target = 8B5BB2050078EFCACBEDC5B4195B80CD /* ZIPFoundation-macOS */;
+			targetProxy = 4285CEC9B722C944491D09BEDA63AF70 /* PBXContainerItemProxy */;
+		};
+		8E71ECF76284BE285E4B90FF3030CA4E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "XMLCoder-iOS";
+			target = 97CD805195BA153A66F6EE105BD6C304 /* XMLCoder-iOS */;
+			targetProxy = 357C683243C9B2A6DFEA4887EF651946 /* PBXContainerItemProxy */;
+		};
+		BE8D6606F58B0CBA18F5B2A23043C217 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "XMLCoder-macOS";
+			target = B3E80B54A6FF4B9682C69A8A5963B885 /* XMLCoder-macOS */;
+			targetProxy = 3156527D92668280EA4472C17749654A /* PBXContainerItemProxy */;
+		};
+		D77C3EA77CAA85F0B6FEF92DB8C9E279 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "XMLCoder-iOS";
+			target = 97CD805195BA153A66F6EE105BD6C304 /* XMLCoder-iOS */;
+			targetProxy = D1324AAE5F8F84A34485D4BB6D93E478 /* PBXContainerItemProxy */;
+		};
+		D89B8FB06BFAA1BA260A39B52742D056 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "XMLCoder-macOS";
+			target = B3E80B54A6FF4B9682C69A8A5963B885 /* XMLCoder-macOS */;
+			targetProxy = 09D29B629CA227A646AFCA5533F8B32D /* PBXContainerItemProxy */;
+		};
+		DBED577855B45388DE9F67F574D16586 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "ZIPFoundation-macOS";
+			target = 8B5BB2050078EFCACBEDC5B4195B80CD /* ZIPFoundation-macOS */;
+			targetProxy = 1752D26E2F802F24B8B8CC0196EB8085 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1241D794DE9F8E5C83C891B0125E6BFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F51063B0213E7889DAC7763976871DA0 /* Pods-Cashdeck (macOS).debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Cashdeck (macOS)/Pods-Cashdeck (macOS)-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MODULEMAP_FILE = "Target Support Files/Pods-Cashdeck (macOS)/Pods-Cashdeck (macOS).modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4BE4FE567CF78EEE2846B5F3480DA82D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5AAE88BB5521EBA18E7044E28A91A3CF /* ZIPFoundation-macOS.release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ZIPFoundation-macOS/ZIPFoundation-macOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ZIPFoundation-macOS/ZIPFoundation-macOS-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MODULEMAP_FILE = "Target Support Files/ZIPFoundation-macOS/ZIPFoundation-macOS.modulemap";
+				PRODUCT_MODULE_NAME = ZIPFoundation;
+				PRODUCT_NAME = ZIPFoundation;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		55FE7E1141DF75C1ED3F1D004BFF5830 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9F94CF4AA4227400047767306CEE739 /* ZIPFoundation-macOS.debug.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ZIPFoundation-macOS/ZIPFoundation-macOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ZIPFoundation-macOS/ZIPFoundation-macOS-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MODULEMAP_FILE = "Target Support Files/ZIPFoundation-macOS/ZIPFoundation-macOS.modulemap";
+				PRODUCT_MODULE_NAME = ZIPFoundation;
+				PRODUCT_NAME = ZIPFoundation;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		66E77398AE3389B81E0A90EC6F2BC376 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 808A2F197AEAC5A8FB6F0800AF949CD2 /* XMLCoder-iOS.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/XMLCoder-iOS/XMLCoder-iOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/XMLCoder-iOS/XMLCoder-iOS-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/XMLCoder-iOS/XMLCoder-iOS.modulemap";
+				PRODUCT_MODULE_NAME = XMLCoder;
+				PRODUCT_NAME = XMLCoder;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		6C788B88B90B82AEBCF469CFB5A2382E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F89B778D50EEB22F0FA934A46970044 /* ZIPFoundation-iOS.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ZIPFoundation-iOS/ZIPFoundation-iOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ZIPFoundation-iOS/ZIPFoundation-iOS-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/ZIPFoundation-iOS/ZIPFoundation-iOS.modulemap";
+				PRODUCT_MODULE_NAME = ZIPFoundation;
+				PRODUCT_NAME = ZIPFoundation;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		748CFDE4511B863885814DA7E862BA0D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93E1ACCAA4FD4C46F20D1ED3D6588985 /* Pods-Cashdeck (macOS).release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Cashdeck (macOS)/Pods-Cashdeck (macOS)-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MODULEMAP_FILE = "Target Support Files/Pods-Cashdeck (macOS)/Pods-Cashdeck (macOS).modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		84C13F8C85D0D56D212AA05BBDD34938 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C34CFEF8D773C9A51C9E690C10EF1EF5 /* XMLCoder-macOS.release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/XMLCoder-macOS/XMLCoder-macOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/XMLCoder-macOS/XMLCoder-macOS-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MODULEMAP_FILE = "Target Support Files/XMLCoder-macOS/XMLCoder-macOS.modulemap";
+				PRODUCT_MODULE_NAME = XMLCoder;
+				PRODUCT_NAME = XMLCoder;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8CE0612C4204B10576FEF52DD29C8AE7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8DA5B9E23AAAACBEAE93DC9536E76DD /* CoreXLSX-iOS.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/CoreXLSX-iOS/CoreXLSX-iOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CoreXLSX-iOS/CoreXLSX-iOS-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/CoreXLSX-iOS/CoreXLSX-iOS.modulemap";
+				PRODUCT_MODULE_NAME = CoreXLSX;
+				PRODUCT_NAME = CoreXLSX;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		92236969D2CAE522F4C49923D0CA0A98 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		94D663F2A5E10E3DBA580BD075610152 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		A1E9166260BB8359942781C592061CD0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0744972B463DDA874EE1DD86995EF928 /* Pods-Cashdeck (iOS).release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Cashdeck (iOS)/Pods-Cashdeck (iOS)-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Cashdeck (iOS)/Pods-Cashdeck (iOS).modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B1A153321280AD5259AFFCACD0BF511F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 227818AE0BB56B73378EF98F73B72792 /* ZIPFoundation-iOS.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ZIPFoundation-iOS/ZIPFoundation-iOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ZIPFoundation-iOS/ZIPFoundation-iOS-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/ZIPFoundation-iOS/ZIPFoundation-iOS.modulemap";
+				PRODUCT_MODULE_NAME = ZIPFoundation;
+				PRODUCT_NAME = ZIPFoundation;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		BE091F4337681957B3A6005FFB27A009 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB516FA306D0396D0D352BF50DB3BEB6 /* Pods-Cashdeck (iOS).debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Cashdeck (iOS)/Pods-Cashdeck (iOS)-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Cashdeck (iOS)/Pods-Cashdeck (iOS).modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C0B492D805B78A3414B8CEB06DFDBE91 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A337CBA5FE4696FB5D18C6EA82CFD8F /* CoreXLSX-macOS.debug.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/CoreXLSX-macOS/CoreXLSX-macOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CoreXLSX-macOS/CoreXLSX-macOS-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MODULEMAP_FILE = "Target Support Files/CoreXLSX-macOS/CoreXLSX-macOS.modulemap";
+				PRODUCT_MODULE_NAME = CoreXLSX;
+				PRODUCT_NAME = CoreXLSX;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.2;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CB160F56FC1169B1D2F060B713C335DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F2075EC46C7A06BA630E37CDFBA9BAF /* XMLCoder-iOS.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/XMLCoder-iOS/XMLCoder-iOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/XMLCoder-iOS/XMLCoder-iOS-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/XMLCoder-iOS/XMLCoder-iOS.modulemap";
+				PRODUCT_MODULE_NAME = XMLCoder;
+				PRODUCT_NAME = XMLCoder;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F5AFBC1C79805E6BC534B24335198DF6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE133A87E1B0699A2169DFCF9FC9D9C1 /* CoreXLSX-iOS.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/CoreXLSX-iOS/CoreXLSX-iOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CoreXLSX-iOS/CoreXLSX-iOS-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/CoreXLSX-iOS/CoreXLSX-iOS.modulemap";
+				PRODUCT_MODULE_NAME = CoreXLSX;
+				PRODUCT_NAME = CoreXLSX;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FC27C01EB38C7A0976E296647A4F15A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA9099890293C576D3CC019561C05344 /* CoreXLSX-macOS.release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/CoreXLSX-macOS/CoreXLSX-macOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CoreXLSX-macOS/CoreXLSX-macOS-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MODULEMAP_FILE = "Target Support Files/CoreXLSX-macOS/CoreXLSX-macOS.modulemap";
+				PRODUCT_MODULE_NAME = CoreXLSX;
+				PRODUCT_NAME = CoreXLSX;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.2;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FEEFF67E826BBCD5552849AF0516C402 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 112BA7485CBAFC1C8C1F83245733EAC7 /* XMLCoder-macOS.debug.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/XMLCoder-macOS/XMLCoder-macOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/XMLCoder-macOS/XMLCoder-macOS-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MODULEMAP_FILE = "Target Support Files/XMLCoder-macOS/XMLCoder-macOS.modulemap";
+				PRODUCT_MODULE_NAME = XMLCoder;
+				PRODUCT_NAME = XMLCoder;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		26F9F74C6A1640D6E786545F4A6C5775 /* Build configuration list for PBXNativeTarget "XMLCoder-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB160F56FC1169B1D2F060B713C335DD /* Debug */,
+				66E77398AE3389B81E0A90EC6F2BC376 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3255ECE7FFCD3E780509FB472B67783C /* Build configuration list for PBXNativeTarget "XMLCoder-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FEEFF67E826BBCD5552849AF0516C402 /* Debug */,
+				84C13F8C85D0D56D212AA05BBDD34938 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		43A27971E953B161C84C8E5422008A29 /* Build configuration list for PBXNativeTarget "ZIPFoundation-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55FE7E1141DF75C1ED3F1D004BFF5830 /* Debug */,
+				4BE4FE567CF78EEE2846B5F3480DA82D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94D663F2A5E10E3DBA580BD075610152 /* Debug */,
+				92236969D2CAE522F4C49923D0CA0A98 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5C8DB6241DCE748337064697CDB0DEA9 /* Build configuration list for PBXNativeTarget "Pods-Cashdeck (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE091F4337681957B3A6005FFB27A009 /* Debug */,
+				A1E9166260BB8359942781C592061CD0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		68486CA99DE3250D9B739F5D6E9E1BD0 /* Build configuration list for PBXNativeTarget "CoreXLSX-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CE0612C4204B10576FEF52DD29C8AE7 /* Debug */,
+				F5AFBC1C79805E6BC534B24335198DF6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF23ED9CF3E8D600683119FD910435D5 /* Build configuration list for PBXNativeTarget "CoreXLSX-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0B492D805B78A3414B8CEB06DFDBE91 /* Debug */,
+				FC27C01EB38C7A0976E296647A4F15A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F055930C4633EFB9FDA94C9014799904 /* Build configuration list for PBXNativeTarget "Pods-Cashdeck (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1241D794DE9F8E5C83C891B0125E6BFF /* Debug */,
+				748CFDE4511B863885814DA7E862BA0D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FEA64812D752AF4D9302E8F9D4130039 /* Build configuration list for PBXNativeTarget "ZIPFoundation-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B1A153321280AD5259AFFCACD0BF511F /* Debug */,
+				6C788B88B90B82AEBCF469CFB5A2382E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

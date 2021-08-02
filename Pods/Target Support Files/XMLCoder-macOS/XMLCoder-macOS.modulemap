@@ -1,0 +1,6 @@
+framework module XMLCoder {
+  umbrella header "XMLCoder-macOS-umbrella.h"
+
+  export *
+  module * { export * }
+}

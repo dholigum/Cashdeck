@@ -1,0 +1,6 @@
+framework module CoreXLSX {
+  umbrella header "CoreXLSX-iOS-umbrella.h"
+
+  export *
+  module * { export * }
+}
