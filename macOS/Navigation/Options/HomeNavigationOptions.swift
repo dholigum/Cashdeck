@@ -17,17 +17,18 @@ struct HomeNavigationOptions {
         (UUID(), "Product List", "product-list", .productList),
         (UUID(), "Product Sold", "product-sold", .productSold),
     ]
-
+    
+    @ViewBuilder
     static func buildView(for option: Option) -> some View {
         switch option.type {
         case .overview:
-            return Text("Main Option selected\n\(option.value)")
+            SampleView(content: "Hell0")
         case .analytics:
-            return Text("Main Option selected\n\(option.value)")
+            SampleVStack()
         case .productList:
-            return Text("Main Option selected\n\(option.value)")
+            Text("Main Option selected\n\(option.value)")
         case .productSold:
-            return Text("Main Option selected\n\(option.value)")
+            Text("Main Option selected\n\(option.value)")
         }
     }
 }

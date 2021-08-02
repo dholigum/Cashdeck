@@ -9,10 +9,12 @@ import SwiftUI
 
 @main
 struct CashdeckApp: App {
+    let persistenceController = PersistenceController.shared
     
     var body: some Scene {
         WindowGroup {
             MainView()
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .background(Color("MainColor"))
         }
         .windowStyle(HiddenTitleBarWindowStyle())
