@@ -16,10 +16,10 @@ struct MonthlyExpenseCard: View {
         VStack(alignment: .center) {
             HStack {
                 Text("Monthly Expense")
-                    .font(Font.title2.weight(.medium))
+                    .font(Font.title.weight(.semibold))
                     .padding(.vertical)
                     .foregroundColor(Color("AccentColor2"))
-                    .padding(.top)
+                    .padding(.top, 4)
                     .padding(.leading, 20)
                 
                 Spacer()

@@ -9,7 +9,15 @@ import SwiftUI
 
 struct ExpenseOverview: View {
     var body: some View {
-        Text("Hello, Expensex!")
+        VStack(spacing: 36) {
+            HStack(spacing: 24) {
+                MonthlyExpenseCard()
+                RecentExpenseCard()
+            }
+            HStack(spacing: 24) {
+                ExpenseTipsCard()
+            }
+        }
     }
 }
 
