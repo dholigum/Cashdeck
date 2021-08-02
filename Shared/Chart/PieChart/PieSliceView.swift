@@ -38,6 +38,7 @@ struct PieSlice: View {
                         x: geometry.size.width * 0.5 * CGFloat(1.0 + 0.78 * cos(self.midRadians)),
                         y: geometry.size.height * 0.5 * CGFloat(1.0 - 0.78 * sin(self.midRadians))
                     )
+                    .font(.caption)
                     .foregroundColor(Color.white)
             }
         }

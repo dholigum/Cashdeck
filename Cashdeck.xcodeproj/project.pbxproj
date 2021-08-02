@@ -39,6 +39,8 @@
 		2F52F32226B7EB970046A1AA /* MonthlyExpenseCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F52F31C26B7E9720046A1AA /* MonthlyExpenseCard.swift */; };
 		2F52F32426B7EBC70046A1AA /* ProductSoldCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F52F32326B7EBC70046A1AA /* ProductSoldCard.swift */; };
 		2F52F32526B7EBC70046A1AA /* ProductSoldCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F52F32326B7EBC70046A1AA /* ProductSoldCard.swift */; };
+		2F52F32726B81ECD0046A1AA /* PieChartLegend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F52F32626B81ECD0046A1AA /* PieChartLegend.swift */; };
+		2F52F32826B81ECD0046A1AA /* PieChartLegend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F52F32626B81ECD0046A1AA /* PieChartLegend.swift */; };
 		2F764DAC26A7C254005B0513 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F764DAB26A7C254005B0513 /* Tests_iOS.swift */; };
 		2F764DB726A7C254005B0513 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F764DB626A7C254005B0513 /* Tests_macOS.swift */; };
 		2F764DB926A7C254005B0513 /* CashdeckApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F764D9026A7C252005B0513 /* CashdeckApp.swift */; };
@@ -95,6 +97,7 @@
 		2F52F31C26B7E9720046A1AA /* MonthlyExpenseCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyExpenseCard.swift; sourceTree = "<group>"; };
 		2F52F31E26B7E9870046A1AA /* NetIncomeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetIncomeCard.swift; sourceTree = "<group>"; };
 		2F52F32326B7EBC70046A1AA /* ProductSoldCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSoldCard.swift; sourceTree = "<group>"; };
+		2F52F32626B81ECD0046A1AA /* PieChartLegend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartLegend.swift; sourceTree = "<group>"; };
 		2F764D9026A7C252005B0513 /* CashdeckApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashdeckApp.swift; sourceTree = "<group>"; };
 		2F764D9226A7C254005B0513 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F764D9726A7C254005B0513 /* Cashdeck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cashdeck.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -222,6 +225,7 @@
 			children = (
 				2F52F31326B7CCD30046A1AA /* PieSliceView.swift */,
 				2F52F31626B7CE1A0046A1AA /* PieChartView.swift */,
+				2F52F32626B81ECD0046A1AA /* PieChartLegend.swift */,
 			);
 			path = PieChart;
 			sourceTree = "<group>";
@@ -544,6 +548,7 @@
 				2F18858026B252560067E82D /* SampleView.swift in Sources */,
 				2F52F30126B7A4E70046A1AA /* DashboardOverview.swift in Sources */,
 				2F52F31F26B7E9870046A1AA /* NetIncomeCard.swift in Sources */,
+				2F52F32726B81ECD0046A1AA /* PieChartLegend.swift in Sources */,
 				2F18857D26B252370067E82D /* MiddleBarMenu.swift in Sources */,
 				2F832F0A26B3E6F000426643 /* HomeNavigationOptions.swift in Sources */,
 				2F764DB926A7C254005B0513 /* CashdeckApp.swift in Sources */,
@@ -575,6 +580,7 @@
 				2F52F30226B7A4E70046A1AA /* DashboardOverview.swift in Sources */,
 				2F18857E26B252370067E82D /* MiddleBarMenu.swift in Sources */,
 				2F52F31526B7CD1C0046A1AA /* PieSliceView.swift in Sources */,
+				2F52F32826B81ECD0046A1AA /* PieChartLegend.swift in Sources */,
 				2F52F31826B7CE670046A1AA /* PieChartView.swift in Sources */,
 				2F832F0B26B3E6F000426643 /* HomeNavigationOptions.swift in Sources */,
 				2F764DBA26A7C254005B0513 /* CashdeckApp.swift in Sources */,

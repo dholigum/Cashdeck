@@ -4,6 +4,7 @@
 //
 //  Created by Nazar Ilamanov on 4/23/21.
 //
+
 import SwiftUI
 
 @available(OSX 10.15, *)
@@ -17,8 +18,6 @@ public struct PieChartView: View {
     
     public var widthFraction: CGFloat
     public var innerRadiusFraction: CGFloat
-    
-    public var showLegend: Bool
     
     @State private var activeIndex: Int = -1
     
@@ -35,25 +34,24 @@ public struct PieChartView: View {
         return tempSlices
     }
     
-    public init(values:[Double], names: [String], formatter: @escaping (Double) -> String, colors: [Color] = [Color.blue, Color.green, Color.orange], backgroundColor: Color = Color(red: 21 / 255, green: 24 / 255, blue: 30 / 255, opacity: 1.0), widthFraction: CGFloat = 0.75, innerRadiusFraction: CGFloat = 0.60, showLegend: Bool = false){
+    public init(values:[Double], names: [String], formatter: @escaping (Double) -> String, colors: [Color] = [Color.blue, Color.green, Color.orange, Color.purple, Color.gray, Color.yellow, Color.red, Color.blue, Color.green, Color.orange, Color.purple, Color.gray, Color.yellow, Color.red], backgroundColor: Color = Color.white, widthFraction: CGFloat = 0.75, innerRadiusFraction: CGFloat = 0.60){
         self.values = values
         self.names = names
         self.formatter = formatter
         
-        self.colors = colors
+        self.colors = Array(colors.prefix(upTo: self.values.count))
         self.backgroundColor = backgroundColor
         self.widthFraction = widthFraction
         self.innerRadiusFraction = innerRadiusFraction
-        self.showLegend = showLegend
     }
     
     public var body: some View {
         GeometryReader { geometry in
-            VStack{
-                ZStack{
+            HStack {
+                ZStack {
                     ForEach(0..<self.values.count){ i in
                         PieSlice(pieSliceData: self.slices[i])
-                            .scaleEffect(self.activeIndex == i ? 1.03 : 1)
+                            .scaleEffect(self.activeIndex == i ? 1.10 : 1)
                             .animation(Animation.spring())
                     }
                     .frame(width: widthFraction * geometry.size.width, height: widthFraction * geometry.size.width)
@@ -80,6 +78,9 @@ public struct PieChartView: View {
                                     }
                                 }
                             }
+                            .onEnded { value in
+                                self.activeIndex = -1
+                            }
                     )
                     Circle()
                         .fill(self.backgroundColor)
@@ -87,17 +88,16 @@ public struct PieChartView: View {
                     
                     VStack {
                         Text(self.activeIndex == -1 ? "Total" : names[self.activeIndex])
-                            .font(.title)
-                            .foregroundColor(Color.gray)
+                            .font(.title3)
+                            .foregroundColor(Color.black)
                         Text(self.formatter(self.activeIndex == -1 ? values.reduce(0, +) : values[self.activeIndex]))
-                            .font(.title)
+                            .font(.subheadline)
+                            .foregroundColor(Color.black)
                     }
                     
                 }
+                .frame(width: 300, height: 300)
                 
-                if showLegend {
-                    PieChartRows(colors: self.colors, names: self.names, values: self.values.map { self.formatter($0) }, percents: self.values.map { String(format: "%.2f%%", $0 * 100 / self.values.reduce(0, +)) })
-                }
             }
             .background(self.backgroundColor)
             .foregroundColor(Color.white)
@@ -105,36 +105,9 @@ public struct PieChartView: View {
     }
 }
 
-@available(OSX 10.15, *)
-struct PieChartRows: View {
-    var colors: [Color]
-    var names: [String]
-    var values: [String]
-    var percents: [String]
-    
-    var body: some View {
-        VStack{
-            ForEach(0..<self.values.count){ i in
-                HStack {
-                    RoundedRectangle(cornerRadius: 5.0)
-                        .fill(self.colors[i])
-                        .frame(width: 20, height: 20)
-                    Text(self.names[i])
-                    Spacer()
-                    VStack(alignment: .trailing) {
-                        Text(self.values[i])
-                        Text(self.percents[i])
-                            .foregroundColor(Color.gray)
-                    }
-                }
-            }
-        }
-    }
-}
-
 @available(OSX 10.15.0, *)
 struct PieChartView_Previews: PreviewProvider {
     static var previews: some View {
-        PieChartView(values: [1300, 500, 300], names: ["Rent", "Transport", "Education"], formatter: {value in String(format: "$%.2f", value)})
+        PieChartView(values: [1300, 500, 300, 500], names: ["Rent", "Transport", "Education", "Dolan"], formatter: {value in String(format: "Rp%.2f", value)})
     }
 }
