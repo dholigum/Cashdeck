@@ -9,7 +9,15 @@ import SwiftUI
 
 struct HomeOverview: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 36) {
+            HStack {
+                NetIncomeCard()
+            }
+            HStack(spacing: 24) {
+                MonthlyExpenseCard()
+                ProductSoldCard()
+            } // Expense and Product
+        }
     }
 }
 

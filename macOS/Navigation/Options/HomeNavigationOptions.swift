@@ -22,11 +22,11 @@ struct HomeNavigationOptions {
     static func buildView(for option: Option) -> some View {
         switch option.type {
         case .overview:
-            SampleView(content: "Hell0")
+            HomeOverview()
         case .analytics:
             SampleVStack()
         case .productList:
-            Text("Main Option selected\n\(option.value)")
+            PieChartView(values: [1300, 500, 300], names: ["Rent", "Transport", "Education"], formatter: {value in String(format: "$%.2f", value)})
         case .productSold:
             Text("Main Option selected\n\(option.value)")
         }
