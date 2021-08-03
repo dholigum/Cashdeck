@@ -63,6 +63,10 @@
 		F73F69AD26B8E90800CD9642 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73F69AB26B8E90800CD9642 /* CoreDataManager.swift */; };
 		F73F69B726B996E600CD9642 /* ProductSoldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73F69B626B996E600CD9642 /* ProductSoldView.swift */; };
 		F73F69B826B996E600CD9642 /* ProductSoldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73F69B626B996E600CD9642 /* ProductSoldView.swift */; };
+		F73F69C126B99B8800CD9642 /* TotalNetIncome.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73F69C026B99B8800CD9642 /* TotalNetIncome.swift */; };
+		F73F69C226B99B8800CD9642 /* TotalNetIncome.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73F69C026B99B8800CD9642 /* TotalNetIncome.swift */; };
+		F73F69C426B99F0C00CD9642 /* TotalSold.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73F69C326B99F0C00CD9642 /* TotalSold.swift */; };
+		F73F69C526B99F0C00CD9642 /* TotalSold.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73F69C326B99F0C00CD9642 /* TotalSold.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +125,8 @@
 		2F832F1326B4439400426643 /* SideBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarButton.swift; sourceTree = "<group>"; };
 		F73F69AB26B8E90800CD9642 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		F73F69B626B996E600CD9642 /* ProductSoldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSoldView.swift; sourceTree = "<group>"; };
+		F73F69C026B99B8800CD9642 /* TotalNetIncome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalNetIncome.swift; sourceTree = "<group>"; };
+		F73F69C326B99F0C00CD9642 /* TotalSold.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalSold.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -300,6 +306,7 @@
 		2F764D8F26A7C252005B0513 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				F73F69BA26B9991200CD9642 /* Fonts */,
 				2F52F31126B7CCBA0046A1AA /* Chart */,
 				2F764D9226A7C254005B0513 /* Assets.xcassets */,
 				2F52F2EA26B7950D0046A1AA /* CashdeckData.xcdatamodeld */,
@@ -419,6 +426,7 @@
 		F73F69B026B9124A00CD9642 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F73F69BB26B99AF200CD9642 /* Component */,
 				F73F69B626B996E600CD9642 /* ProductSoldView.swift */,
 			);
 			path = View;
@@ -429,6 +437,22 @@
 			children = (
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F73F69BA26B9991200CD9642 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		F73F69BB26B99AF200CD9642 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				F73F69C026B99B8800CD9642 /* TotalNetIncome.swift */,
+				F73F69C326B99F0C00CD9642 /* TotalSold.swift */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -593,12 +617,14 @@
 				2F764DD926A92152005B0513 /* BlurWindow.swift in Sources */,
 				2F52F2EC26B7950D0046A1AA /* CashdeckData.xcdatamodeld in Sources */,
 				2F832F0D26B3E6FA00426643 /* IncomeNavigationOptions.swift in Sources */,
+				F73F69C126B99B8800CD9642 /* TotalNetIncome.swift in Sources */,
 				2F52F32F26B82FDD0046A1AA /* RecentExpenseCard.swift in Sources */,
 				2F52F30B26B7CC780046A1AA /* HomeOverview.swift in Sources */,
 				2F832EF726B271EA00426643 /* MainView.swift in Sources */,
 				F73F69B726B996E600CD9642 /* ProductSoldView.swift in Sources */,
 				2F832F1026B3E70500426643 /* ExpenseNavigationOptions.swift in Sources */,
 				2F832F0026B31A6800426643 /* CardMenuButton.swift in Sources */,
+				F73F69C426B99F0C00CD9642 /* TotalSold.swift in Sources */,
 				2F52F2F526B7A25A0046A1AA /* SampleVStack.swift in Sources */,
 				2F52F31426B7CCD30046A1AA /* PieSliceView.swift in Sources */,
 				2F52F2F826B7A4910046A1AA /* ExpenseOverview.swift in Sources */,
@@ -626,12 +652,14 @@
 				2F52F2ED26B7950D0046A1AA /* CashdeckData.xcdatamodeld in Sources */,
 				2F832F0E26B3E6FA00426643 /* IncomeNavigationOptions.swift in Sources */,
 				2F832EF826B271EA00426643 /* MainView.swift in Sources */,
+				F73F69C226B99B8800CD9642 /* TotalNetIncome.swift in Sources */,
 				2F52F33026B82FDD0046A1AA /* RecentExpenseCard.swift in Sources */,
 				2F832F1126B3E70500426643 /* ExpenseNavigationOptions.swift in Sources */,
 				2F832F0126B31A6800426643 /* CardMenuButton.swift in Sources */,
 				F73F69B826B996E600CD9642 /* ProductSoldView.swift in Sources */,
 				2F52F32126B7EB940046A1AA /* NetIncomeCard.swift in Sources */,
 				2F52F2F626B7A25A0046A1AA /* SampleVStack.swift in Sources */,
+				F73F69C526B99F0C00CD9642 /* TotalSold.swift in Sources */,
 				2F52F2F926B7A4910046A1AA /* ExpenseOverview.swift in Sources */,
 				2F52F2F326B798980046A1AA /* SampleCoreDataSave.swift in Sources */,
 				2F52F2FC26B7A49C0046A1AA /* Tokopedia.swift in Sources */,
