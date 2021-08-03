@@ -61,6 +61,14 @@
 		2F832F1126B3E70500426643 /* ExpenseNavigationOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F832F0F26B3E70500426643 /* ExpenseNavigationOptions.swift */; };
 		2F832F1426B4439400426643 /* SideBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F832F1326B4439400426643 /* SideBarButton.swift */; };
 		2F832F1526B4439400426643 /* SideBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F832F1326B4439400426643 /* SideBarButton.swift */; };
+		2FB41BBC26B8F1330035B62B /* ExpenseList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB41BBB26B8F1330035B62B /* ExpenseList.swift */; };
+		2FB41BBD26B8F1330035B62B /* ExpenseList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB41BBB26B8F1330035B62B /* ExpenseList.swift */; };
+		2FB41BC426B8F1F60035B62B /* CashInformationCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB41BC326B8F1F60035B62B /* CashInformationCard.swift */; };
+		2FB41BC526B8F1F60035B62B /* CashInformationCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB41BC326B8F1F60035B62B /* CashInformationCard.swift */; };
+		2FB41BC726B8F2130035B62B /* ProductInformationCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB41BC626B8F2130035B62B /* ProductInformationCard.swift */; };
+		2FB41BC826B8F2130035B62B /* ProductInformationCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB41BC626B8F2130035B62B /* ProductInformationCard.swift */; };
+		2FB41BCA26B8F2200035B62B /* ActionButtonCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB41BC926B8F2200035B62B /* ActionButtonCard.swift */; };
+		2FB41BCB26B8F2200035B62B /* ActionButtonCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB41BC926B8F2200035B62B /* ActionButtonCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +126,10 @@
 		2F832F0C26B3E6FA00426643 /* IncomeNavigationOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeNavigationOptions.swift; sourceTree = "<group>"; };
 		2F832F0F26B3E70500426643 /* ExpenseNavigationOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseNavigationOptions.swift; sourceTree = "<group>"; };
 		2F832F1326B4439400426643 /* SideBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarButton.swift; sourceTree = "<group>"; };
+		2FB41BBB26B8F1330035B62B /* ExpenseList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseList.swift; sourceTree = "<group>"; };
+		2FB41BC326B8F1F60035B62B /* CashInformationCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashInformationCard.swift; sourceTree = "<group>"; };
+		2FB41BC626B8F2130035B62B /* ProductInformationCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInformationCard.swift; sourceTree = "<group>"; };
+		2FB41BC926B8F2200035B62B /* ActionButtonCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButtonCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +175,7 @@
 		2F18857326B250E90067E82D /* Expense */ = {
 			isa = PBXGroup;
 			children = (
+				2FB41BB726B8F0ED0035B62B /* List */,
 				2F52F32926B82F5E0046A1AA /* Overview */,
 			);
 			path = Expense;
@@ -327,6 +340,7 @@
 		2F764DA026A7C254005B0513 /* macOS */ = {
 			isa = PBXGroup;
 			children = (
+				2FB41BC226B8F1E30035B62B /* SharedComponent */,
 				2F18857726B251DD0067E82D /* Navigation */,
 				2F18857326B250E90067E82D /* Expense */,
 				2F18857226B250E40067E82D /* Income */,
@@ -385,6 +399,56 @@
 				2F832F1326B4439400426643 /* SideBarButton.swift */,
 			);
 			path = Component;
+			sourceTree = "<group>";
+		};
+		2FB41BB726B8F0ED0035B62B /* List */ = {
+			isa = PBXGroup;
+			children = (
+				2FB41BBA26B8F1020035B62B /* Model */,
+				2FB41BB926B8F0F90035B62B /* View */,
+				2FB41BB826B8F0F40035B62B /* ViewModel */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		2FB41BB826B8F0F40035B62B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2FB41BB926B8F0F90035B62B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2FB41BBE26B8F1460035B62B /* Component */,
+				2FB41BBB26B8F1330035B62B /* ExpenseList.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2FB41BBA26B8F1020035B62B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2FB41BBE26B8F1460035B62B /* Component */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		2FB41BC226B8F1E30035B62B /* SharedComponent */ = {
+			isa = PBXGroup;
+			children = (
+				2FB41BC326B8F1F60035B62B /* CashInformationCard.swift */,
+				2FB41BC626B8F2130035B62B /* ProductInformationCard.swift */,
+				2FB41BC926B8F2200035B62B /* ActionButtonCard.swift */,
+			);
+			path = SharedComponent;
 			sourceTree = "<group>";
 		};
 		2FEF63C626AC6C5C0073CE75 /* Dashboard */ = {
@@ -552,6 +616,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FB41BC726B8F2130035B62B /* ProductInformationCard.swift in Sources */,
 				2F52F31726B7CE1A0046A1AA /* PieChartView.swift in Sources */,
 				2F832F1426B4439400426643 /* SideBarButton.swift in Sources */,
 				2F764DD926A92152005B0513 /* BlurWindow.swift in Sources */,
@@ -567,15 +632,18 @@
 				2F52F2F826B7A4910046A1AA /* ExpenseOverview.swift in Sources */,
 				2F52F2F226B798980046A1AA /* SampleCoreDataSave.swift in Sources */,
 				2F52F32426B7EBC70046A1AA /* ProductSoldCard.swift in Sources */,
+				2FB41BCA26B8F2200035B62B /* ActionButtonCard.swift in Sources */,
 				2F52F31D26B7E9720046A1AA /* MonthlyExpenseCard.swift in Sources */,
 				2F52F2FB26B7A49C0046A1AA /* Tokopedia.swift in Sources */,
 				2F18858026B252560067E82D /* SampleView.swift in Sources */,
+				2FB41BBC26B8F1330035B62B /* ExpenseList.swift in Sources */,
 				2F52F31F26B7E9870046A1AA /* NetIncomeCard.swift in Sources */,
 				2F52F32726B81ECD0046A1AA /* PieChartLegend.swift in Sources */,
 				2F52F33226B82FF00046A1AA /* ExpenseTipsCard.swift in Sources */,
 				2F18857D26B252370067E82D /* MiddleBarMenu.swift in Sources */,
 				2F832F0A26B3E6F000426643 /* HomeNavigationOptions.swift in Sources */,
 				2F764DB926A7C254005B0513 /* CashdeckApp.swift in Sources */,
+				2FB41BC426B8F1F60035B62B /* CashInformationCard.swift in Sources */,
 				2F52F2EF26B796370046A1AA /* PersistenceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -584,6 +652,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FB41BC826B8F2130035B62B /* ProductInformationCard.swift in Sources */,
 				2F832F1526B4439400426643 /* SideBarButton.swift in Sources */,
 				2F764DDA26A921A3005B0513 /* BlurWindow.swift in Sources */,
 				2F52F2ED26B7950D0046A1AA /* CashdeckData.xcdatamodeld in Sources */,
@@ -599,15 +668,18 @@
 				2F52F2FC26B7A49C0046A1AA /* Tokopedia.swift in Sources */,
 				2F18858126B252560067E82D /* SampleView.swift in Sources */,
 				2F52F32526B7EBC70046A1AA /* ProductSoldCard.swift in Sources */,
+				2FB41BCB26B8F2200035B62B /* ActionButtonCard.swift in Sources */,
 				2F52F32026B7EB910046A1AA /* HomeOverview.swift in Sources */,
 				2F52F32226B7EB970046A1AA /* MonthlyExpenseCard.swift in Sources */,
 				2F18857E26B252370067E82D /* MiddleBarMenu.swift in Sources */,
+				2FB41BBD26B8F1330035B62B /* ExpenseList.swift in Sources */,
 				2F52F31526B7CD1C0046A1AA /* PieSliceView.swift in Sources */,
 				2F52F32826B81ECD0046A1AA /* PieChartLegend.swift in Sources */,
 				2F52F33326B82FF00046A1AA /* ExpenseTipsCard.swift in Sources */,
 				2F52F31826B7CE670046A1AA /* PieChartView.swift in Sources */,
 				2F832F0B26B3E6F000426643 /* HomeNavigationOptions.swift in Sources */,
 				2F764DBA26A7C254005B0513 /* CashdeckApp.swift in Sources */,
+				2FB41BC526B8F1F60035B62B /* CashInformationCard.swift in Sources */,
 				2F52F2F026B796370046A1AA /* PersistenceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -761,7 +833,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PKF8ACHM24;
+				DEVELOPMENT_TEAM = UFNNYX499Q;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -783,7 +855,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PKF8ACHM24;
+				DEVELOPMENT_TEAM = UFNNYX499Q;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -808,7 +880,7 @@
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = PKF8ACHM24;
+				DEVELOPMENT_TEAM = UFNNYX499Q;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = macOS/Info.plist;
@@ -832,7 +904,7 @@
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = PKF8ACHM24;
+				DEVELOPMENT_TEAM = UFNNYX499Q;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = macOS/Info.plist;
@@ -853,7 +925,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H9X3B7ZFUK;
+				DEVELOPMENT_TEAM = UFNNYX499Q;
 				INFOPLIST_FILE = "Tests iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -875,7 +947,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H9X3B7ZFUK;
+				DEVELOPMENT_TEAM = UFNNYX499Q;
 				INFOPLIST_FILE = "Tests iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -899,7 +971,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = H9X3B7ZFUK;
+				DEVELOPMENT_TEAM = UFNNYX499Q;
 				INFOPLIST_FILE = "Tests macOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -921,7 +993,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = H9X3B7ZFUK;
+				DEVELOPMENT_TEAM = UFNNYX499Q;
 				INFOPLIST_FILE = "Tests macOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
