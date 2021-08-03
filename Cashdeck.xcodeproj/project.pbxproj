@@ -61,6 +61,8 @@
 		2F832F1526B4439400426643 /* SideBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F832F1326B4439400426643 /* SideBarButton.swift */; };
 		F73F69AC26B8E90800CD9642 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73F69AB26B8E90800CD9642 /* CoreDataManager.swift */; };
 		F73F69AD26B8E90800CD9642 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73F69AB26B8E90800CD9642 /* CoreDataManager.swift */; };
+		F73F69B726B996E600CD9642 /* ProductSoldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73F69B626B996E600CD9642 /* ProductSoldView.swift */; };
+		F73F69B826B996E600CD9642 /* ProductSoldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73F69B626B996E600CD9642 /* ProductSoldView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +120,7 @@
 		2F832F0F26B3E70500426643 /* ExpenseNavigationOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseNavigationOptions.swift; sourceTree = "<group>"; };
 		2F832F1326B4439400426643 /* SideBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarButton.swift; sourceTree = "<group>"; };
 		F73F69AB26B8E90800CD9642 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		F73F69B626B996E600CD9642 /* ProductSoldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSoldView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -416,6 +419,7 @@
 		F73F69B026B9124A00CD9642 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F73F69B626B996E600CD9642 /* ProductSoldView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -592,6 +596,7 @@
 				2F52F32F26B82FDD0046A1AA /* RecentExpenseCard.swift in Sources */,
 				2F52F30B26B7CC780046A1AA /* HomeOverview.swift in Sources */,
 				2F832EF726B271EA00426643 /* MainView.swift in Sources */,
+				F73F69B726B996E600CD9642 /* ProductSoldView.swift in Sources */,
 				2F832F1026B3E70500426643 /* ExpenseNavigationOptions.swift in Sources */,
 				2F832F0026B31A6800426643 /* CardMenuButton.swift in Sources */,
 				2F52F2F526B7A25A0046A1AA /* SampleVStack.swift in Sources */,
@@ -624,6 +629,7 @@
 				2F52F33026B82FDD0046A1AA /* RecentExpenseCard.swift in Sources */,
 				2F832F1126B3E70500426643 /* ExpenseNavigationOptions.swift in Sources */,
 				2F832F0126B31A6800426643 /* CardMenuButton.swift in Sources */,
+				F73F69B826B996E600CD9642 /* ProductSoldView.swift in Sources */,
 				2F52F32126B7EB940046A1AA /* NetIncomeCard.swift in Sources */,
 				2F52F2F626B7A25A0046A1AA /* SampleVStack.swift in Sources */,
 				2F52F2F926B7A4910046A1AA /* ExpenseOverview.swift in Sources */,
