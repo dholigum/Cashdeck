@@ -16,6 +16,7 @@ struct CashdeckApp: App {
             MainView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .background(Color("MainColor"))
+                .preferredColorScheme(.light)
         }
         .windowStyle(HiddenTitleBarWindowStyle())
     }

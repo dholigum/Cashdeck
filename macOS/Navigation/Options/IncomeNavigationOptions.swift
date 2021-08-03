@@ -15,13 +15,13 @@ struct IncomeNavigationOptions {
         (UUID(), "Tokopedia", "tokopedia", .tokopedia),
         (UUID(), "Shopee", "shopee", .shopee)
     ]
-
+    @ViewBuilder
     static func buildView(for option: Option) -> some View {
         switch option.type {
         case .tokopedia:
-            return Text("Main Option selected\n\(option.value)")
+            Tokopedia()
         case .shopee:
-            return Text("Main Option selected\n\(option.value)")
+            Text("Main Option selected\n\(option.value)")
         }
     }
 }
