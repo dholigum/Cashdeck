@@ -12,6 +12,8 @@ struct ActionButtonCard: View {
     let icon: String
     let title: String
     
+    @Binding var isPressed: Bool
+    
     var body: some View {
         HStack(spacing: 8) {
             Image(systemName: icon)
@@ -22,15 +24,9 @@ struct ActionButtonCard: View {
         }
         .frame(height: 44)
         .padding(.horizontal)
-        .background(Color.white)
-        .cornerRadius(16)
+        .background(isPressed ? Color("TapedMenuColor") : Color.white)
+        .cornerRadius(12)
         .clipped()
         .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.15), radius: 4, x: 2, y: 2)
-    }
-}
-
-struct ActionButtonCard_Previews: PreviewProvider {
-    static var previews: some View {
-        ActionButtonCard(icon: "house", title: "Home")
     }
 }

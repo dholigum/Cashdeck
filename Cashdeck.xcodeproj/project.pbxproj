@@ -69,6 +69,10 @@
 		2FB41BC826B8F2130035B62B /* ProductInformationCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB41BC626B8F2130035B62B /* ProductInformationCard.swift */; };
 		2FB41BCA26B8F2200035B62B /* ActionButtonCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB41BC926B8F2200035B62B /* ActionButtonCard.swift */; };
 		2FB41BCB26B8F2200035B62B /* ActionButtonCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB41BC926B8F2200035B62B /* ActionButtonCard.swift */; };
+		2FB41BD026B8F63E0035B62B /* RecentExpenseTableCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB41BCF26B8F63E0035B62B /* RecentExpenseTableCard.swift */; };
+		2FB41BD126B8F63E0035B62B /* RecentExpenseTableCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB41BCF26B8F63E0035B62B /* RecentExpenseTableCard.swift */; };
+		2FB41BD326B8FE4F0035B62B /* AddExpenseSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB41BD226B8FE4F0035B62B /* AddExpenseSheet.swift */; };
+		2FB41BD426B8FE4F0035B62B /* AddExpenseSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB41BD226B8FE4F0035B62B /* AddExpenseSheet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +134,8 @@
 		2FB41BC326B8F1F60035B62B /* CashInformationCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashInformationCard.swift; sourceTree = "<group>"; };
 		2FB41BC626B8F2130035B62B /* ProductInformationCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInformationCard.swift; sourceTree = "<group>"; };
 		2FB41BC926B8F2200035B62B /* ActionButtonCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButtonCard.swift; sourceTree = "<group>"; };
+		2FB41BCF26B8F63E0035B62B /* RecentExpenseTableCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentExpenseTableCard.swift; sourceTree = "<group>"; };
+		2FB41BD226B8FE4F0035B62B /* AddExpenseSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -437,6 +443,8 @@
 		2FB41BBE26B8F1460035B62B /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				2FB41BCF26B8F63E0035B62B /* RecentExpenseTableCard.swift */,
+				2FB41BD226B8FE4F0035B62B /* AddExpenseSheet.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -616,6 +624,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FB41BD026B8F63E0035B62B /* RecentExpenseTableCard.swift in Sources */,
 				2FB41BC726B8F2130035B62B /* ProductInformationCard.swift in Sources */,
 				2F52F31726B7CE1A0046A1AA /* PieChartView.swift in Sources */,
 				2F832F1426B4439400426643 /* SideBarButton.swift in Sources */,
@@ -630,6 +639,7 @@
 				2F52F2F526B7A25A0046A1AA /* SampleVStack.swift in Sources */,
 				2F52F31426B7CCD30046A1AA /* PieSliceView.swift in Sources */,
 				2F52F2F826B7A4910046A1AA /* ExpenseOverview.swift in Sources */,
+				2FB41BD326B8FE4F0035B62B /* AddExpenseSheet.swift in Sources */,
 				2F52F2F226B798980046A1AA /* SampleCoreDataSave.swift in Sources */,
 				2F52F32426B7EBC70046A1AA /* ProductSoldCard.swift in Sources */,
 				2FB41BCA26B8F2200035B62B /* ActionButtonCard.swift in Sources */,
@@ -652,6 +662,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FB41BD126B8F63E0035B62B /* RecentExpenseTableCard.swift in Sources */,
 				2FB41BC826B8F2130035B62B /* ProductInformationCard.swift in Sources */,
 				2F832F1526B4439400426643 /* SideBarButton.swift in Sources */,
 				2F764DDA26A921A3005B0513 /* BlurWindow.swift in Sources */,
@@ -666,6 +677,7 @@
 				2F52F2F926B7A4910046A1AA /* ExpenseOverview.swift in Sources */,
 				2F52F2F326B798980046A1AA /* SampleCoreDataSave.swift in Sources */,
 				2F52F2FC26B7A49C0046A1AA /* Tokopedia.swift in Sources */,
+				2FB41BD426B8FE4F0035B62B /* AddExpenseSheet.swift in Sources */,
 				2F18858126B252560067E82D /* SampleView.swift in Sources */,
 				2F52F32526B7EBC70046A1AA /* ProductSoldCard.swift in Sources */,
 				2FB41BCB26B8F2200035B62B /* ActionButtonCard.swift in Sources */,
