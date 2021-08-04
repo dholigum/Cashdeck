@@ -69,6 +69,7 @@
 		F73F69C526B99F0C00CD9642 /* TotalSold.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73F69C326B99F0C00CD9642 /* TotalSold.swift */; };
 		F76A1A5726BA318C00CDADFB /* ProductSoldList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A1A5626BA318C00CDADFB /* ProductSoldList.swift */; };
 		F76A1A5826BA318C00CDADFB /* ProductSoldList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A1A5626BA318C00CDADFB /* ProductSoldList.swift */; };
+		F7AA51DF26BA472800BE00B6 /* ProductSoldModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AA51DE26BA472800BE00B6 /* ProductSoldModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +131,7 @@
 		F73F69C026B99B8800CD9642 /* TotalNetIncome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalNetIncome.swift; sourceTree = "<group>"; };
 		F73F69C326B99F0C00CD9642 /* TotalSold.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalSold.swift; sourceTree = "<group>"; };
 		F76A1A5626BA318C00CDADFB /* ProductSoldList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSoldList.swift; sourceTree = "<group>"; };
+		F7AA51DE26BA472800BE00B6 /* ProductSoldModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSoldModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -422,6 +424,7 @@
 		F73F69AF26B9123C00CD9642 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F7AA51DE26BA472800BE00B6 /* ProductSoldModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -641,6 +644,7 @@
 				2F52F31F26B7E9870046A1AA /* NetIncomeCard.swift in Sources */,
 				2F52F32726B81ECD0046A1AA /* PieChartLegend.swift in Sources */,
 				F73F69AC26B8E90800CD9642 /* CoreDataManager.swift in Sources */,
+				F7AA51DF26BA472800BE00B6 /* ProductSoldModel.swift in Sources */,
 				2F52F33226B82FF00046A1AA /* ExpenseTipsCard.swift in Sources */,
 				2F18857D26B252370067E82D /* MiddleBarMenu.swift in Sources */,
 				2F832F0A26B3E6F000426643 /* HomeNavigationOptions.swift in Sources */,
