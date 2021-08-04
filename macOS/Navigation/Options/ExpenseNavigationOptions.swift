@@ -25,7 +25,7 @@ struct ExpenseNavigationOptions {
         case .analytics:
             Text("Main Option selected\n\(option.value)")
         case .expenseList:
-            Text("Main Option selected\n\(option.value)")
+            ExpenseList()
         }
     }
 }

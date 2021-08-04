@@ -21,7 +21,7 @@ struct CardMenuButton: View {
             
             HStack {
                 Text(title)
-                    .font(Font.title3.weight(.bold))
+                    .font(Font.custom("SFProDisplay-Semibold", size: 18))
                     .padding(.vertical)
                     .padding(.leading)
                 

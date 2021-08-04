@@ -9,7 +9,12 @@ import SwiftUI
 
 struct ExpenseOverview: View {
     var body: some View {
-        VStack(spacing: 36) {
+        VStack(alignment: .leading, spacing: 10) {
+            Text("Expense Overview")
+                .font(Font.custom("SFProDisplay-Bold", size: 24))
+                .padding(.bottom)
+                .foregroundColor(Color("AccentColor2"))
+            
             HStack(spacing: 24) {
                 MonthlyExpenseCard()
                 RecentExpenseCard()
@@ -18,6 +23,8 @@ struct ExpenseOverview: View {
                 ExpenseTipsCard()
             }
         }
+        .padding(.top, -40)
+        .padding(.horizontal, -2)
     }
 }
 
