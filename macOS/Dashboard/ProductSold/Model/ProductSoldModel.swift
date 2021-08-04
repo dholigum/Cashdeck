@@ -22,16 +22,70 @@ class ProductSoldModel {
         CoreDataManager.sharedManager.saveContext()
     }
     
-    func insertTransactionDetail(price: Int64, qty: Int64) {
+    func insertTransactionDetail(price: Int64, qty: Int64, product: Products, transaction: Transaction) {
         let newTransactionDetail = TransactionDetail(context: self.context)
         newTransactionDetail.price = price
         newTransactionDetail.quantity = qty
-        
-//        newTransactionDetail.td_product =
-        
+        newTransactionDetail.td_product = product
+        newTransactionDetail.td_transaction = transaction
+        CoreDataManager.sharedManager.saveContext()
     }
     
-    func connectTDProduct(td: TransactionDetail, product: Products) {
-        td.td_product = product
+    func insertTransaction(channel: Channel) -> Transaction {
+        let newTransaction = Transaction(context: context)
+        newTransaction.date = Date()
+        newTransaction.transaction_channel = channel
+        CoreDataManager.sharedManager.saveContext()
+        return newTransaction
+    }
+    
+    func insertChannel() -> Channel {
+        let newChannel = Channel(context: context)
+        newChannel.name = "Tokopedia"
+        newChannel.maxShippingFee = 10000
+        newChannel.productFee = 1.5
+        newChannel.shippingFee = 2.5
+        CoreDataManager.sharedManager.saveContext()
+        return newChannel
+    }
+    
+    func getProduct(sku: String) -> Products {
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Products")
+        fetchRequest.predicate = NSPredicate(format: "sku == %@", sku)
+        do {
+            let item = try context.fetch(fetchRequest)
+            let data = item as! [Products]
+            return data[0]
+        }catch {
+            print(error)
+        }
+        return Products()
+    }
+    
+    func getAllDetail() -> [TransactionDetail] {
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "TransactionDetail")
+        
+        do {
+            let data = try context.fetch(fetchRequest) as! [TransactionDetail]
+            return data
+        }
+        catch let error  as NSError {
+            print("\(error)")
+        }
+        
+        return []
+    }
+    
+    func getChannel(name: String) -> Channel {
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Channel")
+        fetchRequest.predicate = NSPredicate(format: "name == %@", name)
+        do {
+            let item = try context.fetch(fetchRequest)
+            let data = item as! [Channel]
+            return data[0]
+        }catch {
+            print(error)
+        }
+        return Channel()
     }
 }
