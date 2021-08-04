@@ -22,6 +22,7 @@
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="price" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="quantity" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="repeatEvery" optional="YES" attributeType="String"/>
         <relationship name="expense_category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="category_expense" inverseEntity="Category"/>
     </entity>
     <entity name="Products" representedClassName="Products" syncable="YES" codeGenerationType="class">
@@ -60,7 +61,7 @@
         <element name="Alias" positionX="-63" positionY="-18" width="128" height="74"/>
         <element name="Category" positionX="-54" positionY="9" width="128" height="59"/>
         <element name="Channel" positionX="-18" positionY="27" width="128" height="119"/>
-        <element name="Expense" positionX="-36" positionY="18" width="128" height="104"/>
+        <element name="Expense" positionX="-36" positionY="18" width="128" height="119"/>
         <element name="Products" positionX="0" positionY="45" width="128" height="134"/>
         <element name="Transaction" positionX="18" positionY="63" width="128" height="74"/>
         <element name="TransactionDetail" positionX="36" positionY="81" width="128" height="89"/>
