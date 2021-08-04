@@ -18,7 +18,7 @@ struct SideBarButton: View {
         HStack {
             Image(systemName: iconImg)
                 .font(.system(size: 16))
-                .foregroundColor(selectedTabButton == title ? .white : Color("TabButtonColor"))
+                .foregroundColor(selectedTabButton == title ? .white : Color("OrangeColor"))
                 .padding(.horizontal)
                 .frame(width: 16)
             

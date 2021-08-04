@@ -22,7 +22,6 @@ struct ExpenseList: View {
             ActionButtonCard(icon: "plus.circle", title: "Add Expense", isPressed: $showAddExpenseSheet)
                 .onTapGesture {
                     self.showAddExpenseSheet = true
-                    print("showAddExpenseSheet")
                 }
                 .sheet(isPresented: $showAddExpenseSheet) {
                     AddExpenseSheet(isVisible: $showAddExpenseSheet)

@@ -17,7 +17,7 @@ struct ActionButtonCard: View {
     var body: some View {
         HStack(spacing: 8) {
             Image(systemName: icon)
-                .foregroundColor(Color("TabButtonColor"))
+                .foregroundColor(Color("OrangeColor"))
                 .font(.system(size: 16))
             Text(title)
                 .font(Font.title3.weight(.medium))
