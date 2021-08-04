@@ -15,7 +15,7 @@ struct MainView: View {
         NavigationView {
             List {
                 Text("CashDeck")
-                    .font(Font.title.weight(.heavy))
+                    .font(Font.custom("SFProDisplay-Bold", size: 24))
                     .padding(.vertical)
                     .foregroundColor(Color("AccentColor2"))
                 

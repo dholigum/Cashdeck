@@ -23,7 +23,7 @@ struct SideBarButton: View {
                 .frame(width: 16)
             
             Text(title)
-                .font(Font.title3.weight(.medium))
+                .font(Font.custom("SFProDisplay-Semibold", size: 16))
         }
     }
 }

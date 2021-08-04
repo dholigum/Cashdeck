@@ -15,7 +15,7 @@ struct WithCurrencyLabel: ViewModifier {
         HStack(alignment: .bottom) {
             Text(currecy)
                 .foregroundColor(Color("OrangeColor"))
-                .font(Font.title2.weight(.semibold))
+                .font(Font.custom("SFProDisplay-Semibold", size: 24))
             content
         }
     }

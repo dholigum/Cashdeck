@@ -14,7 +14,7 @@ struct ExpenseList: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             Text("Expense List")
-                .font(Font.title.weight(.heavy))
+                .font(Font.custom("SFProDisplay-Bold", size: 24))
                 .padding(.bottom)
                 .foregroundColor(Color("AccentColor2"))
             
