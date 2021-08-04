@@ -67,6 +67,8 @@
 		F73F69C226B99B8800CD9642 /* TotalNetIncome.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73F69C026B99B8800CD9642 /* TotalNetIncome.swift */; };
 		F73F69C426B99F0C00CD9642 /* TotalSold.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73F69C326B99F0C00CD9642 /* TotalSold.swift */; };
 		F73F69C526B99F0C00CD9642 /* TotalSold.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73F69C326B99F0C00CD9642 /* TotalSold.swift */; };
+		F76A1A5726BA318C00CDADFB /* ProductSoldList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A1A5626BA318C00CDADFB /* ProductSoldList.swift */; };
+		F76A1A5826BA318C00CDADFB /* ProductSoldList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A1A5626BA318C00CDADFB /* ProductSoldList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +129,7 @@
 		F73F69B626B996E600CD9642 /* ProductSoldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSoldView.swift; sourceTree = "<group>"; };
 		F73F69C026B99B8800CD9642 /* TotalNetIncome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalNetIncome.swift; sourceTree = "<group>"; };
 		F73F69C326B99F0C00CD9642 /* TotalSold.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalSold.swift; sourceTree = "<group>"; };
+		F76A1A5626BA318C00CDADFB /* ProductSoldList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSoldList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -451,6 +454,7 @@
 			children = (
 				F73F69C026B99B8800CD9642 /* TotalNetIncome.swift */,
 				F73F69C326B99F0C00CD9642 /* TotalSold.swift */,
+				F76A1A5626BA318C00CDADFB /* ProductSoldList.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -631,6 +635,7 @@
 				2F52F2F226B798980046A1AA /* SampleCoreDataSave.swift in Sources */,
 				2F52F32426B7EBC70046A1AA /* ProductSoldCard.swift in Sources */,
 				2F52F31D26B7E9720046A1AA /* MonthlyExpenseCard.swift in Sources */,
+				F76A1A5726BA318C00CDADFB /* ProductSoldList.swift in Sources */,
 				2F52F2FB26B7A49C0046A1AA /* Tokopedia.swift in Sources */,
 				2F18858026B252560067E82D /* SampleView.swift in Sources */,
 				2F52F31F26B7E9870046A1AA /* NetIncomeCard.swift in Sources */,
@@ -666,6 +671,7 @@
 				2F18858126B252560067E82D /* SampleView.swift in Sources */,
 				2F52F32526B7EBC70046A1AA /* ProductSoldCard.swift in Sources */,
 				2F52F32026B7EB910046A1AA /* HomeOverview.swift in Sources */,
+				F76A1A5826BA318C00CDADFB /* ProductSoldList.swift in Sources */,
 				2F52F32226B7EB970046A1AA /* MonthlyExpenseCard.swift in Sources */,
 				2F18857E26B252370067E82D /* MiddleBarMenu.swift in Sources */,
 				2F52F31526B7CD1C0046A1AA /* PieSliceView.swift in Sources */,
