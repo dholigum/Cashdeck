@@ -14,13 +14,10 @@ struct ProductSoldList: View {
     var body: some View {
         VStack(alignment: .leading) {
             
-//            GeometryReader { geometry in
                 Text("Best Seller")
                     .font(Font.custom("SFProDisplay-Semibold", size: 18))
                     .foregroundColor(Color("AccentColor2"))
                     .padding(.bottom, 24)
-    //                .frame(width: 150, alignment: .trailing)
-            
             
                 HStack {
                     Text("SKU")
@@ -29,7 +26,7 @@ struct ProductSoldList: View {
                     
                     Text("Name")
                         .font(Font.custom("SFProDisplay-Semibold", size: 16))
-                        .frame(minWidth: 330, alignment: .leading)
+                        .frame(minWidth: 350, alignment: .leading)
                     
                     Text("Colour")
                         .font(Font.custom("SFProDisplay-Semibold", size: 16))
@@ -48,23 +45,23 @@ struct ProductSoldList: View {
                         .frame(minWidth: 120, alignment: .leading)
                 }
                 .padding(.bottom, 16)
-
-            ForEach(self.data.soldData, id: \.self) { data in
-                HStack {
-                    
-                    if let product = data.td_product, let sku = product.sku {
-                        Text(sku)
-                            .frame(width: 150, alignment: .leading)
-                        Text(product.name!)
+            ScrollView {
+                ForEach(self.data.soldData, id: \.self) { data in
+                    HStack {
+                        
+                        if let product = data.td_product, let sku = product.sku, let productName = product.name {
+                            Text(sku)
+                                .frame(width: 150, alignment: .leading)
+                            Text(productName)
+                                .frame(minWidth: 330, alignment: .leading)
+                        }
+                        
                     }
-                    
                 }
             }
-            
             Spacer()
-            
         }
-        .frame(minWidth: 1009, maxWidth: .infinity, minHeight: 650.94, maxHeight: .infinity, alignment: .leading)
+        .frame(minWidth: 1009, maxWidth: .infinity, minHeight: 650.94, maxHeight: 700, alignment: .leading)
         .background(Color.white)
         .cornerRadius(15)
         .clipped()
