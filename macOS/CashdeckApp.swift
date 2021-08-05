@@ -9,7 +9,11 @@ import SwiftUI
 
 @main
 struct CashdeckApp: App {
-    let persistenceController = PersistenceController.shared
+    
+    init() {
+        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        print(urls[urls.count - 1] as URL)
+    }
     
     var body: some Scene {
         WindowGroup {
@@ -17,6 +21,7 @@ struct CashdeckApp: App {
                 .preferredColorScheme(.light)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .background(Color("MainColor"))
+                .preferredColorScheme(.light)
         }
         .windowStyle(HiddenTitleBarWindowStyle())
     }

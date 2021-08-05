@@ -16,15 +16,16 @@ struct ExpenseNavigationOptions {
         (UUID(), "Analytics", "expense-analytics", .analytics),
         (UUID(), "Expense List", "expense-list", .expenseList),
     ]
-
+    
+    @ViewBuilder
     static func buildView(for option: Option) -> some View {
         switch option.type {
         case .overview:
-            return Text("Main Option selected\n\(option.value)")
+            ExpenseOverview()
         case .analytics:
-            return Text("Main Option selected\n\(option.value)")
+            Text("Main Option selected\n\(option.value)")
         case .expenseList:
-            return Text("Main Option selected\n\(option.value)")
+            ExpenseList()
         }
     }
 }

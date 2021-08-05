@@ -24,11 +24,11 @@ struct HomeNavigationOptions {
         case .overview:
             HomeOverview()
         case .analytics:
-            SampleVStack()
+            HomeOverview()
         case .productList:
             PieChartView(values: [1300, 500, 300], names: ["Rent", "Transport", "Education"], formatter: {value in String(format: "$%.2f", value)})
         case .productSold:
-            Text("Main Option selected\n\(option.value)")
+            ProductSoldView()
         }
     }
 }

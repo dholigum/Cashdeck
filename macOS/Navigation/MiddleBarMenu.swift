@@ -23,7 +23,7 @@ struct MiddleBarMenu: View {
                 ScrollView{
                     VStack (alignment:.leading) {
                         Text(seletedBar)
-                            .font(Font.title.weight(.heavy))
+                            .font(Font.custom("SFProDisplay-Bold", size: 24))
                             .padding(.top, 19)
                             .padding(.bottom, 14)
                             .padding(.leading)
@@ -51,7 +51,7 @@ struct MiddleBarMenu: View {
                 ScrollView{
                     VStack (alignment:.leading) {
                         Text(seletedBar)
-                            .font(Font.title.weight(.heavy))
+                            .font(Font.custom("SFProDisplay-Bold", size: 24))
                             .padding(.top, 19)
                             .padding(.bottom, 14)
                             .padding(.leading)
@@ -79,7 +79,7 @@ struct MiddleBarMenu: View {
                 ScrollView{
                     VStack (alignment:.leading) {
                         Text(seletedBar)
-                            .font(Font.title.weight(.heavy))
+                            .font(Font.custom("SFProDisplay-Bold", size: 24))
                             .padding(.top, 19)
                             .padding(.bottom, 14)
                             .padding(.leading)
