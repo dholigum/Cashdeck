@@ -10,8 +10,8 @@ import CoreXLSX
 
 struct modalImportFile: View {
     @Binding var isVisible: Bool
-    @Binding var listTrans: [transactionModel]
-    @Binding var listTransTemp: [TransactionDetailTemp]
+    @Binding var showmodalSync: Bool
+    @ObservedObject var TransDetailVM = TransDetailViewModel()
     let context = CoreDataManager.sharedManager.persistentContainer.viewContext
     
     var body: some View {
@@ -96,16 +96,19 @@ extension modalImportFile {
                                 let productName = row.cells[6].stringValue(sharedString!)!
                                 let qyt = Int64(row.cells[7].stringValue(sharedString!)!)
                                 let price = Int64(row.cells[10].stringValue(sharedString!)!)
+                                let productId = row.cells[5].stringValue(sharedString!)!
                                 let SKU = row.cells[8].stringValue(sharedString!)
                                 let orderId = row.cells[1].stringValue(sharedString!)
-
-                                let newTrans = transactionModel(date: date!, productName: productName, qyt: qyt!, price: price!, SKU: SKU!, orderId: orderId!)
-                                self.listTrans.append(newTrans)
+                                let newTrans = transactionModel(date: date!, productName: productName, qyt: qyt!, price: price!, SKU: SKU ?? productId, orderId: orderId!)
+                                TransDetailVM.addTransTemp(newTrans)
                             }
                             i += 1
                         }
                     }
                 }
+                try context.save()
+                isVisible = false
+                showmodalSync = true
             } catch {
               print(error)
             }

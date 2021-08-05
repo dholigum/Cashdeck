@@ -10,12 +10,13 @@ import SwiftUI
 struct SyncDataModal: View {
     @Binding var listTransTemp: [TransactionDetailTemp]
     @Binding var showModalSync: Bool
+    @Binding var showModal: Bool
     @ObservedObject var ProductViewModel = ProductviewModel()
     
     var body: some View {
         VStack {
             HStack {
-                Button(action: {showModalSync = false}, label: {
+                Button(action: {showModalSync = false; showModal = false}, label: {
                     Text("Cancel")
                         .font(.system(size: 17))
                         .padding(.init(top: 18, leading: 18, bottom: 18, trailing: 18))
@@ -94,7 +95,7 @@ struct SyncDataModal: View {
                     }
                 }
             }
-            .frame(width: 824)
+            .frame(width: 800)
             .background(Color.white)
             .cornerRadius(15)
             .padding()
@@ -107,6 +108,5 @@ struct SyncDataModal: View {
 extension SyncDataModal {
     func fetchData () {
         ProductViewModel.fetchProducts()
-        let products = ProductViewModel.listProducts
     }
 }

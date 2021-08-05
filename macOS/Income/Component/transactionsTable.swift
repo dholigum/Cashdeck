@@ -11,7 +11,6 @@ import SwiftUI
 struct transactionsTable: View {
     @State var date: Date
     @Binding var listTrans: [transactionModel]
-    @Binding var listTransTemp: [TransactionDetailTemp]
     
     var body: some View {
         VStack {
@@ -86,29 +85,11 @@ struct transactionsTable: View {
                         }
                     }
                 }
-                if listTransTemp.count > 0 {
-                    Text(listTransTemp[0].productName!)
-//                    List (listTransTemp) { trans in
-//                        Text("Hello")
-//                    }
-//                    ForEach(listTransTemp) { transTemp in
-//                        HStack {
-//
-//                            Spacer()
-//                        }
-//                    }
-                }
-                
             }
-            
             Spacer()
         }
         .background(Color.white)
         .cornerRadius(10)
         .padding(10)
     }
-}
-
-extension transactionsTable {
-    
 }

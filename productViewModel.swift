@@ -15,7 +15,6 @@ class ProductviewModel: ObservableObject {
     func fetchProducts () {
         do {
             self.listProducts = try context.fetch(Products.fetchRequest())
-            print(self.listProducts)
         }
         catch {
             print(error.localizedDescription)

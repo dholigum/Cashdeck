@@ -45,11 +45,7 @@ struct Tokopedia: View {
                         showModal.toggle()
                     }
                     .sheet(isPresented: $showModal, content: {
-                        if listTrans.count > 0 {
-                            SyncDataModal(listTransTemp: $listTransTemp.listTransTemp, showModalSync: $showModalSync)
-                        } else {
-                            modalImportFile(isVisible: $showModal, listTrans: $listTrans , listTransTemp: $listTransTemp.listTransTemp)
-                        }
+                        modalImportFile(isVisible: $showModal, showmodalSync: $showModalSync)
                     })
                 if listTransTemp.listTransTemp.count > 0 {
                     primaryBtn(imageName: "arrow.triangle.2.circlepath.circle", title: "Sync Data", width: 147)
@@ -57,13 +53,13 @@ struct Tokopedia: View {
                             showModalSync.toggle()
                         }
                         .sheet(isPresented: $showModalSync, content: {
-                            SyncDataModal(listTransTemp: $listTransTemp.listTransTemp, showModalSync: $showModalSync)
+                            SyncDataModal(listTransTemp: $listTransTemp.listTransTemp, showModalSync: $showModalSync, showModal: $showModal)
                         })
                 }
                 Spacer()
             } .padding(.top, 30)
             HStack {
-                transactionsTable(date: Date(), listTrans: $listTrans, listTransTemp: $listTransTemp.listTransTemp)
+                transactionsTable(date: Date(), listTrans: $listTrans)
             }
             .padding(.top, 20)
             Spacer()
