@@ -78,6 +78,12 @@
 		2FB41BE726B9E0840035B62B /* AmountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB41BE626B9E0840035B62B /* AmountViewModel.swift */; };
 		2FB41BE826B9E0840035B62B /* AmountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB41BE626B9E0840035B62B /* AmountViewModel.swift */; };
 		3E1C911C6AE4A4DB272D605F /* Pods_Cashdeck__iOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C335E609120D79D88B31498D /* Pods_Cashdeck__iOS_.framework */; };
+		51E27EB526BB9838009D0CB6 /* BarChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E27EB226BB9838009D0CB6 /* BarChartCell.swift */; };
+		51E27EB626BB9838009D0CB6 /* ChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E27EB326BB9838009D0CB6 /* ChartData.swift */; };
+		51E27EB726BB9838009D0CB6 /* BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E27EB426BB9838009D0CB6 /* BarView.swift */; };
+		51E27EB826BB9846009D0CB6 /* BarChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E27EB226BB9838009D0CB6 /* BarChartCell.swift */; };
+		51E27EB926BB9848009D0CB6 /* BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E27EB426BB9838009D0CB6 /* BarView.swift */; };
+		51E27EBA26BB984B009D0CB6 /* ChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E27EB326BB9838009D0CB6 /* ChartData.swift */; };
 		ACC8A41D7D9E95F6BEF05EB6 /* Pods_Cashdeck__macOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F2CB752ADBED017B126FD31 /* Pods_Cashdeck__macOS_.framework */; };
 		F346178D26B8A53F0005136B /* CardReports.swift in Sources */ = {isa = PBXBuildFile; fileRef = F346178C26B8A53F0005136B /* CardReports.swift */; };
 		F346179026B8AE6F0005136B /* primaryBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = F346178F26B8AE6F0005136B /* primaryBtn.swift */; };
@@ -162,6 +168,9 @@
 		2FB41BE626B9E0840035B62B /* AmountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountViewModel.swift; sourceTree = "<group>"; };
 		3AD247E402BE1F80A3C3B01C /* Pods-Cashdeck (macOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cashdeck (macOS).debug.xcconfig"; path = "Target Support Files/Pods-Cashdeck (macOS)/Pods-Cashdeck (macOS).debug.xcconfig"; sourceTree = "<group>"; };
 		3F360569D5ED17213BB12E8E /* Pods-Cashdeck (iOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cashdeck (iOS).debug.xcconfig"; path = "Target Support Files/Pods-Cashdeck (iOS)/Pods-Cashdeck (iOS).debug.xcconfig"; sourceTree = "<group>"; };
+		51E27EB226BB9838009D0CB6 /* BarChartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarChartCell.swift; sourceTree = "<group>"; };
+		51E27EB326BB9838009D0CB6 /* ChartData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartData.swift; sourceTree = "<group>"; };
+		51E27EB426BB9838009D0CB6 /* BarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarView.swift; sourceTree = "<group>"; };
 		9F2CB752ADBED017B126FD31 /* Pods_Cashdeck__macOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cashdeck__macOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A28AAB82F35EB1EFE815F97A /* Pods-Cashdeck (macOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cashdeck (macOS).release.xcconfig"; path = "Target Support Files/Pods-Cashdeck (macOS)/Pods-Cashdeck (macOS).release.xcconfig"; sourceTree = "<group>"; };
 		C335E609120D79D88B31498D /* Pods_Cashdeck__iOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cashdeck__iOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -287,6 +296,7 @@
 		2F52F31126B7CCBA0046A1AA /* Chart */ = {
 			isa = PBXGroup;
 			children = (
+				51E27EB126BB97D1009D0CB6 /* BarCharts */,
 				2F52F31226B7CCC10046A1AA /* PieChart */,
 			);
 			path = Chart;
@@ -544,6 +554,16 @@
 				A28AAB82F35EB1EFE815F97A /* Pods-Cashdeck (macOS).release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		51E27EB126BB97D1009D0CB6 /* BarCharts */ = {
+			isa = PBXGroup;
+			children = (
+				51E27EB226BB9838009D0CB6 /* BarChartCell.swift */,
+				51E27EB426BB9838009D0CB6 /* BarView.swift */,
+				51E27EB326BB9838009D0CB6 /* ChartData.swift */,
+			);
+			path = BarCharts;
 			sourceTree = "<group>";
 		};
 		F346178E26B8AD200005136B /* Component */ = {
@@ -860,7 +880,9 @@
 				2F52F31726B7CE1A0046A1AA /* PieChartView.swift in Sources */,
 				2F832F1426B4439400426643 /* SideBarButton.swift in Sources */,
 				2F764DD926A92152005B0513 /* BlurWindow.swift in Sources */,
+				51E27EB626BB9838009D0CB6 /* ChartData.swift in Sources */,
 				2F52F2EC26B7950D0046A1AA /* CashdeckData.xcdatamodeld in Sources */,
+				51E27EB526BB9838009D0CB6 /* BarChartCell.swift in Sources */,
 				2F832F0D26B3E6FA00426643 /* IncomeNavigationOptions.swift in Sources */,
 				F73F69C126B99B8800CD9642 /* TotalNetIncome.swift in Sources */,
 				2F52F32F26B82FDD0046A1AA /* RecentExpenseCard.swift in Sources */,
@@ -889,6 +911,7 @@
 				2F18857D26B252370067E82D /* MiddleBarMenu.swift in Sources */,
 				2F832F0A26B3E6F000426643 /* HomeNavigationOptions.swift in Sources */,
 				2FB41BE126B9C9520035B62B /* StringFormatter.swift in Sources */,
+				51E27EB726BB9838009D0CB6 /* BarView.swift in Sources */,
 				2F764DB926A7C254005B0513 /* CashdeckApp.swift in Sources */,
 				2FB41BC426B8F1F60035B62B /* CashInformationCard.swift in Sources */,
 				2FB41BDB26B9C5490035B62B /* WithTopLabelTextField.swift in Sources */,
@@ -899,6 +922,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51E27EB926BB9848009D0CB6 /* BarView.swift in Sources */,
 				2FB41BD126B8F63E0035B62B /* RecentExpenseTableCard.swift in Sources */,
 				2FB41BE826B9E0840035B62B /* AmountViewModel.swift in Sources */,
 				2FB41BC826B8F2130035B62B /* ProductInformationCard.swift in Sources */,
@@ -910,6 +934,7 @@
 				2F832EF826B271EA00426643 /* MainView.swift in Sources */,
 				F73F69C226B99B8800CD9642 /* TotalNetIncome.swift in Sources */,
 				2F52F33026B82FDD0046A1AA /* RecentExpenseCard.swift in Sources */,
+				51E27EBA26BB984B009D0CB6 /* ChartData.swift in Sources */,
 				2F832F1126B3E70500426643 /* ExpenseNavigationOptions.swift in Sources */,
 				2F832F0126B31A6800426643 /* CardMenuButton.swift in Sources */,
 				F73F69B826B996E600CD9642 /* ProductSoldView.swift in Sources */,
@@ -930,6 +955,7 @@
 				2F52F32226B7EB970046A1AA /* MonthlyExpenseCard.swift in Sources */,
 				2FB3AF1326BADA2200D9C0D8 /* ExpenseModel.swift in Sources */,
 				2F18857E26B252370067E82D /* MiddleBarMenu.swift in Sources */,
+				51E27EB826BB9846009D0CB6 /* BarChartCell.swift in Sources */,
 				2FB41BD826B9C2FB0035B62B /* CustomTextFieldExtension.swift in Sources */,
 				2FB41BBD26B8F1330035B62B /* ExpenseList.swift in Sources */,
 				2F52F31526B7CD1C0046A1AA /* PieSliceView.swift in Sources */,
@@ -1096,7 +1122,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UFNNYX499Q;
+				DEVELOPMENT_TEAM = 7BXW7R92AH;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1119,7 +1145,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UFNNYX499Q;
+				DEVELOPMENT_TEAM = 7BXW7R92AH;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1145,7 +1171,7 @@
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = UFNNYX499Q;
+				DEVELOPMENT_TEAM = 7BXW7R92AH;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = macOS/Info.plist;
@@ -1170,7 +1196,7 @@
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = UFNNYX499Q;
+				DEVELOPMENT_TEAM = 7BXW7R92AH;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = macOS/Info.plist;
@@ -1191,7 +1217,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UFNNYX499Q;
+				DEVELOPMENT_TEAM = 7BXW7R92AH;
 				INFOPLIST_FILE = "Tests iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1213,7 +1239,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UFNNYX499Q;
+				DEVELOPMENT_TEAM = 7BXW7R92AH;
 				INFOPLIST_FILE = "Tests iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1237,7 +1263,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = UFNNYX499Q;
+				DEVELOPMENT_TEAM = 7BXW7R92AH;
 				INFOPLIST_FILE = "Tests macOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1259,7 +1285,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = UFNNYX499Q;
+				DEVELOPMENT_TEAM = 7BXW7R92AH;
 				INFOPLIST_FILE = "Tests macOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -19,7 +19,6 @@ class ExpenseListViewModel: ObservableObject {
         
         newExpense.date = expense.date
         newExpense.name = expense.name
-        newExpense.expense_category = expense.category
         newExpense.quantity = Int64(expense.quantity)
         newExpense.price = Int64(expense.cost)
         newExpense.repeatEvery = expense.repeatEvery

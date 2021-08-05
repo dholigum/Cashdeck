@@ -19,7 +19,7 @@ struct CashdeckApp: App {
         WindowGroup {
             MainView()
                 .preferredColorScheme(.light)
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+ 
                 .background(Color("MainColor"))
                 .preferredColorScheme(.light)
         }
