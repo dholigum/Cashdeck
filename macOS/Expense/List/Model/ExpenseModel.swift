@@ -10,13 +10,13 @@ import Foundation
 class ExpenseModel: Identifiable {
     
     var date: Date
-    var category: Category
+    var category: String
     var name: String
     var quantity: Int
     var cost: Int
     var repeatEvery: String
     
-    init(date: Date, category: Category, name: String, quantity: Int, cost: Int, repeatEvery: String) {
+    init(date: Date, category: String, name: String, quantity: Int, cost: Int, repeatEvery: String) {
         self.date = date
         self.category = category
         self.name = name

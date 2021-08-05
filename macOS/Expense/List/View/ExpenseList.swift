@@ -31,6 +31,7 @@ struct ExpenseList: View {
                 .sheet(isPresented: $showAddExpenseSheet) {
                     AddExpenseSheet(expenseListViewModel: expenseListViewModel, isVisible: $showAddExpenseSheet)
                 }
+            
             RecentExpenseTableCard(expenseData: expenseListViewModel.expenses)
         }
         .padding(.top, -48)

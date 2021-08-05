@@ -41,6 +41,7 @@ struct AddExpenseSheet: View {
             HStack {
                 Button(action: {
                     self.isVisible = false
+                    NSApp.mainWindow?.endSheet(NSApp.keyWindow!)
                 }, label: {
                     Text("Cancel")
                         .font(Font.custom("SFProDisplay-Semibold", size: 16))
@@ -119,11 +120,12 @@ struct AddExpenseSheet: View {
             Button(action: {
                 expenseListViewModel.addExpenseCategory(categories[categoryIndex])
                 
-                expense = ExpenseModel(date: Date(), category: expenseListViewModel.getExpenseCategory(categories[categoryIndex]), name: name, quantity: Int(quantity)!, cost: Int(amount) ?? 0, repeatEvery: repeats[repeatIndex])
+                expense = ExpenseModel(date: Date(), category: categories[categoryIndex], name: name, quantity: Int(quantity)!, cost: Int(amount) ?? 0, repeatEvery: repeats[repeatIndex])
                 
                 expenseListViewModel.addExpense(expense!)
                 
                 self.isVisible = false
+                NSApp.mainWindow?.endSheet(NSApp.keyWindow!)
                 
             }, label: {
                 Text("Save Expense")

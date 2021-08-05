@@ -19,12 +19,25 @@ class ExpenseListViewModel: ObservableObject {
         
         newExpense.date = expense.date
         newExpense.name = expense.name
+        newExpense.category = expense.category
         newExpense.quantity = Int64(expense.quantity)
         newExpense.price = Int64(expense.cost)
         newExpense.repeatEvery = expense.repeatEvery
         CoreDataManager.sharedManager.saveContext()
         
         expenses.append(newExpense)
+    }
+    
+    func getAllExpense() {
+        
+        let fetchRequest: NSFetchRequest<Expense> = Expense.fetchRequest()
+        
+        do {
+            expenses = try context.fetch(fetchRequest) as! [Expense]
+            
+        } catch let error as NSError {
+            print("\(error)")
+        }
     }
     
     func addExpenseCategory(_ name: String) {
@@ -47,17 +60,5 @@ class ExpenseListViewModel: ObservableObject {
             print(error)
         }
         return Category()
-    }
-    
-    func getAllExpense() {
-        
-        let fetchRequest: NSFetchRequest<Expense> = Expense.fetchRequest()
-        
-        do {
-            expenses = try context.fetch(fetchRequest) as! [Expense]
-            
-        } catch let error as NSError {
-            print("\(error)")
-        }
     }
 }
