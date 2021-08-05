@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20D91" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20F71" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Alias" representedClassName="Alias" syncable="YES" codeGenerationType="class">
         <attribute name="name_alias" optional="YES" attributeType="String"/>
         <attribute name="product_id" optional="YES" attributeType="String"/>
@@ -7,7 +7,7 @@
     </entity>
     <entity name="Category" representedClassName="Category" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String"/>
-        <relationship name="category_expense" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Expense" inverseName="expense_category" inverseEntity="Expense"/>
+        <relationship name="category_expense" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Expense"/>
     </entity>
     <entity name="Channel" representedClassName="Channel" syncable="YES" codeGenerationType="class">
         <attribute name="maxShippingFee" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
@@ -18,12 +18,12 @@
         <relationship name="channel_ttemp" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TransactionTemp" inverseName="ttemp_channel" inverseEntity="TransactionTemp"/>
     </entity>
     <entity name="Expense" representedClassName="Expense" syncable="YES" codeGenerationType="class">
+        <attribute name="category" optional="YES" attributeType="String"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="price" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="quantity" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="repeatEvery" optional="YES" attributeType="String"/>
-        <relationship name="expense_category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="category_expense" inverseEntity="Category"/>
     </entity>
     <entity name="Products" representedClassName="Products" syncable="YES" codeGenerationType="class">
         <attribute name="color" optional="YES" attributeType="String"/>
@@ -36,6 +36,7 @@
     </entity>
     <entity name="Transaction" representedClassName="Transaction" syncable="YES" codeGenerationType="class">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="orderId" optional="YES" attributeType="String"/>
         <relationship name="transaction_channel" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Channel" inverseName="channel_transaction" inverseEntity="Channel"/>
         <relationship name="transaction_td" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TransactionDetail" inverseName="td_transaction" inverseEntity="TransactionDetail"/>
     </entity>
@@ -46,6 +47,8 @@
         <relationship name="td_transaction" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Transaction" inverseName="transaction_td" inverseEntity="Transaction"/>
     </entity>
     <entity name="TransactionDetailTemp" representedClassName="TransactionDetailTemp" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="orderId" optional="YES" attributeType="String"/>
         <attribute name="price" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="productName" optional="YES" attributeType="String"/>
         <attribute name="productSKU" optional="YES" attributeType="String"/>
@@ -63,9 +66,9 @@
         <element name="Channel" positionX="-18" positionY="27" width="128" height="119"/>
         <element name="Expense" positionX="-36" positionY="18" width="128" height="119"/>
         <element name="Products" positionX="0" positionY="45" width="128" height="134"/>
-        <element name="Transaction" positionX="18" positionY="63" width="128" height="74"/>
+        <element name="Transaction" positionX="18" positionY="63" width="128" height="89"/>
         <element name="TransactionDetail" positionX="36" positionY="81" width="128" height="89"/>
-        <element name="TransactionDetailTemp" positionX="-9" positionY="36" width="128" height="104"/>
+        <element name="TransactionDetailTemp" positionX="-9" positionY="36" width="128" height="134"/>
         <element name="TransactionTemp" positionX="0" positionY="45" width="128" height="74"/>
     </elements>
 </model>

@@ -11,6 +11,8 @@ struct AddExpenseSheet: View {
     
     @ObservedObject var amountViewModel = AmountViewModel()
     
+    var expenseListViewModel: ExpenseListViewModel
+    
     @Binding var isVisible: Bool
     @State private var amount: String = ""
     @State private var name: String = ""
@@ -18,6 +20,8 @@ struct AddExpenseSheet: View {
     @State private var categoryIndex = 0
     @State private var date = Date()
     @State private var repeatIndex = 0
+    
+    @State var expense: ExpenseModel?
     
     var categories = ["Utilities", "Transport", "Housing", "Personal", "Finance"]
     var repeats = ["Every Week", "Every Month", "Every 2 Month", "Every 4 Month", "Every 6 Month"]
@@ -69,22 +73,22 @@ struct AddExpenseSheet: View {
             .background(Color("AccentColor"))
             
             VStack(spacing: 8) {
-                TextField("...", value: $amountViewModel.amount, formatter: formatter)
+                TextField("...", text: $amountViewModel.amount)
                     .textFieldStyle(PlainTextFieldStyle())
                     .font(Font.custom("SFProDisplay-Semibold", size: 28))
                     .foregroundColor(Color("OrangeColor"))
-                    .modifier(WithTopLabelTextField(labelName: "Amount", isWithCurrency: true))
+                    .modifier(WithTopLabelTextField(labelName: "Amount"))
                     .padding(.top)
                 
                 TextField("Expense Name", text: $name)
                     .textFieldStyle(PlainTextFieldStyle())
                     .font(Font.custom("SFProDisplay-Semibold", size: 24).weight(.light))
-                    .modifier(WithTopLabelTextField(labelName: "Name", isWithCurrency: false))
+                    .modifier(WithTopLabelTextField(labelName: "Name"))
                 
                 TextField("Expense Quantity", text: $quantity)
                     .textFieldStyle(PlainTextFieldStyle())
                     .font(Font.custom("SFProDisplay-Semibold", size: 24).weight(.light))
-                    .modifier(WithTopLabelTextField(labelName: "Quantity", isWithCurrency: false))
+                    .modifier(WithTopLabelTextField(labelName: "Quantity"))
                 
                 Picker("", selection: $categoryIndex) {
                     ForEach(0 ..< categories.count) {
@@ -93,12 +97,12 @@ struct AddExpenseSheet: View {
                     }
                 }
                 .pickerStyle(PopUpButtonPickerStyle())
-                .modifier(WithTopLabelTextField(labelName: "Category", isWithCurrency: false))
+                .modifier(WithTopLabelTextField(labelName: "Category"))
                 
                 DatePicker("", selection: $date, displayedComponents: .date)
                     .pickerStyle(InlinePickerStyle())
                     .font(Font.custom("SFProDisplay-Semibold", size: 24).weight(.light))
-                    .modifier(WithTopLabelTextField(labelName: "Date", isWithCurrency: false))
+                    .modifier(WithTopLabelTextField(labelName: "Date"))
                 
                 Picker("", selection: $repeatIndex) {
                     ForEach(0 ..< repeats.count) {
@@ -107,12 +111,21 @@ struct AddExpenseSheet: View {
                     }
                 }
                 .pickerStyle(PopUpButtonPickerStyle())
-                .modifier(WithTopLabelTextField(labelName: "Repeat", isWithCurrency: false))
+                .modifier(WithTopLabelTextField(labelName: "Repeat"))
             }
             
             Spacer()
             
-            Button(action: {}, label: {
+            Button(action: {
+                expenseListViewModel.addExpenseCategory(categories[categoryIndex])
+                
+                expense = ExpenseModel(date: Date(), category: expenseListViewModel.getExpenseCategory(categories[categoryIndex]), name: name, quantity: Int(quantity)!, cost: Int(amount) ?? 0, repeatEvery: repeats[repeatIndex])
+                
+                expenseListViewModel.addExpense(expense!)
+                
+                self.isVisible = false
+                
+            }, label: {
                 Text("Save Expense")
                     .foregroundColor(Color("AccentColor2"))
                     .font(Font.custom("SFProDisplay-Semibold", size: 16))
