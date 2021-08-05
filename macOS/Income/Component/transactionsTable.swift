@@ -80,7 +80,7 @@ struct transactionsTable: View {
                             Text("Rp 988.000")
                                 .frame(width: 120, alignment: .leading)
                                 .padding(.init(top: 4, leading: 20, bottom: 4, trailing: 20))
-                            
+
                             Spacer()
                         }
                     }

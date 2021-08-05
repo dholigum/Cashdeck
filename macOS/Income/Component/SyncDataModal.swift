@@ -54,45 +54,48 @@ struct SyncDataModal: View {
                 }
                 .padding(35)
                 if listTransTemp.count > 0 {
-                    ForEach(listTransTemp) { trans in
-                        HStack {
-                            if ProductViewModel.listProducts.count > 0 {
-                                HStack {
-                                    Image(systemName: "checkmark.circle.fill")
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                        .frame(width: 24)
-                                        .foregroundColor(Color.green)
+                    ScrollView (showsIndicators: true) {
+                        ForEach(listTransTemp) { trans in
+                            HStack {
+                                if ProductViewModel.listProducts.count > 0 {
+                                    HStack {
+                                        Image(systemName: "checkmark.circle.fill")
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(width: 24)
+                                            .foregroundColor(Color.green)
+                                    }
+                                    .frame(width: 80)
+                                } else {
+                                    HStack {
+                                        Image(systemName: "exclamationmark.triangle.fill")
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(width: 24)
+                                            .foregroundColor(Color.orange)
+                                    }
+                                    .frame(width: 80)
                                 }
-                                .frame(width: 80)
-                            } else {
-                                HStack {
-                                    Image(systemName: "exclamationmark.triangle.fill")
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                        .frame(width: 24)
-                                        .foregroundColor(Color.orange)
-                                }
-                                .frame(width: 80)
-                            }
-                            Text(trans.productName!)
-                                .font(.system(size: 16))
-                                .frame(width: 380, alignment: .leading)
-                            if ProductViewModel.listProducts.count > 0 {
                                 Text(trans.productName!)
                                     .font(.system(size: 16))
-                                    .frame(width: 340, alignment: .leading)
-                                Spacer()
-                            } else {
-                                Text("-- Choose Products --")
-                                    .font(.system(size: 16))
-                                    .frame(width: 340, alignment: .leading)
-                                Spacer()
+                                    .frame(width: 380, alignment: .leading)
+                                if ProductViewModel.listProducts.count > 0 {
+                                    Text(trans.productName!)
+                                        .font(.system(size: 16))
+                                        .frame(width: 340, alignment: .leading)
+                                    Spacer()
+                                } else {
+                                    Text("-- Choose Products --")
+                                        .font(.system(size: 16))
+                                        .frame(width: 340, alignment: .leading)
+                                    Spacer()
+                                }
                             }
+                            Divider()
+                                .padding(10)
                         }
-                        Divider()
-                            .padding(10)
                     }
+                    .frame(height: 456)
                 }
             }
             .frame(width: 800)
