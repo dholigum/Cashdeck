@@ -17,7 +17,7 @@ class ProductSoldModel {
         newProduct.sku = SKU
         newProduct.name = name
         newProduct.color = color
-        newProduct.size = color
+        newProduct.size = size
         newProduct.costPrice = Int64(costPrice)
         CoreDataManager.sharedManager.saveContext()
     }
@@ -88,4 +88,19 @@ class ProductSoldModel {
         }
         return Channel()
     }
+    
+//    func getTransactionDetail(product: Products) -> [TransactionDetail] {
+//        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "TransactionDetail")
+//        fetchRequest.predicate = NSPredicate(format: "td_product", product)
+//        
+//        do {
+//            let data = try context.fetch(fetchRequest) as! [TransactionDetail]
+//            return data
+//        }
+//        catch let error as NSError {
+//            print("\(error)")
+//        }
+//        
+//        return []
+//    }
 }
