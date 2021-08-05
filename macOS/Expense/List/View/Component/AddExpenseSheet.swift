@@ -120,7 +120,7 @@ struct AddExpenseSheet: View {
             Button(action: {
                 expenseListViewModel.addExpenseCategory(categories[categoryIndex])
                 
-                expense = ExpenseModel(date: Date(), category: categories[categoryIndex], name: name, quantity: Int(quantity)!, cost: Int(amount) ?? 0, repeatEvery: repeats[repeatIndex])
+                expense = ExpenseModel(date: date, category: categories[categoryIndex], name: name, quantity: Int(quantity)!, cost: Int(amountViewModel.amount) ?? 0, repeatEvery: repeats[repeatIndex])
                 
                 expenseListViewModel.addExpense(expense!)
                 
