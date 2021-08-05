@@ -29,4 +29,24 @@ class ProductSoldViewModel {
         let costPrice = Int64(detail.count) * product.costPrice
         return totalSellingPrice - costPrice
     }
+    
+    func getTotalNetIncome() -> Int64 {
+        var totalDetail: Int64 = 0
+        var totalCost: Int64 = 0
+        
+        for data in ProductSoldModel.shared.getAllDetail() {
+            totalDetail += data.price
+            totalCost += data.td_product!.costPrice
+        }
+        return totalDetail - totalCost
+    }
+    
+    func getTotalSold() -> Int64 {
+        var totalSold: Int64 = 0
+        
+        for data in ProductSoldModel.shared.getAllDetail() {
+            totalSold += data.quantity
+        }
+        return totalSold
+    }
 }

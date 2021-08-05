@@ -21,9 +21,8 @@ struct ProductSoldView: View {
             
             ProductSoldList()
         }
-        .padding(EdgeInsets(top: 45, leading: -300, bottom: 0, trailing: 0))
-//        .padding(EdgeInsets(top: 45, leading: 12, bottom: 0, trailing: 0))
-//        .frame(minWidth: 1009, maxWidth: 1009, minHeight: 650.94, maxHeight: 700, alignment: .leading)
+        .frame(width: 1300, height: 897, alignment: .leading)
+        .padding(EdgeInsets(top: -40, leading: 0, bottom: 0, trailing: 0))
     }
 }
 

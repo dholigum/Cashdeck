@@ -54,18 +54,24 @@ struct ProductSoldList: View {
 
                                 Text(sku)
                                     .frame(width: 150, alignment: .leading)
+                                    .font(Font.custom("SFProDisplay-Regular", size: 14))
                                 Text(productName)
                                     .frame(minWidth: 350, alignment: .leading)
+                                    .font(Font.custom("SFProDisplay-Regular", size: 14))
                                 Text(productColor)
                                     .frame(minWidth: 105, alignment: .leading)
+                                    .font(Font.custom("SFProDisplay-Regular", size: 14))
                                 Text(productSize)
                                     .frame(minWidth: 90, alignment: .leading)
+                                    .font(Font.custom("SFProDisplay-Regular", size: 14))
                                 
                                 Text("\(data.quantity)")
                                     .frame(minWidth: 118, alignment: .leading)
+                                    .font(Font.custom("SFProDisplay-Regular", size: 14))
                                 
                                 Text("+Rp \(productSoldVM.getNetIncome(sku: sku))")
                                     .frame(minWidth: 120, alignment: .leading)
+                                    .font(Font.custom("SFProDisplay-Regular", size: 14))
                             }
                         }
                         line
@@ -74,7 +80,7 @@ struct ProductSoldList: View {
             }
             .padding(EdgeInsets(top: 0, leading: 22, bottom: 0, trailing: 0))
         }
-        .frame(minWidth: 1009, maxWidth: 1009, minHeight: 650.94, maxHeight: 700, alignment: .leading)
+        .frame(minWidth: 1009, maxWidth: 1009, minHeight: 650.94, maxHeight: 700)
         .background(Color.white)
         .cornerRadius(15)
         .clipped()
@@ -85,7 +91,7 @@ var line: some View {
     VStack {
         Divider()
             .frame(width: 970)
-            .background(Color("AccentColor2"))
+            .background(Color("DividerColor"))
     }
     .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
 }
