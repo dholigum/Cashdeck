@@ -11,7 +11,7 @@ struct HomeOverview: View {
     var body: some View {
         VStack(spacing: 36) {
             HStack {
-                NetIncomeCard()
+                NetIncomeCard(title: "Daily Net Income", legend: "IDR", barColor: .blue, data: chartDataSet)
             }
             HStack(spacing: 24) {
                 MonthlyExpenseCard()

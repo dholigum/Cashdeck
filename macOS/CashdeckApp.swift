@@ -14,6 +14,7 @@ struct CashdeckApp: App {
     var body: some Scene {
         WindowGroup {
             MainView()
+                .preferredColorScheme(.light)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .background(Color("MainColor"))
         }
