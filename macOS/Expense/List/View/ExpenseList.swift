@@ -9,12 +9,7 @@ import SwiftUI
 
 struct ExpenseList: View {
     
-    @State private var showAddExpenseSheet = false
-    @ObservedObject var expenseListVM = ExpenseListViewModel()
-    
-    init() {
-        expenseListVM.getAllExpense()
-    }
+    @StateObject var expenseVM = ExpenseViewModel()
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
@@ -24,15 +19,15 @@ struct ExpenseList: View {
                 .foregroundColor(Color("AccentColor2"))
             
             CashInformationCard(title: "Total Expense", cashInfo: "Rp 2.130.000")
-            ActionButtonCard(icon: "plus.circle", title: "Add Expense", isPressed: $showAddExpenseSheet)
+            ActionButtonCard(icon: "plus.circle", title: "Add Expense", isPressed: $expenseVM.isNewData)
                 .onTapGesture {
-                    self.showAddExpenseSheet = true
+                    expenseVM.isNewData.toggle()
                 }
-                .sheet(isPresented: $showAddExpenseSheet) {
-                    AddExpenseSheet(expenseListVM: expenseListVM, isVisible: $showAddExpenseSheet)
+                .sheet(isPresented: $expenseVM.isNewData) {
+                    ExpenseSheet(expenseVM: expenseVM)
                 }
             
-            RecentExpenseTableCard(expenseData: expenseListVM.expenses, expenseListVM: expenseListVM)
+            RecentExpenseTableCard()
         }
         .padding(.top, -48)
         .padding(.horizontal, 4)

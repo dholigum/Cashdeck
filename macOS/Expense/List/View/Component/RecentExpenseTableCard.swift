@@ -8,11 +8,8 @@
 import SwiftUI
 
 struct RecentExpenseTableCard: View {
-    
-    var expenseData: [Expense]
-    var expenseListVM: ExpenseListViewModel
-    
-    @State private var showAddExpenseSheet = false
+ 
+    @StateObject var expenseVM = ExpenseViewModel()
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -25,7 +22,7 @@ struct RecentExpenseTableCard: View {
             ExpenseTableHeader()
             
             ScrollView {
-                ForEach(expenseData, id: \.self) { expense in
+                ForEach(expenseVM.expenses, id: \.self) { expense in
                     VStack(alignment: .leading) {
                         HStack {
 
@@ -50,19 +47,20 @@ struct RecentExpenseTableCard: View {
                                 HStack(spacing: 10) {
                                     
                                     Button(action: {
-                                        showAddExpenseSheet = true
+//                                        expenseVM.isNewData.toggle()
+                                        expenseVM.editExpense(expense)
                                     }, label: {
                                         Image(systemName: "square.and.pencil")
                                             .font(.system(size: 18))
                                             .foregroundColor(Color("AccentColor2"))
                                     })
                                     .buttonStyle(PlainButtonStyle())
-                                    .sheet(isPresented: $showAddExpenseSheet) {
-                                        AddExpenseSheet(expenseListVM: expenseListVM, isVisible: $showAddExpenseSheet)
+                                    .sheet(isPresented: $expenseVM.isNewData) {
+                                        ExpenseSheet(expenseVM: expenseVM)
                                     }
                                     
                                     Button(action: {
-                                        expenseListVM.deleteExpense(expense)
+                                        expenseVM.deleteExpense(expense)
                                     }, label: {
                                         Image(systemName: "trash.fill")
                                             .font(.system(size: 18))
@@ -85,6 +83,9 @@ struct RecentExpenseTableCard: View {
         .cornerRadius(16)
         .clipped()
         .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.15), radius: 4, x: 2, y: 2)
+        .onAppear() {
+            expenseVM.getAllExpense()
+        }
     }
 }
 
