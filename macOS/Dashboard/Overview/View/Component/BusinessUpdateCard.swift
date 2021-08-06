@@ -1,23 +1,23 @@
 //
-//  ProductSoldView.swift
-//  Cashdeck
+//  BusinessUpdateCard.swift
+//  Cashdeck (iOS)
 //
-//  Created by Syahrul Apple Developer BINUS on 02/08/21.
+//  Created by Shiddiq Syuhada on 06/08/21.
 //
 
 import SwiftUI
 
-struct ProductSoldCard: View {
+struct BusinessUpdateCard: View {
     var body: some View {
         VStack {
-            Text("ProductSoldCard")
+            Text("Business Update")
                 .font(Font.title.weight(.semibold))
                 .padding(.vertical)
                 .foregroundColor(Color("AccentColor2"))
                 .padding(.top, 4)
                 .padding(.leading, 20)
         }
-        .frame(width: 500, height: 380)
+        .frame(width: 410, height: 198)
         .background(Color.white)
         .cornerRadius(16)
         .clipped()
@@ -26,8 +26,8 @@ struct ProductSoldCard: View {
     }
 }
 
-struct ProductSoldCard_Previews: PreviewProvider {
+struct BusinessUpdateCard_Previews: PreviewProvider {
     static var previews: some View {
-        ProductSoldCard()
+        BusinessUpdateCard()
     }
 }
