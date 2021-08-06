@@ -8,11 +8,12 @@
 import Foundation
 
 extension String {
-    // formatting text for currency textField
+    
     func currencyFormatting() -> String {
         if let value = Double(self) {
             let formatter = NumberFormatter()
             formatter.numberStyle = .currency
+            formatter.currencyCode = "Rp."
             formatter.maximumFractionDigits = 3
             formatter.minimumFractionDigits = 0
             if let str = formatter.string(for: value) {
@@ -20,5 +21,14 @@ extension String {
             }
         }
         return ""
+    }
+}
+
+extension Date {
+    
+    func dateFormatting() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "E, dd MMM yyyy"
+        return formatter.string(from: self)
     }
 }

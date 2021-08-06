@@ -13,14 +13,16 @@ struct ProductSoldView: View {
             Text("Product Sold")
                 .font(Font.custom("SFProDisplay-Bold", size: 24))
                 .foregroundColor(Color("AccentColor2"))
-                
             
             HStack (spacing: 24) {
                 TotalNetIncome()
                 TotalSold()
             }
+            
+            ProductSoldList()
         }
-        .padding(EdgeInsets(top: 45, leading: 12, bottom: 0, trailing: 0))
+        .frame(width: 1300, height: 897, alignment: .leading)
+        .padding(EdgeInsets(top: -40, leading: 0, bottom: 0, trailing: 0))
     }
 }
 

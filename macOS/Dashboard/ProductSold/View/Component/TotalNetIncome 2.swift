@@ -8,16 +8,13 @@
 import SwiftUI
 
 struct TotalNetIncome: View {
-    
-    let productSoldVM = ProductSoldViewModel()
-    
     var body: some View {
         VStack (spacing: 8) {
             Text("Total Net Income")
                 .font(Font.custom("SFProDisplay-Semibold", size: 18))
                 .foregroundColor(.black)
             
-            Text("Rp \(productSoldVM.getTotalNetIncome())")
+            Text("Rp 5.390.000")
                 .font(Font.custom("SFProDisplay-Semibold", size: 36))
                 .foregroundColor(Color("AccentColor2"))
         }
