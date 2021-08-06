@@ -12,17 +12,22 @@ struct MonthlyExpenseChart: View {
     let dataValues: [Double] = [30, 24, 21, 13, 12]
     let dataLabels: [String] = ["Utilities", "Transport", "Housing", "Personal", "Finance"]
     
+    @StateObject var calendarVM = ExpenseCalendarViewModel()
+    
     var body: some View {
         VStack(alignment: .center) {
-            HStack {
+            HStack(spacing: 32) {
                 Text("Monthly Expense")
                     .font(Font.title.weight(.semibold))
                     .padding(.vertical)
                     .foregroundColor(Color("AccentColor2"))
                     .padding(.top, 4)
-                    .padding(.leading, 20)
                 
-                Spacer()
+                ActionButtonCard(icon: "calendar", title: calendarVM.formatedMonthYear(), isPressed: $calendarVM.isOpenCalendar)
+                    .onTapGesture { calendarVM.isOpenCalendar.toggle() }
+                    .sheet(isPresented: $calendarVM.isOpenCalendar) {
+                        MonthYearCalendar(calendarVM: calendarVM)
+                    }
             }
             
             HStack {
@@ -30,7 +35,7 @@ struct MonthlyExpenseChart: View {
                 PieChartView(values: dataValues, names: dataLabels, formatter: {value in String(format: "Rp %.0f", value)})
                     .frame(width: 300, height: 300)
             }
-            .padding(.top, -16)
+            .padding(.top, -8)
             .padding(.leading, -16)
             
             PieChartLegend(values: dataValues, names: dataLabels)
