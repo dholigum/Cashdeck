@@ -9,9 +9,9 @@ import SwiftUI
 
 struct ExpenseSheet: View {
     
-    @ObservedObject var expenseVM = ExpenseViewModel()
+    @StateObject var expenseVM = ExpenseViewModel()
     
-    let categories = ["Utilities", "Transport", "Housing", "Personal", "Finance"]
+    let categories = ["Utilities", "Transport", "Housing", "Personal", "Finance", "Other"]
     let repeats = ["Every Week", "Every Month", "Every 2 Month", "Every 4 Month", "Every 6 Month"]
     
     var body: some View {
@@ -29,23 +29,27 @@ struct ExpenseSheet: View {
                 
                 Spacer()
                 
-                Text("Add Expense")
+                Text(expenseVM.updateItem != nil ? "Edit Expense" : "Add Expense")
                     .foregroundColor(Color("OrangeColor"))
                     .font(Font.custom("SFProDisplay-Semibold", size: 18))
                 
                 Spacer()
                 
-                Text("\t\t")
+                if expenseVM.updateItem != nil {
+                    Button(action: {
+                        expenseVM.writeExpense()
+                        expenseVM.isNewData = false
+                        NSApp.mainWindow?.endSheet(NSApp.keyWindow!)
+                    }, label: {
+                        Text("   Save")
+                            .font(Font.title3.weight(.medium))
+                    })
+                    .buttonStyle(PlainButtonStyle())
                     .padding(.horizontal)
-                
-                //                Button(action: {
-                //                    self.isVisible = false
-                //                }, label: {
-                //                    Text("   Save")
-                //                        .font(Font.title3.weight(.medium))
-                //                })
-                //                .buttonStyle(PlainButtonStyle())
-                //                .padding(.horizontal)
+                } else {
+                    Text("\t\t")
+                        .padding(.horizontal)
+                }
                 
             } // Sheet Header
             .frame(width: 392, height: 50)
@@ -95,25 +99,28 @@ struct ExpenseSheet: View {
             
             Spacer()
             
-            Button(action: {
-                expenseVM.writeExpense()
-                expenseVM.isNewData = false
-                NSApp.mainWindow?.endSheet(NSApp.keyWindow!)
-                
-            }, label: {
-                Text("Save Expense")
-                    .foregroundColor(Color("AccentColor2"))
-                    .font(Font.custom("SFProDisplay-Semibold", size: 16))
-                    .frame(width: 358, height: 50)
-                    .background(Color("AccentColor"))
-                    .clipped()
-                    .cornerRadius(16)
-                    .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.15), radius: 4, x: 2, y: 2)
-                    .padding(.bottom)
-            })
-            .buttonStyle(PlainButtonStyle())
+            if expenseVM.updateItem == nil {
+                Button(action: {
+                    expenseVM.writeExpense()
+                    expenseVM.isNewData = false
+                    NSApp.mainWindow?.endSheet(NSApp.keyWindow!)
+                    
+                }, label: {
+                    Text("Save Expense")
+                        .foregroundColor(Color("AccentColor2"))
+                        .font(Font.custom("SFProDisplay-Semibold", size: 16))
+                        .frame(width: 358, height: 50)
+                        .background(Color("AccentColor"))
+                        .clipped()
+                        .cornerRadius(16)
+                        .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.15), radius: 4, x: 2, y: 2)
+                        .padding(.bottom)
+                })
+                .buttonStyle(PlainButtonStyle())
+            }
+            
         }
-        .frame(width: 392, height: 685)
+        .frame(width: 392)
         .background(Color("MainColor"))
     }
 }
