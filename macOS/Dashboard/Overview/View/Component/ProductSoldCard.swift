@@ -11,6 +11,11 @@ struct ProductSoldCard: View {
     var body: some View {
         VStack {
             Text("ProductSoldCard")
+                .font(Font.title.weight(.semibold))
+                .padding(.vertical)
+                .foregroundColor(Color("AccentColor2"))
+                .padding(.top, 4)
+                .padding(.leading, 20)
         }
         .frame(width: 500, height: 380)
         .background(Color.white)

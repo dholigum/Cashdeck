@@ -11,6 +11,11 @@ struct BusinessGrowthCard: View {
     var body: some View {
         VStack {
             Text("Business Growth")
+                .font(Font.title.weight(.semibold))
+                .padding(.vertical)
+                .foregroundColor(Color("AccentColor2"))
+                .padding(.top, 4)
+                .padding(.leading, 20)
         }
         .frame(width: 410, height: 168)
         .background(Color.white)
