@@ -11,19 +11,31 @@ class ExpenseViewModel: ObservableObject {
     
     @Published var expenses: [Expense] = []
     @Published var totalExpense: Int = 0
+    @Published var groupedExpense: [SimpleExpense] = []
     
-    @Published var amount: String = ""
+    @Published var amount: String = "" {
+        didSet {
+            let filtered = amount.filter { "0123456789".contains($0) }
+            if filtered != amount { self.amount = filtered } }
+        }
+    
+    @Published var quantity: String = "" {
+        didSet {
+            let filtered = amount.filter { "0123456789".contains($0) }
+            if filtered != amount { self.amount = filtered } }
+        }
+    
     @Published var name: String = ""
-    @Published var quantity: String = ""
     @Published var categoryIndex = 0
     @Published var date = Date()
     @Published var repeatIndex = 0
-        
+    
     @Published var isNewData = false
     @Published var updateItem: Expense!
     
     let categories = ["Utilities", "Transport", "Housing", "Personal", "Finance"]
     let repeats = ["Every Week", "Every Month", "Every 2 Month", "Every 4 Month", "Every 6 Month"]
+    var simpleExpenses: [SimpleExpense] = []
     
     let context = CoreDataManager.sharedManager.persistentContainer.viewContext
     
@@ -90,7 +102,35 @@ class ExpenseViewModel: ObservableObject {
         do {
             expenses = try context.fetch(fetchRequest)
             totalExpense = Int(expenses.reduce(0) { $0 + $1.price })
+            
+            for expense in expenses {
+                let newSimpleExpense = SimpleExpense(name: expense.category ?? "", cost: Double(expense.price ?? 0))
 
+                simpleExpenses.append(newSimpleExpense)
+            }
+            
+            groupedExpense = simpleExpenses.grouped()
+            
+        } catch let error as NSError {
+            print("\(error)")
+        }
+    }
+    
+    func getMonthlyGroupedExpense() {
+        let fetchRequest: NSFetchRequest<Expense> = Expense.fetchRequest()
+        
+        do {
+            expenses = try context.fetch(fetchRequest)
+            totalExpense = Int(expenses.reduce(0) { $0 + $1.price })
+            
+            for expense in expenses {
+                let newSimpleExpense = SimpleExpense(name: expense.category ?? "", cost: Double(expense.price ?? 0))
+
+                simpleExpenses.append(newSimpleExpense)
+            }
+            
+            groupedExpense = simpleExpenses.grouped()
+            
         } catch let error as NSError {
             print("\(error)")
         }

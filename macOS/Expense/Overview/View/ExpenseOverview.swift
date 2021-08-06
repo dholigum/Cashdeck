@@ -15,15 +15,16 @@ struct ExpenseOverview: View {
                 .padding(.bottom)
                 .foregroundColor(Color("AccentColor2"))
             
-            HStack(spacing: 24) {
-                MonthlyExpenseCard()
-                RecentExpenseCard()
-            }
-            HStack(spacing: 24) {
-                ExpenseTipsCard()
+            HStack(spacing: 20) {
+                MonthlyExpenseChart()
+                
+                VStack(spacing: 20) {
+                    RecentExpenseCard()
+                    ExpenseTipsCard()
+                }
             }
         }
-        .padding(.top, -40)
+        .padding(.top, -28)
         .padding(.horizontal, -2)
     }
 }

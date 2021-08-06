@@ -65,18 +65,18 @@ struct ExpenseSheet: View {
                 
                 TextField("Expense Name", text: $expenseVM.name)
                     .textFieldStyle(PlainTextFieldStyle())
-                    .font(Font.custom("SFProDisplay-Semibold", size: 24).weight(.light))
+                    .font(Font.custom("SFProDisplay-Semibold", size: 24))
                     .modifier(WithTopLabelTextField(labelName: "Name"))
                 
                 TextField("Expense Quantity", text: $expenseVM.quantity)
                     .textFieldStyle(PlainTextFieldStyle())
-                    .font(Font.custom("SFProDisplay-Semibold", size: 24).weight(.light))
+                    .font(Font.custom("SFProDisplay-Semibold", size: 24))
                     .modifier(WithTopLabelTextField(labelName: "Quantity"))
                 
                 Picker("", selection: $expenseVM.categoryIndex) {
                     ForEach(0 ..< categories.count) {
                         Text(self.categories[$0])
-                            .font(Font.custom("SFProDisplay-Semibold", size: 16).weight(.light))
+                            .font(Font.custom("SFProDisplay-Semibold", size: 16))
                     }
                 }
                 .pickerStyle(PopUpButtonPickerStyle())
@@ -84,13 +84,13 @@ struct ExpenseSheet: View {
                 
                 DatePicker("", selection: $expenseVM.date, displayedComponents: .date)
                     .pickerStyle(InlinePickerStyle())
-                    .font(Font.custom("SFProDisplay-Semibold", size: 24).weight(.light))
+                    .font(Font.custom("SFProDisplay-Semibold", size: 24))
                     .modifier(WithTopLabelTextField(labelName: "Date"))
                 
                 Picker("", selection: $expenseVM.repeatIndex) {
                     ForEach(0 ..< repeats.count) {
                         Text(self.repeats[$0])
-                            .font(Font.custom("SFProDisplay-Semibold", size: 16).weight(.light))
+                            .font(Font.custom("SFProDisplay-Semibold", size: 16))
                     }
                 }
                 .pickerStyle(PopUpButtonPickerStyle())
