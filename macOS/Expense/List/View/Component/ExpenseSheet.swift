@@ -1,36 +1,24 @@
 //
-//  AddExpenseSheet.swift
+//  ExpenseSheet.swift
 //  Cashdeck
 //
-//  Created by Syahrul Apple Developer BINUS on 03/08/21.
+//  Created by Syahrul Apple Developer BINUS on 06/08/21.
 //
 
 import SwiftUI
 
 struct ExpenseSheet: View {
     
-    @ObservedObject var amountViewModel = AmountViewModel()
+    @ObservedObject var expenseVM = ExpenseViewModel()
     
-    var expenseListVM: ExpenseListViewModel
-    
-    @Binding var isVisible: Bool
-    @State private var amount: String = ""
-    @State private var name: String = ""
-    @State private var quantity: String = ""
-    @State private var categoryIndex = 0
-    @State private var date = Date()
-    @State private var repeatIndex = 0
-    
-    @State var expense: ExpenseModel?
-    
-    var categories = ["Utilities", "Transport", "Housing", "Personal", "Finance"]
-    var repeats = ["Every Week", "Every Month", "Every 2 Month", "Every 4 Month", "Every 6 Month"]
+    let categories = ["Utilities", "Transport", "Housing", "Personal", "Finance"]
+    let repeats = ["Every Week", "Every Month", "Every 2 Month", "Every 4 Month", "Every 6 Month"]
     
     var body: some View {
         VStack(spacing: 16) {
             HStack {
                 Button(action: {
-                    self.isVisible = false
+                    expenseVM.isNewData = false
                     NSApp.mainWindow?.endSheet(NSApp.keyWindow!)
                 }, label: {
                     Text("Cancel")
@@ -64,41 +52,41 @@ struct ExpenseSheet: View {
             .background(Color("AccentColor"))
             
             VStack(spacing: 8) {
-                TextField("...", text: $amountViewModel.amount)
+                TextField("...", text: $expenseVM.amount)
                     .textFieldStyle(PlainTextFieldStyle())
                     .font(Font.custom("SFProDisplay-Semibold", size: 28))
                     .foregroundColor(Color("OrangeColor"))
                     .modifier(WithTopLabelTextField(labelName: "Amount"))
                     .padding(.top)
                 
-                TextField("Expense Name", text: $name)
+                TextField("Expense Name", text: $expenseVM.name)
                     .textFieldStyle(PlainTextFieldStyle())
-                    .font(Font.custom("SFProDisplay-Semibold", size: 24))
+                    .font(Font.custom("SFProDisplay-Semibold", size: 24).weight(.light))
                     .modifier(WithTopLabelTextField(labelName: "Name"))
                 
-                TextField("Expense Quantity", text: $quantity)
+                TextField("Expense Quantity", text: $expenseVM.quantity)
                     .textFieldStyle(PlainTextFieldStyle())
-                    .font(Font.custom("SFProDisplay-Semibold", size: 24))
+                    .font(Font.custom("SFProDisplay-Semibold", size: 24).weight(.light))
                     .modifier(WithTopLabelTextField(labelName: "Quantity"))
                 
-                Picker("", selection: $categoryIndex) {
+                Picker("", selection: $expenseVM.categoryIndex) {
                     ForEach(0 ..< categories.count) {
                         Text(self.categories[$0])
-                            .font(Font.custom("SFProDisplay-Semibold", size: 16))
+                            .font(Font.custom("SFProDisplay-Semibold", size: 16).weight(.light))
                     }
                 }
                 .pickerStyle(PopUpButtonPickerStyle())
                 .modifier(WithTopLabelTextField(labelName: "Category"))
                 
-                DatePicker("", selection: $date, displayedComponents: .date)
+                DatePicker("", selection: $expenseVM.date, displayedComponents: .date)
                     .pickerStyle(InlinePickerStyle())
-                    .font(Font.custom("SFProDisplay-Semibold", size: 24))
+                    .font(Font.custom("SFProDisplay-Semibold", size: 24).weight(.light))
                     .modifier(WithTopLabelTextField(labelName: "Date"))
                 
-                Picker("", selection: $repeatIndex) {
+                Picker("", selection: $expenseVM.repeatIndex) {
                     ForEach(0 ..< repeats.count) {
                         Text(self.repeats[$0])
-                            .font(Font.custom("SFProDisplay-Semibold", size: 16))
+                            .font(Font.custom("SFProDisplay-Semibold", size: 16).weight(.light))
                     }
                 }
                 .pickerStyle(PopUpButtonPickerStyle())
@@ -108,13 +96,8 @@ struct ExpenseSheet: View {
             Spacer()
             
             Button(action: {
-                expenseListVM.addExpenseCategory(categories[categoryIndex])
-                
-                expense = ExpenseModel(date: date, category: categories[categoryIndex], name: name, quantity: Int(quantity) ?? 0, cost: Int(amountViewModel.amount) ?? 0, repeatEvery: repeats[repeatIndex])
-                
-                expenseListVM.addExpense(expense!)
-                
-                self.isVisible = false
+                expenseVM.writeExpense()
+                expenseVM.isNewData = false
                 NSApp.mainWindow?.endSheet(NSApp.keyWindow!)
                 
             }, label: {
@@ -130,7 +113,14 @@ struct ExpenseSheet: View {
             })
             .buttonStyle(PlainButtonStyle())
         }
-        .frame(width: 392)
+        .frame(width: 392, height: 685)
         .background(Color("MainColor"))
     }
 }
+
+struct ExpenseSheet_Previews: PreviewProvider {
+    static var previews: some View {
+        ExpenseSheet()
+    }
+}
+
