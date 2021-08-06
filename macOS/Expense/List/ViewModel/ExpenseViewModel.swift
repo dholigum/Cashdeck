@@ -33,8 +33,6 @@ class ExpenseViewModel: ObservableObject {
     @Published var isNewData = false
     @Published var updateItem: Expense!
     
-    let categories = ["Utilities", "Transport", "Housing", "Personal", "Finance"]
-    let repeats = ["Every Week", "Every Month", "Every 2 Month", "Every 4 Month", "Every 6 Month"]
     var simpleExpenses: [SimpleExpense] = []
     
     let context = CoreDataManager.sharedManager.persistentContainer.viewContext
@@ -44,11 +42,11 @@ class ExpenseViewModel: ObservableObject {
         if updateItem != nil {
             // Update old data ...
             updateItem.date = date
-            updateItem.category = categories[categoryIndex]
+            updateItem.category = K().categories[categoryIndex]
             updateItem.name = name
             updateItem.price = Int64(amount) ?? 0
             updateItem.quantity = Int64(quantity) ?? 0
-            updateItem.repeatEvery = repeats[repeatIndex]
+            updateItem.repeatEvery = K().repeats[repeatIndex]
             
             CoreDataManager.sharedManager.saveContext()
             totalExpense += Int(amount) ?? 0
@@ -65,10 +63,10 @@ class ExpenseViewModel: ObservableObject {
         
         newExpense.date = date
         newExpense.name = name
-        newExpense.category = categories[categoryIndex]
+        newExpense.category = K().categories[categoryIndex]
         newExpense.quantity = Int64(quantity) ?? 0
         newExpense.price = Int64(amount) ?? 0
-        newExpense.repeatEvery = repeats[repeatIndex]
+        newExpense.repeatEvery = K().repeats[repeatIndex]
         
         // Saving data ...
         do {
@@ -93,32 +91,12 @@ class ExpenseViewModel: ObservableObject {
         amount = String(expense.price)
         name = expense.name!
         quantity = String(expense.quantity)
-        categoryIndex = categories.firstIndex(of: expense.category!)!
-        repeatIndex = repeats.firstIndex(of: expense.repeatEvery!)!
+        categoryIndex = K().categories.firstIndex(of: expense.category!)!
+        repeatIndex = K().repeats.firstIndex(of: expense.repeatEvery!)!
         isNewData.toggle()
     }
     
     func getAllExpense() {
-        let fetchRequest: NSFetchRequest<Expense> = Expense.fetchRequest()
-        
-        do {
-            expenses = try context.fetch(fetchRequest)
-            totalExpense = Int(expenses.reduce(0) { $0 + $1.price })
-            
-            for expense in expenses {
-                let newSimpleExpense = SimpleExpense(name: expense.category ?? "", cost: Double(expense.price ?? 0))
-
-                simpleExpenses.append(newSimpleExpense)
-            }
-            
-            groupedExpense = simpleExpenses.grouped()
-            
-        } catch let error as NSError {
-            print("\(error)")
-        }
-    }
-    
-    func getMonthlyGroupedExpense() {
         let fetchRequest: NSFetchRequest<Expense> = Expense.fetchRequest()
         
         do {

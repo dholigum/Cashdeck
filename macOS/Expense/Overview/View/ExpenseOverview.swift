@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct ExpenseOverview: View {
+    
+    @StateObject var expenseVM = ExpenseViewModel()
+    @StateObject var overviewExpenseVM = OverviewExpenseViewModel()
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             Text("Expense Overview")
@@ -16,10 +20,10 @@ struct ExpenseOverview: View {
                 .foregroundColor(Color("AccentColor2"))
             
             HStack(spacing: 20) {
-                MonthlyExpenseChart()
+                MonthlyExpenseChart(overviewExpenseVM: overviewExpenseVM)
                 
                 VStack(spacing: 20) {
-                    RecentExpenseCard()
+                    RecentExpenseOverviewCard(expenseVM: expenseVM)
                     ExpenseTipsCard()
                 }
             }

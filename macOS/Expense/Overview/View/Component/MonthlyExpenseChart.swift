@@ -12,7 +12,7 @@ struct MonthlyExpenseChart: View {
     let dataValues: [Double] = [30, 24, 21, 13, 12]
     let dataLabels: [String] = ["Utilities", "Transport", "Housing", "Personal", "Finance"]
     
-    @StateObject var calendarVM = ExpenseCalendarViewModel()
+    @StateObject var overviewExpenseVM = OverviewExpenseViewModel()
     
     var body: some View {
         VStack(alignment: .center) {
@@ -23,10 +23,10 @@ struct MonthlyExpenseChart: View {
                     .foregroundColor(Color("AccentColor2"))
                     .padding(.top, 4)
                 
-                ActionButtonCard(icon: "calendar", title: calendarVM.formatedMonthYear(), isPressed: $calendarVM.isOpenCalendar)
-                    .onTapGesture { calendarVM.isOpenCalendar.toggle() }
-                    .sheet(isPresented: $calendarVM.isOpenCalendar) {
-                        MonthYearCalendar(calendarVM: calendarVM)
+                ActionButtonCard(icon: "calendar", title: overviewExpenseVM.formatedMonthYear(), isPressed: $overviewExpenseVM.isOpenCalendar)
+                    .onTapGesture { overviewExpenseVM.isOpenCalendar.toggle() }
+                    .sheet(isPresented: $overviewExpenseVM.isOpenCalendar) {
+                        MonthYearCalendar(overviewExpenseVM: overviewExpenseVM)
                     }
             }
             
@@ -49,6 +49,9 @@ struct MonthlyExpenseChart: View {
         .clipped()
         .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.15), radius: 4, x: 2, y: 2)
         .padding(.horizontal, 2)
+        .onAppear() {
+            overviewExpenseVM.getMonthlyGroupedExpense()
+        }
     }
 }
 

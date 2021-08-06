@@ -11,9 +11,6 @@ struct ExpenseSheet: View {
     
     @StateObject var expenseVM = ExpenseViewModel()
     
-    let categories = ["Utilities", "Transport", "Housing", "Personal", "Finance", "Other"]
-    let repeats = ["Every Week", "Every Month", "Every 2 Month", "Every 4 Month", "Every 6 Month"]
-    
     var body: some View {
         VStack(spacing: 16) {
             HStack {
@@ -74,8 +71,8 @@ struct ExpenseSheet: View {
                     .modifier(WithTopLabelTextField(labelName: "Quantity"))
                 
                 Picker("", selection: $expenseVM.categoryIndex) {
-                    ForEach(0 ..< categories.count) {
-                        Text(self.categories[$0])
+                    ForEach(0 ..< K().categories.count) {
+                        Text(K().categories[$0])
                             .font(Font.custom("SFProDisplay-Semibold", size: 16))
                     }
                 }
@@ -88,8 +85,8 @@ struct ExpenseSheet: View {
                     .modifier(WithTopLabelTextField(labelName: "Date"))
                 
                 Picker("", selection: $expenseVM.repeatIndex) {
-                    ForEach(0 ..< repeats.count) {
-                        Text(self.repeats[$0])
+                    ForEach(0 ..< K().repeats.count) {
+                        Text(K().repeats[$0])
                             .font(Font.custom("SFProDisplay-Semibold", size: 16))
                     }
                 }

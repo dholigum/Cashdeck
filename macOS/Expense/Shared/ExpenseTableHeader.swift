@@ -8,33 +8,42 @@
 import SwiftUI
 
 struct ExpenseTableHeader: View {
+    
+    var dateWidth: Int = 160
+    var categoryWidth: Int = 105
+    var nameWidth: Int = 350
+    var quantityWidth: Int = 90
+    var priceWidth: Int = 90
+    var actionWidrh: Int = 118
+    var leadingPadding: Int = 22
+    
     var body: some View {
         HStack {
             Text("Date")
                 .font(Font.custom("SFProDisplay-Semibold", size: 16))
-                .frame(width: 160, alignment: .leading)
+                .frame(width: CGFloat(dateWidth), alignment: .leading)
             
             Text("Category")
                 .font(Font.custom("SFProDisplay-Semibold", size: 16))
-                .frame(minWidth: 105, alignment: .leading)
+                .frame(width: CGFloat(categoryWidth), alignment: .leading)
             
             Text("Name")
                 .font(Font.custom("SFProDisplay-Semibold", size: 16))
-                .frame(minWidth: 350, alignment: .leading)
+                .frame(width: CGFloat(nameWidth), alignment: .leading)
             
-            Text("Quantity")
+            Text("Qty")
                 .font(Font.custom("SFProDisplay-Semibold", size: 16))
-                .frame(minWidth: 90, alignment: .leading)
+                .frame(width: CGFloat(quantityWidth), alignment: .leading)
             
             Text("Price")
                 .font(Font.custom("SFProDisplay-Semibold", size: 16))
-                .frame(minWidth: 118, alignment: .leading)
+                .frame(width: CGFloat(priceWidth), alignment: .leading)
             
             Text("")
                 .font(Font.custom("SFProDisplay-Semibold", size: 16))
-                .frame(minWidth: 120, alignment: .leading)
+                .frame(width: CGFloat(actionWidrh), alignment: .leading)
         }
-        .padding(EdgeInsets(top: 0, leading: 22, bottom: 16, trailing: 0))
+        .padding(EdgeInsets(top: 0, leading: CGFloat(leadingPadding), bottom: 16, trailing: 0))
     }
 }
 
