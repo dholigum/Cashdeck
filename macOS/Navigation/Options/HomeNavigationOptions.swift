@@ -26,7 +26,7 @@ struct HomeNavigationOptions {
         case .analytics:
             HomeOverview()
         case .productList:
-            PieChartView(values: [1300, 500, 300], names: ["Rent", "Transport", "Education"], formatter: {value in String(format: "$%.2f", value)})
+            ProductList()
         case .productSold:
             ProductSoldView()
         }

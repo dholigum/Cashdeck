@@ -85,6 +85,12 @@
 		F302B03726BBA9BA00B3B83A /* ChooseProductModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F302B03526BBA9BA00B3B83A /* ChooseProductModal.swift */; };
 		F302B03926BBA9CD00B3B83A /* EditFeeModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F302B03826BBA9CD00B3B83A /* EditFeeModal.swift */; };
 		F302B03A26BBA9CD00B3B83A /* EditFeeModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F302B03826BBA9CD00B3B83A /* EditFeeModal.swift */; };
+		F30E164D26BCD04400A6DDDC /* ProductList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30E164C26BCD04400A6DDDC /* ProductList.swift */; };
+		F30E164E26BCD04400A6DDDC /* ProductList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30E164C26BCD04400A6DDDC /* ProductList.swift */; };
+		F30E165026BCED9500A6DDDC /* CardSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30E164F26BCED9500A6DDDC /* CardSummary.swift */; };
+		F30E165126BCED9500A6DDDC /* CardSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30E164F26BCED9500A6DDDC /* CardSummary.swift */; };
+		F30E165326BCEF8400A6DDDC /* ModalAddProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30E165226BCEF8400A6DDDC /* ModalAddProduct.swift */; };
+		F30E165426BCEF8400A6DDDC /* ModalAddProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30E165226BCEF8400A6DDDC /* ModalAddProduct.swift */; };
 		F32412AC26BA6E590022E95D /* modalImportFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32412AB26BA6E590022E95D /* modalImportFile.swift */; };
 		F32412AE26BA88400022E95D /* SyncDataModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32412AD26BA88400022E95D /* SyncDataModal.swift */; };
 		F346178D26B8A53F0005136B /* CardReports.swift in Sources */ = {isa = PBXBuildFile; fileRef = F346178C26B8A53F0005136B /* CardReports.swift */; };
@@ -176,6 +182,9 @@
 		F302B03226BB992800B3B83A /* productViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = productViewModel.swift; sourceTree = SOURCE_ROOT; };
 		F302B03526BBA9BA00B3B83A /* ChooseProductModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseProductModal.swift; sourceTree = "<group>"; };
 		F302B03826BBA9CD00B3B83A /* EditFeeModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFeeModal.swift; sourceTree = "<group>"; };
+		F30E164C26BCD04400A6DDDC /* ProductList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductList.swift; sourceTree = "<group>"; };
+		F30E164F26BCED9500A6DDDC /* CardSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSummary.swift; sourceTree = "<group>"; };
+		F30E165226BCEF8400A6DDDC /* ModalAddProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalAddProduct.swift; sourceTree = "<group>"; };
 		F32412AB26BA6E590022E95D /* modalImportFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = modalImportFile.swift; sourceTree = "<group>"; };
 		F32412AD26BA88400022E95D /* SyncDataModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncDataModal.swift; sourceTree = "<group>"; };
 		F346178C26B8A53F0005136B /* CardReports.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardReports.swift; sourceTree = "<group>"; };
@@ -532,6 +541,7 @@
 		2FEF63C626AC6C5C0073CE75 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				F30E164726BCCFE100A6DDDC /* ProductList */,
 				F73F69AE26B910C000CD9642 /* ProductSold */,
 				2F52F30926B7CC640046A1AA /* Overview */,
 			);
@@ -556,6 +566,48 @@
 				1599E0FF0C0B916D92607B2A /* Pods-Cashdeck (macOS).release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		F30E164726BCCFE100A6DDDC /* ProductList */ = {
+			isa = PBXGroup;
+			children = (
+				F30E164B26BCD00D00A6DDDC /* Component */,
+				F30E164A26BCD00200A6DDDC /* ViewModel */,
+				F30E164926BCCFFA00A6DDDC /* Model */,
+				F30E164826BCCFF200A6DDDC /* View */,
+			);
+			path = ProductList;
+			sourceTree = "<group>";
+		};
+		F30E164826BCCFF200A6DDDC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F30E164C26BCD04400A6DDDC /* ProductList.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F30E164926BCCFFA00A6DDDC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F30E164A26BCD00200A6DDDC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F30E164B26BCD00D00A6DDDC /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				F30E164F26BCED9500A6DDDC /* CardSummary.swift */,
+				F30E165226BCEF8400A6DDDC /* ModalAddProduct.swift */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 		F346178E26B8AD200005136B /* Component */ = {
@@ -897,6 +949,7 @@
 				2F52F32426B7EBC70046A1AA /* ProductSoldCard.swift in Sources */,
 				2FB41BCA26B8F2200035B62B /* ActionButtonCard.swift in Sources */,
 				2F52F31D26B7E9720046A1AA /* MonthlyExpenseCard.swift in Sources */,
+				F30E165026BCED9500A6DDDC /* CardSummary.swift in Sources */,
 				F76A1A5726BA318C00CDADFB /* ProductSoldList.swift in Sources */,
 				2F52F2FB26B7A49C0046A1AA /* Tokopedia.swift in Sources */,
 				2FB41BD726B9C2FB0035B62B /* CustomTextFieldExtension.swift in Sources */,
@@ -911,8 +964,10 @@
 				2FB41BE126B9C9520035B62B /* StringFormatter.swift in Sources */,
 				2F764DB926A7C254005B0513 /* CashdeckApp.swift in Sources */,
 				2FB41BC426B8F1F60035B62B /* CashInformationCard.swift in Sources */,
+				F30E164D26BCD04400A6DDDC /* ProductList.swift in Sources */,
 				F302B03926BBA9CD00B3B83A /* EditFeeModal.swift in Sources */,
 				2FB41BDB26B9C5490035B62B /* WithTopLabelTextField.swift in Sources */,
+				F30E165326BCEF8400A6DDDC /* ModalAddProduct.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -929,8 +984,11 @@
 				2FB41BDF26B9C76C0035B62B /* WithCurrencyLabel.swift in Sources */,
 				2F764DDA26A921A3005B0513 /* BlurWindow.swift in Sources */,
 				2F52F2ED26B7950D0046A1AA /* CashdeckData.xcdatamodeld in Sources */,
+				F30E165126BCED9500A6DDDC /* CardSummary.swift in Sources */,
 				F346179926B8D6270005136B /* TransactionModel.swift in Sources */,
+				F30E165426BCEF8400A6DDDC /* ModalAddProduct.swift in Sources */,
 				2F832F0E26B3E6FA00426643 /* IncomeNavigationOptions.swift in Sources */,
+				F30E164E26BCD04400A6DDDC /* ProductList.swift in Sources */,
 				2F832EF826B271EA00426643 /* MainView.swift in Sources */,
 				F73F69C226B99B8800CD9642 /* TotalNetIncome.swift in Sources */,
 				F302B03A26BBA9CD00B3B83A /* EditFeeModal.swift in Sources */,

@@ -16,7 +16,6 @@ struct Tokopedia: View {
     
     init() {
         listTransTemp.fetchDataTrans()
-//        print(listTransTemp.listTransTemp)
     }
     var window = NSScreen.main?.visibleFrame
     var body: some View {
@@ -53,7 +52,7 @@ struct Tokopedia: View {
                             showModalSync.toggle()
                         }
                         .sheet(isPresented: $showModalSync, content: {
-                            SyncDataModal(listTransTemp: $listTransTemp.listTransTemp, showModalSync: $showModalSync, showModal: $showModal)
+                            SyncDataModal(showModalSync: $showModalSync, showModal: $showModal)
                         })
                 }
                 Spacer()

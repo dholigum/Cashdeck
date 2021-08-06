@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct SyncDataModal: View {
-    @Binding var listTransTemp: [TransactionDetailTemp]
     @Binding var showModalSync: Bool
     @Binding var showModal: Bool
     @ObservedObject var ProductViewModel = ProductviewModel()
+    @ObservedObject var TransTempViewModel = TransDetailViewModel()
     
     var body: some View {
         VStack {
@@ -53,9 +53,9 @@ struct SyncDataModal: View {
                     Spacer()
                 }
                 .padding(35)
-                if listTransTemp.count > 0 {
-                    ScrollView (showsIndicators: true) {
-                        ForEach(listTransTemp) { trans in
+                if TransTempViewModel.listTransTemp.count > 0 {
+                    ScrollView () {
+                        ForEach(TransTempViewModel.listTransTemp) { trans in
                             HStack {
                                 if ProductViewModel.listProducts.count > 0 {
                                     HStack {
@@ -111,5 +111,6 @@ struct SyncDataModal: View {
 extension SyncDataModal {
     func fetchData () {
         ProductViewModel.fetchProducts()
+        TransTempViewModel.fetchDataTrans()
     }
 }
