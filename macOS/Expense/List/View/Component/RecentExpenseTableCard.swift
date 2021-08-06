@@ -47,7 +47,6 @@ struct RecentExpenseTableCard: View {
                                 HStack(spacing: 10) {
                                     
                                     Button(action: {
-//                                        expenseVM.isNewData.toggle()
                                         expenseVM.editExpense(expense)
                                     }, label: {
                                         Image(systemName: "square.and.pencil")
@@ -83,9 +82,7 @@ struct RecentExpenseTableCard: View {
         .cornerRadius(16)
         .clipped()
         .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.15), radius: 4, x: 2, y: 2)
-        .onAppear() {
-            expenseVM.getAllExpense()
-        }
+        .onAppear() { expenseVM.getAllExpense() }
     }
 }
 

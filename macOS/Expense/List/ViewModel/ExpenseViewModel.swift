@@ -10,6 +10,7 @@ import SwiftUI
 class ExpenseViewModel: ObservableObject {
     
     @Published var expenses: [Expense] = []
+    @Published var totalExpense: Int = 0
     
     @Published var amount: String = ""
     @Published var name: String = ""
@@ -55,11 +56,11 @@ class ExpenseViewModel: ObservableObject {
         newExpense.quantity = Int64(quantity) ?? 0
         newExpense.price = Int64(amount) ?? 0
         newExpense.repeatEvery = repeats[repeatIndex]
-        expenses.append(newExpense)
         
         // Saving data ...
         do {
             CoreDataManager.sharedManager.saveContext()
+            expenses.append(newExpense)
             
             // Closing view when success
             isNewData.toggle()
@@ -88,6 +89,7 @@ class ExpenseViewModel: ObservableObject {
         
         do {
             expenses = try context.fetch(fetchRequest)
+            totalExpense = Int(expenses.reduce(0) { $0 + $1.price })
 
         } catch let error as NSError {
             print("\(error)")
