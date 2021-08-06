@@ -12,11 +12,14 @@ struct EditFeeModal: View {
     @State private var productFee: String = ""
     @State private var shippingFee: String = ""
     @State private var maxShippingFee: String = ""
+    @Binding var isPresented: Bool
     
     var body: some View {
         VStack(spacing: 16) {
             HStack {
                 Button(action: {
+                    isPresented = false
+                    NSApp.mainWindow?.endSheet(NSApp.keyWindow!)
                 }, label: {
                     Text("Cancel")
                         .font(Font.custom("SFProDisplay-Semibold", size: 16))
@@ -78,6 +81,6 @@ struct EditFeeModal: View {
 
 struct EditFeeModal_Previews: PreviewProvider {
     static var previews: some View {
-        EditFeeModal()
+        EditFeeModal(isPresented: .constant(true))
     }
 }

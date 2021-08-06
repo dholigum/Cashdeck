@@ -39,7 +39,13 @@ struct Tokopedia: View {
                 Spacer()
             }
             HStack {
-                primaryBtn(imageName: "dollarsign.circle.fill", title: "Add Fee", width: 120)
+                primaryBtn(imageName: "dollarsign.circle.fill", title: "Edit Fee", width: 120)
+                    .onTapGesture {
+                        showModal.toggle()
+                    }
+                    .sheet(isPresented: $showModal, content: {
+                        EditFeeModal(isPresented: $showModal)
+                    })
                 primaryBtn(imageName: "square.and.arrow.down", title: "Import Data", width: 147)
                     .onTapGesture {
                         showModal.toggle()
