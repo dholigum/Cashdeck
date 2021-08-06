@@ -8,10 +8,13 @@
 import SwiftUI
 
 class AmountViewModel: ObservableObject {
-    @Published var formattedAmount = ""
+    
+    @Published var formattedCurrency = ""
+    @Published var currency = ""
+    
     @Published var amount = "" {
         didSet {
-            let filtered = amount.filter { "0123456789".contains($0) }
+            let filtered = amount.filter { "0123456789.".contains($0) }
             if filtered != amount {
                 self.amount = filtered
             }

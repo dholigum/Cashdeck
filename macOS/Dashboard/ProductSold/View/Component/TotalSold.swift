@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct TotalSold: View {
+    let productSoldVM = ProductSoldViewModel()
+    
     var body: some View {
         VStack (spacing: 8) {
             Text("Product Sold")
                 .font(Font.custom("SFProDisplay-Semibold", size: 18))
                 .foregroundColor(.black)
             
-            Text("50")
+            Text("\(productSoldVM.getTotalSold())")
                 .font(Font.custom("SFProDisplay-Semibold", size: 36))
                 .foregroundColor(Color("AccentColor2"))
         }

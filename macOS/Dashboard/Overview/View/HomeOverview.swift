@@ -15,7 +15,11 @@ struct HomeOverview: View {
                 .foregroundColor(Color("AccentColor2"))
             
             HStack {
-                NetIncomeCard()
+                NetIncomeCard(title: "Daily Net Income", legend: "IDR", barColor: .blue, data: chartDataSet)
+                VStack (alignment: .leading, spacing: 18){
+                    BusinessGrowthCard()
+                    BusinessUpdateCard()
+                }.padding()
             }
             
             HStack(spacing: 24) {
