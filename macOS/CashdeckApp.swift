@@ -21,6 +21,8 @@ struct CashdeckApp: App {
     var body: some Scene {
         WindowGroup {
             MainView()
+                .preferredColorScheme(.light)
+ 
                 .background(Color("MainColor"))
                 .preferredColorScheme(.light)
         }

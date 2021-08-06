@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AddExpenseSheet: View {
+struct ExpenseSheet: View {
     
     @ObservedObject var amountViewModel = AmountViewModel()
     
@@ -25,16 +25,6 @@ struct AddExpenseSheet: View {
     
     var categories = ["Utilities", "Transport", "Housing", "Personal", "Finance"]
     var repeats = ["Every Week", "Every Month", "Every 2 Month", "Every 4 Month", "Every 6 Month"]
-    
-    let formatter: NumberFormatter = {
-        let formatter = NumberFormatter()
-        formatter.groupingSeparator = "."
-        formatter.groupingSize = 3
-        formatter.usesGroupingSeparator = true
-        
-        return formatter
-    }()
-    
     
     var body: some View {
         VStack(spacing: 16) {
@@ -83,18 +73,18 @@ struct AddExpenseSheet: View {
                 
                 TextField("Expense Name", text: $name)
                     .textFieldStyle(PlainTextFieldStyle())
-                    .font(Font.custom("SFProDisplay-Semibold", size: 24).weight(.light))
+                    .font(Font.custom("SFProDisplay-Semibold", size: 24))
                     .modifier(WithTopLabelTextField(labelName: "Name"))
                 
                 TextField("Expense Quantity", text: $quantity)
                     .textFieldStyle(PlainTextFieldStyle())
-                    .font(Font.custom("SFProDisplay-Semibold", size: 24).weight(.light))
+                    .font(Font.custom("SFProDisplay-Semibold", size: 24))
                     .modifier(WithTopLabelTextField(labelName: "Quantity"))
                 
                 Picker("", selection: $categoryIndex) {
                     ForEach(0 ..< categories.count) {
                         Text(self.categories[$0])
-                            .font(Font.custom("SFProDisplay-Semibold", size: 16).weight(.light))
+                            .font(Font.custom("SFProDisplay-Semibold", size: 16))
                     }
                 }
                 .pickerStyle(PopUpButtonPickerStyle())
@@ -102,13 +92,13 @@ struct AddExpenseSheet: View {
                 
                 DatePicker("", selection: $date, displayedComponents: .date)
                     .pickerStyle(InlinePickerStyle())
-                    .font(Font.custom("SFProDisplay-Semibold", size: 24).weight(.light))
+                    .font(Font.custom("SFProDisplay-Semibold", size: 24))
                     .modifier(WithTopLabelTextField(labelName: "Date"))
                 
                 Picker("", selection: $repeatIndex) {
                     ForEach(0 ..< repeats.count) {
                         Text(self.repeats[$0])
-                            .font(Font.custom("SFProDisplay-Semibold", size: 16).weight(.light))
+                            .font(Font.custom("SFProDisplay-Semibold", size: 16))
                     }
                 }
                 .pickerStyle(PopUpButtonPickerStyle())
@@ -140,7 +130,7 @@ struct AddExpenseSheet: View {
             })
             .buttonStyle(PlainButtonStyle())
         }
-        .frame(width: 392, height: 685)
+        .frame(width: 392)
         .background(Color("MainColor"))
     }
 }

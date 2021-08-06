@@ -7,7 +7,7 @@
     </entity>
     <entity name="Category" representedClassName="Category" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String"/>
-        <relationship name="category_expense" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Expense" inverseName="expense_category" inverseEntity="Expense"/>
+        <relationship name="category_expense" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Expense"/>
     </entity>
     <entity name="Channel" representedClassName="Channel" syncable="YES" codeGenerationType="class">
         <attribute name="maxShippingFee" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
@@ -18,12 +18,12 @@
         <relationship name="channel_transaction" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Transaction" inverseName="transaction_channel" inverseEntity="Transaction"/>
     </entity>
     <entity name="Expense" representedClassName="Expense" syncable="YES" codeGenerationType="class">
+        <attribute name="category" optional="YES" attributeType="String"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="price" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="quantity" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="repeatEvery" optional="YES" attributeType="String"/>
-        <relationship name="expense_category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="category_expense" inverseEntity="Category"/>
     </entity>
     <entity name="Products" representedClassName="Products" syncable="YES" codeGenerationType="class">
         <attribute name="color" optional="YES" attributeType="String"/>
