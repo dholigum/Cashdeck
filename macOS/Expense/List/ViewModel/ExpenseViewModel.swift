@@ -21,8 +21,8 @@ class ExpenseViewModel: ObservableObject {
     
     @Published var quantity: String = "" {
         didSet {
-            let filtered = amount.filter { "0123456789".contains($0) }
-            if filtered != amount { self.amount = filtered } }
+            let filtered = quantity.filter { "0123456789".contains($0) }
+            if filtered != quantity { self.quantity = filtered } }
         }
     
     @Published var name: String = ""
@@ -51,6 +51,7 @@ class ExpenseViewModel: ObservableObject {
             updateItem.repeatEvery = repeats[repeatIndex]
             
             CoreDataManager.sharedManager.saveContext()
+            totalExpense += Int(amount) ?? 0
             
             // Removing updatingItem if successfull
             updateItem = nil
@@ -73,6 +74,7 @@ class ExpenseViewModel: ObservableObject {
         do {
             CoreDataManager.sharedManager.saveContext()
             expenses.append(newExpense)
+            totalExpense += Int(amount) ?? 0
             
             // Closing view when success
             isNewData.toggle()
@@ -138,6 +140,7 @@ class ExpenseViewModel: ObservableObject {
     
     func deleteExpense(_ expense: Expense) {
         
+        totalExpense -= Int(expense.price)
         CoreDataManager.sharedManager.deleteContext(expense)
         
         if let index = expenses.firstIndex(of: expense) {

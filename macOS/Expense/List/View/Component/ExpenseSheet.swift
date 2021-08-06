@@ -56,7 +56,7 @@ struct ExpenseSheet: View {
             .background(Color("AccentColor"))
             
             VStack(spacing: 8) {
-                TextField("...", text: $expenseVM.amount)
+                TextField("Rp ..........", text: $expenseVM.amount)
                     .textFieldStyle(PlainTextFieldStyle())
                     .font(Font.custom("SFProDisplay-Semibold", size: 28))
                     .foregroundColor(Color("OrangeColor"))

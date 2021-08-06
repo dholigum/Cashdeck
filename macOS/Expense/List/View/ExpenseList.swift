@@ -18,13 +18,13 @@ struct ExpenseList: View {
                 .padding(.bottom)
                 .foregroundColor(Color("AccentColor2"))
             
-            TotalExpenseInfoCard(title: "Total Expense")
+            TotalExpenseInfoCard(expenseVM: expenseVM)
             
             ActionButtonCard(icon: "plus.circle", title: "Add Expense", isPressed: $expenseVM.isNewData)
                 .onTapGesture { expenseVM.isNewData.toggle() }
                 .sheet(isPresented: $expenseVM.isNewData) { ExpenseSheet(expenseVM: expenseVM) }
             
-            RecentExpenseTableCard()
+            RecentExpenseTableCard(expenseVM: expenseVM)
         }
         .padding(.top, -48)
         .padding(.horizontal, 4)

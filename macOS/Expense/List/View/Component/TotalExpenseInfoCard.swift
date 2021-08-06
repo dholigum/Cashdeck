@@ -8,14 +8,12 @@
 import SwiftUI
 
 struct TotalExpenseInfoCard: View {
-    
-    let title: String
 
     @StateObject var expenseVM = ExpenseViewModel()
     
     var body: some View {
         VStack(spacing: 8) {
-            Text(title)
+            Text("Total Expense")
                 .font(Font.title3.weight(.medium))
             Text(String(expenseVM.totalExpense).currencyFormatting())
                 .font(Font.system(size: 36).weight(.semibold))
