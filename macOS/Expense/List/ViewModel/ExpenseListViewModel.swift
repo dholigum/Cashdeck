@@ -40,6 +40,15 @@ class ExpenseListViewModel: ObservableObject {
         }
     }
     
+    func deleteExpense(_ expense: Expense) {
+        
+        CoreDataManager.sharedManager.deleteContext(expense)
+        
+        if let index = expenses.firstIndex(of: expense) {
+            expenses.remove(at: index)
+        }
+    }
+    
     func addExpenseCategory(_ name: String) {
         
         let newCategory = Category(context: context)

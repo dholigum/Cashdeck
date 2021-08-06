@@ -10,6 +10,9 @@ import SwiftUI
 struct RecentExpenseTableCard: View {
     
     var expenseData: [Expense]
+    var expenseListVM: ExpenseListViewModel
+    
+    @State private var showAddExpenseSheet = false
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -20,14 +23,13 @@ struct RecentExpenseTableCard: View {
                 .padding(EdgeInsets(top: 22, leading: 22, bottom: 24, trailing: 0))
             
             ExpenseTableHeader()
-            CustomDivider(width: 840)
             
             ScrollView {
-                ForEach(expenseData, id: \.self) { data in
+                ForEach(expenseData, id: \.self) { expense in
                     VStack(alignment: .leading) {
                         HStack {
 
-                            if let date = data.date, let category = data.category, let name = data.name, let quantity = data.quantity, let price = data.price {
+                            if let date = expense.date, let category = expense.category, let name = expense.name, let quantity = expense.quantity, let price = expense.price {
 
                                 Text(date.dateFormatting())
                                     .font(.system(size: 14))
@@ -46,18 +48,33 @@ struct RecentExpenseTableCard: View {
                                     .frame(minWidth: 118, alignment: .leading)
 
                                 HStack(spacing: 10) {
-                                    Image(systemName: "square.and.pencil")
-                                        .font(.system(size: 18))
-                                        .foregroundColor(Color("AccentColor2"))
-                                    Image(systemName: "trash.fill")
-                                        .font(.system(size: 18))
-                                        .foregroundColor(Color("OrangeColor"))
+                                    
+                                    Button(action: {
+                                        showAddExpenseSheet = true
+                                    }, label: {
+                                        Image(systemName: "square.and.pencil")
+                                            .font(.system(size: 18))
+                                            .foregroundColor(Color("AccentColor2"))
+                                    })
+                                    .buttonStyle(PlainButtonStyle())
+                                    .sheet(isPresented: $showAddExpenseSheet) {
+                                        AddExpenseSheet(expenseListVM: expenseListVM, isVisible: $showAddExpenseSheet)
+                                    }
+                                    
+                                    Button(action: {
+                                        expenseListVM.deleteExpense(expense)
+                                    }, label: {
+                                        Image(systemName: "trash.fill")
+                                            .font(.system(size: 18))
+                                            .foregroundColor(Color("OrangeColor"))
+                                    })
+                                    .buttonStyle(PlainButtonStyle())
                                 }
                                 .frame(minWidth: 120, alignment: .leading)
                             }
                         }
                         
-                        CustomDivider(width: 840)
+                        CustomDivider(width: 920)
                     }
                 }
             }

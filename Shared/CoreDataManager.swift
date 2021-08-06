@@ -35,4 +35,17 @@ class CoreDataManager {
             }
         }
     }
+    
+    func deleteContext(_ object: NSManagedObject) {
+        let context = CoreDataManager.sharedManager.persistentContainer.viewContext
+        
+        do {
+            try context.delete(object)
+            try context.save()
+        }
+        catch {
+            let nserror = error as NSError
+            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+        }
+    }
 }

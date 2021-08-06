@@ -11,7 +11,7 @@ struct AddExpenseSheet: View {
     
     @ObservedObject var amountViewModel = AmountViewModel()
     
-    var expenseListViewModel: ExpenseListViewModel
+    var expenseListVM: ExpenseListViewModel
     
     @Binding var isVisible: Bool
     @State private var amount: String = ""
@@ -118,11 +118,11 @@ struct AddExpenseSheet: View {
             Spacer()
             
             Button(action: {
-                expenseListViewModel.addExpenseCategory(categories[categoryIndex])
+                expenseListVM.addExpenseCategory(categories[categoryIndex])
                 
-                expense = ExpenseModel(date: date, category: categories[categoryIndex], name: name, quantity: Int(quantity)!, cost: Int(amountViewModel.amount) ?? 0, repeatEvery: repeats[repeatIndex])
+                expense = ExpenseModel(date: date, category: categories[categoryIndex], name: name, quantity: Int(quantity) ?? 0, cost: Int(amountViewModel.amount) ?? 0, repeatEvery: repeats[repeatIndex])
                 
-                expenseListViewModel.addExpense(expense!)
+                expenseListVM.addExpense(expense!)
                 
                 self.isVisible = false
                 NSApp.mainWindow?.endSheet(NSApp.keyWindow!)

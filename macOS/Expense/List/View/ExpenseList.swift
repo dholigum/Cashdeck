@@ -10,10 +10,10 @@ import SwiftUI
 struct ExpenseList: View {
     
     @State private var showAddExpenseSheet = false
-    @ObservedObject var expenseListViewModel = ExpenseListViewModel()
+    @ObservedObject var expenseListVM = ExpenseListViewModel()
     
     init() {
-        expenseListViewModel.getAllExpense()
+        expenseListVM.getAllExpense()
     }
     
     var body: some View {
@@ -29,10 +29,10 @@ struct ExpenseList: View {
                     self.showAddExpenseSheet = true
                 }
                 .sheet(isPresented: $showAddExpenseSheet) {
-                    AddExpenseSheet(expenseListViewModel: expenseListViewModel, isVisible: $showAddExpenseSheet)
+                    AddExpenseSheet(expenseListVM: expenseListVM, isVisible: $showAddExpenseSheet)
                 }
             
-            RecentExpenseTableCard(expenseData: expenseListViewModel.expenses)
+            RecentExpenseTableCard(expenseData: expenseListVM.expenses, expenseListVM: expenseListVM)
         }
         .padding(.top, -48)
         .padding(.horizontal, 4)

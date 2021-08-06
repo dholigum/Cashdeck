@@ -13,8 +13,8 @@ struct SamplePage: View {
     
     var body: some View {
         VStack {
-            CurrencyFormattedTextField(formatted: $vm.formattedCurrency, rawValue: $vm.currency)
-                .scaledToFit()
+//            CurrencyFormattedTextField(formatted: $vm.formattedCurrency, rawValue: $vm.currency)
+//                .scaledToFit()
             
             Text("RAW: \(vm.currency)")
             Text("FORMATTED: \(vm.formattedCurrency)")
