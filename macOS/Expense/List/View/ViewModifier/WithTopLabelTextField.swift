@@ -10,7 +10,6 @@ import SwiftUI
 struct WithTopLabelTextField: ViewModifier {
     
     let labelName: String
-    let isWithCurrency: Bool
     
     public func body(content: Content) -> some View {
         VStack(alignment: .leading) {
@@ -20,14 +19,8 @@ struct WithTopLabelTextField: ViewModifier {
                 .font(Font.custom("SFProDisplay-Semibold", size: 18))
                 .padding(.vertical, -4)
             
-            if isWithCurrency {
-                content
-                    .modifier(WithCurrencyLabel(currecy: "Rp"))
-                    .padding(.horizontal, 8)
-            } else {
-                content
-                    .padding(.horizontal, 8)
-            }
+            content
+                .padding(.horizontal, 8)
         }
         .frame(height: 72)
         .background(Color.white)
