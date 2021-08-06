@@ -13,8 +13,7 @@ struct ExpenseNavigationOptions {
     typealias Option = (id: UUID, value: String, image: String, type: Self.OptionType)
     static var options: [Option] = [
         (UUID(), "Overview", "expense-overview", .overview),
-        (UUID(), "Analytics", "expense-analytics", .analytics),
-        (UUID(), "Expense List", "expense-list", .expenseList),
+        (UUID(), "Expense List", "expense-list", .expenseList)
     ]
     
     @ViewBuilder
