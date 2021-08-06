@@ -41,6 +41,8 @@ class ExpenseViewModel: ObservableObject {
         
         if updateItem != nil {
             // Update old data ...
+            let priceDiff = (Int64(amount) ?? 0) - updateItem.price
+
             updateItem.date = date
             updateItem.category = K().categories[categoryIndex]
             updateItem.name = name
@@ -49,7 +51,7 @@ class ExpenseViewModel: ObservableObject {
             updateItem.repeatEvery = K().repeats[repeatIndex]
             
             CoreDataManager.sharedManager.saveContext()
-            totalExpense += Int(amount) ?? 0
+            totalExpense += Int(priceDiff)
             
             // Removing updatingItem if successfull
             updateItem = nil
