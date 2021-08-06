@@ -36,6 +36,7 @@ class ProductSoldViewModel {
         
         for data in ProductSoldModel.shared.getAllDetail() {
             totalDetail += data.price
+            //ganti
             totalCost += data.td_product!.costPrice
         }
         return totalDetail - totalCost
