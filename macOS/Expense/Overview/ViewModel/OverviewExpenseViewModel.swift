@@ -10,8 +10,8 @@ import SwiftUI
 class OverviewExpenseViewModel: ObservableObject {
     
     @Published var isOpenCalendar = false
-    @Published var yearIndex = 21
-    @Published var monthIndex = 0
+    @Published var yearIndex = Calendar.current.component(.year, from: Date()) - 2000
+    @Published var monthIndex = Calendar.current.component(.month, from: Date()) - 1 
     
     @Published var expenses: [Expense] = []
     @Published var groupedDataLabels: [String] = []
@@ -52,12 +52,8 @@ class OverviewExpenseViewModel: ObservableObject {
         
         do {
             expenses = try context.fetch(fetchRequest)
-
-            for expense in expenses {
-                let newSimpleExpense = SimpleExpense(name: expense.category ?? "", cost: Double(expense.price ?? 0))
-
-                simpleExpenses.append(newSimpleExpense)
-            }
+            
+            simpleExpenses = expenses.map({ (expense: Expense) -> SimpleExpense in SimpleExpense(name: expense.category ?? "", cost: Double(expense.price ?? 0)) })
             
             if expenses.count == 0 {
                 groupedDataLabels = []
@@ -66,7 +62,7 @@ class OverviewExpenseViewModel: ObservableObject {
                 groupedDataLabels = simpleExpenses.grouped().map({ (expense: SimpleExpense) -> String in expense.name! })
                 groupedDataValues = simpleExpenses.grouped().map({ (expense: SimpleExpense) -> Double in expense.cost })
             }
-            
+
         } catch let error as NSError {
             print("\(error)")
         }

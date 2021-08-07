@@ -13,12 +13,13 @@ struct MonthlyExpenseChart: View {
     
     var body: some View {
         VStack(alignment: .center) {
-            HStack(spacing: 32) {
+            HStack {
                 Text("Monthly Expense")
-                    .font(Font.title.weight(.semibold))
+                    .font(Font.custom("SFProDisplay-Bold", size: 18))
                     .padding(.vertical)
                     .foregroundColor(Color("AccentColor2"))
-                    .padding(.top, 4)
+                
+                Spacer()
                 
                 ActionButtonCard(icon: "calendar", title: overviewExpenseVM.formatedMonthYear(), isPressed: $overviewExpenseVM.isOpenCalendar)
                     .onTapGesture {
@@ -30,6 +31,7 @@ struct MonthlyExpenseChart: View {
                         MonthYearCalendar(overviewExpenseVM: overviewExpenseVM)
                     }
             }
+            .padding(EdgeInsets(.init(top: 16, leading: 16, bottom: 0, trailing: 16)))
             
             HStack {
 
