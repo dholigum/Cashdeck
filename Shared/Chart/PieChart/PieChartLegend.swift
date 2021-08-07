@@ -25,16 +25,26 @@ struct PieChartLegend: View {
     }
     
     var body: some View {
-        VStack(alignment: .leading) {
-            ForEach(0..<self.values.count){ i in
-                HStack {
-                    RoundedRectangle(cornerRadius: 5.0)
-                        .fill(self.colors[i])
-                        .frame(width: 20, height: 20)
-                    Text(self.percents[i])
-                    Text(self.names[i])
+        if values.count != 0 {
+            VStack(alignment: .leading) {
+                ForEach(0..<self.values.count){ i in
+                    HStack {
+                        RoundedRectangle(cornerRadius: 5.0)
+                            .fill(self.colors[i])
+                            .frame(width: 20, height: 20)
+                        Text(self.percents[i])
+                        Text(self.names[i])
+                    }
                 }
             }
+        } else {
+            VStack {
+                Text("Ups.. No Data in this Month!")
+                    .font(Font.custom("SFProDisplay-Semibold", size: 18))
+                Text("Try to add some data in Expense List Menu")
+                    .font(Font.custom("SFProDisplay-Regular", size: 14))
+            }
+            .padding(.top, -8)
         }
     }
 }
