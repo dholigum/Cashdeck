@@ -13,6 +13,8 @@ struct SyncDataModal: View {
     @Binding var showModal: Bool
     @ObservedObject var ProductViewModel = ProductviewModel()
     
+    @State private var chooseProduct = false
+    
     var body: some View {
         VStack {
             HStack {
@@ -85,10 +87,23 @@ struct SyncDataModal: View {
                                         .frame(width: 340, alignment: .leading)
                                     Spacer()
                                 } else {
-                                    Text("-- Choose Products --")
+//                                    Text("-- Choose Products --")
+//                                        .font(.system(size: 16))
+//                                        .frame(width: 340, alignment: .leading)
+                                    Button(action: {
+                                        
+                                    }, label: {
+                                        Text("-- Choose Products --")
+                                    })
                                         .font(.system(size: 16))
                                         .frame(width: 340, alignment: .leading)
                                     Spacer()
+                                        .onTapGesture {
+                                            chooseProduct = true
+                                        }
+                                        .sheet(isPresented: $chooseProduct, content: {
+                                            ChooseProductModal()
+                                        })
                                 }
                             }
                             Divider()
