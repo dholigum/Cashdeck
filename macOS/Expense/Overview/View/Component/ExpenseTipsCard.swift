@@ -12,7 +12,7 @@ struct ExpenseTipsCard: View {
         VStack {
             Text("ExpenseTipsCard")
         }
-        .frame(width: 567, height: 380)
+        .frame(width: 600, height: 380)
         .background(Color.white)
         .cornerRadius(16)
         .clipped()

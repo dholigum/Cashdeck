@@ -27,7 +27,7 @@ struct MonthlyExpenseCard: View {
             
             HStack {
 
-                PieChartView(values: dataValues, names: dataLabels, formatter: {value in String(format: "Rp %.0f", value)})
+                PieChartView(values: dataValues, names: dataLabels)
                     .frame(width: 300, height: 300)
                 
                 PieChartLegend(values: dataValues, names: dataLabels)

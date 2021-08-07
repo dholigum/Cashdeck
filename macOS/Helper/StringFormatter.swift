@@ -31,4 +31,10 @@ extension Date {
         formatter.dateFormat = "E, dd MMM yyyy"
         return formatter.string(from: self)
     }
+    
+    func shortDateFormatting() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yy"
+        return formatter.string(from: self)
+    }
 }
