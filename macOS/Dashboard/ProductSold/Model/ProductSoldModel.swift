@@ -76,20 +76,18 @@ class ProductSoldModel {
         return []
     }
     
+    func getAllProduct() -> [Products] {
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Products")
+        
+        do {
+            let data = try context.fetch(fetchRequest) as! [Products]
+            return data
+        }
+        catch let error  as NSError {
+            print("\(error)")
+        }
+        
+        return []
+    }
     
-    
-//    func getTransactionDetail(product: Products) -> [TransactionDetail] {
-//        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "TransactionDetail")
-//        fetchRequest.predicate = NSPredicate(format: "td_product", product)
-//        
-//        do {
-//            let data = try context.fetch(fetchRequest) as! [TransactionDetail]
-//            return data
-//        }
-//        catch let error as NSError {
-//            print("\(error)")
-//        }
-//        
-//        return []
-//    }
 }

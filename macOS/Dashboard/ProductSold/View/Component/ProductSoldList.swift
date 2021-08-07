@@ -46,33 +46,27 @@ struct ProductSoldList: View {
                 }
                 .padding(EdgeInsets(top: 0, leading: 22, bottom: 16, trailing: 0))
             ScrollView {
-                ForEach(self.productSoldVM.soldData, id: \.self) { data in
+                ForEach(self.productSoldVM.productSold, id: \.self) { data in
                     VStack (alignment: .leading){
                         HStack {
-                            
-                            if let product = data.td_product, let sku = product.sku, let productName = product.name, let productColor = product.color, let productSize = product.size {
-
-                                Text(sku)
+                            Text(data.sku)
                                     .frame(width: 150, alignment: .leading)
                                     .font(Font.custom("SFProDisplay-Regular", size: 14))
-                                Text(productName)
+                            Text(data.name)
                                     .frame(minWidth: 350, alignment: .leading)
                                     .font(Font.custom("SFProDisplay-Regular", size: 14))
-                                Text(productColor)
+                            Text(data.color)
                                     .frame(minWidth: 105, alignment: .leading)
                                     .font(Font.custom("SFProDisplay-Regular", size: 14))
-                                Text(productSize)
+                            Text(data.size)
                                     .frame(minWidth: 90, alignment: .leading)
                                     .font(Font.custom("SFProDisplay-Regular", size: 14))
-                                
                                 Text("\(data.quantity)")
                                     .frame(minWidth: 118, alignment: .leading)
                                     .font(Font.custom("SFProDisplay-Regular", size: 14))
-                                
-                                Text("+Rp \(productSoldVM.getNetIncome(sku: sku))")
+                            Text("+Rp \(data.netIncome)")
                                     .frame(minWidth: 120, alignment: .leading)
                                     .font(Font.custom("SFProDisplay-Regular", size: 14))
-                            }
                         }
                         line
                     }
