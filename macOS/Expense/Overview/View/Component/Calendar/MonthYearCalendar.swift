@@ -122,7 +122,7 @@ struct MonthYearCalendar: View {
                 overviewExpenseVM.isOpenCalendar = false
                 overviewExpenseVM.getMonthlyGroupedExpense()
                 overviewExpenseVM.showPieChart.toggle()
-                overviewExpenseVM.showPiecHartLegend.toggle()
+                overviewExpenseVM.showPieChartLegend.toggle()
                 NSApp.mainWindow?.endSheet(NSApp.keyWindow!)
                 
             }, label: {

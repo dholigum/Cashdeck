@@ -67,7 +67,6 @@ public struct PieChartView: View {
                             .onChanged { value in
                                 let radius = 0.5 * widthFraction * geometry.size.width
                                 let diff = CGPoint(x: value.location.x - radius, y: radius - value.location.y)
-                                print(value)
                                 let dist = pow(pow(diff.x, 2.0) + pow(diff.y, 2.0), 0.5)
                                 if (dist > radius || dist < radius * innerRadiusFraction) {
                                     self.activeIndex = -1
