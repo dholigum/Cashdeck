@@ -9,13 +9,14 @@ import SwiftUI
 
 struct BusinessUpdateCard: View {
     var body: some View {
-        VStack {
+        VStack (alignment: .leading, spacing: 5) {
             Text("Business Update")
                 .font(Font.title.weight(.semibold))
                 .padding(.vertical)
                 .foregroundColor(Color("AccentColor2"))
-                .padding(.top, 4)
+                
                 .padding(.leading, 20)
+            Text("Your net income this month looks good. Keep it up to maintain your profit stability! \n If possible, increase your most selling product STEEBLACK to improve your profit next month")
         }
         .frame(width: 410, height: 198)
         .background(Color.white)
