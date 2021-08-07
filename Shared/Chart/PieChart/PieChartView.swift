@@ -43,8 +43,8 @@ public struct PieChartView: View {
     }
     
     public init(values:[Double], names: [String], colors: [Color] = [Color.blue, Color.green, Color.orange, Color.purple, Color.gray, Color.yellow, Color.red, Color.blue, Color.green, Color.orange, Color.purple, Color.gray, Color.yellow, Color.red], backgroundColor: Color = Color.white, widthFraction: CGFloat = 0.75, innerRadiusFraction: CGFloat = 0.60){
-        self.values = values
-        self.names = names
+        self.values = values.allSatisfy { $0 == 0 } ? [] : values
+        self.names = values.allSatisfy { $0 == 0 } ? [] : names
         
         self.colors = Array(colors.prefix(upTo: self.values.count))
         self.backgroundColor = backgroundColor

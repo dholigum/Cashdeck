@@ -13,6 +13,9 @@ struct PieChartComplexLegend: View {
     var names: [String]
     var values: [Double]
     var oldValues: [Double]
+    var isAllZeroValues: Bool {
+        return self.values.allSatisfy { $0 == 0 }
+    }
     var percents: [String] {
         return self.values.map { String(format: "%.2f%%", $0 * 100 / values.reduce(0, +)) }
     }
@@ -38,7 +41,7 @@ struct PieChartComplexLegend: View {
     }
     
     var body: some View {
-        if values.count != 0 {
+        if !isAllZeroValues {
             VStack(alignment: .leading, spacing: 10) {
                 ForEach(0..<self.values.count) { i in
                     HStack(alignment: .top, spacing: 6) {
