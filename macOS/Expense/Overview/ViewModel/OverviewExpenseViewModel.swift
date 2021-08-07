@@ -14,9 +14,15 @@ class OverviewExpenseViewModel: ObservableObject {
     @Published var monthIndex = 0
     
     @Published var expenses: [Expense] = []
-    @Published var groupedExpense: [SimpleExpense] = []
+    @Published var groupedDataLabels: [String] = []
+    @Published var groupedDataValues: [Double] = []
+    
+    @Published var showPieChart = false
+    @Published var showPiecHartLegend = false
     
     let context = CoreDataManager.sharedManager.persistentContainer.viewContext
+    
+    var simpleExpenses: [SimpleExpense] = []
     
     func formatedMonthYear() -> String {
         let realYear = 2000 + yearIndex
@@ -46,19 +52,20 @@ class OverviewExpenseViewModel: ObservableObject {
         
         do {
             expenses = try context.fetch(fetchRequest)
-            
+
             for expense in expenses {
-                print(expense.name, expense.category)
+                let newSimpleExpense = SimpleExpense(name: expense.category ?? "", cost: Double(expense.price ?? 0))
+
+                simpleExpenses.append(newSimpleExpense)
             }
-//            totalExpense = Int(expenses.reduce(0) { $0 + $1.price })
-//
-//            for expense in expenses {
-//                let newSimpleExpense = SimpleExpense(name: expense.category ?? "", cost: Double(expense.price ?? 0))
-//
-//                simpleExpenses.append(newSimpleExpense)
-//            }
-//
-//            groupedExpense = simpleExpenses.grouped()
+            
+            if expenses.count == 0 {
+                groupedDataLabels = []
+                groupedDataValues = []
+            } else {
+                groupedDataLabels = simpleExpenses.grouped().map({ (expense: SimpleExpense) -> String in expense.name! })
+                groupedDataValues = simpleExpenses.grouped().map({ (expense: SimpleExpense) -> Double in expense.cost })
+            }
             
         } catch let error as NSError {
             print("\(error)")

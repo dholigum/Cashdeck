@@ -11,8 +11,7 @@ import SwiftUI
 public struct PieChartView: View {
     public let values: [Double]
     public let names: [String]
-    public let formatter: (Double) -> String
-    
+
     public var colors: [Color]
     public var backgroundColor: Color
     
@@ -20,6 +19,15 @@ public struct PieChartView: View {
     public var innerRadiusFraction: CGFloat
     
     @State private var activeIndex: Int = -1
+    
+    func currencyFormatter(_ value: Double) -> String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.currencyCode = "Rp."
+        formatter.maximumFractionDigits = 3
+        formatter.minimumFractionDigits = 0
+        return formatter.string(for: value)!
+    }
     
     var slices: [PieSliceData] {
         let sum = values.reduce(0, +)
@@ -34,10 +42,9 @@ public struct PieChartView: View {
         return tempSlices
     }
     
-    public init(values:[Double], names: [String], formatter: @escaping (Double) -> String, colors: [Color] = [Color.blue, Color.green, Color.orange, Color.purple, Color.gray, Color.yellow, Color.red, Color.blue, Color.green, Color.orange, Color.purple, Color.gray, Color.yellow, Color.red], backgroundColor: Color = Color.white, widthFraction: CGFloat = 0.75, innerRadiusFraction: CGFloat = 0.60){
+    public init(values:[Double], names: [String], colors: [Color] = [Color.blue, Color.green, Color.orange, Color.purple, Color.gray, Color.yellow, Color.red, Color.blue, Color.green, Color.orange, Color.purple, Color.gray, Color.yellow, Color.red], backgroundColor: Color = Color.white, widthFraction: CGFloat = 0.75, innerRadiusFraction: CGFloat = 0.60){
         self.values = values
         self.names = names
-        self.formatter = formatter
         
         self.colors = Array(colors.prefix(upTo: self.values.count))
         self.backgroundColor = backgroundColor
@@ -88,10 +95,10 @@ public struct PieChartView: View {
                     
                     VStack {
                         Text(self.activeIndex == -1 ? "Total" : names[self.activeIndex])
-                            .font(.title3)
+                            .font(Font.custom("SFProDisplay-Semibold", size: 24))
                             .foregroundColor(Color.black)
-                        Text(self.formatter(self.activeIndex == -1 ? values.reduce(0, +) : values[self.activeIndex]))
-                            .font(.subheadline)
+                        Text(self.currencyFormatter(self.activeIndex == -1 ? values.reduce(0, +) : values[self.activeIndex]))
+                            .font(Font.custom("SFProDisplay-Semibold", size: 18))
                             .foregroundColor(Color.black)
                     }
                     
@@ -105,9 +112,10 @@ public struct PieChartView: View {
     }
 }
 
+
 @available(OSX 10.15.0, *)
 struct PieChartView_Previews: PreviewProvider {
     static var previews: some View {
-        PieChartView(values: [1300, 500, 300, 500], names: ["Rent", "Transport", "Education", "Dolan"], formatter: {value in String(format: "Rp%.2f", value)})
+        PieChartView(values: [], names: [])
     }
 }

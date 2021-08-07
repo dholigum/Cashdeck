@@ -9,9 +9,6 @@ import SwiftUI
 
 struct MonthlyExpenseChart: View {
     
-    let dataValues: [Double] = [30, 24, 21, 13, 12]
-    let dataLabels: [String] = ["Utilities", "Transport", "Housing", "Personal", "Finance"]
-    
     @StateObject var overviewExpenseVM = OverviewExpenseViewModel()
     
     var body: some View {
@@ -24,7 +21,11 @@ struct MonthlyExpenseChart: View {
                     .padding(.top, 4)
                 
                 ActionButtonCard(icon: "calendar", title: overviewExpenseVM.formatedMonthYear(), isPressed: $overviewExpenseVM.isOpenCalendar)
-                    .onTapGesture { overviewExpenseVM.isOpenCalendar.toggle() }
+                    .onTapGesture {
+                        overviewExpenseVM.isOpenCalendar.toggle()
+                        overviewExpenseVM.showPieChart.toggle()
+                        overviewExpenseVM.showPiecHartLegend.toggle()
+                    }
                     .sheet(isPresented: $overviewExpenseVM.isOpenCalendar) {
                         MonthYearCalendar(overviewExpenseVM: overviewExpenseVM)
                     }
@@ -32,13 +33,17 @@ struct MonthlyExpenseChart: View {
             
             HStack {
 
-                PieChartView(values: dataValues, names: dataLabels, formatter: {value in String(format: "Rp %.0f", value)})
-                    .frame(width: 300, height: 300)
+                if overviewExpenseVM.showPieChart {
+                    PieChartView(values: overviewExpenseVM.groupedDataValues, names: overviewExpenseVM.groupedDataLabels)
+                        .frame(width: 300, height: 300)
+                }
             }
             .padding(.top, -8)
             .padding(.leading, -16)
             
-            PieChartLegend(values: dataValues, names: dataLabels)
+            if overviewExpenseVM.showPieChart {
+                PieChartLegend(values: overviewExpenseVM.groupedDataValues, names: overviewExpenseVM.groupedDataLabels)
+            }
             
             Spacer()
             
@@ -51,6 +56,7 @@ struct MonthlyExpenseChart: View {
         .padding(.horizontal, 2)
         .onAppear() {
             overviewExpenseVM.getMonthlyGroupedExpense()
+            overviewExpenseVM.showPieChart.toggle()
         }
     }
 }
