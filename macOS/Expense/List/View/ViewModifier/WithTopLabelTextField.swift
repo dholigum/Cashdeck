@@ -10,6 +10,7 @@ import SwiftUI
 struct WithTopLabelTextField: ViewModifier {
     
     let labelName: String
+    let frameHeight: Int
     
     public func body(content: Content) -> some View {
         VStack(alignment: .leading) {
@@ -22,7 +23,7 @@ struct WithTopLabelTextField: ViewModifier {
             content
                 .padding(.horizontal, 8)
         }
-        .frame(height: 72)
+        .frame(height: CGFloat(frameHeight))
         .background(Color.white)
         .cornerRadius(8)
         .clipped()

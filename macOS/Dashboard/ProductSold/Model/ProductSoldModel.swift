@@ -76,18 +76,7 @@ class ProductSoldModel {
         return []
     }
     
-    func getChannel(name: String) -> Channel {
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Channel")
-        fetchRequest.predicate = NSPredicate(format: "name == %@", name)
-        do {
-            let item = try context.fetch(fetchRequest)
-            let data = item as! [Channel]
-            return data[0]
-        }catch {
-            print(error)
-        }
-        return Channel()
-    }
+    
     
 //    func getTransactionDetail(product: Products) -> [TransactionDetail] {
 //        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "TransactionDetail")
