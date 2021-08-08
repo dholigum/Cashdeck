@@ -75,7 +75,6 @@ class OverviewExpenseViewModel: ObservableObject {
             groupedPrevDataValues = structureValues(labels: groupedPrevMonthDataLabels, values: groupedPrevMonthDataValues)
             
             // Expense Tips
-            print(expenseTips)
             getHighestMonthlyExpense()
             getPersonalExpensePercentage()
             getComparisonWithPreviousMonth()
