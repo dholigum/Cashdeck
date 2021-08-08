@@ -103,23 +103,22 @@ struct SyncDataModal: View {
 //                                    Text("-- Choose Products --")
 //                                        .font(.system(size: 16))
 //                                        .frame(width: 340, alignment: .leading)
-                                if trans.tdtemp_product != nil {
-                                    Button(action: {
-//                                        let transs = trans
-                                        chooseProduct = true
-                                        print(trans.productName)
-                                    }, label: {
-                                        Text("\(trans.tdtemp_product?.name ?? "") - \(trans.tdtemp_product?.color ?? "") - \(trans.tdtemp_product?.size ?? "")")
-    //                                        .frame(width: 300)
-                                        Spacer()
-                                        Text(">")
-                                    })
-                                    .buttonStyle(PlainButtonStyle())
-                                    .font(.system(size: 16))
-                                    .sheet(isPresented: $chooseProduct, content: {
-                                        ChooseProductModal(chooseProductt: $chooseProduct, transDetaill: trans)
-                                    })
-                                } else {
+//                                if trans.tdtemp_product != nil {
+//                                    Button(action: {
+//                                        chooseProduct = true
+//                                        print(trans.productName)
+//                                    }, label: {
+//                                        Text("\(trans.tdtemp_product?.name ?? "") - \(trans.tdtemp_product?.color ?? "") - \(trans.tdtemp_product?.size ?? "")")
+//    //                                        .frame(width: 300)
+//                                        Spacer()
+//                                        Text(">")
+//                                    })
+//                                    .buttonStyle(PlainButtonStyle())
+//                                    .font(.system(size: 16))
+//                                    .sheet(isPresented: $chooseProduct, content: {
+//                                        ChooseProductModal(chooseProductt: $chooseProduct, transDetaill: trans)
+//                                    })
+//                                } else {
                                     Button(action: {
                                         chooseProduct = true
                                         
@@ -138,7 +137,7 @@ struct SyncDataModal: View {
                                         })
                                     
                                     Spacer()
-                                }
+//                                }
                             }
                             .padding(.leading, 30)
                             Divider()

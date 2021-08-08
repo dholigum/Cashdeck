@@ -83,6 +83,7 @@ class TransDetailViewModel: ObservableObject {
 
             //saving to core data
             do {
+                context.delete(transTemp)
                 try self.context.save()
             }
             catch {
