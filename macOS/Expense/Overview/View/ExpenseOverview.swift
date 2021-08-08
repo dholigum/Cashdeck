@@ -24,7 +24,7 @@ struct ExpenseOverview: View {
                 
                 VStack(spacing: 20) {
                     RecentExpenseOverviewCard(expenseVM: expenseVM)
-                    ExpenseTipsCard()
+                    ExpenseTipsCard(overviewExpenseVM: overviewExpenseVM)
                 }
             }
         }
