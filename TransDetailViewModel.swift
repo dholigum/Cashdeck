@@ -36,4 +36,17 @@ class TransDetailViewModel: ObservableObject {
             print(error.localizedDescription)
         }
     }
+    
+    func connectProduct (_ transTemp: TransactionDetailTemp, product: Products) {
+        transTemp.tdtemp_product = product
+        do {
+            try self.context.save()
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+    func saveToTransaction (_ transTemp: TransactionDetailTemp) {
+        
+    }
 }
