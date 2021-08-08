@@ -44,13 +44,7 @@ struct ChooseProductModal: View {
                 
                 Spacer()
                 
-                Button(action: {
-                    print(transDetail.productName)
-                }, label: {
-                    /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
-                })
-                
-                Text("\t\t")
+                Text("\t\t\t")
 //                Button(action: {
 //                }, label: {
 //                    Text("Save")

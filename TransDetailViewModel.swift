@@ -52,11 +52,16 @@ class TransDetailViewModel: ObservableObject {
             var transList = [Transaction]()
             let newTrans = Transaction(context: self.context)
             let newTransDetail = TransactionDetail(context: self.context)
+            let newAlias = Alias(context: self.context)
 
             //adding data to transDetail table
             newTransDetail.price = transTemp.price
             newTransDetail.quantity = transTemp.quantity
             newTransDetail.td_product = transTemp.tdtemp_product
+            
+            newAlias.name_alias = transTemp.productName
+            newAlias.product_id = transTemp.productSKU
+            newAlias.sku_product = transTemp.tdtemp_product
 
             //checking if orderId exists in core data
             do {

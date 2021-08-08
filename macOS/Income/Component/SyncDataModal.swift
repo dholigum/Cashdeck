@@ -40,6 +40,8 @@ struct SyncDataModal: View {
                     for transTemp in listTransTemp {
                         TransDetailVM.saveToTransaction(transTemp)
                     }
+                    showModalSync = false
+                    showModal = false
                 }, label: {
                     Text("Sync")
                         .font(Font.custom("SFProDisplay-Semibold", size: 16))
@@ -67,53 +69,54 @@ struct SyncDataModal: View {
                         .frame(width: 340, alignment: .leading)
                     Spacer()
                 }
-                .padding(35)
+                .padding(.horizontal, 35)
+                .padding(.top, 20)
+                .padding(.bottom, 10)
+                Divider()
                 if listTransTemp.count > 0 {
                     ScrollView (showsIndicators: true) {
                         ForEach(listTransTemp) { trans in
-                            HStack {
-                                if trans.tdtemp_product != nil{
+                            if trans.productName != nil {
+                                HStack {
                                     HStack {
-                                        Image(systemName: "checkmark.circle.fill")
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fit)
-                                            .frame(width: 24)
-                                            .foregroundColor(Color.green)
+                                        if trans.tdtemp_product != nil{
+                                            Image(systemName: "checkmark.circle.fill")
+                                                .resizable()
+                                                .aspectRatio(contentMode: .fit)
+                                                .frame(width: 24)
+                                                .foregroundColor(Color.green)
+                                        } else {
+                                            Image(systemName: "exclamationmark.triangle.fill")
+                                                .resizable()
+                                                .aspectRatio(contentMode: .fit)
+                                                .frame(width: 24)
+                                                .foregroundColor(Color.yellow)
+                                        }
                                     }
-                                    .frame(width: 80)
-                                } else {
-                                    HStack {
-                                        Image(systemName: "exclamationmark.triangle.fill")
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fit)
-                                            .frame(width: 24)
-                                            .foregroundColor(Color.orange)
-                                    }
-                                    .frame(width: 80)
-                                }
-                                Text(trans.productName!)
+                                        .frame(width: 80)
+                                    
+                                    Text(trans.productName ?? "")
+                                        .font(.system(size: 16))
+                                        .frame(width: 380, alignment: .leading)
+                                    Button(action: {
+                                        chooseProduct = true
+                                        print(trans.productName)
+                                        transPicked = trans
+                                    }, label: {
+                                        if trans.tdtemp_product != nil {
+                                        Text("\(trans.tdtemp_product?.name ?? "") - \(trans.tdtemp_product?.color ?? "") - \(trans.tdtemp_product?.size ?? "")")
+                                        } else {
+                                            Text("-- Choose Products --")
+                                        }
+                                        Spacer()
+                                        Text(">")
+                                    })
+                                    .buttonStyle(PlainButtonStyle())
                                     .font(.system(size: 16))
-                                    .frame(width: 380, alignment: .leading)
-                                Button(action: {
-                                    chooseProduct = true
-                                    print(trans.productName)
-                                    transPicked = trans
-                                }, label: {
-                                    if trans.tdtemp_product != nil {
-                                    Text("\(trans.tdtemp_product?.name ?? "") - \(trans.tdtemp_product?.color ?? "") - \(trans.tdtemp_product?.size ?? "")")
-                                    } else {
-                                        Text("-- Choose Products --")
-                                    }
                                     Spacer()
-                                    Text(">")
-                                })
-                                .buttonStyle(PlainButtonStyle())
-                                .font(.system(size: 16))
-                                Spacer()
+                                }
+                                Divider()
                             }
-                            .padding(.leading, 30)
-                            Divider()
-//                                .padding(10)
                         }
                         .sheet(isPresented: $chooseProduct, content: {
                             ChooseProductModal(chooseProductt: $chooseProduct, transDetaill: transPicked)
