@@ -11,10 +11,10 @@ struct SyncDataModal: View {
     @Binding var listTransTemp: [TransactionDetailTemp]
     @Binding var showModalSync: Bool
     @Binding var showModal: Bool
-    @ObservedObject var ProductViewModel = ProductviewModel()
     @ObservedObject var TransDetailVM = TransDetailViewModel()
     
     @State var chooseProduct = false
+    @State var transPicked: TransactionDetailTemp
     
 //    var transs: TransactionDetailTemp
     
@@ -72,7 +72,7 @@ struct SyncDataModal: View {
                     ScrollView (showsIndicators: true) {
                         ForEach(listTransTemp) { trans in
                             HStack {
-                                if ProductViewModel.listProducts.count > 0 {
+                                if trans.tdtemp_product != nil{
                                     HStack {
                                         Image(systemName: "checkmark.circle.fill")
                                             .resizable()
@@ -94,34 +94,24 @@ struct SyncDataModal: View {
                                 Text(trans.productName!)
                                     .font(.system(size: 16))
                                     .frame(width: 380, alignment: .leading)
-//                                if ProductViewModel.listProducts.count > 0 {
-//                                    Text(trans.productName!)
-//                                        .font(.system(size: 16))
-//                                        .frame(width: 340, alignment: .leading)
-//                                    Spacer()
-//                                } else {
-//                                    Text("-- Choose Products --")
-//                                        .font(.system(size: 16))
-//                                        .frame(width: 340, alignment: .leading)
-//                                if trans.tdtemp_product != nil {
-//                                    Button(action: {
-//                                        chooseProduct = true
-//                                        print(trans.productName)
-//                                    }, label: {
-//                                        Text("\(trans.tdtemp_product?.name ?? "") - \(trans.tdtemp_product?.color ?? "") - \(trans.tdtemp_product?.size ?? "")")
-//    //                                        .frame(width: 300)
-//                                        Spacer()
-//                                        Text(">")
-//                                    })
-//                                    .buttonStyle(PlainButtonStyle())
-//                                    .font(.system(size: 16))
-//                                    .sheet(isPresented: $chooseProduct, content: {
-//                                        ChooseProductModal(chooseProductt: $chooseProduct, transDetaill: trans)
-//                                    })
-//                                } else {
+                                if trans.tdtemp_product != nil {
                                     Button(action: {
                                         chooseProduct = true
-                                        
+                                        print(trans.productName)
+                                        transPicked = trans
+                                    }, label: {
+                                        Text("\(trans.tdtemp_product?.name ?? "") - \(trans.tdtemp_product?.color ?? "") - \(trans.tdtemp_product?.size ?? "")")
+                                        Spacer()
+                                        Text(">")
+                                    })
+                                    .buttonStyle(PlainButtonStyle())
+                                    .font(.system(size: 16))
+                                    Spacer()
+                                } else {
+                                    Button(action: {
+                                        chooseProduct = true
+                                        transPicked = trans
+                                        print(transPicked)
                                     }, label: {
                                         HStack {
                                             Text("-- Choose Products --")
@@ -132,17 +122,19 @@ struct SyncDataModal: View {
                                         .buttonStyle(PlainButtonStyle())
                                         .font(.system(size: 16))
                                         .frame(width: 340, alignment: .leading)
-                                        .sheet(isPresented: $chooseProduct, content: {
-                                            ChooseProductModal(chooseProductt: $chooseProduct, transDetaill: trans)
-                                        })
-                                    
+//                                        .sheet(isPresented: $chooseProduct, content: {
+//                                            ChooseProductModal(chooseProductt: $chooseProduct, transDetaill: trans)
+//                                        })
                                     Spacer()
-//                                }
+                                }
                             }
                             .padding(.leading, 30)
                             Divider()
-                                .padding(10)
+//                                .padding(10)
                         }
+                        .sheet(isPresented: $chooseProduct, content: {
+                            ChooseProductModal(chooseProductt: $chooseProduct, transDetaill: transPicked)
+                        })
                     }
                     .frame(height: 456)
                 }
@@ -153,12 +145,5 @@ struct SyncDataModal: View {
             .padding()
         }
         .background(Color("MainColor"))
-        .onAppear(perform: fetchData)
-    }
-}
-
-extension SyncDataModal {
-    func fetchData () {
-        ProductViewModel.fetchProducts()
     }
 }
