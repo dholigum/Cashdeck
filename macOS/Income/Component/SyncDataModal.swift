@@ -94,39 +94,22 @@ struct SyncDataModal: View {
                                 Text(trans.productName!)
                                     .font(.system(size: 16))
                                     .frame(width: 380, alignment: .leading)
-                                if trans.tdtemp_product != nil {
-                                    Button(action: {
-                                        chooseProduct = true
-                                        print(trans.productName)
-                                        transPicked = trans
-                                    }, label: {
-                                        Text("\(trans.tdtemp_product?.name ?? "") - \(trans.tdtemp_product?.color ?? "") - \(trans.tdtemp_product?.size ?? "")")
-                                        Spacer()
-                                        Text(">")
-                                    })
-                                    .buttonStyle(PlainButtonStyle())
-                                    .font(.system(size: 16))
+                                Button(action: {
+                                    chooseProduct = true
+                                    print(trans.productName)
+                                    transPicked = trans
+                                }, label: {
+                                    if trans.tdtemp_product != nil {
+                                    Text("\(trans.tdtemp_product?.name ?? "") - \(trans.tdtemp_product?.color ?? "") - \(trans.tdtemp_product?.size ?? "")")
+                                    } else {
+                                        Text("-- Choose Products --")
+                                    }
                                     Spacer()
-                                } else {
-                                    Button(action: {
-                                        chooseProduct = true
-                                        transPicked = trans
-                                        print(transPicked)
-                                    }, label: {
-                                        HStack {
-                                            Text("-- Choose Products --")
-                                            Spacer()
-                                            Text(">")
-                                        }.frame(width: 300)
-                                    })
-                                        .buttonStyle(PlainButtonStyle())
-                                        .font(.system(size: 16))
-                                        .frame(width: 340, alignment: .leading)
-//                                        .sheet(isPresented: $chooseProduct, content: {
-//                                            ChooseProductModal(chooseProductt: $chooseProduct, transDetaill: trans)
-//                                        })
-                                    Spacer()
-                                }
+                                    Text(">")
+                                })
+                                .buttonStyle(PlainButtonStyle())
+                                .font(.system(size: 16))
+                                Spacer()
                             }
                             .padding(.leading, 30)
                             Divider()
