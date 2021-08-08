@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ExpenseTipsCard: View {
+    
+    @StateObject var overviewExpenseVM = OverviewExpenseViewModel()
+    
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
@@ -19,10 +22,23 @@ struct ExpenseTipsCard: View {
                     .font(Font.custom("SFProDisplay-Semibold", size: 14))
                     .foregroundColor(Color("AccentColor2"))
                     .padding(.bottom, 16)
+
+                ForEach(overviewExpenseVM.expenseTips, id:\.self) { tips in
+                    if tips != "" {
+                        HStack(alignment: .top) {
+                            Circle()
+                                .frame(width: 4, height: 4)
+                                .padding(.top, 4)
+                            Text(tips)
+                                .font(Font.custom("SFProDisplay-Reguler", size: 16))
+                                .padding(.vertical, 2)
+                        }
+                    }
+                }
                 
                 Spacer()
             }
-            .padding(.leading, 16)
+            .padding(.horizontal, 16)
             
             Spacer()
         }

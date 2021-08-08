@@ -21,6 +21,8 @@ class OverviewExpenseViewModel: ObservableObject {
     @Published var showPieChart = false
     @Published var showPieChartLegend = false
     
+    @Published var expenseTips: [String] = ["Try omnichannel. Customers are not fixed in one online marketplace", "", "", "", ""]
+    
     let context = CoreDataManager.sharedManager.persistentContainer.viewContext
     
     var simpleExpenses: [SimpleExpense] = []
@@ -72,9 +74,56 @@ class OverviewExpenseViewModel: ObservableObject {
             groupedDataValues = structureValues(labels: groupedDataLabels, values: groupedDataValues)
             groupedPrevDataValues = structureValues(labels: groupedPrevMonthDataLabels, values: groupedPrevMonthDataValues)
             
+            // Expense Tips
+            print(expenseTips)
+            getHighestMonthlyExpense()
+            getPersonalExpensePercentage()
+            getComparisonWithPreviousMonth()
+            
         } catch let error as NSError {
             print("\(error)")
         }
+    }
+    
+    func getHighestMonthlyExpense() {
+        
+        let highestExpenseValue = groupedDataValues.max()!
+        let highestExpenseLabel = K().categories[groupedDataValues.firstIndex(of: highestExpenseValue)!]
+        var tips: String = ""
+        if highestExpenseValue > 300000 {
+            tips = "Based on chart, you have the largest expense in \(highestExpenseLabel) at \(String(highestExpenseValue).currencyFormatting()).  If possible, reduce \(highestExpenseLabel) bill to balance your expense"
+        } else { tips = "" }
+        expenseTips[1] = tips
+    }
+    
+    func getPersonalExpensePercentage() {
+        
+        let personalExpenseValue = groupedDataValues[K().categories.firstIndex(of: "Personal")!]
+        let totalExpenseDataValue = groupedDataValues.reduce(0, +)
+        let personalExpensePercentage = personalExpenseValue/totalExpenseDataValue * 100
+        var tips: String = ""
+        if personalExpensePercentage > 15 {
+            tips = "Based on chart, you have \(String(format: "%.2f", personalExpensePercentage))% for personal expense. You might consider to reduce your personal expense."
+        } else if personalExpensePercentage.isNaN  {
+            tips = ""
+        } else {
+            tips = "Based on chart, you have \(String(format: "%.2f", personalExpensePercentage))% for personal expense. Keep that number under 15% to reduce your overall expense"
+        }
+        expenseTips[2] = tips
+    }
+    
+    func getComparisonWithPreviousMonth() {
+        
+        let totalThisMonthExpenses = groupedDataValues.reduce(0, +)
+        let totalPrevMonthExpenses = groupedPrevDataValues.reduce(0, +)
+        let monthDifference = abs(totalThisMonthExpenses - totalPrevMonthExpenses)
+        var tips: String = ""
+        if monthDifference > 150000 {
+            tips = "Based on your previous expense at \(String(totalPrevMonthExpenses).currencyFormatting()) and this month expense at \(String(totalThisMonthExpenses).currencyFormatting()), Your expenses are not stable. Try to inspect your expenses again and get rid of unuseful expenses"
+        } else {
+            tips = "Based on your previous expense at \(String(totalPrevMonthExpenses).currencyFormatting()) and this month expense at \(String(totalThisMonthExpenses).currencyFormatting()), Your expenses are stable. Keep it up!"
+        }
+        expenseTips[3] = tips
     }
     
     func predicateGenerator(year: Int, month: Int) -> NSPredicate {
