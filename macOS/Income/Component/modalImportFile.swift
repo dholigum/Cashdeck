@@ -19,18 +19,19 @@ struct modalImportFile: View {
             HStack {
                 Button(action: {isVisible = false}, label: {
                     Text("Cancel")
-                        .font(.system(size: 17))
+                        .font(Font.custom("SFProDisplay-Semibold", size: 16))
                         .padding(.init(top: 18, leading: 18, bottom: 18, trailing: 18))
                         .frame(width: 100, alignment: .leading)
                 })
                 .buttonStyle(PlainButtonStyle())
                 Text("New Transaction")
-                    .font(.system(size: 18))
+                    .font(Font.custom("SFProDisplay-Semibold", size: 18))
                     .foregroundColor(Color("AccentColor2"))
                     .frame(width: 192, alignment: .center)
                 Text(" ")
                     .frame(width: 100)
             }
+            .frame(height: 50)
             .background(Color("AccentColor"))
             VStack {
                 Image(systemName: "square.and.arrow.up")

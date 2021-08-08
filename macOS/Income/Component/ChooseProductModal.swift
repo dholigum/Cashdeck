@@ -10,12 +10,14 @@ import SwiftUI
 struct ChooseProductModal: View {
     
     @ObservedObject var productVM: ProductviewModel
+    @Binding var chooseProduct: Bool
     
     @State var text: String
     
-    init() {
-        productVM = ProductviewModel()
-        text = ""
+    init(chooseProductt: Binding<Bool>) {
+        self.productVM = ProductviewModel()
+        self._chooseProduct = chooseProductt
+        self.text = ""
     }
     
     let namess = ["aaa", "bbb", "ccc", "ddd", "eee", "fff", "ggg", "hhh", "iii", "jjj", "kkk", "lll", "mmm", "nnn", "ooo"]
@@ -25,8 +27,7 @@ struct ChooseProductModal: View {
     var body: some View {        
         VStack(spacing: 16) {
             HStack {
-                Button(action: {
-                }, label: {
+                Button(action: { chooseProduct = false }, label: {
                     Text("Cancel")
                         .font(Font.custom("SFProDisplay-Semibold", size: 16))
                 })
@@ -138,6 +139,6 @@ struct ChooseProductModal: View {
 
 struct ChooseProductModal_Previews: PreviewProvider {
     static var previews: some View {
-        ChooseProductModal()
+        ChooseProductModal(chooseProductt: .constant(true))
     }
 }

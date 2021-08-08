@@ -13,30 +13,35 @@ struct SyncDataModal: View {
     @Binding var showModal: Bool
     @ObservedObject var ProductViewModel = ProductviewModel()
     
-    @State private var chooseProduct = false
+    @State var chooseProduct = false
     
     var body: some View {
         VStack {
             HStack {
                 Button(action: {showModalSync = false; showModal = false}, label: {
                     Text("Cancel")
-                        .font(.system(size: 17))
-                        .padding(.init(top: 18, leading: 18, bottom: 18, trailing: 18))
-                        .frame(width: 100, alignment: .trailing)
+                        .font(Font.custom("SFProDisplay-Semibold", size: 16))
                 })
                 .buttonStyle(PlainButtonStyle())
+                .padding(.horizontal)
+                
+                Spacer()
+                
                 Text("Sync Data")
-                    .font(.system(size: 18))
+                    .font(Font.custom("SFProDisplay-Semibold", size: 18))
                     .foregroundColor(Color("AccentColor2"))
-                    .frame(width: 661, alignment: .center)
+                
+                Spacer()
+                
                 Button(action: {}, label: {
                     Text("Sync")
-                        .font(.system(size: 17))
-                        .padding(.init(top: 18, leading: 18, bottom: 18, trailing: 18))
-                        .frame(width: 100, alignment: .trailing)
+                        .font(Font.custom("SFProDisplay-Semibold", size: 16))
                 })
                 .buttonStyle(PlainButtonStyle())
+                .padding(.horizontal)
             }
+            .frame(height: 50)
+            .background(Color("AccentColor"))
             .background(Color("AccentColor"))
             VStack {
                 HStack {
@@ -81,30 +86,28 @@ struct SyncDataModal: View {
                                 Text(trans.productName!)
                                     .font(.system(size: 16))
                                     .frame(width: 380, alignment: .leading)
-                                if ProductViewModel.listProducts.count > 0 {
-                                    Text(trans.productName!)
-                                        .font(.system(size: 16))
-                                        .frame(width: 340, alignment: .leading)
-                                    Spacer()
-                                } else {
+//                                if ProductViewModel.listProducts.count > 0 {
+//                                    Text(trans.productName!)
+//                                        .font(.system(size: 16))
+//                                        .frame(width: 340, alignment: .leading)
+//                                    Spacer()
+//                                } else {
 //                                    Text("-- Choose Products --")
 //                                        .font(.system(size: 16))
 //                                        .frame(width: 340, alignment: .leading)
                                     Button(action: {
+                                        chooseProduct = true
                                         
                                     }, label: {
                                         Text("-- Choose Products --")
                                     })
                                         .font(.system(size: 16))
                                         .frame(width: 340, alignment: .leading)
-                                    Spacer()
-                                        .onTapGesture {
-                                            chooseProduct = true
-                                        }
                                         .sheet(isPresented: $chooseProduct, content: {
-                                            ChooseProductModal()
+                                            ChooseProductModal(chooseProductt: $chooseProduct)
                                         })
-                                }
+                                    Spacer()
+//                                }
                             }
                             Divider()
                                 .padding(10)
