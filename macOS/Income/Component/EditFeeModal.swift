@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct EditFeeModal: View {
-    
-    @State private var productFee: String = ""
-    @State private var shippingFee: String = ""
-    @State private var maxShippingFee: String = ""
+    @Binding var isPresented: Bool
+    @ObservedObject var feeVM = FeeViewModel()
     
     var body: some View {
         VStack(spacing: 16) {
             HStack {
                 Button(action: {
+                    isPresented = false
+                    NSApp.mainWindow?.endSheet(NSApp.keyWindow!)
                 }, label: {
                     Text("Cancel")
                         .font(Font.custom("SFProDisplay-Semibold", size: 16))
@@ -35,30 +35,35 @@ struct EditFeeModal: View {
                 Text("\t\t")
                     .padding(.horizontal)
             } // Sheet Header
-            .frame(width: .infinity, height: 50)
+            .frame(width: 400, height: 50)
             .background(Color("AccentColor"))
             
-            VStack(spacing: 8) {
-                TextField("Product Fee", text: $productFee)
+            VStack(spacing: 9) {
+                TextField("Product Fee", text: $feeVM.productFee)
                     .textFieldStyle(PlainTextFieldStyle())
                     .font(Font.custom("SFProDisplay-Semibold", size: 28))
                     .foregroundColor(Color("OrangeColor"))
-                    .modifier(WithTopLabelTextField(labelName: "Product Fee"))
-                TextField("Shipping Fee", text: $shippingFee)
+                    .modifier(WithTopLabelTextField(labelName: "Product Fee", frameHeight: 82))
+                    .padding(.top, 20)
+                TextField("Shipping Fee", text: $feeVM.shippingFee)
                     .textFieldStyle(PlainTextFieldStyle())
                     .font(Font.custom("SFProDisplay-Semibold", size: 28))
                     .foregroundColor(Color("OrangeColor"))
-                    .modifier(WithTopLabelTextField(labelName: "Shipping Fee"))
-                TextField("Max Shipping Fee", text: $maxShippingFee)
+                    .modifier(WithTopLabelTextField(labelName: "Shipping Fee", frameHeight: 82))
+                TextField("Max Shipping Fee", text: $feeVM.maxShippingFee)
                     .textFieldStyle(PlainTextFieldStyle())
                     .font(Font.custom("SFProDisplay-Semibold", size: 28))
                     .foregroundColor(Color("OrangeColor"))
-                    .modifier(WithTopLabelTextField(labelName: "Maximum Shipping Fee"))
+                    .modifier(WithTopLabelTextField(labelName: "Maximum Shipping Fee", frameHeight: 82))
+            
             }
             
             Spacer()
             
-            Button(action: {}, label: {
+            Button(action: {
+                feeVM.editFee()
+                NSApp.mainWindow?.endSheet(NSApp.keyWindow!)
+            }, label: {
                 Text("Save Expense")
                     .foregroundColor(Color("AccentColor2"))
                     .font(Font.custom("SFProDisplay-Semibold", size: 16))
@@ -71,13 +76,13 @@ struct EditFeeModal: View {
             })
             .buttonStyle(PlainButtonStyle())
         }
-        .frame(width: 400, height: .infinity)
+        .frame(width: 400, height: 461)
         .background(Color("MainColor"))
     }
 }
 
 struct EditFeeModal_Previews: PreviewProvider {
     static var previews: some View {
-        EditFeeModal()
+        EditFeeModal(isPresented: .constant(true))
     }
 }

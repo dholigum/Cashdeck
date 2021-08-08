@@ -13,7 +13,7 @@ struct NetIncomeCard: View {
     var legend: String
     var barColor: Color
     var data: [ChartData]
-    var barLabel: [String] = [
+    let barLabel = [
         "Monday",
         "Tuesday",
         "Wednesday",
@@ -24,24 +24,43 @@ struct NetIncomeCard: View {
     
     @State private var currentValue = ""
     @State private var currentLabel = ""
+    @State private var currentDay = ""
     @State private var touchLocation: CGFloat = -1
     
     var body: some View {
         VStack(alignment: .leading) {
             
             Text(title)
-                .bold()
-                .font(.largeTitle)
-            Text("Current Value: \(currentValue)")
-                .font(.headline)
+                .font(Font.title.weight(.semibold))
+                .padding(.vertical)
+                .foregroundColor(Color("AccentColor2"))
+                .padding(.top, 4)
+                .padding(.leading, 20)
+            Text("\(currentValue)")
+                .foregroundColor(Color("AccentColor2"))
+                .padding(.leading, 20)
             
             GeometryReader {
                 geometry in
                      VStack {
                          HStack {
                              //Cells
+                            VStack{
+                                Text("1.000.000")
+                                Text("750.000")
+                                Text("500.000")
+                                Text("250.000")
+                                Text("0")
+                            }
+                            .frame(width: 77, height: 175, alignment: .leading)
+                            .padding()
+                            
                             ForEach(0..<data.count, id: \.self) { i in
-                                BarChartCell(value: normalizedValue(index: i), barColor: barColor, labels: "Day")
+                                BarChartCell(
+                                    value: normalizedValue(index: i),
+                                    barColor: barColor,
+                                    labels: "\(horizontalLabels(index: i))")
+                                    
                                     .opacity(barIsTouched(index: i) ? 1 : 0.7)
                                     .scaleEffect(barIsTouched(index: i) ? CGSize(width: 1.05, height: 1) : CGSize(width: 1, height: 1), anchor: .bottom)
                                     .animation(.spring())
@@ -70,22 +89,39 @@ struct NetIncomeCard: View {
 //                                 .padding(5)
 //                                 .background(RoundedRectangle(cornerRadius: 5).foregroundColor(.white).shadow(radius: 3))
                          } else {
-                            VStack{
-                                Text(currentLabel)
-                                    .bold()
-                                    .foregroundColor(.black)
-                                Text(currentValue)
-                                    .bold()
-                                    .foregroundColor(.black)
-                            }
-                            .background(RoundedRectangle(cornerRadius: 5).foregroundColor(.white).shadow(radius: 3))
-                             .animation(.easeIn)
-                           .offset(x: labelOffset(in: geometry.frame(in: .local).width))
-                           .animation(.easeIn)
+//                            VStack{
+//                                Text(currentLabel)
+//                                    .bold()
+//                                    .foregroundColor(.black)
+//                                Text(currentValue)
+//                                    .bold()
+//                                    .foregroundColor(.black)
+//                            }
+//                            .background(RoundedRectangle(cornerRadius: 5).foregroundColor(.white).shadow(radius: 3))
+//                            .animation(.easeIn)
+//                            .offset(x: labelOffset(in: geometry.frame(in: .local).width))
+//                            .animation(.easeIn)
                          }
                      }
             }
             .padding()
+            
+            HStack{
+                VStack{
+                    Text("Total Income")
+                    Text("Rp. 1.000.000")
+                }.frame(minWidth: 0, maxWidth: .infinity)
+                VStack{
+                    Text("Total Expense")
+                    Text("Rp. 1.000.000")
+                }.frame(minWidth: 0, maxWidth: .infinity)
+                VStack{
+                    Text("Total Net Income")
+                    Text("Rp. 1.000.000")
+                }.frame(minWidth: 0, maxWidth: .infinity)
+            }
+            .padding()
+            .frame(maxWidth: 567)
         }
         .frame(width: 567, height: 380)
         .background(Color.white)
@@ -95,21 +131,25 @@ struct NetIncomeCard: View {
     }
     
     func normalizedValue(index: Int) -> Double {
-             var allValues: [Double]    {
-                 var values = [Double]()
-                 for data in data {
-                     values.append(data.value)
-                 }
-                 return values
-             }
-             guard let max = allValues.max() else {
-                 return 1
-             }
-             if max != 0 {
-                 return Double(data[index].value)/Double(max)
-             } else {
-                 return 1
-             }
+        var allValues: [Double] {
+            var values = [Double]()
+            for data in data {
+                values.append(data.value)
+            }
+            return values
+        }
+        guard let max = allValues.max() else {
+            return 1
+        }
+        if max != 0 {
+            return Double(data[index].value)/Double(max)
+        } else {
+            return 1
+        }
+    }
+    
+    func horizontalLabels(index: Int) -> String{
+        return String(data[index].day)
     }
     
     func barIsTouched(index: Int) -> Bool {
@@ -121,15 +161,18 @@ struct NetIncomeCard: View {
              guard index < data.count && index >= 0 else {
                  currentValue = ""
                  currentLabel = ""
+                 currentDay = ""
                  return
              }
-             currentValue = "\(data[index].value)"
+             currentValue = "Rp. \(data[index].value)"
              currentLabel = data[index].label
+             currentDay = data[index].day
     }
     func resetValues() {
              touchLocation = -1
              currentValue  =  ""
              currentLabel = ""
+             currentDay = ""
     }
     func labelOffset(in width: CGFloat) -> CGFloat {
              let currentIndex = Int(touchLocation * CGFloat(data.count))

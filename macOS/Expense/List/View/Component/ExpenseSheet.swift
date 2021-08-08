@@ -57,18 +57,18 @@ struct ExpenseSheet: View {
                     .textFieldStyle(PlainTextFieldStyle())
                     .font(Font.custom("SFProDisplay-Semibold", size: 28))
                     .foregroundColor(Color("OrangeColor"))
-                    .modifier(WithTopLabelTextField(labelName: "Amount"))
+                    .modifier(WithTopLabelTextField(labelName: "Amount", frameHeight: 74))
                     .padding(.top)
                 
                 TextField("Expense Name", text: $expenseVM.name)
                     .textFieldStyle(PlainTextFieldStyle())
-                    .font(Font.custom("SFProDisplay-Semibold", size: 24))
-                    .modifier(WithTopLabelTextField(labelName: "Name"))
+                    .font(Font.custom("SFProDisplay-Semibold", size: 24).weight(.light))
+                    .modifier(WithTopLabelTextField(labelName: "Name", frameHeight: 74))
                 
                 TextField("Expense Quantity", text: $expenseVM.quantity)
                     .textFieldStyle(PlainTextFieldStyle())
-                    .font(Font.custom("SFProDisplay-Semibold", size: 24))
-                    .modifier(WithTopLabelTextField(labelName: "Quantity"))
+                    .font(Font.custom("SFProDisplay-Semibold", size: 24).weight(.light))
+                    .modifier(WithTopLabelTextField(labelName: "Quantity", frameHeight: 74))
                 
                 Picker("", selection: $expenseVM.categoryIndex) {
                     ForEach(0 ..< K().categories.count) {
@@ -77,12 +77,12 @@ struct ExpenseSheet: View {
                     }
                 }
                 .pickerStyle(PopUpButtonPickerStyle())
-                .modifier(WithTopLabelTextField(labelName: "Category"))
+                .modifier(WithTopLabelTextField(labelName: "Category", frameHeight: 74))
                 
                 DatePicker("", selection: $expenseVM.date, displayedComponents: .date)
                     .pickerStyle(InlinePickerStyle())
-                    .font(Font.custom("SFProDisplay-Semibold", size: 24))
-                    .modifier(WithTopLabelTextField(labelName: "Date"))
+                    .font(Font.custom("SFProDisplay-Semibold", size: 24).weight(.light))
+                    .modifier(WithTopLabelTextField(labelName: "Date", frameHeight: 74))
                 
                 Picker("", selection: $expenseVM.repeatIndex) {
                     ForEach(0 ..< K().repeats.count) {
@@ -91,7 +91,7 @@ struct ExpenseSheet: View {
                     }
                 }
                 .pickerStyle(PopUpButtonPickerStyle())
-                .modifier(WithTopLabelTextField(labelName: "Repeat"))
+                .modifier(WithTopLabelTextField(labelName: "Repeat", frameHeight: 74))
             }
             
             Spacer()

@@ -10,6 +10,7 @@ import CoreXLSX
 
 struct Tokopedia: View {
     @State var showModal = false
+    @State var showModalFee = false
     @State var showModalSync = false
     @State var listTrans = [transactionModel]()
     @ObservedObject var listTransTemp = TransDetailViewModel()
@@ -39,7 +40,13 @@ struct Tokopedia: View {
                 Spacer()
             }
             HStack {
-                primaryBtn(imageName: "dollarsign.circle.fill", title: "Add Fee", width: 120)
+                primaryBtn(imageName: "dollarsign.circle.fill", title: "Edit Fee", width: 120)
+                    .onTapGesture {
+                        showModalFee.toggle()
+                    }
+                    .sheet(isPresented: $showModalFee, content: {
+                        EditFeeModal(isPresented: $showModalFee)
+                    })
                 primaryBtn(imageName: "square.and.arrow.down", title: "Import Data", width: 147)
                     .onTapGesture {
                         showModal.toggle()

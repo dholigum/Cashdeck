@@ -9,25 +9,20 @@ import SwiftUI
 
 struct ChooseProductModal: View {
     
-//    @Binding var listProduct: [Products]
-    struct Names: Identifiable, Hashable {
-        let name: String
-        let id = UUID()
-    }
-    @State private var names = [
-        Names(name: "Pacific"),
-        Names(name: "Atlantic"),
-        Names(name: "Indian"),
-        Names(name: "Southern"),
-        Names(name: "Arctic")
-    ]
+    @ObservedObject var productVM: ProductviewModel
+    
     @State var text: String
+    
+    init() {
+        productVM = ProductviewModel()
+        text = ""
+    }
     
     let namess = ["aaa", "bbb", "ccc", "ddd", "eee", "fff", "ggg", "hhh", "iii", "jjj", "kkk", "lll", "mmm", "nnn", "ooo"]
     
     @State private var isEditing = false
     
-    var body: some View {
+    var body: some View {        
         VStack(spacing: 16) {
             HStack {
                 Button(action: {
@@ -72,31 +67,51 @@ struct ChooseProductModal: View {
 //            }
             
             ScrollView {
-                ForEach(namess, id: \.self) { row in
-                    if(text == ""){
-                        VStack {
-                            Text(row)
-                                .frame(width: 450, height: 25, alignment: .leading)
-                                .font(.title2)
-                                .padding(.top, 10)
-                            Divider()
+//                ForEach(namess, id: \.self) { row in
+//                    if(text == ""){
+//                        VStack {
+//                            Text(row)
+//                                .frame(width: 450, height: 25, alignment: .leading)
+//                                .font(.title2)
+//                                .padding(.top, 10)
+//                            Divider()
+//                        }
+//                        .background(Color(CGColor.white))
+//                    } else if (text != "" && "\(row)".contains(text)) {
+//                        VStack {
+//                            Text(row)
+//                                .frame(width: 450, height: 25, alignment: .leading)
+//                                .font(.title2)
+//                                .padding(.top, 10)
+//                            Divider()
+//                        }
+//                        .background(Color(CGColor.white))
+//                    }
+                
+                    ForEach(self.productVM.listProducts, id: \.self) { product in
+                        if(text == ""){
+                            VStack{
+                                Text("\(product.name ?? "") - \(product.color ?? "") - \(product.size ?? "")")
+                                    .frame(width: 450, height: 25, alignment: .leading)
+                                    .font(.title3)
+                                    .padding(.top, 10)
+                                Divider()
+                            }
+                        } else if (text != "" && "\(String(describing: product.name)) - \(String(describing: product.color)) - \(String(describing: product.size))".localizedCaseInsensitiveContains(text)){
+                            VStack{
+                                Text("\(product.name ?? "") - \(product.color ?? "") - \(product.size ?? "")")
+                                    .frame(width: 450, height: 25, alignment: .leading)
+                                    .font(.title3)
+                                    .padding(.top, 10)
+                                Divider()
+                            }
                         }
-                        .background(Color(CGColor.white))
-                    } else if (text != "" && "\(row)".contains(text)) {
-                        VStack {
-                            Text(row)
-                                .frame(width: 450, height: 25, alignment: .leading)
-                                .font(.title2)
-                                .padding(.top, 10)
-                            Divider()
-                        }
-                        .background(Color(CGColor.white))
                     }
                 }
-            }
-            .background(Color(CGColor.white))
-            .padding(.horizontal, 10)
-            .frame(width: .infinity, height: 550, alignment: .leading)
+                .background(Color(CGColor.white))
+                .padding(10)
+                .cornerRadius(50)
+            .frame(height: 500)
             
             
             Spacer()
@@ -123,6 +138,6 @@ struct ChooseProductModal: View {
 
 struct ChooseProductModal_Previews: PreviewProvider {
     static var previews: some View {
-        ChooseProductModal(text: "")
+        ChooseProductModal()
     }
 }

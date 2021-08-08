@@ -18,7 +18,7 @@ struct BarChartCell: View {
             RoundedRectangle(cornerRadius: 5)
                 .fill(barColor)
                 .scaleEffect(CGSize(width: 1, height: value), anchor: .bottom)
-            Text(labels)
+            Text(labels).font(.system(size: 9))
         }
         
     }
