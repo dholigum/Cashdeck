@@ -38,6 +38,7 @@ class TransDetailViewModel: ObservableObject {
     }
     
     func connectProduct (_ transTemp: TransactionDetailTemp, product: Products) {
+        //connecting product to transDetailTemp
         transTemp.tdtemp_product = product
         do {
             try self.context.save()
@@ -47,6 +48,46 @@ class TransDetailViewModel: ObservableObject {
     }
     
     func saveToTransaction (_ transTemp: TransactionDetailTemp) {
-        
+        if((transTemp.tdtemp_product) != nil) {
+            var transList = [Transaction]()
+            let newTrans = Transaction(context: self.context)
+            let newTransDetail = TransactionDetail(context: self.context)
+
+            //adding data to transDetail table
+            newTransDetail.price = transTemp.price
+            newTransDetail.quantity = transTemp.quantity
+            newTransDetail.td_product = transTemp.tdtemp_product
+
+            //checking if orderId exists in core data
+            do {
+                let request = Transaction.fetchRequest() as NSFetchRequest<Transaction>
+
+                let pred = NSPredicate(format: "orderId = %@", "\(String(describing: transTemp.orderId))")
+                request.predicate = pred
+
+                transList = try context.fetch(request)
+            } catch {
+                print(error.localizedDescription)
+            }
+
+            if(transList.isEmpty) {
+                //if orderId does not exist in core data
+                newTrans.date = transTemp.date
+                newTrans.orderId = transTemp.orderId
+                newTrans.transaction_channel = transTemp.tdtemp_channel
+                newTransDetail.td_transaction = newTrans
+            } else {
+                //if orderId exists in core data
+                newTransDetail.td_transaction = transList.first
+            }
+
+            //saving to core data
+            do {
+                try self.context.save()
+            }
+            catch {
+                print(error.localizedDescription)
+            }
+        }
     }
 }

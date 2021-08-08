@@ -36,7 +36,11 @@ struct SyncDataModal: View {
                 
                 Spacer()
                 
-                Button(action: {}, label: {
+                Button(action: {
+                    for transTemp in listTransTemp {
+                        TransDetailVM.saveToTransaction(transTemp)
+                    }
+                }, label: {
                     Text("Sync")
                         .font(Font.custom("SFProDisplay-Semibold", size: 16))
                 })
