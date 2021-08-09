@@ -9,26 +9,29 @@ import SwiftUI
 
 struct HomeOverview: View {
     var body: some View {
-        VStack(alignment: .leading, spacing: 18) {
-            Text("Overview")
-                .font(Font.custom("SFProDisplay-Bold", size: 24))
-                .foregroundColor(Color("AccentColor2"))
-            
-            HStack {
-                NetIncomeCard(title: "Daily Net Income", legend: "IDR", barColor: .blue, data: chartDataSet)
-                VStack (alignment: .leading, spacing: 18){
-                    BusinessGrowthCard()
-                    BusinessUpdateCard()
-                }.padding()
+        GeometryReader { geometry in
+            VStack(alignment: .leading, spacing: 18) {
+                Text("Overview")
+                    .font(Font.custom("SFProDisplay-Bold", size: 24))
+                    .foregroundColor(Color("AccentColor2"))
+                
+                HStack {
+                    NetIncomeCard(title: "Daily Net Income", legend: "IDR", barColor: .blue, data: chartDataSet)
+                    VStack (alignment: .leading, spacing: 18){
+                        BusinessGrowthCard()
+                        BusinessUpdateCard()
+                    }.padding()
+                }
+                
+                HStack(spacing: 24) {
+                    MonthlyExpenseCard()
+                    ProductSoldCard()
+                } // Expense and Product
             }
-            
-            HStack(spacing: 24) {
-                MonthlyExpenseCard()
-                ProductSoldCard()
-            } // Expense and Product
+            .frame(width: geometry.frame(in: .global).size.width, height: geometry.frame(in: .global).size.height, alignment: .leading)
+            .padding(.leading, 12)
         }
-        .padding(.horizontal, 8)
-        .padding(.top, -28)
+        
     }
 }
 
