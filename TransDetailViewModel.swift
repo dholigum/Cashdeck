@@ -16,6 +16,10 @@ class TransDetailViewModel: ObservableObject {
     
     let context = CoreDataManager.sharedManager.persistentContainer.viewContext
     
+    init() {
+        fetchDataTrans()
+    }
+    
     func fetchDataTrans () {
         do {
             self.listTransTemp = try context.fetch(TransactionDetailTemp.fetchRequest())
@@ -94,6 +98,7 @@ class TransDetailViewModel: ObservableObject {
                 context.delete(transTemp)
                 
                 try self.context.save()
+                fetchDataTrans()
             }
             catch {
                 print(error.localizedDescription)
