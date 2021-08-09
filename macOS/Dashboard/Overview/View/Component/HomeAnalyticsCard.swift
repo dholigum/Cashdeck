@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct HomeAnalyticsCard: View {
     
     var title: String
@@ -27,6 +28,11 @@ struct HomeAnalyticsCard: View {
     @State private var currentDay = ""
     @State private var touchLocation: CGFloat = -1
     
+    @State private var chartOptions = "Income"
+    var options = ["Income","Expense","Net Income"]
+    @State private var durationOptions = "Income"
+    var duration = ["Daily","Weekly","Monthly","Yearly"]
+    
     var body: some View {
         VStack(alignment: .leading) {
             HStack{
@@ -37,7 +43,25 @@ struct HomeAnalyticsCard: View {
                     .padding(.top, 4)
                     .padding(.leading, 20)
                 
+                Picker("",selection:$chartOptions){
+                    ForEach(options, id:\.self){
+                        Text($0)
+                    }
+                }
+                .pickerStyle(SegmentedPickerStyle())
+                .frame(width: 426)
+                .padding(.leading,250)
+                
+                Picker("",selection:$durationOptions){
+                    ForEach(duration, id:\.self){
+                        Text($0)
+                    }
+                }
+                .pickerStyle(DefaultPickerStyle())
+                .frame(width: 100)
+                .padding(.leading,120)
             }
+            
             Text("\(currentValue)")
                 .foregroundColor(Color("AccentColor2"))
                 .padding(.leading, 20)
@@ -49,24 +73,23 @@ struct HomeAnalyticsCard: View {
                              //Cells
                             VStack{
                                 Text("1.000.000")
-                                    .frame(height: 70)
+                                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 70, maxHeight: .infinity, alignment: .top)
                                 Text("750.000")
-                                    .frame(height: 70)
+                                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 70, maxHeight: .infinity, alignment: .top)
                                 Text("500.000")
-                                    .frame(height: 70)
+                                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 70, maxHeight: .infinity, alignment: .top)
                                 Text("250.000")
-                                    .frame(height: 70)
-                                Text("0")
-                                    .frame(height: 70)
+                                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 70, maxHeight: .infinity, alignment: .top)
                             }
-                            .frame(width: 77, height: 350, alignment: .leading)
+                            .frame(width: 77, height: 450, alignment: .leading)
                             .padding()
                             
                             ForEach(0..<data.count, id: \.self) { i in
                                 BarChartCell(
                                     value: normalizedValue(index: i),
                                     barColor: barColor,
-                                    labels: "\(horizontalLabels(index: i))")
+                                    labels: "\(horizontalLabels(index: i))",
+                                    labelSize: 16)
                                     
                                     .opacity(barIsTouched(index: i) ? 1 : 0.7)
                                     .scaleEffect(barIsTouched(index: i) ? CGSize(width: 1.05, height: 1) : CGSize(width: 1, height: 1), anchor: .bottom)
@@ -113,7 +136,7 @@ struct HomeAnalyticsCard: View {
             }
             .padding()
             
-            HStack{
+            HStack(spacing:150){
                 VStack (alignment: .leading, spacing: 1){
                     Text("Total Income")
                     Text("Rp. 1.000.000")
@@ -123,7 +146,7 @@ struct HomeAnalyticsCard: View {
                         .font(Font.custom("SFProDisplay-Bold", size: 12))
                         .foregroundColor(Color(.red))
                     Text("-10.45% from Yesterday")
-                }.frame(minWidth: 0, idealWidth: 200, maxWidth: .infinity)
+                }.frame(maxWidth: .infinity)
                 VStack (alignment: .leading, spacing: 1){
                     Text("Total Expense")
                     Text("Rp. 400.000")
@@ -133,7 +156,7 @@ struct HomeAnalyticsCard: View {
                         .font(Font.custom("SFProDisplay-Bold", size: 12))
                         .foregroundColor(Color(.green))
                     Text("+10.12% from Yesterday")
-                }.frame(minWidth: 0, idealWidth: 200, maxWidth: .infinity)
+                }.frame(maxWidth: .infinity)
                 VStack (alignment: .leading, spacing: 1){
                     Text("Total Net Income")
                     Text("Rp. 600.000")
@@ -143,11 +166,11 @@ struct HomeAnalyticsCard: View {
                         .font(Font.custom("SFProDisplay-Bold", size: 12))
                         .foregroundColor(Color(.green))
                     Text("+12.12% from Yesterday")
-                }.frame(minWidth: 0, idealWidth: 200, maxWidth: .infinity)
+                }.frame(maxWidth: .infinity)
             }
             .padding()
             .fixedSize(horizontal: true, vertical: false)
-            .frame(width: 700)
+            .frame(width: 1000)
             
         }
         .frame(width: 1000, height: 700)

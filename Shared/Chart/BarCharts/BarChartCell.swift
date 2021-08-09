@@ -12,13 +12,14 @@ struct BarChartCell: View {
     var value: Double
     var barColor: Color
     var labels: String
+    var labelSize: CGFloat
     
     var body: some View {
         VStack(spacing: 5){
             RoundedRectangle(cornerRadius: 5)
                 .fill(barColor)
                 .scaleEffect(CGSize(width: 1, height: value), anchor: .bottom)
-            Text(labels).font(.system(size: 9))
+            Text(labels).font(.system(size: labelSize))
         }
         
     }
@@ -26,7 +27,7 @@ struct BarChartCell: View {
 
 struct BarChartCell_Previews: PreviewProvider {
     static var previews: some View {
-        BarChartCell(value: 300, barColor: .blue, labels: "Day")
+        BarChartCell(value: 300, barColor: .blue, labels: "Day", labelSize: 9)
             .previewLayout(.sizeThatFits)
     }
 }

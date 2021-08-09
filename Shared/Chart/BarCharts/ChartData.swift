@@ -21,5 +21,5 @@ let chartDataSet =
          ChartData(label: "April 2021", value: 350.0, day: "Thursday"),
          ChartData(label: "May 2021", value: 450.0, day: "Friday"),
          ChartData(label: "June 2021", value: 380.0, day: "Saturday"),
-         ChartData(label: "July 2021", value: 365.98, day: "Sunday")
+         ChartData(label: "July 2021", value: 900.98, day: "Sunday")
      ]

@@ -27,15 +27,31 @@ struct NetIncomeCard: View {
     @State private var currentDay = ""
     @State private var touchLocation: CGFloat = -1
     
+    @State private var durationOptions = "Income"
+    var duration = ["Daily","Weekly","Monthly","Yearly"]
+    
+    
     var body: some View {
         VStack(alignment: .leading) {
+            HStack{
+                Text(title)
+                    .font(Font.title.weight(.semibold))
+                    .padding(.vertical)
+                    .foregroundColor(Color("AccentColor2"))
+                    .padding(.top, 4)
+                    .padding(.leading, 20)
+                
+                Picker(selection:$durationOptions, label: Text("")){
+                    ForEach(duration, id:\.self){
+                        Text($0)
+                    }
+                }
+                .pickerStyle(DefaultPickerStyle())
+                .frame(width: 100)
+                .padding(.leading,250)
+            }
             
-            Text(title)
-                .font(Font.title.weight(.semibold))
-                .padding(.vertical)
-                .foregroundColor(Color("AccentColor2"))
-                .padding(.top, 4)
-                .padding(.leading, 20)
+            
             Text("\(currentValue)")
                 .foregroundColor(Color("AccentColor2"))
                 .padding(.leading, 20)
@@ -47,10 +63,13 @@ struct NetIncomeCard: View {
                              //Cells
                             VStack{
                                 Text("1.000.000")
+                                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .top)
                                 Text("750.000")
+                                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .top)
                                 Text("500.000")
+                                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .top)
                                 Text("250.000")
-                                Text("0")
+                                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .top)
                             }
                             .frame(width: 77, height: 175, alignment: .leading)
                             .padding()
@@ -59,7 +78,8 @@ struct NetIncomeCard: View {
                                 BarChartCell(
                                     value: normalizedValue(index: i),
                                     barColor: barColor,
-                                    labels: "\(horizontalLabels(index: i))")
+                                    labels: "\(horizontalLabels(index: i))",
+                                    labelSize: 9)
                                     
                                     .opacity(barIsTouched(index: i) ? 1 : 0.7)
                                     .scaleEffect(barIsTouched(index: i) ? CGSize(width: 1.05, height: 1) : CGSize(width: 1, height: 1), anchor: .bottom)
@@ -107,18 +127,27 @@ struct NetIncomeCard: View {
             .padding()
             
             HStack{
-                VStack{
+                VStack (alignment: .leading, spacing: 1){
                     Text("Total Income")
                     Text("Rp. 1.000.000")
-                }.frame(minWidth: 0, maxWidth: .infinity)
-                VStack{
+                        .font(Font.custom("SFProDisplay-Bold", size: 20))
+                        .foregroundColor(Color("AccentColor2"))
+                    
+                }.frame(maxWidth: .infinity)
+                VStack (alignment: .leading, spacing: 1){
                     Text("Total Expense")
-                    Text("Rp. 1.000.000")
-                }.frame(minWidth: 0, maxWidth: .infinity)
-                VStack{
+                    Text("Rp. 400.000")
+                        .font(Font.custom("SFProDisplay-Bold", size: 20))
+                        .foregroundColor(Color("AccentColor2"))
+                    
+                }.frame(maxWidth: .infinity)
+                VStack (alignment: .leading, spacing: 1){
                     Text("Total Net Income")
-                    Text("Rp. 1.000.000")
-                }.frame(minWidth: 0, maxWidth: .infinity)
+                    Text("Rp. 600.000")
+                        .font(Font.custom("SFProDisplay-Bold", size: 20))
+                        .foregroundColor(Color("AccentColor2"))
+                    
+                }.frame(maxWidth: .infinity)
             }
             .padding()
             .frame(maxWidth: 567)
