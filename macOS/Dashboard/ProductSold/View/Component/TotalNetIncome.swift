@@ -25,6 +25,7 @@ struct TotalNetIncome: View {
         .background(Color.white)
         .cornerRadius(15)
         .clipped()
+        .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.15), radius: 4, x: 2, y: 2)
     }
 }
 

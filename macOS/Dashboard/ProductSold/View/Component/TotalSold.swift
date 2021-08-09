@@ -23,6 +23,7 @@ struct TotalSold: View {
         .frame(width: 185, height: 101.06, alignment: .center)
         .background(Color.white)
         .cornerRadius(15)
+        .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.15), radius: 4, x: 2, y: 2)
     }
 }
 
