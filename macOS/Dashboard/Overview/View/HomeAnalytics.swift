@@ -15,7 +15,7 @@ struct HomeAnalytics: View {
                 .foregroundColor(Color("AccentColor2"))
             
             VStack (alignment: .leading, spacing: 18){
-                HomeAnalyticsCard(title: "Chart", legend: "IDR", barColor: .blue, data: chartDataSet)
+                HomeAnalyticsCard(title: "Chart", legend: "IDR", barColor: Color("AccentColor2"), data: chartDataSet)
             }
 //            .frame(width: 1000, height: 700)
 //            .background(Color.white)
