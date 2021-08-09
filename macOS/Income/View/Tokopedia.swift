@@ -13,12 +13,14 @@ struct Tokopedia: View {
     @State var showModalFee = false
     @State var showModalSync = false
     @State var listTrans = [transactionModel]()
-    @ObservedObject var listTransTemp = TransDetailViewModel()
+    @StateObject var listTransTemp = TransDetailViewModel.shared
     
-    init() {
-        listTransTemp.fetchDataTrans()
-//        print(listTransTemp.listTransTemp)
-    }
+    @StateObject var transVM = TransactionViewModel.shared
+    
+//    init() {
+//        listTransTemp.fetchDataTrans()
+////        print(listTransTemp.listTransTemp)
+//    }
     var window = NSScreen.main?.visibleFrame
     var body: some View {
         VStack {
@@ -66,7 +68,7 @@ struct Tokopedia: View {
                 Spacer()
             } .padding(.top, 30)
             HStack {
-                transactionsTable(date: Date(), listTrans: $listTrans)
+                transactionsTable(date: Date(), transVM: transVM)
             }
             .padding(.top, 20)
             Spacer()

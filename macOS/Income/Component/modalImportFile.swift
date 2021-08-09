@@ -11,7 +11,7 @@ import CoreXLSX
 struct modalImportFile: View {
     @Binding var isVisible: Bool
     @Binding var showmodalSync: Bool
-    @ObservedObject var TransDetailVM = TransDetailViewModel()
+    @StateObject var TransDetailVM = TransDetailViewModel.shared
     let context = CoreDataManager.sharedManager.persistentContainer.viewContext
     
     var body: some View {
@@ -51,7 +51,9 @@ struct modalImportFile: View {
             .background(Color.white)
             .cornerRadius(15)
             .padding(.init(top: 25, leading: 0, bottom: 30, trailing: 0))
-            Button(action: {btnImportPressed()}, label: {
+            Button(action: {btnImportPressed()
+                TransDetailVM.fetchDataTrans()
+            }, label: {
                 Text("Import")
                     .font(.system(size: 18))
                     .foregroundColor(Color("AccentColor2"))
