@@ -84,14 +84,14 @@ struct ExpenseSheet: View {
                     .font(Font.custom("SFProDisplay-Semibold", size: 24).weight(.light))
                     .modifier(WithTopLabelTextField(labelName: "Date", frameHeight: 74))
                 
-                Picker("", selection: $expenseVM.repeatIndex) {
-                    ForEach(0 ..< K().repeats.count) {
-                        Text(K().repeats[$0])
-                            .font(Font.custom("SFProDisplay-Semibold", size: 16))
-                    }
-                }
-                .pickerStyle(PopUpButtonPickerStyle())
-                .modifier(WithTopLabelTextField(labelName: "Repeat", frameHeight: 74))
+//                Picker("", selection: $expenseVM.repeatIndex) {
+//                    ForEach(0 ..< K().repeats.count) {
+//                        Text(K().repeats[$0])
+//                            .font(Font.custom("SFProDisplay-Semibold", size: 16))
+//                    }
+//                }
+//                .pickerStyle(PopUpButtonPickerStyle())
+//                .modifier(WithTopLabelTextField(labelName: "Repeat", frameHeight: 74))
             }
             
             Spacer()

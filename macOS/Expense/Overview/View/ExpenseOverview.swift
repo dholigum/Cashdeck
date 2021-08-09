@@ -13,23 +13,25 @@ struct ExpenseOverview: View {
     @StateObject var overviewExpenseVM = OverviewExpenseViewModel()
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            Text("Expense Overview")
-                .font(Font.custom("SFProDisplay-Bold", size: 24))
-                .padding(.bottom)
-                .foregroundColor(Color("AccentColor2"))
-            
-            HStack(spacing: 20) {
-                MonthlyExpenseChart(overviewExpenseVM: overviewExpenseVM)
+        GeometryReader { geometry in
+            VStack(alignment: .leading, spacing: 10) {
+                Text("Expense Overview")
+                    .font(Font.custom("SFProDisplay-Bold", size: 24))
+                    .padding(.bottom)
+                    .foregroundColor(Color("AccentColor2"))
                 
-                VStack(spacing: 20) {
-                    RecentExpenseOverviewCard(expenseVM: expenseVM)
-                    ExpenseTipsCard()
+                HStack(spacing: 20) {
+                    MonthlyExpenseChart(overviewExpenseVM: overviewExpenseVM)
+                    
+                    VStack(spacing: 20) {
+                        RecentExpenseOverviewCard(expenseVM: expenseVM)
+                        ExpenseTipsCard(overviewExpenseVM: overviewExpenseVM)
+                    }
                 }
             }
+            .frame(width: geometry.frame(in: .global).size.width, height: geometry.frame(in: .global).size.height, alignment: .leading)
+                        .padding(.leading, 12)
         }
-        .padding(.top, -28)
-        .padding(.horizontal, -2)
     }
 }
 

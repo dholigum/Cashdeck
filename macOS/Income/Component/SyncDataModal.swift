@@ -11,32 +11,46 @@ struct SyncDataModal: View {
     @Binding var listTransTemp: [TransactionDetailTemp]
     @Binding var showModalSync: Bool
     @Binding var showModal: Bool
-    @ObservedObject var ProductViewModel = ProductviewModel()
+    @ObservedObject var TransDetailVM = TransDetailViewModel()
     
-    @State private var chooseProduct = false
+    @State var chooseProduct = false
+    @State var transPicked: TransactionDetailTemp
+    
+//    var transs: TransactionDetailTemp
     
     var body: some View {
         VStack {
             HStack {
                 Button(action: {showModalSync = false; showModal = false}, label: {
                     Text("Cancel")
-                        .font(.system(size: 17))
-                        .padding(.init(top: 18, leading: 18, bottom: 18, trailing: 18))
-                        .frame(width: 100, alignment: .trailing)
+                        .font(Font.custom("SFProDisplay-Semibold", size: 16))
                 })
                 .buttonStyle(PlainButtonStyle())
+                .padding(.horizontal)
+                
+                Spacer()
+                
                 Text("Sync Data")
-                    .font(.system(size: 18))
+                    .font(Font.custom("SFProDisplay-Semibold", size: 18))
                     .foregroundColor(Color("AccentColor2"))
-                    .frame(width: 661, alignment: .center)
-                Button(action: {}, label: {
+                
+                Spacer()
+                
+                Button(action: {
+                    for transTemp in listTransTemp {
+                        TransDetailVM.saveToTransaction(transTemp)
+                    }
+                    showModalSync = false
+                    showModal = false
+                }, label: {
                     Text("Sync")
-                        .font(.system(size: 17))
-                        .padding(.init(top: 18, leading: 18, bottom: 18, trailing: 18))
-                        .frame(width: 100, alignment: .trailing)
+                        .font(Font.custom("SFProDisplay-Semibold", size: 16))
                 })
                 .buttonStyle(PlainButtonStyle())
+                .padding(.horizontal)
             }
+            .frame(height: 50)
+            .background(Color("AccentColor"))
             .background(Color("AccentColor"))
             VStack {
                 HStack {
@@ -44,6 +58,7 @@ struct SyncDataModal: View {
                         .font(.system(size: 16))
                         .fontWeight(.semibold)
                         .frame(width: 80)
+                        .padding(.leading, 30)
                     Text("Product Name (Marketplace)")
                         .font(.system(size: 16))
                         .fontWeight(.semibold)
@@ -54,61 +69,58 @@ struct SyncDataModal: View {
                         .frame(width: 340, alignment: .leading)
                     Spacer()
                 }
-                .padding(35)
+                .padding(.horizontal, 35)
+                .padding(.top, 20)
+                .padding(.bottom, 10)
+                Divider()
                 if listTransTemp.count > 0 {
                     ScrollView (showsIndicators: true) {
                         ForEach(listTransTemp) { trans in
-                            HStack {
-                                if ProductViewModel.listProducts.count > 0 {
+                            if trans.productName != nil {
+                                HStack {
                                     HStack {
-                                        Image(systemName: "checkmark.circle.fill")
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fit)
-                                            .frame(width: 24)
-                                            .foregroundColor(Color.green)
-                                    }
-                                    .frame(width: 80)
-                                } else {
-                                    HStack {
-                                        Image(systemName: "exclamationmark.triangle.fill")
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fit)
-                                            .frame(width: 24)
-                                            .foregroundColor(Color.orange)
-                                    }
-                                    .frame(width: 80)
-                                }
-                                Text(trans.productName!)
-                                    .font(.system(size: 16))
-                                    .frame(width: 380, alignment: .leading)
-                                if ProductViewModel.listProducts.count > 0 {
-                                    Text(trans.productName!)
-                                        .font(.system(size: 16))
-                                        .frame(width: 340, alignment: .leading)
-                                    Spacer()
-                                } else {
-//                                    Text("-- Choose Products --")
-//                                        .font(.system(size: 16))
-//                                        .frame(width: 340, alignment: .leading)
-                                    Button(action: {
-                                        
-                                    }, label: {
-                                        Text("-- Choose Products --")
-                                    })
-                                        .font(.system(size: 16))
-                                        .frame(width: 340, alignment: .leading)
-                                    Spacer()
-                                        .onTapGesture {
-                                            chooseProduct = true
+                                        if trans.tdtemp_product != nil{
+                                            Image(systemName: "checkmark.circle.fill")
+                                                .resizable()
+                                                .aspectRatio(contentMode: .fit)
+                                                .frame(width: 24)
+                                                .foregroundColor(Color.green)
+                                        } else {
+                                            Image(systemName: "exclamationmark.triangle.fill")
+                                                .resizable()
+                                                .aspectRatio(contentMode: .fit)
+                                                .frame(width: 24)
+                                                .foregroundColor(Color.yellow)
                                         }
-                                        .sheet(isPresented: $chooseProduct, content: {
-                                            ChooseProductModal()
-                                        })
+                                    }
+                                        .frame(width: 80)
+                                    
+                                    Text(trans.productName ?? "")
+                                        .font(.system(size: 16))
+                                        .frame(width: 380, alignment: .leading)
+                                    Button(action: {
+                                        chooseProduct = true
+                                        print(trans.productName)
+                                        transPicked = trans
+                                    }, label: {
+                                        if trans.tdtemp_product != nil {
+                                        Text("\(trans.tdtemp_product?.name ?? "") - \(trans.tdtemp_product?.color ?? "") - \(trans.tdtemp_product?.size ?? "")")
+                                        } else {
+                                            Text("-- Choose Products --")
+                                        }
+                                        Spacer()
+                                        Text(">")
+                                    })
+                                    .buttonStyle(PlainButtonStyle())
+                                    .font(.system(size: 16))
+                                    Spacer()
                                 }
+                                Divider()
                             }
-                            Divider()
-                                .padding(10)
                         }
+                        .sheet(isPresented: $chooseProduct, content: {
+                            ChooseProductModal(chooseProductt: $chooseProduct, transDetaill: transPicked)
+                        })
                     }
                     .frame(height: 456)
                 }
@@ -119,12 +131,5 @@ struct SyncDataModal: View {
             .padding()
         }
         .background(Color("MainColor"))
-        .onAppear(perform: fetchData)
-    }
-}
-
-extension SyncDataModal {
-    func fetchData () {
-        ProductViewModel.fetchProducts()
     }
 }

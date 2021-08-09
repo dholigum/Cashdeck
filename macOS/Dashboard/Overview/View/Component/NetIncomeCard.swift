@@ -152,7 +152,7 @@ struct NetIncomeCard: View {
             .padding()
             .frame(maxWidth: 567)
         }
-        .frame(width: 567, height: 380)
+        .frame(width: 567, height: 414)
         .background(Color.white)
         .cornerRadius(16)
         .clipped()
