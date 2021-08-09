@@ -60,7 +60,7 @@ struct Tokopedia: View {
                             showModalSync.toggle()
                         }
                         .sheet(isPresented: $showModalSync, content: {
-                            SyncDataModal(listTransTemp: $listTransTemp.listTransTemp, showModalSync: $showModalSync, showModal: $showModal)
+                            SyncDataModal(listTransTemp: $listTransTemp.listTransTemp, showModalSync: $showModalSync, showModal: $showModal, transPicked: TransactionDetailTemp())
                         })
                 }
                 Spacer()

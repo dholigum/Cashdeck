@@ -147,6 +147,30 @@
 		F7AA51E226BA4E8200BE00B6 /* ProductSoldModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AA51E026BA4E8200BE00B6 /* ProductSoldModel.swift */; };
 		F7FC2E2926BE733700AD3ACB /* ProductSold.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FC2E2826BE733700AD3ACB /* ProductSold.swift */; };
 		F7FC2E2A26BE733700AD3ACB /* ProductSold.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FC2E2826BE733700AD3ACB /* ProductSold.swift */; };
+		F7FC2E8126BFBBF300AD3ACB /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FC2E7826BFBBF200AD3ACB /* Line.swift */; };
+		F7FC2E8226BFBBF300AD3ACB /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FC2E7826BFBBF200AD3ACB /* Line.swift */; };
+		F7FC2E8326BFBBF300AD3ACB /* Path+QuadCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FC2E7926BFBBF200AD3ACB /* Path+QuadCurve.swift */; };
+		F7FC2E8426BFBBF300AD3ACB /* Path+QuadCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FC2E7926BFBBF200AD3ACB /* Path+QuadCurve.swift */; };
+		F7FC2E8526BFBBF300AD3ACB /* LineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FC2E7A26BFBBF200AD3ACB /* LineChartView.swift */; };
+		F7FC2E8626BFBBF300AD3ACB /* LineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FC2E7A26BFBBF200AD3ACB /* LineChartView.swift */; };
+		F7FC2E8726BFBBF300AD3ACB /* IndicatorPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FC2E7B26BFBBF200AD3ACB /* IndicatorPoint.swift */; };
+		F7FC2E8826BFBBF300AD3ACB /* IndicatorPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FC2E7B26BFBBF200AD3ACB /* IndicatorPoint.swift */; };
+		F7FC2E8926BFBBF300AD3ACB /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FC2E7C26BFBBF300AD3ACB /* LineView.swift */; };
+		F7FC2E8A26BFBBF300AD3ACB /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FC2E7C26BFBBF300AD3ACB /* LineView.swift */; };
+		F7FC2E8B26BFBBF300AD3ACB /* MagnifierRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FC2E7D26BFBBF300AD3ACB /* MagnifierRect.swift */; };
+		F7FC2E8C26BFBBF300AD3ACB /* MagnifierRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FC2E7D26BFBBF300AD3ACB /* MagnifierRect.swift */; };
+		F7FC2E8D26BFBBF300AD3ACB /* Legend.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FC2E7E26BFBBF300AD3ACB /* Legend.swift */; };
+		F7FC2E8E26BFBBF300AD3ACB /* Legend.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FC2E7E26BFBBF300AD3ACB /* Legend.swift */; };
+		F7FC2E8F26BFBBF300AD3ACB /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FC2E7F26BFBBF300AD3ACB /* Helpers.swift */; };
+		F7FC2E9026BFBBF300AD3ACB /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FC2E7F26BFBBF300AD3ACB /* Helpers.swift */; };
+		F7FC2E9126BFBBF300AD3ACB /* MultiLineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FC2E8026BFBBF300AD3ACB /* MultiLineChartView.swift */; };
+		F7FC2E9226BFBBF300AD3ACB /* MultiLineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FC2E8026BFBBF300AD3ACB /* MultiLineChartView.swift */; };
+		F7FC2E9526BFCCDA00AD3ACB /* SFProDisplay-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7FC2E9326BFCCDA00AD3ACB /* SFProDisplay-Bold.ttf */; };
+		F7FC2E9626BFCCDA00AD3ACB /* SFProDisplay-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7FC2E9326BFCCDA00AD3ACB /* SFProDisplay-Bold.ttf */; };
+		F7FC2E9726BFCCDA00AD3ACB /* SFProDisplay-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7FC2E9426BFCCDA00AD3ACB /* SFProDisplay-Semibold.ttf */; };
+		F7FC2E9826BFCCDA00AD3ACB /* SFProDisplay-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7FC2E9426BFCCDA00AD3ACB /* SFProDisplay-Semibold.ttf */; };
+		F7FC2E9A26C00B1E00AD3ACB /* SFProText-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7FC2E9926C00B1E00AD3ACB /* SFProText-Bold.ttf */; };
+		F7FC2E9B26C00B1E00AD3ACB /* SFProText-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7FC2E9926C00B1E00AD3ACB /* SFProText-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -256,6 +280,18 @@
 		F7761FD726BD85CC00324C2E /* FeeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeeModel.swift; sourceTree = "<group>"; };
 		F7AA51E026BA4E8200BE00B6 /* ProductSoldModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSoldModel.swift; sourceTree = "<group>"; };
 		F7FC2E2826BE733700AD3ACB /* ProductSold.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSold.swift; sourceTree = "<group>"; };
+		F7FC2E7826BFBBF200AD3ACB /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
+		F7FC2E7926BFBBF200AD3ACB /* Path+QuadCurve.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Path+QuadCurve.swift"; sourceTree = "<group>"; };
+		F7FC2E7A26BFBBF200AD3ACB /* LineChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChartView.swift; sourceTree = "<group>"; };
+		F7FC2E7B26BFBBF200AD3ACB /* IndicatorPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndicatorPoint.swift; sourceTree = "<group>"; };
+		F7FC2E7C26BFBBF300AD3ACB /* LineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
+		F7FC2E7D26BFBBF300AD3ACB /* MagnifierRect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnifierRect.swift; sourceTree = "<group>"; };
+		F7FC2E7E26BFBBF300AD3ACB /* Legend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Legend.swift; sourceTree = "<group>"; };
+		F7FC2E7F26BFBBF300AD3ACB /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		F7FC2E8026BFBBF300AD3ACB /* MultiLineChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiLineChartView.swift; sourceTree = "<group>"; };
+		F7FC2E9326BFCCDA00AD3ACB /* SFProDisplay-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Bold.ttf"; sourceTree = "<group>"; };
+		F7FC2E9426BFCCDA00AD3ACB /* SFProDisplay-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Semibold.ttf"; sourceTree = "<group>"; };
+		F7FC2E9926C00B1E00AD3ACB /* SFProText-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProText-Bold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -369,6 +405,7 @@
 		2F52F31126B7CCBA0046A1AA /* Chart */ = {
 			isa = PBXGroup;
 			children = (
+				F7FC2E5C26BFBA9C00AD3ACB /* LineChart */,
 				51E27EB126BB97D1009D0CB6 /* BarCharts */,
 				2F52F31226B7CCC10046A1AA /* PieChart */,
 			);
@@ -780,6 +817,9 @@
 		F73F69BA26B9991200CD9642 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				F7FC2E9926C00B1E00AD3ACB /* SFProText-Bold.ttf */,
+				F7FC2E9326BFCCDA00AD3ACB /* SFProDisplay-Bold.ttf */,
+				F7FC2E9426BFCCDA00AD3ACB /* SFProDisplay-Semibold.ttf */,
 				F760C61226BC30B200CF95E0 /* SFProDisplay-Regular.ttf */,
 			);
 			path = Fonts;
@@ -793,6 +833,22 @@
 				F76A1A5626BA318C00CDADFB /* ProductSoldList.swift */,
 			);
 			path = Component;
+			sourceTree = "<group>";
+		};
+		F7FC2E5C26BFBA9C00AD3ACB /* LineChart */ = {
+			isa = PBXGroup;
+			children = (
+				F7FC2E7F26BFBBF300AD3ACB /* Helpers.swift */,
+				F7FC2E7B26BFBBF200AD3ACB /* IndicatorPoint.swift */,
+				F7FC2E7E26BFBBF300AD3ACB /* Legend.swift */,
+				F7FC2E7826BFBBF200AD3ACB /* Line.swift */,
+				F7FC2E7A26BFBBF200AD3ACB /* LineChartView.swift */,
+				F7FC2E7C26BFBBF300AD3ACB /* LineView.swift */,
+				F7FC2E7D26BFBBF300AD3ACB /* MagnifierRect.swift */,
+				F7FC2E8026BFBBF300AD3ACB /* MultiLineChartView.swift */,
+				F7FC2E7926BFBBF200AD3ACB /* Path+QuadCurve.swift */,
+			);
+			path = LineChart;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -922,8 +978,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7FC2E9526BFCCDA00AD3ACB /* SFProDisplay-Bold.ttf in Resources */,
+				F7FC2E9726BFCCDA00AD3ACB /* SFProDisplay-Semibold.ttf in Resources */,
 				F760C61326BC30B200CF95E0 /* SFProDisplay-Regular.ttf in Resources */,
 				2F764DBD26A7C254005B0513 /* Assets.xcassets in Resources */,
+				F7FC2E9A26C00B1E00AD3ACB /* SFProText-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -931,8 +990,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7FC2E9626BFCCDA00AD3ACB /* SFProDisplay-Bold.ttf in Resources */,
+				F7FC2E9826BFCCDA00AD3ACB /* SFProDisplay-Semibold.ttf in Resources */,
 				F760C61426BC30B200CF95E0 /* SFProDisplay-Regular.ttf in Resources */,
 				2F764DBE26A7C254005B0513 /* Assets.xcassets in Resources */,
+				F7FC2E9B26C00B1E00AD3ACB /* SFProText-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1027,6 +1089,7 @@
 				2FB41BC726B8F2130035B62B /* ProductInformationCard.swift in Sources */,
 				2F52F31726B7CE1A0046A1AA /* PieChartView.swift in Sources */,
 				2F832F1426B4439400426643 /* SideBarButton.swift in Sources */,
+				F7FC2E8B26BFBBF300AD3ACB /* MagnifierRect.swift in Sources */,
 				2F764DD926A92152005B0513 /* BlurWindow.swift in Sources */,
 				51E27EB626BB9838009D0CB6 /* ChartData.swift in Sources */,
 				F74758DB26BE44F900740DAE /* FeeViewModel.swift in Sources */,
@@ -1035,8 +1098,10 @@
 				2F57B83426BD54F200472B74 /* ExpenseSheet.swift in Sources */,
 				2F52F2EC26B7950D0046A1AA /* CashdeckData.xcdatamodeld in Sources */,
 				51E27EB526BB9838009D0CB6 /* BarChartCell.swift in Sources */,
+				F7FC2E8726BFBBF300AD3ACB /* IndicatorPoint.swift in Sources */,
 				2F57B86326BEAE2E00472B74 /* PieChartComplexLegend.swift in Sources */,
 				2F57B83B26BD7B7900472B74 /* SimpleExpense.swift in Sources */,
+				F7FC2E8526BFBBF300AD3ACB /* LineChartView.swift in Sources */,
 				2F832F0D26B3E6FA00426643 /* IncomeNavigationOptions.swift in Sources */,
 				F73F69C126B99B8800CD9642 /* TotalNetIncome.swift in Sources */,
 				F302B03626BBA9BA00B3B83A /* ChooseProductModal.swift in Sources */,
@@ -1044,7 +1109,9 @@
 				2F52F32F26B82FDD0046A1AA /* RecentExpenseOverviewCard.swift in Sources */,
 				2F52F30B26B7CC780046A1AA /* HomeOverview.swift in Sources */,
 				2F832EF726B271EA00426643 /* MainView.swift in Sources */,
+				F7FC2E8926BFBBF300AD3ACB /* LineView.swift in Sources */,
 				51E27EBC26BCCDC8009D0CB6 /* BusinessGrowthCard.swift in Sources */,
+				F7FC2E8D26BFBBF300AD3ACB /* Legend.swift in Sources */,
 				F73F69B726B996E600CD9642 /* ProductSoldView.swift in Sources */,
 				2F832F1026B3E70500426643 /* ExpenseNavigationOptions.swift in Sources */,
 				2F832F0026B31A6800426643 /* CardMenuButton.swift in Sources */,
@@ -1052,12 +1119,15 @@
 				2F52F31426B7CCD30046A1AA /* PieSliceView.swift in Sources */,
 				51E27EBE26BCCDDF009D0CB6 /* BusinessUpdateCard.swift in Sources */,
 				2F52F2F826B7A4910046A1AA /* ExpenseOverview.swift in Sources */,
+				F7FC2E9126BFBBF300AD3ACB /* MultiLineChartView.swift in Sources */,
 				2F52F32426B7EBC70046A1AA /* ProductSoldCard.swift in Sources */,
 				F7611CD526BA8EDC00CD3169 /* ProductSoldViewModel.swift in Sources */,
+				F7FC2E8126BFBBF300AD3ACB /* Line.swift in Sources */,
 				2F57B83126BD549F00472B74 /* ExpenseViewModel.swift in Sources */,
 				2FB41BCA26B8F2200035B62B /* ActionButtonCard.swift in Sources */,
 				2F52F31D26B7E9720046A1AA /* MonthlyExpenseCard.swift in Sources */,
 				F76A1A5726BA318C00CDADFB /* ProductSoldList.swift in Sources */,
+				F7FC2E8F26BFBBF300AD3ACB /* Helpers.swift in Sources */,
 				2F52F2FB26B7A49C0046A1AA /* Tokopedia.swift in Sources */,
 				2FB41BD726B9C2FB0035B62B /* CustomTextFieldExtension.swift in Sources */,
 				2FB41BBC26B8F1330035B62B /* ExpenseList.swift in Sources */,
@@ -1075,6 +1145,7 @@
 				2FB41BE126B9C9520035B62B /* StringFormatter.swift in Sources */,
 				51E27EB726BB9838009D0CB6 /* BarView.swift in Sources */,
 				2FF3EE8326BB9CDB001AFAC7 /* CurrencyFormattedTextField.swift in Sources */,
+				F7FC2E8326BFBBF300AD3ACB /* Path+QuadCurve.swift in Sources */,
 				2F764DB926A7C254005B0513 /* CashdeckApp.swift in Sources */,
 				2F57B84726BDBB3A00472B74 /* MonthSelector.swift in Sources */,
 				2FB41BC426B8F1F60035B62B /* CashInformationCard.swift in Sources */,
@@ -1101,10 +1172,13 @@
 				2F52F2ED26B7950D0046A1AA /* CashdeckData.xcdatamodeld in Sources */,
 				F346179926B8D6270005136B /* TransactionModel.swift in Sources */,
 				2F82F13326BC2137004E4ADF /* CustomDivider.swift in Sources */,
+				F7FC2E8626BFBBF300AD3ACB /* LineChartView.swift in Sources */,
 				2F832F0E26B3E6FA00426643 /* IncomeNavigationOptions.swift in Sources */,
 				2F832EF826B271EA00426643 /* MainView.swift in Sources */,
+				F7FC2E9026BFBBF300AD3ACB /* Helpers.swift in Sources */,
 				F73F69C226B99B8800CD9642 /* TotalNetIncome.swift in Sources */,
 				F302B03A26BBA9CD00B3B83A /* EditFeeModal.swift in Sources */,
+				F7FC2E8E26BFBBF300AD3ACB /* Legend.swift in Sources */,
 				2F52F33026B82FDD0046A1AA /* RecentExpenseOverviewCard.swift in Sources */,
 				51E27EBA26BB984B009D0CB6 /* ChartData.swift in Sources */,
 				2F832F1126B3E70500426643 /* ExpenseNavigationOptions.swift in Sources */,
@@ -1114,6 +1188,7 @@
 				2F57B86426BEAE2E00472B74 /* PieChartComplexLegend.swift in Sources */,
 				2F52F32126B7EB940046A1AA /* NetIncomeCard.swift in Sources */,
 				2F57B84126BD82E100472B74 /* GroupingData.swift in Sources */,
+				F7FC2E8426BFBBF300AD3ACB /* Path+QuadCurve.swift in Sources */,
 				2F57B84826BDBB3A00472B74 /* MonthSelector.swift in Sources */,
 				F73F69C526B99F0C00CD9642 /* TotalSold.swift in Sources */,
 				2F57B83526BD54F200472B74 /* ExpenseSheet.swift in Sources */,
@@ -1121,9 +1196,11 @@
 				2F4066AD26BBCD1000F9B456 /* SamplePage.swift in Sources */,
 				F346179026B8AE6F0005136B /* primaryBtn.swift in Sources */,
 				51E27EBF26BCCE4D009D0CB6 /* BusinessGrowthCard.swift in Sources */,
+				F7FC2E9226BFBBF300AD3ACB /* MultiLineChartView.swift in Sources */,
 				2F52F2FC26B7A49C0046A1AA /* Tokopedia.swift in Sources */,
 				2F82F13026BC20C0004E4ADF /* ExpenseTableHeader.swift in Sources */,
 				F346179226B8B2380005136B /* transactionsTable.swift in Sources */,
+				F7FC2E8A26BFBBF300AD3ACB /* LineView.swift in Sources */,
 				F346178D26B8A53F0005136B /* CardReports.swift in Sources */,
 				F346179426B8B36C0005136B /* BtnDatePicker.swift in Sources */,
 				2F52F2FC26B7A49C0046A1AA /* Tokopedia.swift in Sources */,
@@ -1159,8 +1236,11 @@
 				2FB41BE226B9C9520035B62B /* StringFormatter.swift in Sources */,
 				2F764DBA26A7C254005B0513 /* CashdeckApp.swift in Sources */,
 				2FB41BC526B8F1F60035B62B /* CashInformationCard.swift in Sources */,
+				F7FC2E8C26BFBBF300AD3ACB /* MagnifierRect.swift in Sources */,
+				F7FC2E8226BFBBF300AD3ACB /* Line.swift in Sources */,
 				2FB41BDC26B9C5490035B62B /* WithTopLabelTextField.swift in Sources */,
 				2F57B83926BD68EE00472B74 /* TotalExpenseInfoCard.swift in Sources */,
+				F7FC2E8826BFBBF300AD3ACB /* IndicatorPoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
