@@ -43,8 +43,8 @@ public struct PieChartView: View {
     }
     
     public init(values:[Double], names: [String], colors: [Color] = [Color.blue, Color.green, Color.orange, Color.purple, Color.gray, Color.yellow, Color.red, Color.blue, Color.green, Color.orange, Color.purple, Color.gray, Color.yellow, Color.red], backgroundColor: Color = Color.white, widthFraction: CGFloat = 0.75, innerRadiusFraction: CGFloat = 0.60){
-        self.values = values
-        self.names = names
+        self.values = values.allSatisfy { $0 == 0 } ? [] : values
+        self.names = values.allSatisfy { $0 == 0 } ? [] : names
         
         self.colors = Array(colors.prefix(upTo: self.values.count))
         self.backgroundColor = backgroundColor
@@ -67,7 +67,6 @@ public struct PieChartView: View {
                             .onChanged { value in
                                 let radius = 0.5 * widthFraction * geometry.size.width
                                 let diff = CGPoint(x: value.location.x - radius, y: radius - value.location.y)
-                                print(value)
                                 let dist = pow(pow(diff.x, 2.0) + pow(diff.y, 2.0), 0.5)
                                 if (dist > radius || dist < radius * innerRadiusFraction) {
                                     self.activeIndex = -1

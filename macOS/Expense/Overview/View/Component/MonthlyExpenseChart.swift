@@ -18,6 +18,7 @@ struct MonthlyExpenseChart: View {
                     .font(Font.custom("SFProDisplay-Bold", size: 18))
                     .padding(.vertical)
                     .foregroundColor(Color("AccentColor2"))
+
                 
                 Spacer()
                 
@@ -25,7 +26,7 @@ struct MonthlyExpenseChart: View {
                     .onTapGesture {
                         overviewExpenseVM.isOpenCalendar.toggle()
                         overviewExpenseVM.showPieChart.toggle()
-                        overviewExpenseVM.showPiecHartLegend.toggle()
+                        overviewExpenseVM.showPieChartLegend.toggle()
                     }
                     .sheet(isPresented: $overviewExpenseVM.isOpenCalendar) {
                         MonthYearCalendar(overviewExpenseVM: overviewExpenseVM)
@@ -36,15 +37,15 @@ struct MonthlyExpenseChart: View {
             HStack {
 
                 if overviewExpenseVM.showPieChart {
-                    PieChartView(values: overviewExpenseVM.groupedDataValues, names: overviewExpenseVM.groupedDataLabels)
+                    PieChartView(values: overviewExpenseVM.groupedDataValues, names: K().categories)
                         .frame(width: 300, height: 300)
                 }
             }
             .padding(.top, -8)
             .padding(.leading, -16)
             
-            if overviewExpenseVM.showPieChart {
-                PieChartLegend(values: overviewExpenseVM.groupedDataValues, names: overviewExpenseVM.groupedDataLabels)
+            if overviewExpenseVM.showPieChartLegend {
+                PieChartComplexLegend(values: overviewExpenseVM.groupedDataValues, oldValues: overviewExpenseVM.groupedPrevDataValues, names: K().categories)
             }
             
             Spacer()
@@ -59,6 +60,7 @@ struct MonthlyExpenseChart: View {
         .onAppear() {
             overviewExpenseVM.getMonthlyGroupedExpense()
             overviewExpenseVM.showPieChart.toggle()
+            overviewExpenseVM.showPieChartLegend.toggle()
         }
     }
 }
