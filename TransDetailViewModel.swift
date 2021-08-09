@@ -9,7 +9,10 @@ import SwiftUI
 
 class TransDetailViewModel: ObservableObject {
     
+    static let shared: TransDetailViewModel = TransDetailViewModel()
+    
     @Published var listTransTemp: [TransactionDetailTemp] = [TransactionDetailTemp]()
+    @StateObject var transVM = TransactionViewModel.shared
     
     let context = CoreDataManager.sharedManager.persistentContainer.viewContext
     
@@ -89,6 +92,7 @@ class TransDetailViewModel: ObservableObject {
             //saving to core data
             do {
                 context.delete(transTemp)
+                
                 try self.context.save()
             }
             catch {

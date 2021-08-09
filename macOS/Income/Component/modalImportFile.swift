@@ -11,7 +11,7 @@ import CoreXLSX
 struct modalImportFile: View {
     @Binding var isVisible: Bool
     @Binding var showmodalSync: Bool
-    @ObservedObject var TransDetailVM = TransDetailViewModel()
+    @ObservedObject var TransDetailVM = TransDetailViewModel.shared
     let context = CoreDataManager.sharedManager.persistentContainer.viewContext
     
     var body: some View {

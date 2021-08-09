@@ -10,7 +10,7 @@ import SwiftUI
 
 struct transactionsTable: View {
     @State var date: Date
-    @Binding var listTrans: [transactionModel]
+    @StateObject var transVM = TransactionViewModel.shared
     
     var body: some View {
         VStack {
@@ -49,7 +49,7 @@ struct transactionsTable: View {
                     .padding(20)
                 Spacer()
             }
-            if listTrans.count < 1 {
+            if transVM.listTrans.count < 1 {
                 HStack {
                     Image("noTransactionIllustration")
                         .resizable()
@@ -62,16 +62,16 @@ struct transactionsTable: View {
                     .fontWeight(.semibold)
                     .foregroundColor(Color("AccentColor2"))
             } else {
-                if listTrans.count > 0 {
-                    ForEach(listTrans) { trans in
+                if transVM.listTrans.count > 0 {
+                    ForEach(transVM.listTrans) { trans in
                         HStack {
-                            Text(trans.date, style: .date)
+                            Text(trans.td_transaction?.date ?? Date(), style: .date)
                                 .padding(.init(top: 4, leading: 20, bottom: 4, trailing: 20))
                                 .frame(width: 120, alignment: .leading)
-                            Text(trans.productName)
+                            Text(trans.td_product?.name ?? "")
                                 .frame(width: 300, alignment: .leading)
                                 .padding(.init(top: 4, leading: 20, bottom: 4, trailing: 20))
-                            Text("\(trans.qyt)")
+                            Text("\(trans.quantity)")
                                 .frame(width: 100, alignment: .leading)
                                 .padding(.init(top: 4, leading: 20, bottom: 4, trailing: 20))
                             Text("Rp \(trans.price)")
@@ -91,5 +91,8 @@ struct transactionsTable: View {
         .background(Color.white)
         .cornerRadius(10)
         .padding(10)
+        .onAppear(perform: {
+            transVM.fetchData()
+        })
     }
 }

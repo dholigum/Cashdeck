@@ -13,7 +13,9 @@ struct Tokopedia: View {
     @State var showModalFee = false
     @State var showModalSync = false
     @State var listTrans = [transactionModel]()
-    @ObservedObject var listTransTemp = TransDetailViewModel()
+    @ObservedObject var listTransTemp = TransDetailViewModel.shared
+    
+    @StateObject var transVM = TransactionViewModel.shared
     
     init() {
         listTransTemp.fetchDataTrans()
@@ -66,7 +68,7 @@ struct Tokopedia: View {
                 Spacer()
             } .padding(.top, 30)
             HStack {
-                transactionsTable(date: Date(), listTrans: $listTrans)
+                transactionsTable(date: Date(), transVM: transVM)
             }
             .padding(.top, 20)
             Spacer()
