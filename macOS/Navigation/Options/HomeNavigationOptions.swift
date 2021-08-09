@@ -24,7 +24,7 @@ struct HomeNavigationOptions {
         case .overview:
             HomeOverview()
         case .analytics:
-            HomeOverview()
+            HomeAnalytics()
         case .productList:
             HomeOverview()
         case .productSold:
