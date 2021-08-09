@@ -22,6 +22,10 @@ class CoreDataManager {
         return container
     }()
     
+    func insertInitData() {
+        ProductSoldModel.shared.insertChannel()
+    }
+    
     func saveContext() {
         let context = CoreDataManager.sharedManager.persistentContainer.viewContext
         
