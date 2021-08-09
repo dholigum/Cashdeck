@@ -91,6 +91,7 @@ public struct LineView: View {
                         .offset(x: self.dragLocation.x - geometry.frame(in: .local).size.width/2, y: 36)
                 }
                 .frame(width: geometry.frame(in: .local).size.width, height: 150)
+                .padding(.leading, -20)
                 .gesture(DragGesture()
                 .onChanged({ value in
                     self.dragLocation = value.location
