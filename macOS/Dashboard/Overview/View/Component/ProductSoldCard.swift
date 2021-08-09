@@ -11,14 +11,16 @@ struct ProductSoldCard: View {
     let productSoldVM = ProductSoldViewModel()
     
     var body: some View {
-        VStack {
+        VStack (spacing: 20) {
             GeometryReader { geometry in
                 Text("Product Sold")
                     .font(Font.custom("SFProDisplay-Semibold", size: 18))
                     .foregroundColor(Color("AccentColor2"))
                     .frame(width: geometry.frame(in: .local).size.width, alignment: .leading)
                     .padding(.leading, 25)
-            }.frame(height: 24)
+            }
+            .frame(height: 24)
+            .padding(.top, 20)
             
             
             
