@@ -9,8 +9,7 @@ import SwiftUI
 
 struct MonthlyExpenseCard: View {
     
-    let dataValues: [Double] = [30, 24, 21, 13, 12]
-    let dataLabels: [String] = ["Utilities", "Transport", "Housing", "Personal", "Finance"]
+    @StateObject var overviewExpenseVM = OverviewExpenseViewModel()
     
     var body: some View {
         VStack(alignment: .center) {
@@ -27,10 +26,14 @@ struct MonthlyExpenseCard: View {
             
             HStack {
 
-                PieChartView(values: dataValues, names: dataLabels)
-                    .frame(width: 300, height: 300)
+                if overviewExpenseVM.showPieChart {
+                    PieChartView(values: overviewExpenseVM.groupedDataValues, names: K().categories)
+                        .frame(width: 300, height: 300)
+                }
                 
-                PieChartLegend(values: dataValues, names: dataLabels)
+                if overviewExpenseVM.showPieChartLegend {
+                    PieChartLegend(values: overviewExpenseVM.groupedDataValues, names: K().categories)
+                }
             }
             .padding(.top, -16)
             .padding(.leading, -24)
@@ -43,6 +46,11 @@ struct MonthlyExpenseCard: View {
         .clipped()
         .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.15), radius: 4, x: 2, y: 2)
         .padding(.horizontal, 2)
+        .onAppear() {
+            overviewExpenseVM.getMonthlyGroupedExpense()
+            overviewExpenseVM.showPieChart.toggle()
+            overviewExpenseVM.showPieChartLegend.toggle()
+        }
     }
 }
 

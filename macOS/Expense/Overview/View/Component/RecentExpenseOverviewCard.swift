@@ -23,35 +23,51 @@ struct RecentExpenseOverviewCard: View {
             CustomDivider(width: 560)
                 .padding(EdgeInsets(top: -8, leading: 16, bottom: 0, trailing: 0))
             
-            ScrollView(.vertical, showsIndicators: true, content: {
-                LazyVStack {
-                    ForEach(expenseVM.expenses, id: \.self) { expense in
-                        VStack(alignment: .leading) {
-                            HStack {
+            if expenseVM.expenses.count > 0 {
+                ScrollView(.vertical, showsIndicators: true, content: {
+                    LazyVStack {
+                        ForEach(expenseVM.expenses, id: \.self) { expense in
+                            VStack(alignment: .leading) {
+                                HStack {
 
-                                if let date = expense.date, let category = expense.category, let name = expense.name, let price = expense.price {
+                                    if let date = expense.date, let category = expense.category, let name = expense.name, let price = expense.price {
 
-                                    Text(date.shortDateFormatting())
-                                        .font(.system(size: 14))
-                                        .frame(width: 80, alignment: .leading)
-                                    Text(category)
-                                        .font(.system(size: 14))
-                                        .frame(width: 80, alignment: .leading)
-                                    Text(name)
-                                        .font(.system(size: 14))
-                                        .frame(width: 250, alignment: .leading)
-                                    Text("\(price)".currencyFormatting())
-                                        .font(.system(size: 14))
-                                        .frame(width: 120, alignment: .leading)
+                                        Text(date.shortDateFormatting())
+                                            .font(.system(size: 14))
+                                            .frame(width: 80, alignment: .leading)
+                                        Text(category)
+                                            .font(.system(size: 14))
+                                            .frame(width: 80, alignment: .leading)
+                                        Text(name)
+                                            .font(.system(size: 14))
+                                            .frame(width: 250, alignment: .leading)
+                                        Text("\(price)".currencyFormatting())
+                                            .font(.system(size: 14))
+                                            .frame(width: 120, alignment: .leading)
+                                    }
                                 }
+                                
+                                CustomDivider(width: 560)
                             }
-                            
-                            CustomDivider(width: 560)
                         }
                     }
-                }
-            })
-            .padding(EdgeInsets(top: 0, leading: -8, bottom: 0, trailing: 0))
+                })
+                .padding(EdgeInsets(top: 0, leading: -8, bottom: 0, trailing: 0))
+            } else {
+                HStack {
+                    Image("noTransactionIllustration")
+                        .resizable()
+                        .frame(width: 356, height: 272)
+                        .aspectRatio(contentMode: .fill)
+                } .padding(.top, 30)
+                
+                Text("You have no expenses yet.")
+                    .font(.system(size: 24))
+                    .fontWeight(.semibold)
+                    .foregroundColor(Color("AccentColor2"))
+            }
+            
+            
         }
         .frame(width: 600, height: 380)
         .background(Color.white)
