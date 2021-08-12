@@ -22,7 +22,7 @@ struct MonthlyExpenseChart: View {
                 
                 Spacer()
                 
-                ActionButtonCard(icon: "calendar", title: overviewExpenseVM.formatedMonthYear(), isPressed: $overviewExpenseVM.isOpenCalendar)
+                ActionButtonCard(icon: "calendar", title: overviewExpenseVM.formatedMonthYear(), defaultColor: Color("MainColor"), isPressed: $overviewExpenseVM.isOpenCalendar )
                     .onTapGesture {
                         overviewExpenseVM.isOpenCalendar.toggle()
                         overviewExpenseVM.showPieChart.toggle()
