@@ -98,15 +98,24 @@ class ExpenseViewModel: ObservableObject {
         isNewData.toggle()
     }
     
-    func getAllExpense() {
+    func getAllExpense(sortByQty: Bool = false) {
+        
         let fetchRequest: NSFetchRequest<Expense> = Expense.fetchRequest()
+        
+        if sortByQty {
+            let sortByQty = NSSortDescriptor.init(key: "quantity", ascending: false)
+            fetchRequest.sortDescriptors = [sortByQty]
+        } else {
+            let sortByDate = NSSortDescriptor.init(key: "date", ascending: false)
+            fetchRequest.sortDescriptors = [sortByDate]
+        }
         
         do {
             expenses = try context.fetch(fetchRequest)
             totalExpense = Int(expenses.reduce(0) { $0 + $1.price })
             
             for expense in expenses {
-                let newSimpleExpense = SimpleExpense(name: expense.category ?? "", cost: Double(expense.price ?? 0))
+                let newSimpleExpense = SimpleExpense(name: expense.category ?? "", cost: Double(expense.price))
 
                 simpleExpenses.append(newSimpleExpense)
             }

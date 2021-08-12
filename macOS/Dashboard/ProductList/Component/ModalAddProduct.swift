@@ -1,38 +1,40 @@
 //
-//  modalImportFile.swift
-//  Cashdeck (macOS)
+//  ModalAddProduct.swift
+//  Cashdeck
 //
-//  Created by Azrullah Kainage on 04/08/21.
+//  Created by Azrullah Kainage on 06/08/21.
 //
 
 import SwiftUI
 import CoreXLSX
 
-struct modalImportFile: View {
+struct ModalAddProduct: View {
     @Binding var isVisible: Bool
-    @Binding var showmodalSync: Bool
-    @StateObject var TransDetailVM = TransDetailViewModel.shared
-    let context = CoreDataManager.sharedManager.persistentContainer.viewContext
-    
+    @ObservedObject var ProductVM = ProductViewModel()
     var body: some View {
         VStack {
             HStack {
                 Button(action: {isVisible = false}, label: {
                     Text("Cancel")
-                        .font(Font.custom("SFProDisplay-Semibold", size: 16))
+                        .font(.system(size: 17))
                         .padding(.init(top: 18, leading: 18, bottom: 18, trailing: 18))
                         .frame(width: 100, alignment: .leading)
                 })
                 .buttonStyle(PlainButtonStyle())
-                Text("New Transaction")
-                    .font(Font.custom("SFProDisplay-Semibold", size: 18))
+                Text("New Product")
+                    .font(.system(size: 18))
                     .foregroundColor(Color("AccentColor2"))
                     .frame(width: 192, alignment: .center)
                 Text(" ")
                     .frame(width: 100)
             }
-            .frame(height: 50)
             .background(Color("AccentColor"))
+            HStack {
+                primaryBtn(imageName: "square.and.arrow.down", title: "Download Template", width: 359)
+                    .onTapGesture {
+                        downloadTemplate()
+                    }
+            }
             VStack {
                 Image(systemName: "square.and.arrow.up")
                     .resizable()
@@ -51,9 +53,7 @@ struct modalImportFile: View {
             .background(Color.white)
             .cornerRadius(15)
             .padding(.init(top: 25, leading: 0, bottom: 30, trailing: 0))
-            Button(action: {btnImportPressed()
-                TransDetailVM.fetchDataTrans()
-            }, label: {
+            Button(action: {btnImportPressed()}, label: {
                 Text("Import")
                     .font(.system(size: 18))
                     .foregroundColor(Color("AccentColor2"))
@@ -66,52 +66,47 @@ struct modalImportFile: View {
             .padding(.bottom, 27)
             Spacer()
         }
-        .frame(width: 392, height: 374)
+        .frame(width: 392, height: 447)
         .background(Color("MainColor"))
     }
 }
 
-extension modalImportFile {
+extension ModalAddProduct {
     func btnImportPressed () {
         let panel = NSOpenPanel()
         panel.allowsMultipleSelection = false
-        panel.allowedFileTypes = ["xlsx", "xls"]
+        panel.allowedFileTypes = ["xlsx", "xls", "number"]
         if panel.runModal() == .OK {
             do {
 
             var tmp = "\(panel.url!)".split(separator: "/")
             tmp.removeFirst()
+            let fileName = tmp[tmp.count - 1]
+            let addSpace = fileName.replacingOccurrences(of: "%20", with: " ")
+            tmp[tmp.count - 1] = "\(addSpace)"
             let path = tmp.joined(separator: "/")
             let file = XLSXFile(filepath: "/\(path)")
-
-            let sharedString = try file!.parseSharedStrings()
+            let sharedString = try file?.parseSharedStrings()
+                
             var i = 0
             for wbk in try file!.parseWorkbooks() {
                 for (_, path) in try file!.parseWorksheetPathsAndNames(workbook: wbk) {
                         let worksheet = try file!.parseWorksheet(at: path)
                         for row in worksheet.data?.rows ?? [] {
-                            if i > 3 {
-                                let isoDate = row.cells[3].stringValue(sharedString!)!
-                                let dateFormatter = DateFormatter()
-                                dateFormatter.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
-                                dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
-                                let date = dateFormatter.date(from:isoDate)
-                                let productName = row.cells[6].stringValue(sharedString!)!
-                                let qyt = Int64(row.cells[7].stringValue(sharedString!)!)
-                                let price = Int64(row.cells[10].stringValue(sharedString!)!)
-                                let productId = row.cells[5].stringValue(sharedString!)!
-                                let SKU = row.cells[8].stringValue(sharedString!)
-                                let orderId = row.cells[1].stringValue(sharedString!)
-                                let newTrans = transactionModel(date: date!, productName: productName, qyt: qyt!, price: price!, SKU: SKU ?? productId, orderId: orderId!)
-                                TransDetailVM.addTransTemp(newTrans)
+                            if i > 0 {
+                                let name = row.cells[1].stringValue(sharedString!)!
+                                let size = row.cells[3].stringValue(sharedString!)!
+                                let color = row.cells[4].stringValue(sharedString!)!
+                                let costPrice = Int64(row.cells[2].stringValue(sharedString!)!)
+                                let SKU = row.cells[0].stringValue(sharedString!)!
+                                self.ProductVM.addProduct(ProductModel(SKU: SKU, name: name, costPrice: costPrice!, size: size, color: color))
                             }
                             i += 1
                         }
                     }
                 }
-                try context.save()
+                ProductVM.fetchProducts()
                 isVisible = false
-                showmodalSync = true
             } catch {
               print(error)
             }
