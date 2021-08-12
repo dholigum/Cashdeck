@@ -12,13 +12,15 @@ class ProductSoldModel {
     static let shared = ProductSoldModel()
     let context = CoreDataManager.sharedManager.persistentContainer.viewContext
     
-    func insertProduct(name: String, SKU: String, color: String, size: String, costPrice: Int) {
+    func insertProduct(name: String, SKU: String, color: String, size: String, costPrice: Int, quantity: Int) {
         let newProduct = Products(context: self.context)
         newProduct.sku = SKU
         newProduct.name = name
         newProduct.color = color
         newProduct.size = size
         newProduct.costPrice = Int64(costPrice)
+        newProduct.quantity = Int64(quantity
+        )
         CoreDataManager.sharedManager.saveContext()
     }
     
@@ -31,9 +33,10 @@ class ProductSoldModel {
         CoreDataManager.sharedManager.saveContext()
     }
     
-    func insertTransaction(channel: Channel) -> Transaction {
+    func insertTransaction(channel: Channel, orderId: String) -> Transaction {
         let newTransaction = Transaction(context: context)
         newTransaction.date = Date()
+        newTransaction.orderId = orderId
         newTransaction.transaction_channel = channel
         CoreDataManager.sharedManager.saveContext()
         return newTransaction
