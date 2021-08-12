@@ -27,7 +27,7 @@ struct BarChartCell: View {
 
 struct BarChartCell_Previews: PreviewProvider {
     static var previews: some View {
-        BarChartCell(value: 300, barColor: .blue, labels: "Day", labelSize: 9)
+        BarChartCell(value: 300, barColor: Color("AccentColor2"), labels: "Day", labelSize: 9)
             .previewLayout(.sizeThatFits)
     }
 }

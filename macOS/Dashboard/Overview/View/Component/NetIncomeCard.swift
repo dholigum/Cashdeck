@@ -131,21 +131,21 @@ struct NetIncomeCard: View {
                     Text("Total Income")
                     Text("Rp. 1.000.000")
                         .font(Font.custom("SFProDisplay-Bold", size: 20))
-                        .foregroundColor(Color("AccentColor2"))
+                        .foregroundColor(Color("colorUp"))
                     
                 }.frame(maxWidth: .infinity)
                 VStack (alignment: .leading, spacing: 1){
                     Text("Total Expense")
                     Text("Rp. 400.000")
                         .font(Font.custom("SFProDisplay-Bold", size: 20))
-                        .foregroundColor(Color("AccentColor2"))
+                        .foregroundColor(Color("ExpenseColor"))
                     
                 }.frame(maxWidth: .infinity)
                 VStack (alignment: .leading, spacing: 1){
                     Text("Total Net Income")
                     Text("Rp. 600.000")
                         .font(Font.custom("SFProDisplay-Bold", size: 20))
-                        .foregroundColor(Color("AccentColor2"))
+                        .foregroundColor(Color("OrangeColor"))
                     
                 }.frame(maxWidth: .infinity)
             }
