@@ -44,7 +44,7 @@ struct MiddleBarMenu: View {
                     }
                 }
                 // INITIAL DETAIL VIEW
-                Text("Select option from the left")
+                InitialView()
             }
         } else if seletedBar == "Income" {
             NavigationView {
@@ -72,7 +72,7 @@ struct MiddleBarMenu: View {
                     }
                 }
                 // INITIAL DETAIL VIEW
-                Text("Select option from the left")
+                InitialView()
             }
         } else {
             NavigationView {
@@ -100,7 +100,7 @@ struct MiddleBarMenu: View {
                     }
                 }
                 // INITIAL DETAIL VIEW
-                Text("Select option from the left")
+                InitialView()
             }
         }
     }

@@ -113,6 +113,8 @@
 		2FB41BE226B9C9520035B62B /* StringFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB41BE026B9C9520035B62B /* StringFormatter.swift */; };
 		2FC7540126C5360700036064 /* FilterCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC7540026C5360700036064 /* FilterCalendar.swift */; };
 		2FC7540226C5360700036064 /* FilterCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC7540026C5360700036064 /* FilterCalendar.swift */; };
+		2FC7540A26C5861B00036064 /* InitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC7540926C5861B00036064 /* InitialView.swift */; };
+		2FC7540B26C5861B00036064 /* InitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC7540926C5861B00036064 /* InitialView.swift */; };
 		2FF3EE8326BB9CDB001AFAC7 /* CurrencyFormattedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF3EE8226BB9CDB001AFAC7 /* CurrencyFormattedTextField.swift */; };
 		2FF3EE8426BB9CDB001AFAC7 /* CurrencyFormattedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF3EE8226BB9CDB001AFAC7 /* CurrencyFormattedTextField.swift */; };
 		3E1C911C6AE4A4DB272D605F /* Pods_Cashdeck__iOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C335E609120D79D88B31498D /* Pods_Cashdeck__iOS_.framework */; };
@@ -277,6 +279,7 @@
 		2FB41BDA26B9C5490035B62B /* WithTopLabelTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithTopLabelTextField.swift; sourceTree = "<group>"; };
 		2FB41BE026B9C9520035B62B /* StringFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringFormatter.swift; sourceTree = "<group>"; };
 		2FC7540026C5360700036064 /* FilterCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCalendar.swift; sourceTree = "<group>"; };
+		2FC7540926C5861B00036064 /* InitialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialView.swift; sourceTree = "<group>"; };
 		2FF3EE8226BB9CDB001AFAC7 /* CurrencyFormattedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormattedTextField.swift; sourceTree = "<group>"; };
 		3AD247E402BE1F80A3C3B01C /* Pods-Cashdeck (macOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cashdeck (macOS).debug.xcconfig"; path = "Target Support Files/Pods-Cashdeck (macOS)/Pods-Cashdeck (macOS).debug.xcconfig"; sourceTree = "<group>"; };
 		3F360569D5ED17213BB12E8E /* Pods-Cashdeck (iOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cashdeck (iOS).debug.xcconfig"; path = "Target Support Files/Pods-Cashdeck (iOS)/Pods-Cashdeck (iOS).debug.xcconfig"; sourceTree = "<group>"; };
@@ -716,6 +719,7 @@
 			children = (
 				2F832EFF26B31A6800426643 /* CardMenuButton.swift */,
 				2F832F1326B4439400426643 /* SideBarButton.swift */,
+				2FC7540926C5861B00036064 /* InitialView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -1208,6 +1212,7 @@
 				F73F69C126B99B8800CD9642 /* TotalNetIncome.swift in Sources */,
 				F302B03626BBA9BA00B3B83A /* ChooseProductModal.swift in Sources */,
 				F302B02C26BB82D700B3B83A /* TransDetailViewModel.swift in Sources */,
+				2FC7540A26C5861B00036064 /* InitialView.swift in Sources */,
 				2F52F32F26B82FDD0046A1AA /* RecentExpenseOverviewCard.swift in Sources */,
 				2F52F30B26B7CC780046A1AA /* HomeOverview.swift in Sources */,
 				2F832EF726B271EA00426643 /* MainView.swift in Sources */,
@@ -1273,6 +1278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				51E27EB926BB9848009D0CB6 /* BarView.swift in Sources */,
+				2FC7540B26C5861B00036064 /* InitialView.swift in Sources */,
 				2FB41BD126B8F63E0035B62B /* RecentExpenseTableCard.swift in Sources */,
 				F32412AE26BA88400022E95D /* SyncDataModal.swift in Sources */,
 				2FB41BC826B8F2130035B62B /* ProductInformationCard.swift in Sources */,
