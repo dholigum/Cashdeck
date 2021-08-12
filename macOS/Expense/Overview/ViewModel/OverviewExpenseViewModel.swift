@@ -45,6 +45,10 @@ class OverviewExpenseViewModel: ObservableObject {
         let fetchRequestPrevsMonth: NSFetchRequest<Expense> = Expense.fetchRequest()
         fetchRequestPrevsMonth.predicate = prevMonthPredicate
         
+        let sortByDate = NSSortDescriptor.init(key: "date", ascending: false)
+        fetchRequestThisMonth.sortDescriptors = [sortByDate]
+        fetchRequestPrevsMonth.sortDescriptors = [sortByDate]
+        
         do {
             expenses = try context.fetch(fetchRequestThisMonth)
             let prevExpenses = try context.fetch(fetchRequestPrevsMonth)
