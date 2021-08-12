@@ -106,7 +106,6 @@ extension modalImportFile {
                         }
                     }
                 }
-                try context.save()
                 isVisible = false
                 showmodalSync = true
             } catch {

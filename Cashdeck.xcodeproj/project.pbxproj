@@ -107,6 +107,10 @@
 		F302B03726BBA9BA00B3B83A /* ChooseProductModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F302B03526BBA9BA00B3B83A /* ChooseProductModal.swift */; };
 		F302B03926BBA9CD00B3B83A /* EditFeeModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F302B03826BBA9CD00B3B83A /* EditFeeModal.swift */; };
 		F302B03A26BBA9CD00B3B83A /* EditFeeModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F302B03826BBA9CD00B3B83A /* EditFeeModal.swift */; };
+		F30A6E9626C0E62F00B8E446 /* Product Template.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = F30A6E9526C0E62F00B8E446 /* Product Template.xlsx */; };
+		F30A6E9726C0E62F00B8E446 /* Product Template.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = F30A6E9526C0E62F00B8E446 /* Product Template.xlsx */; };
+		F30A6E9B26C0E92600B8E446 /* productController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30A6E9A26C0E92600B8E446 /* productController.swift */; };
+		F30A6E9C26C0E92600B8E446 /* productController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30A6E9A26C0E92600B8E446 /* productController.swift */; };
 		F30E164D26BCD04400A6DDDC /* ProductList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30E164C26BCD04400A6DDDC /* ProductList.swift */; };
 		F30E164E26BCD04400A6DDDC /* ProductList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30E164C26BCD04400A6DDDC /* ProductList.swift */; };
 		F30E165026BCED9500A6DDDC /* CardSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30E164F26BCED9500A6DDDC /* CardSummary.swift */; };
@@ -120,6 +124,12 @@
 		F346179226B8B2380005136B /* transactionsTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F346179126B8B2380005136B /* transactionsTable.swift */; };
 		F346179426B8B36C0005136B /* BtnDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F346179326B8B36C0005136B /* BtnDatePicker.swift */; };
 		F346179926B8D6270005136B /* TransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F346179826B8D6270005136B /* TransactionModel.swift */; };
+		F39B707226C2238C00138107 /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39B707126C2238C00138107 /* ProductViewModel.swift */; };
+		F39B707326C2238F00138107 /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39B707126C2238C00138107 /* ProductViewModel.swift */; };
+		F39B707526C224A400138107 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39B707426C224A400138107 /* ProductModel.swift */; };
+		F39B707626C224A400138107 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39B707426C224A400138107 /* ProductModel.swift */; };
+		F3D92A3D26C3E3E400CD3381 /* ProductTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D92A3C26C3E3E400CD3381 /* ProductTable.swift */; };
+		F3D92A3E26C3E3E400CD3381 /* ProductTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D92A3C26C3E3E400CD3381 /* ProductTable.swift */; };
 		F73F69AC26B8E90800CD9642 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73F69AB26B8E90800CD9642 /* CoreDataManager.swift */; };
 		F73F69AD26B8E90800CD9642 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73F69AB26B8E90800CD9642 /* CoreDataManager.swift */; };
 		F73F69B726B996E600CD9642 /* ProductSoldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73F69B626B996E600CD9642 /* ProductSoldView.swift */; };
@@ -221,6 +231,8 @@
 		F302B03226BB992800B3B83A /* productViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = productViewModel.swift; sourceTree = SOURCE_ROOT; };
 		F302B03526BBA9BA00B3B83A /* ChooseProductModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseProductModal.swift; sourceTree = "<group>"; };
 		F302B03826BBA9CD00B3B83A /* EditFeeModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFeeModal.swift; sourceTree = "<group>"; };
+		F30A6E9526C0E62F00B8E446 /* Product Template.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Product Template.xlsx"; sourceTree = "<group>"; };
+		F30A6E9A26C0E92600B8E446 /* productController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = productController.swift; sourceTree = "<group>"; };
 		F30E164C26BCD04400A6DDDC /* ProductList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductList.swift; sourceTree = "<group>"; };
 		F30E164F26BCED9500A6DDDC /* CardSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSummary.swift; sourceTree = "<group>"; };
 		F30E165226BCEF8400A6DDDC /* ModalAddProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalAddProduct.swift; sourceTree = "<group>"; };
@@ -231,6 +243,9 @@
 		F346179126B8B2380005136B /* transactionsTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = transactionsTable.swift; sourceTree = "<group>"; };
 		F346179326B8B36C0005136B /* BtnDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BtnDatePicker.swift; sourceTree = "<group>"; };
 		F346179826B8D6270005136B /* TransactionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionModel.swift; sourceTree = "<group>"; };
+		F39B707126C2238C00138107 /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
+		F39B707426C224A400138107 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
+		F3D92A3C26C3E3E400CD3381 /* ProductTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTable.swift; sourceTree = "<group>"; };
 		F73F69AB26B8E90800CD9642 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		F73F69B626B996E600CD9642 /* ProductSoldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSoldView.swift; sourceTree = "<group>"; };
 		F73F69C026B99B8800CD9642 /* TotalNetIncome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalNetIncome.swift; sourceTree = "<group>"; };
@@ -438,6 +453,7 @@
 		2F764D8F26A7C252005B0513 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				F30A6E9426C0E61B00B8E446 /* Template */,
 				F73F69BA26B9991200CD9642 /* Fonts */,
 				2F52F31126B7CCBA0046A1AA /* Chart */,
 				2F764D9226A7C254005B0513 /* Assets.xcassets */,
@@ -637,9 +653,26 @@
 			path = BarCharts;
 			sourceTree = "<group>";
 		};
+		F30A6E9426C0E61B00B8E446 /* Template */ = {
+			isa = PBXGroup;
+			children = (
+				F30A6E9526C0E62F00B8E446 /* Product Template.xlsx */,
+			);
+			path = Template;
+			sourceTree = "<group>";
+		};
+		F30A6E9826C0E90400B8E446 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F30A6E9A26C0E92600B8E446 /* productController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		F30E164726BCCFE100A6DDDC /* ProductList */ = {
 			isa = PBXGroup;
 			children = (
+				F30A6E9826C0E90400B8E446 /* Controllers */,
 				F30E164B26BCD00D00A6DDDC /* Component */,
 				F30E164A26BCD00200A6DDDC /* ViewModel */,
 				F30E164926BCCFFA00A6DDDC /* Model */,
@@ -659,6 +692,7 @@
 		F30E164926BCCFFA00A6DDDC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F39B707426C224A400138107 /* ProductModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -666,6 +700,7 @@
 		F30E164A26BCD00200A6DDDC /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				F39B707126C2238C00138107 /* ProductViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -675,6 +710,7 @@
 			children = (
 				F30E164F26BCED9500A6DDDC /* CardSummary.swift */,
 				F30E165226BCEF8400A6DDDC /* ModalAddProduct.swift */,
+				F3D92A3C26C3E3E400CD3381 /* ProductTable.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -901,6 +937,7 @@
 			files = (
 				F760C61326BC30B200CF95E0 /* SFProDisplay-Regular.ttf in Resources */,
 				2F764DBD26A7C254005B0513 /* Assets.xcassets in Resources */,
+				F30A6E9626C0E62F00B8E446 /* Product Template.xlsx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -910,6 +947,7 @@
 			files = (
 				F760C61426BC30B200CF95E0 /* SFProDisplay-Regular.ttf in Resources */,
 				2F764DBE26A7C254005B0513 /* Assets.xcassets in Resources */,
+				F30A6E9726C0E62F00B8E446 /* Product Template.xlsx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1013,9 +1051,11 @@
 				2F832F0D26B3E6FA00426643 /* IncomeNavigationOptions.swift in Sources */,
 				F73F69C126B99B8800CD9642 /* TotalNetIncome.swift in Sources */,
 				F302B03626BBA9BA00B3B83A /* ChooseProductModal.swift in Sources */,
+				F30A6E9B26C0E92600B8E446 /* productController.swift in Sources */,
 				F302B02C26BB82D700B3B83A /* TransDetailViewModel.swift in Sources */,
 				2F52F32F26B82FDD0046A1AA /* RecentExpenseCard.swift in Sources */,
 				2F52F30B26B7CC780046A1AA /* HomeOverview.swift in Sources */,
+				F39B707526C224A400138107 /* ProductModel.swift in Sources */,
 				2F832EF726B271EA00426643 /* MainView.swift in Sources */,
 				51E27EBC26BCCDC8009D0CB6 /* BusinessGrowthCard.swift in Sources */,
 				F73F69B726B996E600CD9642 /* ProductSoldView.swift in Sources */,
@@ -1024,6 +1064,7 @@
 				F73F69C426B99F0C00CD9642 /* TotalSold.swift in Sources */,
 				2F52F31426B7CCD30046A1AA /* PieSliceView.swift in Sources */,
 				51E27EBE26BCCDDF009D0CB6 /* BusinessUpdateCard.swift in Sources */,
+				F39B707226C2238C00138107 /* ProductViewModel.swift in Sources */,
 				2F52F2F826B7A4910046A1AA /* ExpenseOverview.swift in Sources */,
 				2FB41BD326B8FE4F0035B62B /* AddExpenseSheet.swift in Sources */,
 				2F52F32426B7EBC70046A1AA /* ProductSoldCard.swift in Sources */,
@@ -1053,6 +1094,7 @@
 				F30E164D26BCD04400A6DDDC /* ProductList.swift in Sources */,
 				F302B03926BBA9CD00B3B83A /* EditFeeModal.swift in Sources */,
 				2FB41BDB26B9C5490035B62B /* WithTopLabelTextField.swift in Sources */,
+				F3D92A3D26C3E3E400CD3381 /* ProductTable.swift in Sources */,
 				F30E165326BCEF8400A6DDDC /* ModalAddProduct.swift in Sources */,
 				2F82F13226BC2137004E4ADF /* CustomDivider.swift in Sources */,
 			);
@@ -1065,6 +1107,7 @@
 				51E27EB926BB9848009D0CB6 /* BarView.swift in Sources */,
 				2FB41BD126B8F63E0035B62B /* RecentExpenseTableCard.swift in Sources */,
 				2FB41BE826B9E0840035B62B /* AmountViewModel.swift in Sources */,
+				F39B707626C224A400138107 /* ProductModel.swift in Sources */,
 				F32412AE26BA88400022E95D /* SyncDataModal.swift in Sources */,
 				2FB41BC826B8F2130035B62B /* ProductInformationCard.swift in Sources */,
 				2F832F1526B4439400426643 /* SideBarButton.swift in Sources */,
@@ -1091,6 +1134,7 @@
 				2F52F2F926B7A4910046A1AA /* ExpenseOverview.swift in Sources */,
 				2F4066AD26BBCD1000F9B456 /* SamplePage.swift in Sources */,
 				F346179026B8AE6F0005136B /* primaryBtn.swift in Sources */,
+				F3D92A3E26C3E3E400CD3381 /* ProductTable.swift in Sources */,
 				51E27EBF26BCCE4D009D0CB6 /* BusinessGrowthCard.swift in Sources */,
 				2F52F2FC26B7A49C0046A1AA /* Tokopedia.swift in Sources */,
 				2F82F13026BC20C0004E4ADF /* ExpenseTableHeader.swift in Sources */,
@@ -1122,9 +1166,11 @@
 				F7611CD626BA8EDC00CD3169 /* ProductSoldViewModel.swift in Sources */,
 				2F832F0B26B3E6F000426643 /* HomeNavigationOptions.swift in Sources */,
 				2FB3AF1626BADB5D00D9C0D8 /* ExpenseListViewModel.swift in Sources */,
+				F39B707326C2238F00138107 /* ProductViewModel.swift in Sources */,
 				51E27EC026BCCE59009D0CB6 /* BusinessUpdateCard.swift in Sources */,
 				2FB41BE226B9C9520035B62B /* StringFormatter.swift in Sources */,
 				2F764DBA26A7C254005B0513 /* CashdeckApp.swift in Sources */,
+				F30A6E9C26C0E92600B8E446 /* productController.swift in Sources */,
 				2FB41BC526B8F1F60035B62B /* CashInformationCard.swift in Sources */,
 				2FB41BDC26B9C5490035B62B /* WithTopLabelTextField.swift in Sources */,
 			);
@@ -1329,7 +1375,7 @@
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = UFNNYX499Q;
+				DEVELOPMENT_TEAM = 7CG3SG3HTX;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = macOS/Info.plist;
@@ -1354,7 +1400,7 @@
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = UFNNYX499Q;
+				DEVELOPMENT_TEAM = 7CG3SG3HTX;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = macOS/Info.plist;

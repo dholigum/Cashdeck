@@ -10,7 +10,7 @@ import CoreXLSX
 
 struct ModalAddProduct: View {
     @Binding var isVisible: Bool
-    
+    @ObservedObject var ProductVM = ProductViewModel()
     var body: some View {
         VStack {
             HStack {
@@ -31,6 +31,9 @@ struct ModalAddProduct: View {
             .background(Color("AccentColor"))
             HStack {
                 primaryBtn(imageName: "square.and.arrow.down", title: "Download Template", width: 359)
+                    .onTapGesture {
+                        downloadTemplate()
+                    }
             }
             VStack {
                 Image(systemName: "square.and.arrow.up")
@@ -72,39 +75,37 @@ extension ModalAddProduct {
     func btnImportPressed () {
         let panel = NSOpenPanel()
         panel.allowsMultipleSelection = false
-        panel.allowedFileTypes = ["xlsx", "xls"]
+        panel.allowedFileTypes = ["xlsx", "xls", "number"]
         if panel.runModal() == .OK {
             do {
 
             var tmp = "\(panel.url!)".split(separator: "/")
             tmp.removeFirst()
+            let fileName = tmp[tmp.count - 1]
+            let addSpace = fileName.replacingOccurrences(of: "%20", with: " ")
+            tmp[tmp.count - 1] = "\(addSpace)"
             let path = tmp.joined(separator: "/")
             let file = XLSXFile(filepath: "/\(path)")
-
-            let sharedString = try file!.parseSharedStrings()
+            let sharedString = try file?.parseSharedStrings()
+                
             var i = 0
             for wbk in try file!.parseWorkbooks() {
                 for (_, path) in try file!.parseWorksheetPathsAndNames(workbook: wbk) {
                         let worksheet = try file!.parseWorksheet(at: path)
                         for row in worksheet.data?.rows ?? [] {
-                            if i > 3 {
-                                let isoDate = row.cells[3].stringValue(sharedString!)!
-                                let dateFormatter = DateFormatter()
-                                dateFormatter.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
-                                dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
-                                let date = dateFormatter.date(from:isoDate)
-                                let productName = row.cells[6].stringValue(sharedString!)!
-                                let qyt = Int64(row.cells[7].stringValue(sharedString!)!)
-                                let price = Int64(row.cells[10].stringValue(sharedString!)!)
-                                let productId = row.cells[5].stringValue(sharedString!)!
-                                let SKU = row.cells[8].stringValue(sharedString!)
-                                let orderId = row.cells[1].stringValue(sharedString!)
-                                print(productName)
+                            if i > 0 {
+                                let name = row.cells[1].stringValue(sharedString!)!
+                                let size = row.cells[3].stringValue(sharedString!)!
+                                let color = row.cells[4].stringValue(sharedString!)!
+                                let costPrice = Int64(row.cells[2].stringValue(sharedString!)!)
+                                let SKU = row.cells[0].stringValue(sharedString!)!
+                                self.ProductVM.addProduct(ProductModel(SKU: SKU, name: name, costPrice: costPrice!, size: size, color: color))
                             }
                             i += 1
                         }
                     }
                 }
+                ProductVM.fetchProducts()
                 isVisible = false
             } catch {
               print(error)

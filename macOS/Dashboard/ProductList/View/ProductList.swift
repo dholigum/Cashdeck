@@ -44,9 +44,8 @@ struct ProductList: View {
                 Spacer()
             } .padding(.top, 30)
             HStack {
-                
+                ProductTable()
             }
-            .padding(.top, 20)
             Spacer()
         }
         .frame(minWidth: window!.width / 1.8)
