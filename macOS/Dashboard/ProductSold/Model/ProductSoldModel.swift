@@ -42,6 +42,18 @@ class ProductSoldModel {
         return newTransaction
     }
     
+    func insertTransactionDetailTemp(orderId: String, price: Int, productName: String, productSKU: String, quantity: Int, channel: Channel) {
+        let newTransactionDetailTemp = TransactionDetailTemp(context: context)
+        newTransactionDetailTemp.date = Date()
+        newTransactionDetailTemp.orderId = orderId
+        newTransactionDetailTemp.price = Int64(price)
+        newTransactionDetailTemp.productName = productName
+        newTransactionDetailTemp.productSKU = productSKU
+        newTransactionDetailTemp.quantity = Int64(quantity)
+        newTransactionDetailTemp.tdtemp_channel = channel
+        CoreDataManager.sharedManager.saveContext()
+    }
+    
     func insertChannel() -> Channel {
         let newChannel = Channel(context: context)
         newChannel.name = "Tokopedia"
@@ -50,6 +62,15 @@ class ProductSoldModel {
         newChannel.shippingFee = 2.5
         CoreDataManager.sharedManager.saveContext()
         return newChannel
+    }
+    
+    func insertExpense(category: String, name: String, price: Int, quantity: Int) {
+        let newExpense = Expense(context: context)
+        newExpense.category = category
+        newExpense.date = Date()
+        newExpense.name = name
+        newExpense.price = Int64(price)
+        newExpense.quantity = Int64(quantity)
     }
     
     func getProduct(sku: String) -> Products {

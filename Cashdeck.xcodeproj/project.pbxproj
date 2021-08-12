@@ -111,6 +111,8 @@
 		2FB41BDC26B9C5490035B62B /* WithTopLabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB41BDA26B9C5490035B62B /* WithTopLabelTextField.swift */; };
 		2FB41BE126B9C9520035B62B /* StringFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB41BE026B9C9520035B62B /* StringFormatter.swift */; };
 		2FB41BE226B9C9520035B62B /* StringFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB41BE026B9C9520035B62B /* StringFormatter.swift */; };
+		2FC7540126C5360700036064 /* FilterCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC7540026C5360700036064 /* FilterCalendar.swift */; };
+		2FC7540226C5360700036064 /* FilterCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC7540026C5360700036064 /* FilterCalendar.swift */; };
 		2FF3EE8326BB9CDB001AFAC7 /* CurrencyFormattedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF3EE8226BB9CDB001AFAC7 /* CurrencyFormattedTextField.swift */; };
 		2FF3EE8426BB9CDB001AFAC7 /* CurrencyFormattedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF3EE8226BB9CDB001AFAC7 /* CurrencyFormattedTextField.swift */; };
 		3E1C911C6AE4A4DB272D605F /* Pods_Cashdeck__iOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C335E609120D79D88B31498D /* Pods_Cashdeck__iOS_.framework */; };
@@ -274,6 +276,7 @@
 		2FB41BD626B9C2FB0035B62B /* CustomTextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldExtension.swift; sourceTree = "<group>"; };
 		2FB41BDA26B9C5490035B62B /* WithTopLabelTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithTopLabelTextField.swift; sourceTree = "<group>"; };
 		2FB41BE026B9C9520035B62B /* StringFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringFormatter.swift; sourceTree = "<group>"; };
+		2FC7540026C5360700036064 /* FilterCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCalendar.swift; sourceTree = "<group>"; };
 		2FF3EE8226BB9CDB001AFAC7 /* CurrencyFormattedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormattedTextField.swift; sourceTree = "<group>"; };
 		3AD247E402BE1F80A3C3B01C /* Pods-Cashdeck (macOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cashdeck (macOS).debug.xcconfig"; path = "Target Support Files/Pods-Cashdeck (macOS)/Pods-Cashdeck (macOS).debug.xcconfig"; sourceTree = "<group>"; };
 		3F360569D5ED17213BB12E8E /* Pods-Cashdeck (iOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cashdeck (iOS).debug.xcconfig"; path = "Target Support Files/Pods-Cashdeck (iOS)/Pods-Cashdeck (iOS).debug.xcconfig"; sourceTree = "<group>"; };
@@ -757,6 +760,7 @@
 		2FB41BBE26B8F1460035B62B /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				2FC753FF26C535E900036064 /* FilterCalendar */,
 				2F82F12D26BC2089004E4ADF /* Table */,
 				2FB41BCF26B8F63E0035B62B /* RecentExpenseTableCard.swift */,
 				2FF3EE8226BB9CDB001AFAC7 /* CurrencyFormattedTextField.swift */,
@@ -782,6 +786,14 @@
 				2FB41BDA26B9C5490035B62B /* WithTopLabelTextField.swift */,
 			);
 			path = ViewModifier;
+			sourceTree = "<group>";
+		};
+		2FC753FF26C535E900036064 /* FilterCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				2FC7540026C5360700036064 /* FilterCalendar.swift */,
+			);
+			path = FilterCalendar;
 			sourceTree = "<group>";
 		};
 		2FEF63C626AC6C5C0073CE75 /* Dashboard */ = {
@@ -1240,6 +1252,7 @@
 				2F832F0A26B3E6F000426643 /* HomeNavigationOptions.swift in Sources */,
 				2FB41BE126B9C9520035B62B /* StringFormatter.swift in Sources */,
 				51E27EB726BB9838009D0CB6 /* BarView.swift in Sources */,
+				2FC7540126C5360700036064 /* FilterCalendar.swift in Sources */,
 				2FF3EE8326BB9CDB001AFAC7 /* CurrencyFormattedTextField.swift in Sources */,
 				F7FC2E8326BFBBF300AD3ACB /* Path+QuadCurve.swift in Sources */,
 				2F764DB926A7C254005B0513 /* CashdeckApp.swift in Sources */,
@@ -1289,6 +1302,7 @@
 				2F832F0126B31A6800426643 /* CardMenuButton.swift in Sources */,
 				2F57B85A26BDE34C00472B74 /* OverviewExpenseViewModel.swift in Sources */,
 				F73F69B826B996E600CD9642 /* ProductSoldView.swift in Sources */,
+				2FC7540226C5360700036064 /* FilterCalendar.swift in Sources */,
 				2F57B86426BEAE2E00472B74 /* PieChartComplexLegend.swift in Sources */,
 				2F52F32126B7EB940046A1AA /* NetIncomeCard.swift in Sources */,
 				2F57B84126BD82E100472B74 /* GroupingData.swift in Sources */,
@@ -1551,7 +1565,7 @@
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = UFNNYX499Q;
+				DEVELOPMENT_TEAM = H9X3B7ZFUK;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = macOS/Info.plist;
@@ -1576,7 +1590,7 @@
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = UFNNYX499Q;
+				DEVELOPMENT_TEAM = H9X3B7ZFUK;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = macOS/Info.plist;

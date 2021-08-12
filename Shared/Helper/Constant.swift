@@ -10,6 +10,6 @@ import Foundation
 struct K {
     
     let monthName: [String] = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Des"]
-    let categories: [String] = ["Utilities", "Transport", "Housing", "Personal", "Finance", "Other"]
+    let categories: [String] = ["Utilities", "Shipping", "Rent", "Finance", "Marketing", "Other"]
     let repeats: [String] = ["Never", "Every Week", "Every Month"]
 }
