@@ -13,13 +13,17 @@ class ExpenseViewModel: ObservableObject {
     @Published var totalExpense: Int = 0
     @Published var groupedExpense: [SimpleExpense] = []
     
+    @Published var isOpenCalendar = false
+    @Published var yearIndex = Calendar.current.component(.year, from: Date()) - 2000
+    @Published var monthIndex = Calendar.current.component(.month, from: Date()) - 1 
+    
     @Published var amount: String = "" {
         didSet {
             let filtered = amount.filter { "0123456789".contains($0) }
             if filtered != amount { self.amount = filtered } }
         }
     
-    @Published var quantity: String = "" {
+    @Published var quantity: String = "0" {
         didSet {
             let filtered = quantity.filter { "0123456789".contains($0) }
             if filtered != quantity { self.quantity = filtered } }
@@ -36,6 +40,13 @@ class ExpenseViewModel: ObservableObject {
     var simpleExpenses: [SimpleExpense] = []
     
     let context = CoreDataManager.sharedManager.persistentContainer.viewContext
+    
+    func formatedMonthYear() -> String {
+        let realYear = 2000 + yearIndex
+        let realMonth = K().monthName[monthIndex]
+        
+        return "\(realMonth) \(realYear)"
+    }
     
     func writeExpense() {
         
@@ -101,6 +112,8 @@ class ExpenseViewModel: ObservableObject {
     func getAllExpense(sortByQty: Bool = false) {
         
         let fetchRequest: NSFetchRequest<Expense> = Expense.fetchRequest()
+        let thisMonthPredicate = predicateGenerator(year: yearIndex, month: monthIndex)
+        fetchRequest.predicate = thisMonthPredicate
         
         if sortByQty {
             let sortByQty = NSSortDescriptor.init(key: "quantity", ascending: false)
@@ -144,5 +157,22 @@ class ExpenseViewModel: ObservableObject {
         categoryIndex = 0
         repeatIndex = 0
         date = Date()
+    }
+    
+    func predicateGenerator(year: Int, month: Int) -> NSPredicate {
+        
+        var dateComp = DateComponents()
+        dateComp.year = year + 2000
+        dateComp.month = month + 1 // In datecomponents, month start from 1
+        dateComp.day = 1
+        
+        let calendar = Calendar.current
+        let firstDayOfTheMonth = calendar.date(from: dateComp)
+        
+        var oneMonth = DateComponents()
+        oneMonth.month = 1
+        let beginningOfNextMonth = calendar.date(byAdding: oneMonth, to: firstDayOfTheMonth!)
+        
+        return NSPredicate(format: "%K >= %@ && %K < %@", "date", firstDayOfTheMonth! as NSDate, "date", beginningOfNextMonth! as NSDate)
     }
 }

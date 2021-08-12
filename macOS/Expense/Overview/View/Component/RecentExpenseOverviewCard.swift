@@ -19,7 +19,7 @@ struct RecentExpenseOverviewCard: View {
                 .foregroundColor(Color("AccentColor2"))
                 .padding(EdgeInsets(top: 22, leading: 16, bottom: 24, trailing: 0))
             
-            ExpenseTableHeader(dateWidth: 80, categoryWidth: 80, nameWidth: 200, quantityWidth: 50, priceWidth: 120, actionWidrh: 0, leadingPadding: 16)
+            ExpenseTableHeader(dateWidth: 80, categoryWidth: 80, nameWidth: 250, priceWidth: 120, actionWidrh: 0, leadingPadding: 16)
             CustomDivider(width: 560)
                 .padding(EdgeInsets(top: -8, leading: 16, bottom: 0, trailing: 0))
             
@@ -29,7 +29,7 @@ struct RecentExpenseOverviewCard: View {
                         VStack(alignment: .leading) {
                             HStack {
 
-                                if let date = expense.date, let category = expense.category, let name = expense.name, let quantity = expense.quantity, let price = expense.price {
+                                if let date = expense.date, let category = expense.category, let name = expense.name, let price = expense.price {
 
                                     Text(date.shortDateFormatting())
                                         .font(.system(size: 14))
@@ -39,10 +39,7 @@ struct RecentExpenseOverviewCard: View {
                                         .frame(width: 80, alignment: .leading)
                                     Text(name)
                                         .font(.system(size: 14))
-                                        .frame(width: 200, alignment: .leading)
-                                    Text("\(quantity)")
-                                        .font(.system(size: 14))
-                                        .frame(width: 50, alignment: .leading)
+                                        .frame(width: 250, alignment: .leading)
                                     Text("\(price)".currencyFormatting())
                                         .font(.system(size: 14))
                                         .frame(width: 120, alignment: .leading)

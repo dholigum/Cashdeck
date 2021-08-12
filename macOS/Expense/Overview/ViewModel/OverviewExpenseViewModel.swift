@@ -80,7 +80,7 @@ class OverviewExpenseViewModel: ObservableObject {
             
             // Expense Tips
             getHighestMonthlyExpense()
-            getPersonalExpensePercentage()
+            getFinanceExpensePercentage()
             getComparisonWithPreviousMonth()
             
         } catch let error as NSError {
@@ -99,18 +99,18 @@ class OverviewExpenseViewModel: ObservableObject {
         expenseTips[1] = tips
     }
     
-    func getPersonalExpensePercentage() {
+    func getFinanceExpensePercentage() {
         
-        let personalExpenseValue = groupedDataValues[K().categories.firstIndex(of: "Personal")!]
+        let financeExpenseValue = groupedDataValues[K().categories.firstIndex(of: "Finance")!]
         let totalExpenseDataValue = groupedDataValues.reduce(0, +)
-        let personalExpensePercentage = personalExpenseValue/totalExpenseDataValue * 100
+        let financeExpensePercentage = financeExpenseValue/totalExpenseDataValue * 100
         var tips: String = ""
-        if personalExpensePercentage > 15 {
-            tips = "Based on chart, you have \(String(format: "%.2f", personalExpensePercentage))% for personal expense. You might consider to reduce your personal expense."
-        } else if personalExpensePercentage.isNaN  {
+        if financeExpensePercentage > 15 {
+            tips = "Based on chart, you have \(String(format: "%.2f", financeExpensePercentage))% for finance expense. You might consider to reduce your finance expense."
+        } else if financeExpensePercentage.isNaN  {
             tips = ""
         } else {
-            tips = "Based on chart, you have \(String(format: "%.2f", personalExpensePercentage))% for personal expense. Keep that number under 15% to reduce your overall expense"
+            tips = "Based on chart, you have \(String(format: "%.2f", financeExpensePercentage))% for finance expense. Keep that number under 15% to reduce your overall expense"
         }
         expenseTips[2] = tips
     }

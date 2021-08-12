@@ -11,8 +11,7 @@ struct ExpenseTableHeader: View {
     
     var dateWidth: Int = 160
     var categoryWidth: Int = 105
-    var nameWidth: Int = 350
-    var quantityWidth: Int = 90
+    var nameWidth: Int = 450
     var priceWidth: Int = 90
     var actionWidrh: Int = 118
     var leadingPadding: Int = 22
@@ -30,10 +29,6 @@ struct ExpenseTableHeader: View {
             Text("Name")
                 .font(Font.custom("SFProDisplay-Semibold", size: 16))
                 .frame(width: CGFloat(nameWidth), alignment: .leading)
-            
-            Text("Qty")
-                .font(Font.custom("SFProDisplay-Semibold", size: 16))
-                .frame(width: CGFloat(quantityWidth), alignment: .leading)
             
             Text("Price")
                 .font(Font.custom("SFProDisplay-Semibold", size: 16))
