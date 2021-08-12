@@ -11,12 +11,13 @@ struct SyncDataModal: View {
     @Binding var listTransTemp: [TransactionDetailTemp]
     @Binding var showModalSync: Bool
     @Binding var showModal: Bool
-    @ObservedObject var TransDetailVM = TransDetailViewModel()
+    @ObservedObject var TransDetailVM = TransDetailViewModel.shared
     
     @State var chooseProduct = false
     @State var transPicked: TransactionDetailTemp
     
-//    var transs: TransactionDetailTemp
+    @StateObject var transVM = TransactionViewModel.shared
+    
     
     var body: some View {
         VStack {
@@ -40,8 +41,11 @@ struct SyncDataModal: View {
                     for transTemp in listTransTemp {
                         TransDetailVM.saveToTransaction(transTemp)
                     }
+                    
                     showModalSync = false
                     showModal = false
+                    transVM.fetchData()
+                    
                 }, label: {
                     Text("Sync")
                         .font(Font.custom("SFProDisplay-Semibold", size: 16))
