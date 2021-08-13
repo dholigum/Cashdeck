@@ -10,13 +10,13 @@ import CoreXLSX
 
 struct ProductList: View {
     @State var showModal = false
-    @State var listTrans = [transactionModel]()
-    @ObservedObject var listTransTemp = TransDetailViewModel()
+    @ObservedObject var productVM = ProductViewModel()
     
     init() {
-        listTransTemp.fetchDataTrans()
-        //        print(listTransTemp.listTransTemp)
+        productVM.fetchProducts()
     }
+    
+    
     var window = NSScreen.main?.visibleFrame
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
@@ -26,10 +26,12 @@ struct ProductList: View {
                     .padding(.init(top: 19, leading: 10, bottom: 10, trailing: 0))
                     .foregroundColor(Color("AccentColor2"))
             }
+            
             HStack {
-                CardSummary(title: "Total Product", value: "20")
-                CardSummary(title: "Total Quantity", value: "70")
+                CardSummary(title: "Total Product", value: String(productVM.totalProducts))
+                CardSummary(title: "Total Quantity", value: String(productVM.totalQuantity))
             }
+            
             HStack {
                 primaryBtn(imageName: "square.and.arrow.down", title: "Import Product", width: 170)
                     .onTapGesture {

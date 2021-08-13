@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ProductTable: View {
+    
     @ObservedObject var ProductsVM: ProductViewModel = ProductViewModel()
     
     var body: some View {
@@ -87,7 +88,9 @@ struct ProductTable: View {
                                 }
                                 .buttonStyle(PlainButtonStyle())
                                 .padding(.trailing, 10)
-                                Button(action: {}) {
+                                Button(action: {
+                                    ProductsVM.deleteProduct(product)
+                                }) {
                                     Image(systemName: "trash.fill")
                                         .resizable()
                                         .frame(width: 17, height: 17)
