@@ -14,81 +14,117 @@ struct ProductTable: View {
         VStack {
             HStack {
                 Text("All Product")
-                    .font(.system(size: 20))
-                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                    .font(Font.custom("SFProDisplay-Semibold", size: 18))
                     .padding()
                     .foregroundColor(Color("AccentColor2"))
                 Spacer()
             }
             HStack {
                 Text("SKU")
-                    .fontWeight(.semibold)
-                    .padding(20)
+                    .font(Font.custom("SFProDisplay-Semibold", size: 16))
+                    .padding(10)
                     .frame(width: 120, alignment: .leading)
                 Text("Name")
-                    .fontWeight(.semibold)
-                    .frame(width: 300, alignment: .leading)
-                    .padding(20)
-                Text("Cost Price")
-                    .fontWeight(.semibold)
-                    .frame(width: 100, alignment: .leading)
-                    .padding(20)
+                    .font(Font.custom("SFProDisplay-Semibold", size: 16))
+                    .frame(width: 350, alignment: .leading)
+                    .padding(10)
                 Text("Size")
-                    .fontWeight(.semibold)
-                    .frame(width: 100, alignment: .leading)
-                    .padding(20)
+                    .font(Font.custom("SFProDisplay-Semibold", size: 16))
+                    .frame(width: 30, alignment: .leading)
+                    .padding(10)
                 Text("Color")
-                    .fontWeight(.semibold)
+                    .font(Font.custom("SFProDisplay-Semibold", size: 16))
+                    .frame(width: 60, alignment: .leading)
+                    .padding(10)
+                Text("Quantity")
+                    .font(Font.custom("SFProDisplay-Semibold", size: 16))
+                    .frame(width: 70, alignment: .leading)
+                    .padding(10)
+                Text("Cost Price")
+                    .font(Font.custom("SFProDisplay-Semibold", size: 16))
                     .frame(width: 100, alignment: .leading)
-                    .padding(20)
+                    .padding(10)
                 Spacer()
-            }
+            }.padding(.leading, 10)
+            
+            CustomDivider(width: 960)
+                .padding(EdgeInsets(top: -8, leading: -8, bottom: 0, trailing: 0))
+            
             ScrollView {
                 if self.ProductsVM.listProducts.count > 0 {
                     ForEach(self.ProductsVM.listProducts) { product in
-                        HStack {
-                            Text(product.sku!)
-                                .padding(.init(top: 4, leading: 20, bottom: 4, trailing: 20))
-                                .frame(width: 120, alignment: .leading)
-                            Text(product.name!)
-                                .frame(width: 300, alignment: .leading)
-                                .padding(.init(top: 4, leading: 20, bottom: 4, trailing: 20))
-                            Text("\(product.costPrice)")
-                                .frame(width: 100, alignment: .leading)
-                                .padding(.init(top: 4, leading: 20, bottom: 4, trailing: 20))
-                            Text(product.size!)
-                                .frame(width: 100, alignment: .leading)
-                                .padding(.init(top: 4, leading: 20, bottom: 4, trailing: 20))
-                            Text(product.color!)
-                                .frame(width: 100, alignment: .leading)
-                                .padding(.init(top: 4, leading: 20, bottom: 4, trailing: 20))
-                            Button(action: {}) {
-                                Image(systemName: "square.and.pencil")
-                                    .resizable()
-                                    .frame(width: 17, height: 17)
-                                    .foregroundColor(Color("AccentColor2"))
+                        VStack {
+                            HStack {
+                                Text(product.sku!)
+                                    .font(Font.custom("SFProDisplay-Regular", size: 14))
+                                    .padding(.init(top: 4, leading: 10, bottom: 4, trailing: 10))
+                                    .frame(width: 120, alignment: .leading)
+                                Text(product.name!)
+                                    .font(Font.custom("SFProDisplay-Regular", size: 14))
+                                    .frame(width: 350, alignment: .leading)
+                                    .padding(.init(top: 4, leading: 10, bottom: 4, trailing: 10))
+                                Text(product.size!)
+                                    .font(Font.custom("SFProDisplay-Regular", size: 14))
+                                    .frame(width: 30, alignment: .leading)
+                                    .padding(.init(top: 4, leading: 10, bottom: 4, trailing: 10))
+                                Text(product.color!)
+                                    .font(Font.custom("SFProDisplay-Regular", size: 14))
+                                    .frame(width: 60, alignment: .leading)
+                                    .padding(.init(top: 4, leading: 10, bottom: 4, trailing: 10))
+                                Text(String(product.quantity))
+                                    .font(Font.custom("SFProDisplay-Regular", size: 14))
+                                    .frame(width: 70, alignment: .leading)
+                                    .padding(.init(top: 4, leading: 10, bottom: 4, trailing: 10))
+                                Text("\(product.costPrice)")
+                                    .font(Font.custom("SFProDisplay-Regular", size: 14))
+                                    .frame(width: 100, alignment: .leading)
+                                    .padding(.init(top: 4, leading: 10, bottom: 4, trailing: 10))
+                                Button(action: {}) {
+                                    Image(systemName: "square.and.pencil")
+                                        .resizable()
+                                        .frame(width: 17, height: 17)
+                                        .foregroundColor(Color("AccentColor2"))
+                                }
+                                .buttonStyle(PlainButtonStyle())
+                                .padding(.trailing, 10)
+                                Button(action: {}) {
+                                    Image(systemName: "trash.fill")
+                                        .resizable()
+                                        .frame(width: 17, height: 17)
+                                        .foregroundColor(Color.orange)
+                                }
+                                .buttonStyle(PlainButtonStyle())
+                                .padding(.trailing, 35)
+                                
                             }
-                            .buttonStyle(PlainButtonStyle())
-                            .padding(.trailing, 20)
-                            Button(action: {}) {
-                                Image(systemName: "trash.fill")
-                                    .resizable()
-                                    .frame(width: 17, height: 17)
-                                    .foregroundColor(Color.orange)
-                            }
-                            .buttonStyle(PlainButtonStyle())
-                            .padding(.trailing, 35)
-                            Spacer()
+                            .padding(.leading, -6)
+                            CustomDivider(width: 960)
+
                         }
                     }
+                } else {
+                    VStack(alignment: .center) {
+                        
+                        Image("noProductListIllustration")
+                            .resizable()
+                            .frame(width: 356, height: 272)
+                            .aspectRatio(contentMode: .fill)
+                        
+                        Text("You have no expenses yet.")
+                            .font(.system(size: 24))
+                            .fontWeight(.semibold)
+                            .foregroundColor(Color("AccentColor2"))
+                    }
+                    .padding(.top, 36)
                 }
             }
             Spacer()
         }
         .background(Color.white)
         .cornerRadius(15)
-        .padding()
+        .padding(10)
         .onAppear(perform: fetchProduct)
+        .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.15), radius: 4, x: 2, y: 2)
     }
 }
 

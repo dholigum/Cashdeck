@@ -15,23 +15,20 @@ struct ProductList: View {
     
     init() {
         listTransTemp.fetchDataTrans()
-//        print(listTransTemp.listTransTemp)
+        //        print(listTransTemp.listTransTemp)
     }
     var window = NSScreen.main?.visibleFrame
     var body: some View {
-        VStack {
+        VStack(alignment: .leading, spacing: 10) {
             HStack {
                 Text("Product List")
-                    .font(.system(size: 24))
-                    .fontWeight(.bold)
-                    .padding(.init(top: 19, leading: 10, bottom: 20, trailing: 0))
+                    .font(Font.custom("SFProDisplay-Bold", size: 24))
+                    .padding(.init(top: 19, leading: 10, bottom: 10, trailing: 0))
                     .foregroundColor(Color("AccentColor2"))
-                Spacer()
             }
             HStack {
                 CardSummary(title: "Total Product", value: "20")
                 CardSummary(title: "Total Quantity", value: "70")
-                Spacer()
             }
             HStack {
                 primaryBtn(imageName: "square.and.arrow.down", title: "Import Product", width: 170)
@@ -42,12 +39,12 @@ struct ProductList: View {
                         ModalAddProduct(isVisible: $showModal)
                     })
                 Spacer()
-            } .padding(.top, 30)
-            HStack {
-                ProductTable()
-            }
+            } .padding(.top, 10)
+            
+            ProductTable()
             Spacer()
         }
+        .padding(.horizontal, 16)
         .frame(minWidth: window!.width / 1.8)
     }
 }
