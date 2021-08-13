@@ -17,6 +17,8 @@ struct Tokopedia: View {
     
     @StateObject var transVM = TransactionViewModel.shared
     
+    @ObservedObject var tokopediaVM = tokopediaViewModel()
+    
 //    init() {
 //        listTransTemp.fetchDataTrans()
 ////        print(listTransTemp.listTransTemp)
@@ -33,11 +35,11 @@ struct Tokopedia: View {
                 Spacer()
             }
             HStack {
-                CardReports(title: "Net Income", value: "Rp 988.000", percent: 10, width: 306)
+                CardReports(title: "Net Income", value: "Rp \(tokopediaVM.totalNetIncome())", percent: 10, width: 306)
                     .padding(.leading, 10)
-                CardReports(title: "Product Sold", value: "10", percent: -10, width: 227)
+                CardReports(title: "Product Sold", value: "\(tokopediaVM.totalProductSold())", percent: -10, width: 227)
                     .padding(.leading, 10)
-                CardReports(title: "Total Orders", value: "10", percent: 10, width: 227)
+                CardReports(title: "Total Orders", value: "\(tokopediaVM.totalOrder())", percent: 10, width: 227)
                     .padding(.leading, 10)
                 Spacer()
             }
