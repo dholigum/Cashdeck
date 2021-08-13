@@ -168,6 +168,8 @@
 		F76D0EAC26C61E9400601A66 /* BusinessUpdateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76D0EAA26C61E9400601A66 /* BusinessUpdateViewModel.swift */; };
 		F76D0EAE26C61FDE00601A66 /* BusinessUpdateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76D0EAD26C61FDE00601A66 /* BusinessUpdateModel.swift */; };
 		F76D0EAF26C61FDE00601A66 /* BusinessUpdateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76D0EAD26C61FDE00601A66 /* BusinessUpdateModel.swift */; };
+		F76D0EB126C6B71A00601A66 /* BusinessGrowthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76D0EB026C6B71A00601A66 /* BusinessGrowthModel.swift */; };
+		F76D0EB226C6B71A00601A66 /* BusinessGrowthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76D0EB026C6B71A00601A66 /* BusinessGrowthModel.swift */; };
 		F7761FD826BD85CC00324C2E /* FeeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7761FD726BD85CC00324C2E /* FeeModel.swift */; };
 		F78F5F8126C0F6DD00CB5D6D /* TransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78F5F8026C0F6DD00CB5D6D /* TransactionViewModel.swift */; };
 		F78F5F8226C0F6DD00CB5D6D /* TransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78F5F8026C0F6DD00CB5D6D /* TransactionViewModel.swift */; };
@@ -318,6 +320,7 @@
 		F76A1A5626BA318C00CDADFB /* ProductSoldList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSoldList.swift; sourceTree = "<group>"; };
 		F76D0EAA26C61E9400601A66 /* BusinessUpdateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BusinessUpdateViewModel.swift; path = macOS/BusinessUpdateViewModel.swift; sourceTree = SOURCE_ROOT; };
 		F76D0EAD26C61FDE00601A66 /* BusinessUpdateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BusinessUpdateModel.swift; path = macOS/BusinessUpdateModel.swift; sourceTree = SOURCE_ROOT; };
+		F76D0EB026C6B71A00601A66 /* BusinessGrowthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BusinessGrowthModel.swift; path = macOS/BusinessGrowthModel.swift; sourceTree = SOURCE_ROOT; };
 		F7761FD726BD85CC00324C2E /* FeeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeeModel.swift; sourceTree = "<group>"; };
 		F78F5F8026C0F6DD00CB5D6D /* TransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TransactionViewModel.swift; path = macOS/Income/Component/TransactionViewModel.swift; sourceTree = SOURCE_ROOT; };
 		F7AA51E026BA4E8200BE00B6 /* ProductSoldModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSoldModel.swift; sourceTree = "<group>"; };
@@ -497,6 +500,7 @@
 			isa = PBXGroup;
 			children = (
 				F76D0EAD26C61FDE00601A66 /* BusinessUpdateModel.swift */,
+				F76D0EB026C6B71A00601A66 /* BusinessGrowthModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1271,6 +1275,7 @@
 				F7FC2E8326BFBBF300AD3ACB /* Path+QuadCurve.swift in Sources */,
 				2F764DB926A7C254005B0513 /* CashdeckApp.swift in Sources */,
 				2F57B84726BDBB3A00472B74 /* MonthSelector.swift in Sources */,
+				F76D0EB126C6B71A00601A66 /* BusinessGrowthModel.swift in Sources */,
 				F76D0EAB26C61E9400601A66 /* BusinessUpdateViewModel.swift in Sources */,
 				2FB41BC426B8F1F60035B62B /* CashInformationCard.swift in Sources */,
 				F302B03926BBA9CD00B3B83A /* EditFeeModal.swift in Sources */,
@@ -1303,6 +1308,7 @@
 				2F2B3B1826C4DFCD006FF7F2 /* ProductList.swift in Sources */,
 				2F82F13326BC2137004E4ADF /* CustomDivider.swift in Sources */,
 				F7FC2E8626BFBBF300AD3ACB /* LineChartView.swift in Sources */,
+				F76D0EB226C6B71A00601A66 /* BusinessGrowthModel.swift in Sources */,
 				2F832F0E26B3E6FA00426643 /* IncomeNavigationOptions.swift in Sources */,
 				51F8CDB926C0BCFC00DC017D /* HomeAnalytics.swift in Sources */,
 				2F2B3B0E26C4DFCD006FF7F2 /* ProductViewModel.swift in Sources */,

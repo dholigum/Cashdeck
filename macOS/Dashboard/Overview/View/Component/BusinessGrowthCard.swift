@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct BusinessGrowthCard: View {
+    
+    let businessVM = BusinessUpdateViewModel.shared
+    
     var body: some View {
         HStack (spacing: 10){
-            LineView(data: [10000, 20000, 30000, 20000, 15000, 36000], title: "Business Growth", style: ChartStyle(backgroundColor: .white, accentColor: Color("AccentColor2"), secondGradientColor: Color("AccentColor2"), textColor: Color("AccentColor2"), legendTextColor: .red, dropShadowColor: .red), legendSpecifier: "")
+            LineView(data: businessVM.calculateFixIncomePerDay(), title: "Business Growth", style: ChartStyle(backgroundColor: .white, accentColor: Color("AccentColor2"), secondGradientColor: Color("AccentColor2"), textColor: Color("AccentColor2"), legendTextColor: .red, dropShadowColor: .red), legendSpecifier: "")
                 .padding(.bottom, 200)
         
             VStack (alignment: .trailing, spacing: 6) {

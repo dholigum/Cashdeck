@@ -8,15 +8,17 @@
 import Foundation
 
 class BusinessUpdateViewModel {
+    static let shared = BusinessUpdateViewModel()
     var yearIndex = Calendar.current.component(.year, from: Date()) - 2000
     var monthIndex = Calendar.current.component(.month, from: Date()) - 1
-    let businessUpdateModel = BusinessUpdateModel()
+    let businessUpdateModel = BusinessUpdateModel.shared
     let expenseVM = OverviewExpenseViewModel()
+    let businessGrowthModel = BusinessGrowthModel.shared
     
     
     func isGrowth() -> String {
-        let currIncome = getNetIncome(detail: detailThisMonth())
-        let prevIncome = getNetIncome(detail: detailLastMonth())
+        let currIncome = getNetIncomeTrans(detail: detailThisMonth())
+        let prevIncome = getNetIncomeTrans(detail: detailLastMonth())
 
         let thisMonthPredicate = expenseVM.predicateGenerator(year: yearIndex, month: monthIndex)
         let prevMonthPredicate = expenseVM.predicateGenerator(year: yearIndex, month: monthIndex - 1 )
@@ -36,7 +38,7 @@ class BusinessUpdateViewModel {
         return ProductSoldViewModel.init().productSold[0].sku
     }
     
-    func getNetIncome(detail: [TransactionDetail]) -> Int64 {
+    func getNetIncomeTrans(detail: [TransactionDetail]) -> Int64 {
         var total: Int64 = 0
         for data in detail {
             if let prod = data.td_product {
@@ -58,5 +60,64 @@ class BusinessUpdateViewModel {
         let details = businessUpdateModel.getDetail().filter{ ($0.td_transaction?.date!)! >= prevMonth!  && ($0.td_transaction?.date!)! <= lastMonth!}
         
         return details
+    }
+    
+    func calculateFixIncomePerDay() -> [Double] {
+        var listDate = [Int64]()
+        var listMonth = [Int64]()
+        var fixIncome = [TransModel]()
+        for data in businessGrowthModel.getSortedDetail(){
+            if let data = data.td_transaction, let date = data.date {
+                listDate.append(convertDateToDay(date: date))
+                listMonth.append(convertDateToMonth(date: date))
+            }
+        }
+        
+        let clearDate = Array(NSOrderedSet(array: listDate))
+        for date in clearDate {
+            let temp = filteringDetails(details: businessGrowthModel.getSortedDetail(), date: date as! Int64)
+            let income = getNetIncomeTrans(detail: temp)
+            guard let data = temp[0].td_transaction?.date else { continue }
+            fixIncome.append(TransModel(netIncome: income, month: convertDateToMonth(date: data)))
+        }
+        return calculateTotalIncomePerDay(income: fixIncome)
+    }
+    
+    func calculateTotalIncomePerDay(income: [TransModel]) -> [Double] {
+        var totalNetIncome = [Double]()
+        for data in income {
+            let total = data.netIncome - (calculateExpense(date: data.month) / 30)
+            totalNetIncome.append(Double(total))
+        }
+        return totalNetIncome
+    }
+    
+    func convertDateToDay(date: Date) -> Int64 {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd"
+        let day = dateFormatter.string(from: date)
+        return Int64(day) ?? 0
+    }
+    
+    func convertDateToMonth(date: Date) -> Int64 {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM"
+        let month = dateFormatter.string(from: date)
+        return Int64(month) ?? 0
+    }
+    
+    func filteringDetails(details: [TransactionDetail], date: Int64) -> [TransactionDetail] {
+        let data = details.filter { convertDateToDay(date: ($0.td_transaction?.date)!) == date }
+        return data
+    }
+    
+    func calculateExpense(date: Int64) -> Int64 {
+        let expenses = businessGrowthModel.getExpenses().filter {
+            if let data = $0.date {
+                return (convertDateToMonth(date: data) == date)
+            }
+            return false
+        }
+        return expenses.map({$0.price}).reduce(0, +)
     }
 }

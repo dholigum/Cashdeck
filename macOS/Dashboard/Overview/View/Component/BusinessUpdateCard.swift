@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BusinessUpdateCard: View {
     
-    let businessUpdateVM = BusinessUpdateViewModel()
+    let businessUpdateVM = BusinessUpdateViewModel.shared
     
     var body: some View {
         VStack (alignment: .leading) {
