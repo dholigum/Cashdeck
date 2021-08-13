@@ -22,6 +22,7 @@ class ProductSoldViewModel {
             newProductSold.quantity = calculateQty(product: product)
             newProductSold.netIncome = getNetIncome(product: product)
             productSold.append(newProductSold)
+            productSold.sort { $0.quantity > $1.quantity }
         }
     }
     

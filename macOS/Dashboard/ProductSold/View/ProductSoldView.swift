@@ -11,7 +11,7 @@ struct ProductSoldView: View {
     var body: some View {
         GeometryReader { geometry in
             VStack (alignment: .leading, spacing: 24) {
-                Text("Product Sold")
+                Text("Best Seller")
                     .font(Font.custom("SFProDisplay-Bold", size: 24))
                     .foregroundColor(Color("AccentColor2"))
                 
