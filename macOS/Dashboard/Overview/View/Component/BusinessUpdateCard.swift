@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct BusinessUpdateCard: View {
+    
+    let businessUpdateVM = BusinessUpdateViewModel()
+    
     var body: some View {
         VStack (alignment: .leading) {
             Text("Business Update")
@@ -15,7 +18,7 @@ struct BusinessUpdateCard: View {
                 .foregroundColor(Color("AccentColor2"))
                 .padding(.bottom, 8)
             
-            Text("Your net income this month looks good. Keep it up to maintain your profit stability!")
+            Text(businessUpdateVM.isGrowth())
                 .font(Font.custom("SFProDisplay-Regular", size: 18))
                 .padding(.bottom, 16)
             
@@ -23,7 +26,7 @@ struct BusinessUpdateCard: View {
                 Text("If possible, increase your most selling product")
                     .font(Font.custom("SFProDisplay-Regular", size: 18))
                 HStack{
-                    Text("STEEBLACK")
+                    Text(businessUpdateVM.mostSellingProduct())
                         .font(Font.custom("SFProDisplay-semibold", size: 18))
                         .foregroundColor(Color("AccentColor3"))
                     Text("to improve profit next month")
