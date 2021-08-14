@@ -174,6 +174,24 @@ class TransDetailViewModel: ObservableObject {
             catch {
                 print(error.localizedDescription)
             }
+        } else {
+            var aliasCheck: Alias = Alias()
+            var isFound = false
+            let fetchAlias = NSFetchRequest<NSManagedObject>(entityName: "Alias")
+            fetchAlias.predicate = NSPredicate(format: "name_alias == %@", transTemp.productName!)
+            do {
+                let result = try context.fetch(fetchAlias)
+                if (result.count > 0) {
+                    aliasCheck = result.first as! Alias
+                    isFound = true
+                }
+            } catch {
+                print(error.localizedDescription)
+            }
+            if (isFound == true) {
+                transTemp.tdtemp_product = aliasCheck.sku_product
+                saveToTransaction(transTemp)
+            }
         }
     }
 }
