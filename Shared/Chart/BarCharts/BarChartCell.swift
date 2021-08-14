@@ -18,10 +18,18 @@ struct BarChartCell: View {
         VStack(spacing: 5){
             RoundedRectangle(cornerRadius: 5)
                 .fill(barColor)
-                .scaleEffect(CGSize(width: 1, height: value), anchor: .bottom)
+                .scaleEffect(CGSize(width: 1, height: barHeight(val: value)), anchor: .bottom)
             Text(labels).font(.system(size: labelSize))
         }
         
+    }
+    func barHeight(val: Double) -> Double {
+        if val<0 {
+            print("Negative")
+            return val * -1
+        } else {
+            return val
+        }
     }
 }
 

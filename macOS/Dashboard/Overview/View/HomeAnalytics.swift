@@ -54,11 +54,11 @@ struct HomeAnalytics: View {
                     }
                     
                     if chartOptions == "Income" {
-                        HomeAnalyticsCard(title: "Chart", legend: "IDR", barColor: .blue, data: chartDataSet)
+                        HomeAnalyticsCard(title: "Chart", legend: "IDR", barColor: Color("AccenColor2"), data: chartDataSet)
                     } else if chartOptions == "Expense" {
-                        HomeAnalyticsCard(title: "Expense", legend: "IDR", barColor: .blue, data: expensesDataSet)
+                        HomeAnalyticsCard(title: "Expense", legend: "IDR", barColor: Color("AccenColor2"), data: expensesDataSet)
                     } else {
-                        HomeAnalyticsCard(title: "Expense", legend: "IDR", barColor: .blue, data: netIncomeDataSet)
+                        HomeAnalyticsCard(title: "Expense", legend: "IDR", barColor: Color("AccenColor2"), data: netIncomeDataSet)
                     }
                     
                 }

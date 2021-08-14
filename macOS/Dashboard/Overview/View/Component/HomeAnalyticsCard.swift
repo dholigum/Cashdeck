@@ -54,7 +54,7 @@ struct HomeAnalyticsCard: View {
                             ForEach(0..<data.count, id: \.self) { i in
                                 BarChartCell(
                                     value: normalizedValue(index: i),
-                                    barColor: barColor,
+                                    barColor: setBarColor(index: i),
                                     labels: "\(horizontalLabels(index: i))",
                                     labelSize: 16)
                                     
@@ -192,8 +192,13 @@ struct HomeAnalyticsCard: View {
              let position = cellWidth * CGFloat(currentIndex) - actualWidth/2
              return position
     }
-    func changeDataSet(value: String){
-        print(value)
+    func setBarColor(index: Int) -> Color {
+        if Double(data[index].value) < 0 {
+            return Color("colorDown")
+        }
+        else{
+            return Color("AccentColor2")
+        }
     }
 }
 
