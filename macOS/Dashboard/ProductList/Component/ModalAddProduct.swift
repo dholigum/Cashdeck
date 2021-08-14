@@ -9,8 +9,10 @@ import SwiftUI
 import CoreXLSX
 
 struct ModalAddProduct: View {
+    
     @Binding var isVisible: Bool
-    @ObservedObject var ProductVM = ProductViewModel()
+    @StateObject var ProductVM = ProductViewModel()
+    
     var body: some View {
         VStack {
             HStack {
@@ -94,12 +96,14 @@ extension ModalAddProduct {
                         let worksheet = try file!.parseWorksheet(at: path)
                         for row in worksheet.data?.rows ?? [] {
                             if i > 0 {
-                                let name = row.cells[1].stringValue(sharedString!)!
-                                let size = row.cells[3].stringValue(sharedString!)!
-                                let color = row.cells[4].stringValue(sharedString!)!
-                                let costPrice = Int64(row.cells[2].stringValue(sharedString!)!)
                                 let SKU = row.cells[0].stringValue(sharedString!)!
-                                self.ProductVM.addProduct(ProductModel(SKU: SKU, name: name, costPrice: costPrice!, size: size, color: color))
+                                let name = row.cells[1].stringValue(sharedString!)!
+                                let color = row.cells[2].stringValue(sharedString!)!
+                                let size = row.cells[3].stringValue(sharedString!)!
+                                let quantity = Int64(row.cells[4].stringValue(sharedString!)!)
+                                let costPrice = Int64(row.cells[5].stringValue(sharedString!)!)
+                                
+                                self.ProductVM.addProduct(ProductModel(SKU: SKU, name: name, costPrice: costPrice!, size: size, color: color, quantity: quantity!))
                             }
                             i += 1
                         }

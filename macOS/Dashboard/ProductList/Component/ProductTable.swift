@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ProductTable: View {
     
-    @ObservedObject var ProductsVM: ProductViewModel = ProductViewModel()
+    @StateObject var ProductsVM = ProductViewModel()
     
     var body: some View {
         VStack {
