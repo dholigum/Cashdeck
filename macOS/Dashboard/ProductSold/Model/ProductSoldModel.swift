@@ -19,8 +19,7 @@ class ProductSoldModel {
         newProduct.color = color
         newProduct.size = size
         newProduct.costPrice = Int64(costPrice)
-        newProduct.quantity = Int64(quantity
-        )
+//        newProduct.quantity = Int64(quantity)
         CoreDataManager.sharedManager.saveContext()
     }
     

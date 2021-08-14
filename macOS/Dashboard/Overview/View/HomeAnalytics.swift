@@ -8,6 +8,12 @@
 import SwiftUI
 
 struct HomeAnalytics: View {
+    
+    @State private var chartOptions = "Income"
+    var options = ["Income","Expense","Net Income"]
+    @State private var durationOptions = "Income"
+    var duration = ["Daily","Weekly","Monthly","Yearly"]
+    
     var body: some View {
         GeometryReader { geometry in
             VStack(alignment: .leading, spacing: 18){
@@ -16,13 +22,60 @@ struct HomeAnalytics: View {
                     .foregroundColor(Color("AccentColor2"))
                 
                 VStack (alignment: .leading, spacing: 18){
-                    HomeAnalyticsCard(title: "Chart", legend: "IDR", barColor: .blue, data: chartDataSet)
+                    
+                    HStack{
+                        Text("Chart")
+                            .font(Font.title.weight(.semibold))
+                            .padding(.vertical)
+                            .foregroundColor(Color("AccentColor2"))
+                            .padding(.top, 4)
+                            .padding(.leading, 20)
+                        
+                        Picker(selection:$chartOptions, label: Text("")){
+                            ForEach(options, id:\.self){
+                                Text($0)
+                            }
+                        }
+                        .onReceive([self.chartOptions].publisher.first(), perform: { (value) in
+                            changeDataSet(value: value)
+                        })
+                        .pickerStyle(SegmentedPickerStyle())
+                        .frame(width: 426)
+                        .padding(.leading,250)
+                        
+                        Picker("",selection:$durationOptions){
+                            ForEach(duration, id:\.self){
+                                Text($0)
+                            }
+                        }
+                        .pickerStyle(DefaultPickerStyle())
+                        .frame(width: 100)
+                        .padding(.leading,120)
+                    }
+                    
+                    if chartOptions == "Income" {
+                        HomeAnalyticsCard(title: "Chart", legend: "IDR", barColor: .blue, data: chartDataSet)
+                    } else if chartOptions == "Expense" {
+                        HomeAnalyticsCard(title: "Expense", legend: "IDR", barColor: .blue, data: expensesDataSet)
+                    } else {
+                        HomeAnalyticsCard(title: "Expense", legend: "IDR", barColor: .blue, data: netIncomeDataSet)
+                    }
+                    
                 }
+                .frame(width: 1000, height: 700)
+                .background(Color.white)
+                .cornerRadius(16)
+                .clipped()
+                .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.15), radius: 4, x: 2, y: 2)
             }
             .frame(width: geometry.frame(in: .global).size.width, height: geometry.frame(in: .global).size.height, alignment: .leading)
             .padding(.leading, 12)
+            
         }
 
+    }
+    func changeDataSet(value: String){
+        print(value)
     }
 }
 
