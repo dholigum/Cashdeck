@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 struct transactionsTable: View {
+    
     @State var date: Date
     @StateObject var transVM = TransactionViewModel.shared
     
@@ -16,15 +17,18 @@ struct transactionsTable: View {
         VStack {
             HStack {
                 Text("Transaction List")
-                    .font(.system(size: 20))
-                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                    .font(Font.custom("SFProDisplay-Semibold", size: 18))
+                    .foregroundColor(Color("AccentColor2"))
                     .padding()
                 Spacer()
-                HStack {
-                    BtnDatePicker()
-                        .padding(.trailing, 35)
-                }
-                .padding()
+                ActionButtonCard(icon: "calendar", title: transVM.formatedMonthYear(), defaultColor: Color("MainColor"), isPressed: $transVM.isOpenCalendar )
+                    .onTapGesture {
+                        transVM.isOpenCalendar.toggle()
+                    }
+                    .sheet(isPresented: $transVM.isOpenCalendar) {
+                        TransactionByMonthCalendar()
+                    }
+                    .padding()
             }
             HStack {
                 Text("Date")
