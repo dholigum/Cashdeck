@@ -22,7 +22,9 @@ class TransactionViewModel: ObservableObject {
     
     func fetchData() {
         do {
-            self.listTrans = ProductSoldModel.shared.getAllDetail()
+            let filteredListTrans = ProductSoldModel.shared.getAllDetail().filter() { $0.td_transaction?.date?.year == (yearIndex + 2000) && $0.td_transaction?.date?.month == (monthIndex + 1)}
+            self.listTrans = filteredListTrans
+            
         }
         catch {
             print("\(error.localizedDescription)")

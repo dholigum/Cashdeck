@@ -117,6 +117,8 @@
 		2FC7540B26C5861B00036064 /* InitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC7540926C5861B00036064 /* InitialView.swift */; };
 		2FC7541826C6BBFC00036064 /* TransactionByMonthCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC7541726C6BBFC00036064 /* TransactionByMonthCalendar.swift */; };
 		2FC7541926C6BBFC00036064 /* TransactionByMonthCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC7541726C6BBFC00036064 /* TransactionByMonthCalendar.swift */; };
+		2FC7541C26C7846C00036064 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC7541B26C7846C00036064 /* DateExtension.swift */; };
+		2FC7541D26C7846C00036064 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC7541B26C7846C00036064 /* DateExtension.swift */; };
 		2FF3EE8326BB9CDB001AFAC7 /* CurrencyFormattedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF3EE8226BB9CDB001AFAC7 /* CurrencyFormattedTextField.swift */; };
 		2FF3EE8426BB9CDB001AFAC7 /* CurrencyFormattedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF3EE8226BB9CDB001AFAC7 /* CurrencyFormattedTextField.swift */; };
 		3E1C911C6AE4A4DB272D605F /* Pods_Cashdeck__iOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C335E609120D79D88B31498D /* Pods_Cashdeck__iOS_.framework */; };
@@ -148,7 +150,6 @@
 		F346178D26B8A53F0005136B /* CardReports.swift in Sources */ = {isa = PBXBuildFile; fileRef = F346178C26B8A53F0005136B /* CardReports.swift */; };
 		F346179026B8AE6F0005136B /* primaryBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = F346178F26B8AE6F0005136B /* primaryBtn.swift */; };
 		F346179226B8B2380005136B /* transactionsTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F346179126B8B2380005136B /* transactionsTable.swift */; };
-		F346179426B8B36C0005136B /* BtnDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F346179326B8B36C0005136B /* BtnDatePicker.swift */; };
 		F346179926B8D6270005136B /* TransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F346179826B8D6270005136B /* TransactionModel.swift */; };
 		F73F69AC26B8E90800CD9642 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73F69AB26B8E90800CD9642 /* CoreDataManager.swift */; };
 		F73F69AD26B8E90800CD9642 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73F69AB26B8E90800CD9642 /* CoreDataManager.swift */; };
@@ -283,6 +284,7 @@
 		2FC7540026C5360700036064 /* FilterCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCalendar.swift; sourceTree = "<group>"; };
 		2FC7540926C5861B00036064 /* InitialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialView.swift; sourceTree = "<group>"; };
 		2FC7541726C6BBFC00036064 /* TransactionByMonthCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionByMonthCalendar.swift; sourceTree = "<group>"; };
+		2FC7541B26C7846C00036064 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		2FF3EE8226BB9CDB001AFAC7 /* CurrencyFormattedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormattedTextField.swift; sourceTree = "<group>"; };
 		3AD247E402BE1F80A3C3B01C /* Pods-Cashdeck (macOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cashdeck (macOS).debug.xcconfig"; path = "Target Support Files/Pods-Cashdeck (macOS)/Pods-Cashdeck (macOS).debug.xcconfig"; sourceTree = "<group>"; };
 		3F360569D5ED17213BB12E8E /* Pods-Cashdeck (iOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cashdeck (iOS).debug.xcconfig"; path = "Target Support Files/Pods-Cashdeck (iOS)/Pods-Cashdeck (iOS).debug.xcconfig"; sourceTree = "<group>"; };
@@ -305,7 +307,6 @@
 		F346178C26B8A53F0005136B /* CardReports.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardReports.swift; sourceTree = "<group>"; };
 		F346178F26B8AE6F0005136B /* primaryBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = primaryBtn.swift; sourceTree = "<group>"; };
 		F346179126B8B2380005136B /* transactionsTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = transactionsTable.swift; sourceTree = "<group>"; };
-		F346179326B8B36C0005136B /* BtnDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BtnDatePicker.swift; sourceTree = "<group>"; };
 		F346179826B8D6270005136B /* TransactionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionModel.swift; sourceTree = "<group>"; };
 		F73F69AB26B8E90800CD9642 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		F73F69B626B996E600CD9642 /* ProductSoldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSoldView.swift; sourceTree = "<group>"; };
@@ -379,6 +380,7 @@
 		2F18857226B250E40067E82D /* Income */ = {
 			isa = PBXGroup;
 			children = (
+				2FC7541A26C7845200036064 /* Helper */,
 				F346179726B8BB230005136B /* ViewModel */,
 				F346179626B8BB1C0005136B /* Model */,
 				F346179526B8BB0C0005136B /* View */,
@@ -803,6 +805,14 @@
 			path = FilterCalendar;
 			sourceTree = "<group>";
 		};
+		2FC7541A26C7845200036064 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				2FC7541B26C7846C00036064 /* DateExtension.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		2FEF63C626AC6C5C0073CE75 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -848,7 +858,6 @@
 				F346178C26B8A53F0005136B /* CardReports.swift */,
 				F346178F26B8AE6F0005136B /* primaryBtn.swift */,
 				F346179126B8B2380005136B /* transactionsTable.swift */,
-				F346179326B8B36C0005136B /* BtnDatePicker.swift */,
 				F32412AB26BA6E590022E95D /* modalImportFile.swift */,
 				F32412AD26BA88400022E95D /* SyncDataModal.swift */,
 				F302B03526BBA9BA00B3B83A /* ChooseProductModal.swift */,
@@ -1202,6 +1211,7 @@
 				2F764DD926A92152005B0513 /* BlurWindow.swift in Sources */,
 				51E27EB626BB9838009D0CB6 /* ChartData.swift in Sources */,
 				F74758DB26BE44F900740DAE /* FeeViewModel.swift in Sources */,
+				2FC7541C26C7846C00036064 /* DateExtension.swift in Sources */,
 				2F82F12F26BC20A3004E4ADF /* ExpenseTableHeader.swift in Sources */,
 				2F57B84A26BDC17A00472B74 /* MonthlyExpenseChart.swift in Sources */,
 				2F57B83426BD54F200472B74 /* ExpenseSheet.swift in Sources */,
@@ -1330,11 +1340,11 @@
 				F7FC2E9226BFBBF300AD3ACB /* MultiLineChartView.swift in Sources */,
 				2F52F2FC26B7A49C0046A1AA /* Tokopedia.swift in Sources */,
 				2F82F13026BC20C0004E4ADF /* ExpenseTableHeader.swift in Sources */,
+				2FC7541D26C7846C00036064 /* DateExtension.swift in Sources */,
 				F78F5F8226C0F6DD00CB5D6D /* TransactionViewModel.swift in Sources */,
 				F346179226B8B2380005136B /* transactionsTable.swift in Sources */,
 				F7FC2E8A26BFBBF300AD3ACB /* LineView.swift in Sources */,
 				F346178D26B8A53F0005136B /* CardReports.swift in Sources */,
-				F346179426B8B36C0005136B /* BtnDatePicker.swift in Sources */,
 				2F52F2FC26B7A49C0046A1AA /* Tokopedia.swift in Sources */,
 				F302B03426BB992800B3B83A /* productViewModel.swift in Sources */,
 				2FF3EE8426BB9CDB001AFAC7 /* CurrencyFormattedTextField.swift in Sources */,
