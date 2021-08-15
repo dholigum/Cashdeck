@@ -13,6 +13,16 @@ class tokopediaViewModel: ObservableObject {
     
     let context = CoreDataManager.sharedManager.persistentContainer.viewContext
     
+    func calculatefee(_ td: TransactionDetail) -> Double{
+        let productFee = Double(td.price*td.quantity)*(td.td_transaction?.transaction_channel!.productFee)!/100
+        let shippingFee = Double(td.price*td.quantity)*(td.td_transaction?.transaction_channel!.shippingFee)!/100
+        if (shippingFee > Double((td.td_transaction?.transaction_channel!.maxShippingFee)!)) {
+            return productFee+Double((td.td_transaction?.transaction_channel!.maxShippingFee)!)
+        } else {
+            return productFee+shippingFee
+        }
+    }
+    
     func totalNetIncome() -> Int64 {
         var transDetailList: [TransactionDetail] = [TransactionDetail]()
         do {
@@ -24,7 +34,7 @@ class tokopediaViewModel: ObservableObject {
         var totalNetIncome:Int64 = 0
         
         for trans in transDetailList {
-            totalNetIncome += (trans.price - trans.td_product!.costPrice)*trans.quantity
+            totalNetIncome += (trans.price - trans.td_product!.costPrice)*trans.quantity-Int64(calculatefee(trans))
         }
         
         return totalNetIncome

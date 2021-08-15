@@ -14,6 +14,8 @@ struct Tokopedia: View {
     @State var showModalSync = false
     @State var listTrans = [transactionModel]()
     @StateObject var listTransTemp = TransDetailViewModel.shared
+    var monthIndex = TransactionViewModel.shared.monthIndex
+    var yearIndex = TransactionViewModel.shared.yearIndex
     
     @StateObject var transVM = TransactionViewModel.shared
     
