@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import CoreXLSX
+import CodableCSV
 
 struct ModalAddProduct: View {
     
@@ -55,7 +55,7 @@ struct ModalAddProduct: View {
             .background(Color.white)
             .cornerRadius(15)
             .padding(.init(top: 25, leading: 0, bottom: 30, trailing: 0))
-            Button(action: {btnImportPressed()}, label: {
+            Button(action: {importCSVPressed()}, label: {
                 Text("Import")
                     .font(.system(size: 18))
                     .foregroundColor(Color("AccentColor2"))
@@ -74,45 +74,27 @@ struct ModalAddProduct: View {
 }
 
 extension ModalAddProduct {
-    func btnImportPressed () {
+    func importCSVPressed () {
         let panel = NSOpenPanel()
         panel.allowsMultipleSelection = false
-        panel.allowedFileTypes = ["xlsx", "xls", "number"]
+        panel.allowedFileTypes = ["csv"]
         if panel.runModal() == .OK {
             do {
-
-            var tmp = "\(panel.url!)".split(separator: "/")
-            tmp.removeFirst()
-            let fileName = tmp[tmp.count - 1]
-            let addSpace = fileName.replacingOccurrences(of: "%20", with: " ")
-            tmp[tmp.count - 1] = "\(addSpace)"
-            let path = tmp.joined(separator: "/")
-            let file = XLSXFile(filepath: "/\(path)")
-            let sharedString = try file?.parseSharedStrings()
-                
-            var i = 0
-            for wbk in try file!.parseWorkbooks() {
-                for (_, path) in try file!.parseWorksheetPathsAndNames(workbook: wbk) {
-                        let worksheet = try file!.parseWorksheet(at: path)
-                        for row in worksheet.data?.rows ?? [] {
-                            if i > 0 {
-                                let SKU = row.cells[0].stringValue(sharedString!)!
-                                let name = row.cells[1].stringValue(sharedString!)!
-                                let color = row.cells[2].stringValue(sharedString!)!
-                                let size = row.cells[3].stringValue(sharedString!)!
-                                let quantity = Int64(row.cells[4].stringValue(sharedString!)!)
-                                let costPrice = Int64(row.cells[5].stringValue(sharedString!)!)
-                                
-                                self.ProductVM.addProduct(ProductModel(SKU: SKU, name: name, costPrice: costPrice!, size: size, color: color, quantity: quantity!))
-                            }
-                            i += 1
-                        }
-                    }
+                let reader = try CSVReader(input: URL(resolvingAliasFileAt: panel.url!)) { $0.headerStrategy = .firstLine }
+                for row in reader {
+                    let sku = row[0]
+                    let name = row[1]
+                    let color = row[2]
+                    let size = row[3]
+                    let quantity = Int64(row[4])
+                    let costPrice = Int64(row[5])
+                    
+                    self.ProductVM.addProduct(ProductModel(SKU: sku, name: name, costPrice: costPrice!, size: size, color: color, quantity: quantity!))
                 }
                 ProductVM.fetchProducts()
                 isVisible = false
             } catch {
-              print(error)
+                print(error)
             }
         }
     }

@@ -15,5 +15,6 @@ target 'Cashdeck (macOS)' do
 
   # Pods for Cashdeck (macOS)
     pod 'CoreXLSX', '~> 0.14.0'
+    pod 'CodableCSV', '~> 0.6.6'
 
 end
