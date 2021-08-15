@@ -18,7 +18,7 @@ class ProductSoldViewModel {
             newProductSold.name = product.name!
             newProductSold.color = product.color!
             newProductSold.size = product.size!
-            if calculateQty(product: product) == 0 { return }
+            if calculateQty(product: product) == 0 { continue }
             newProductSold.quantity = calculateQty(product: product)
             newProductSold.netIncome = getNetIncome(product: product)
             productSold.append(newProductSold)
@@ -39,11 +39,9 @@ class ProductSoldViewModel {
     func getNetIncome(product: Products) -> Int64 {
         var totalSellingPrice: Int64 = 0
         let detail = ProductSoldModel.shared.getAllDetail().filter { $0.td_product == product }
-
-        for data in detail {
-            totalSellingPrice += data.price
-        }
-        let costPrice = Int64(detail.count) * product.costPrice
+        let totalQty = calculateQty(product: product)
+        totalSellingPrice = detail[0].price * totalQty
+        let costPrice = totalQty * product.costPrice
         
         return totalSellingPrice - costPrice
     }
