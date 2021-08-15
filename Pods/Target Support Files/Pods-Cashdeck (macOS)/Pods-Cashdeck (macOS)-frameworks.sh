@@ -175,11 +175,13 @@ code_sign_if_enabled() {
 }
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/CodableCSV/CodableCSV.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CoreXLSX/CoreXLSX.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/XMLCoder/XMLCoder.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ZIPFoundation/ZIPFoundation.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/CodableCSV/CodableCSV.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CoreXLSX/CoreXLSX.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/XMLCoder/XMLCoder.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ZIPFoundation/ZIPFoundation.framework"

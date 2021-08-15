@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct CardSummary: View {
-    @State var title: String
-    @State var value: String
+    
+    var title: String
+    var value: String
     
     var body: some View {
         VStack {

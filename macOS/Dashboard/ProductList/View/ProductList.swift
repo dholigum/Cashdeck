@@ -10,12 +10,7 @@ import CoreXLSX
 
 struct ProductList: View {
     @State var showModal = false
-    @ObservedObject var productVM = ProductViewModel()
-    
-    init() {
-        productVM.fetchProducts()
-    }
-    
+    @StateObject var productVM = ProductViewModel()
     
     var window = NSScreen.main?.visibleFrame
     var body: some View {
@@ -27,10 +22,7 @@ struct ProductList: View {
                     .foregroundColor(Color("AccentColor2"))
             }
             
-            HStack {
-                CardSummary(title: "Total Product", value: String(productVM.totalProducts))
-                CardSummary(title: "Total Quantity", value: String(productVM.totalQuantity))
-            }
+            CardSummaryGroup(productVM: productVM)
             
             HStack {
                 primaryBtn(imageName: "square.and.arrow.down", title: "Import Product", width: 170)
@@ -38,21 +30,15 @@ struct ProductList: View {
                         showModal.toggle()
                     }
                     .sheet(isPresented: $showModal, content: {
-                        ModalAddProduct(isVisible: $showModal)
+                        ModalAddProduct(isVisible: $showModal, ProductVM: productVM)
                     })
                 Spacer()
             } .padding(.top, 10)
             
-            ProductTable()
+            ProductTable(ProductsVM: productVM)
             Spacer()
         }
         .padding(.horizontal, 16)
         .frame(minWidth: window!.width / 1.8)
-    }
-}
-
-struct ProductList_Preview: PreviewProvider {
-    static var previews: some View {
-        ProductList()
     }
 }
