@@ -31,7 +31,7 @@ struct CardReports: View {
                         .font(.system(size: 14))
                         .foregroundColor(.green)
                 }
-                Text("from yesterday")
+                Text("from last month")
                     .font(.system(size: 14))
             }
         }

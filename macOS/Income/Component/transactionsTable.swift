@@ -57,6 +57,7 @@ struct transactionsTable: View {
                     .padding(20)
                 Spacer()
             }
+            Divider()
             if transVM.listTrans.count < 1 {
                 HStack {
                     Image("noTransactionIllustration")
@@ -74,14 +75,16 @@ struct transactionsTable: View {
                     if transVM.listTrans.count > 0 {
                         ForEach(transVM.listTrans) { trans in
                             HStack {
-                                Text(trans.td_transaction?.date ?? Date(), style: .date)
-                                    .padding(.init(top: 4, leading: 20, bottom: 4, trailing: 0))
-                                    .frame(width: 130, alignment: .leading)
+                                if let date = trans.td_transaction?.date {
+                                    Text(date.dateFormatting())
+                                        .padding(.init(top: 4, leading: 20, bottom: 4, trailing: 0))
+                                        .frame(width: 130, alignment: .leading)
+                                }
                                 Text("\(trans.td_product?.name ?? "") - \(trans.td_product?.color ?? "") - \(trans.td_product?.size ?? "")")
                                     .frame(width: 290, alignment: .leading)
                                     .padding(.init(top: 4, leading: 20, bottom: 4, trailing: 0))
                                 Text("\(trans.quantity)")
-                                    .frame(width: 55, alignment: .leading)
+                                    .frame(width: 55, alignment: .center)
                                     .padding(.init(top: 4, leading: 20, bottom: 4, trailing: 20))
                                 Text("Rp \(trans.price)")
                                     .frame(width: 100, alignment: .leading)
@@ -94,6 +97,7 @@ struct transactionsTable: View {
                                     .padding(.init(top: 4, leading: 20, bottom: 4, trailing: 0))
                                 Spacer()
                             }
+                            Divider()
                         }
                     }
                 }

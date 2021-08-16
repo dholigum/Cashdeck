@@ -19,7 +19,7 @@ struct Tokopedia: View {
     
     @StateObject var transVM = TransactionViewModel.shared
     
-    @ObservedObject var tokopediaVM = tokopediaViewModel()
+    var tokopediaVM = tokopediaViewModel()
     
 //    init() {
 //        listTransTemp.fetchDataTrans()
@@ -37,11 +37,11 @@ struct Tokopedia: View {
                 Spacer()
             }
             HStack {
-                CardReports(title: "Net Income", value: "Rp \(tokopediaVM.totalNetIncome())", percent: 10, width: 306)
+                CardReports(title: "Net Income", value: "Rp \(tokopediaVM.totalNetIncome(transVM.monthIndex+1, yearIndex: transVM.yearIndex+2000))", percent: tokopediaVM.increaseNetIncome(transVM.monthIndex+1, yearIndex: transVM.yearIndex+2000), width: 306)
                     .padding(.leading, 10)
-                CardReports(title: "Product Sold", value: "\(tokopediaVM.totalProductSold())", percent: -10, width: 227)
+                CardReports(title: "Product Sold", value: "\(tokopediaVM.totalProductSold(transVM.monthIndex+1, yearIndex: transVM.yearIndex+2000))", percent: tokopediaVM.increaseProductSold(transVM.monthIndex+1, yearIndex: transVM.yearIndex+2000), width: 227)
                     .padding(.leading, 10)
-                CardReports(title: "Total Orders", value: "\(tokopediaVM.totalOrder())", percent: 10, width: 227)
+                CardReports(title: "Total Orders", value: "\(tokopediaVM.totalOrder(transVM.monthIndex+1, yearIndex: transVM.yearIndex+2000))", percent: tokopediaVM.increaseTotalOrder(transVM.monthIndex+1, yearIndex: transVM.yearIndex+2000), width: 227)
                     .padding(.leading, 10)
                 Spacer()
             }
