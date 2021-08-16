@@ -28,17 +28,19 @@ struct PieChartLegend: View {
         if values.count != 0 {
             VStack(alignment: .leading) {
                 ForEach(0..<self.values.count){ i in
-                    HStack {
-                        Circle()
-                            .foregroundColor(self.colors[i])
-                            .frame(width: 16, height: 16)
-                            .padding(3)
-                        Text(self.percents[i])
-                            .font(Font.custom("SFProDisplay-Semibold", size: 16))
-                        Text(self.names[i])
-                            .font(Font.custom("SFProDisplay-Regular", size: 16))
+                    if self.percents[i] != "0.00%" {
+                        HStack {
+                            Circle()
+                                .foregroundColor(self.colors[i])
+                                .frame(width: 16, height: 16)
+                                .padding(3)
+                            Text(self.percents[i])
+                                .font(Font.custom("SFProDisplay-Semibold", size: 16))
+                            Text(self.names[i])
+                                .font(Font.custom("SFProDisplay-Regular", size: 16))
+                        }
+                        .padding(.vertical, 4)
                     }
-                    .padding(.vertical, 4)
                 }
             }
         } else {

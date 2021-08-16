@@ -44,31 +44,33 @@ struct PieChartComplexLegend: View {
         if !isAllZeroValues {
             VStack(alignment: .leading, spacing: 10) {
                 ForEach(0..<self.values.count) { i in
-                    HStack(alignment: .top, spacing: 6) {
-                        Circle()
-                            .foregroundColor(self.colors[i])
-                            .frame(width: 16, height: 16)
-                            .padding(3)
-                        
-                        VStack(alignment: .leading, spacing: 6) {
-                            HStack(spacing: 12) {
-                                Text("\(self.percents[i]) \(self.names[i])")
-                                    .font(Font.custom("SFProDisplay-Semibold", size: 18))
-                                HStack {
-                                    Image(systemName: self.isIncrease[i] ? "arrow.up" : "arrow.down")
-                                        .padding(.trailing, -6)
-                                        .font(Font.custom("SFProDisplay-Semibold", size: 14).bold())
-                                    Text(String(self.differences[i]).currencyFormatting())
+                    if self.percents[i] != "0.00%" {
+                        HStack(alignment: .top, spacing: 6) {
+                            Circle()
+                                .foregroundColor(self.colors[i])
+                                .frame(width: 16, height: 16)
+                                .padding(3)
+                            
+                            VStack(alignment: .leading, spacing: 6) {
+                                HStack(spacing: 12) {
+                                    Text("\(self.percents[i]) \(self.names[i])")
+                                        .font(Font.custom("SFProDisplay-Semibold", size: 18))
+                                    HStack {
+                                        Image(systemName: self.isIncrease[i] ? "arrow.up" : "arrow.down")
+                                            .padding(.trailing, -6)
+                                            .font(Font.custom("SFProDisplay-Semibold", size: 14).bold())
+                                        Text(String(self.differences[i]).currencyFormatting())
+                                            .font(Font.custom("SFProDisplay-Regular", size: 14))
+                                    }
+                                    .foregroundColor(self.isIncrease[i] ? .green : .red)
+                                }
+                                HStack(spacing: 4) {
+                                    Text("\(String(format: "%.2f", self.pnctageDiff[i] * 100))%")
+                                        .foregroundColor(self.isIncrease[i] ? .green : .red)
+                                        .font(Font.custom("SFProDisplay-Regular", size: 14))
+                                    Text("from last month")
                                         .font(Font.custom("SFProDisplay-Regular", size: 14))
                                 }
-                                .foregroundColor(self.isIncrease[i] ? .green : .red)
-                            }
-                            HStack(spacing: 4) {
-                                Text("\(String(format: "%.2f", self.pnctageDiff[i] * 100))%")
-                                    .foregroundColor(self.isIncrease[i] ? .green : .red)
-                                    .font(Font.custom("SFProDisplay-Regular", size: 14))
-                                Text("from last month")
-                                    .font(Font.custom("SFProDisplay-Regular", size: 14))
                             }
                         }
                     }
