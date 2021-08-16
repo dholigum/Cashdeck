@@ -14,6 +14,8 @@ struct HomeAnalytics: View {
     @State private var durationOptions = "Income"
     var duration = ["Daily","Weekly","Monthly","Yearly"]
     
+    @StateObject var expenseVM = ExpenseViewModel()
+    
     var body: some View {
         GeometryReader { geometry in
             VStack(alignment: .leading, spacing: 18){
@@ -56,7 +58,7 @@ struct HomeAnalytics: View {
                     if chartOptions == "Income" {
                         HomeAnalyticsCard(title: "Chart", legend: "IDR", barColor: Color("AccenColor2"), data: chartDataSet)
                     } else if chartOptions == "Expense" {
-                        HomeAnalyticsCard(title: "Expense", legend: "IDR", barColor: Color("AccenColor2"), data: expensesDataSet)
+                        HomeAnalyticsCard(title: "Expense", legend: "IDR", barColor: Color("AccenColor2"), data: expenseVM.groupedExpenseByMonth)
                     } else {
                         HomeAnalyticsCard(title: "Expense", legend: "IDR", barColor: Color("AccenColor2"), data: netIncomeDataSet)
                     }
@@ -70,10 +72,10 @@ struct HomeAnalytics: View {
             }
             .frame(width: geometry.frame(in: .global).size.width, height: geometry.frame(in: .global).size.height, alignment: .leading)
             .padding(.leading, 12)
-            
+            .onAppear() { expenseVM.getAllMonthExpense() }
         }
-
     }
+    
     func changeDataSet(value: String){
         print(value)
     }
