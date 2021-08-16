@@ -62,11 +62,11 @@ struct PieChartComplexLegend: View {
                                         Text(String(self.differences[i]).currencyFormatting())
                                             .font(Font.custom("SFProDisplay-Regular", size: 14))
                                     }
-                                    .foregroundColor(self.isIncrease[i] ? .green : .red)
+                                    .foregroundColor(self.isIncrease[i] ? .red : .green)
                                 }
                                 HStack(spacing: 4) {
                                     Text("\(String(format: "%.2f", self.pnctageDiff[i] * 100))%")
-                                        .foregroundColor(self.isIncrease[i] ? .green : .red)
+                                        .foregroundColor(self.isIncrease[i] ? .red : .green)
                                         .font(Font.custom("SFProDisplay-Regular", size: 14))
                                     Text("from last month")
                                         .font(Font.custom("SFProDisplay-Regular", size: 14))
