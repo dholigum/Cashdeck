@@ -123,6 +123,8 @@
 		2FC7541D26C7846C00036064 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC7541B26C7846C00036064 /* DateExtension.swift */; };
 		2FF3829826CA043F00C54666 /* ExpenseChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF3829726CA043F00C54666 /* ExpenseChartData.swift */; };
 		2FF3829926CA043F00C54666 /* ExpenseChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF3829726CA043F00C54666 /* ExpenseChartData.swift */; };
+		2FF3829B26CA206300C54666 /* MonthlyExpenseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF3829A26CA206300C54666 /* MonthlyExpenseModel.swift */; };
+		2FF3829C26CA206300C54666 /* MonthlyExpenseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF3829A26CA206300C54666 /* MonthlyExpenseModel.swift */; };
 		2FF3EE8326BB9CDB001AFAC7 /* CurrencyFormattedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF3EE8226BB9CDB001AFAC7 /* CurrencyFormattedTextField.swift */; };
 		2FF3EE8426BB9CDB001AFAC7 /* CurrencyFormattedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF3EE8226BB9CDB001AFAC7 /* CurrencyFormattedTextField.swift */; };
 		3E1C911C6AE4A4DB272D605F /* Pods_Cashdeck__iOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C335E609120D79D88B31498D /* Pods_Cashdeck__iOS_.framework */; };
@@ -299,6 +301,7 @@
 		2FC7541726C6BBFC00036064 /* TransactionByMonthCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionByMonthCalendar.swift; sourceTree = "<group>"; };
 		2FC7541B26C7846C00036064 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		2FF3829726CA043F00C54666 /* ExpenseChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseChartData.swift; sourceTree = "<group>"; };
+		2FF3829A26CA206300C54666 /* MonthlyExpenseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyExpenseModel.swift; sourceTree = "<group>"; };
 		2FF3EE8226BB9CDB001AFAC7 /* CurrencyFormattedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormattedTextField.swift; sourceTree = "<group>"; };
 		3AD247E402BE1F80A3C3B01C /* Pods-Cashdeck (macOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cashdeck (macOS).debug.xcconfig"; path = "Target Support Files/Pods-Cashdeck (macOS)/Pods-Cashdeck (macOS).debug.xcconfig"; sourceTree = "<group>"; };
 		3F360569D5ED17213BB12E8E /* Pods-Cashdeck (iOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cashdeck (iOS).debug.xcconfig"; path = "Target Support Files/Pods-Cashdeck (iOS)/Pods-Cashdeck (iOS).debug.xcconfig"; sourceTree = "<group>"; };
@@ -755,6 +758,7 @@
 			isa = PBXGroup;
 			children = (
 				2F57B83A26BD7B7900472B74 /* SimpleExpense.swift */,
+				2FF3829A26CA206300C54666 /* MonthlyExpenseModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1288,6 +1292,7 @@
 				2F52F32726B81ECD0046A1AA /* PieChartLegend.swift in Sources */,
 				2F57B85526BDCEE500472B74 /* Constant.swift in Sources */,
 				2F2B3B1126C4DFCD006FF7F2 /* ProductTable.swift in Sources */,
+				2FF3829B26CA206300C54666 /* MonthlyExpenseModel.swift in Sources */,
 				2F2B3B0F26C4DFCD006FF7F2 /* ModalAddProduct.swift in Sources */,
 				F73F69AC26B8E90800CD9642 /* CoreDataManager.swift in Sources */,
 				F7AA51E126BA4E8200BE00B6 /* ProductSoldModel.swift in Sources */,
@@ -1358,6 +1363,7 @@
 				2F57B86426BEAE2E00472B74 /* PieChartComplexLegend.swift in Sources */,
 				2F52F32126B7EB940046A1AA /* NetIncomeCard.swift in Sources */,
 				2F57B84126BD82E100472B74 /* GroupingData.swift in Sources */,
+				2FF3829C26CA206300C54666 /* MonthlyExpenseModel.swift in Sources */,
 				2F2B3B1226C4DFCD006FF7F2 /* ProductTable.swift in Sources */,
 				F7FC2E8426BFBBF300AD3ACB /* Path+QuadCurve.swift in Sources */,
 				84ACCDC626C6D1C4009938D8 /* tokopediaViewModel.swift in Sources */,

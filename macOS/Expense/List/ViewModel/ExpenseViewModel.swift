@@ -12,6 +12,7 @@ class ExpenseViewModel: ObservableObject {
     @Published var expenses: [Expense] = []
     @Published var totalExpense: Int = 0
     @Published var groupedExpense: [SimpleExpense] = []
+    @Published var groupedExpenseByMonth: [ChartData] = []
     
     @Published var isOpenCalendar = false
     @Published var yearIndex = Calendar.current.component(.year, from: Date()) - 2000
@@ -38,6 +39,7 @@ class ExpenseViewModel: ObservableObject {
     @Published var updateItem: Expense!
     
     var simpleExpenses: [SimpleExpense] = []
+    var monthlyExpenses: [MonthlyExpenseModel] = []
     
     let context = CoreDataManager.sharedManager.persistentContainer.viewContext
     
@@ -129,11 +131,26 @@ class ExpenseViewModel: ObservableObject {
             
             for expense in expenses {
                 let newSimpleExpense = SimpleExpense(name: expense.category ?? "", cost: Double(expense.price))
+                let newMonthlyExpense = MonthlyExpenseModel(date: expense.date ?? Date(), cost: Double(expense.price), month: K().monthName[(expense.date?.month ?? 0) - 1])
 
                 simpleExpenses.append(newSimpleExpense)
+                monthlyExpenses.append(newMonthlyExpense)
             }
             
             groupedExpense = simpleExpenses.grouped()
+            
+            let groupedExpenseByMonthLabels: [String]
+            let groupedExpenseByMonthValues: [Double]
+            groupedExpenseByMonthLabels = monthlyExpenses.groupedByMonth().map({
+                (expense: MonthlyExpenseModel) -> String in expense.month ?? "" })
+            groupedExpenseByMonthValues = monthlyExpenses.groupedByMonth().map({
+                (expense: MonthlyExpenseModel) -> Double in expense.cost ?? 0 })
+            
+            groupedExpenseByMonth = structureGrouped(values: groupedExpenseByMonthValues, labels: groupedExpenseByMonthLabels)
+            
+            for item in groupedExpenseByMonth {
+                print(item.label, item.value)
+            }
             
         } catch let error as NSError {
             print("\(error)")
@@ -174,5 +191,14 @@ class ExpenseViewModel: ObservableObject {
         let beginningOfNextMonth = calendar.date(byAdding: oneMonth, to: firstDayOfTheMonth!)
         
         return NSPredicate(format: "%K >= %@ && %K < %@", "date", firstDayOfTheMonth! as NSDate, "date", beginningOfNextMonth! as NSDate)
+    }
+    
+    func structureGrouped(values: [Double], labels: [String]) -> [ChartData] {
+        K().monthName.map({ (month: String) -> ChartData in
+            if labels.firstIndex(of: month) != nil {
+                return ChartData(label: "\(month) \(Date().year)", value: values[labels.firstIndex(of: month) ?? 0], day: month)
+            }
+            return ChartData(label: "\(month) \(Date().year)", value: 0, day: month)
+        })
     }
 }
