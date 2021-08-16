@@ -44,4 +44,14 @@ class TransactionViewModel: ObservableObject {
         
         return "\(realMonth) \(realYear)"
     }
+    
+    func calculatefee(_ td: TransactionDetail) -> Double{
+        let productFee = Double(td.price*td.quantity)*(td.td_transaction?.transaction_channel!.productFee)!/100
+        let shippingFee = Double(td.price*td.quantity)*(td.td_transaction?.transaction_channel!.shippingFee)!/100
+        if (shippingFee > Double((td.td_transaction?.transaction_channel!.maxShippingFee)!)) {
+            return productFee+Double((td.td_transaction?.transaction_channel!.maxShippingFee)!)
+        } else {
+            return productFee+shippingFee
+        }
+    }
 }

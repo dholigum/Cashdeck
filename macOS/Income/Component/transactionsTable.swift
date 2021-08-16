@@ -34,25 +34,30 @@ struct transactionsTable: View {
                 Text("Date")
                     .fontWeight(.semibold)
                     .padding(20)
-                    .frame(width: 120, alignment: .leading)
+                    .frame(width: 130, alignment: .leading)
                 Text("Product Name")
                     .fontWeight(.semibold)
-                    .frame(width: 300, alignment: .leading)
+                    .frame(width: 270, alignment: .leading)
                     .padding(20)
                 Text("Quantity")
                     .fontWeight(.semibold)
-                    .frame(width: 100, alignment: .leading)
+                    .frame(width: 55, alignment: .leading)
                     .padding(20)
                 Text("Price")
                     .fontWeight(.semibold)
-                    .frame(width: 130, alignment: .leading)
+                    .frame(width: 100, alignment: .leading)
+                    .padding(20)
+                Text("Fee")
+                    .fontWeight(.semibold)
+                    .frame(width: 100, alignment: .leading)
                     .padding(20)
                 Text("Net Income")
                     .fontWeight(.semibold)
-                    .frame(width: 120, alignment: .leading)
+                    .frame(width: 100, alignment: .leading)
                     .padding(20)
                 Spacer()
             }
+            Divider()
             if transVM.listTrans.count < 1 {
                 HStack {
                     Image("noTransactionIllustration")
@@ -66,26 +71,33 @@ struct transactionsTable: View {
                     .fontWeight(.semibold)
                     .foregroundColor(Color("AccentColor2"))
             } else {
-                if transVM.listTrans.count > 0 {
-                    ForEach(transVM.listTrans) { trans in
-                        HStack {
-                            Text(trans.td_transaction?.date ?? Date(), style: .date)
-                                .padding(.init(top: 4, leading: 20, bottom: 4, trailing: 20))
-                                .frame(width: 120, alignment: .leading)
-                            Text(trans.td_product?.name ?? "")
-                                .frame(width: 300, alignment: .leading)
-                                .padding(.init(top: 4, leading: 20, bottom: 4, trailing: 20))
-                            Text("\(trans.quantity)")
-                                .frame(width: 100, alignment: .leading)
-                                .padding(.init(top: 4, leading: 20, bottom: 4, trailing: 20))
-                            Text("Rp \(trans.price)")
-                                .frame(width: 130, alignment: .leading)
-                                .padding(.init(top: 4, leading: 20, bottom: 4, trailing: 20))
-                            Text("Rp 988.000")
-                                .frame(width: 120, alignment: .leading)
-                                .padding(.init(top: 4, leading: 20, bottom: 4, trailing: 20))
-
-                            Spacer()
+                ScrollView {
+                    if transVM.listTrans.count > 0 {
+                        ForEach(transVM.listTrans) { trans in
+                            HStack {
+                                if let date = trans.td_transaction?.date {
+                                    Text(date.dateFormatting())
+                                        .padding(.init(top: 4, leading: 20, bottom: 4, trailing: 0))
+                                        .frame(width: 130, alignment: .leading)
+                                }
+                                Text("\(trans.td_product?.name ?? "") - \(trans.td_product?.color ?? "") - \(trans.td_product?.size ?? "")")
+                                    .frame(width: 290, alignment: .leading)
+                                    .padding(.init(top: 4, leading: 20, bottom: 4, trailing: 0))
+                                Text("\(trans.quantity)")
+                                    .frame(width: 55, alignment: .center)
+                                    .padding(.init(top: 4, leading: 20, bottom: 4, trailing: 20))
+                                Text("Rp \(trans.price)")
+                                    .frame(width: 100, alignment: .leading)
+                                    .padding(.init(top: 4, leading: 20, bottom: 4, trailing: 20))
+                                Text("Rp \(Int(transVM.calculatefee(trans)))")
+                                    .frame(width: 100, alignment: .leading)
+                                    .padding(.init(top: 4, leading: 20, bottom: 4, trailing: 20))
+                                Text("Rp \((trans.price-trans.td_product!.costPrice)*trans.quantity-Int64(transVM.calculatefee(trans)))")
+                                    .frame(width: 100, alignment: .leading)
+                                    .padding(.init(top: 4, leading: 20, bottom: 4, trailing: 0))
+                                Spacer()
+                            }
+                            Divider()
                         }
                     }
                 }
