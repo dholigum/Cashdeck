@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 struct HomeAnalyticsCard: View {
     
     var title: String
@@ -28,40 +27,8 @@ struct HomeAnalyticsCard: View {
     @State private var currentDay = ""
     @State private var touchLocation: CGFloat = -1
     
-    @State private var chartOptions = "Income"
-    var options = ["Income","Expense","Net Income"]
-    @State private var durationOptions = "Income"
-    var duration = ["Daily","Weekly","Monthly","Yearly"]
-    
     var body: some View {
         VStack(alignment: .leading) {
-            HStack{
-                Text(title)
-                    .font(Font.title.weight(.semibold))
-                    .padding(.vertical)
-                    .foregroundColor(Color("AccentColor2"))
-                    .padding(.top, 4)
-                    .padding(.leading, 20)
-                
-                Picker("",selection:$chartOptions){
-                    ForEach(options, id:\.self){
-                        Text($0)
-                    }
-                }
-                .pickerStyle(SegmentedPickerStyle())
-                .frame(width: 426)
-                .padding(.leading,250)
-                
-                Picker("",selection:$durationOptions){
-                    ForEach(duration, id:\.self){
-                        Text($0)
-                    }
-                }
-                .pickerStyle(DefaultPickerStyle())
-                .frame(width: 100)
-                .padding(.leading,120)
-            }
-            
             Text("\(currentValue)")
                 .foregroundColor(Color("AccentColor2"))
                 .padding(.leading, 20)
@@ -87,7 +54,7 @@ struct HomeAnalyticsCard: View {
                             ForEach(0..<data.count, id: \.self) { i in
                                 BarChartCell(
                                     value: normalizedValue(index: i),
-                                    barColor: barColor,
+                                    barColor: setBarColor(index: i),
                                     labels: "\(horizontalLabels(index: i))",
                                     labelSize: 16)
                                     
@@ -97,40 +64,23 @@ struct HomeAnalyticsCard: View {
                                     .padding(.top)
                             }
                             .gesture(DragGesture(minimumDistance: 0)
-                                        .onChanged({
-                                            position in
-                                            let touchPosition = position.location.x/geometry.frame(in: .local).width
-                                            touchLocation = touchPosition
-                                            updateCurrentValue()
-                                        })
-                                        .onEnded({
-                                            _ in
-                                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                                                    withAnimation(Animation.easeOut(duration: 0.5)) {
-                                                        resetValues()
-                                                    }
-                                                }
-                                        })
-                         )}
+                                .onChanged({
+                                    position in
+                                    let touchPosition = position.location.x/geometry.frame(in: .local).width
+                                    touchLocation = touchPosition
+                                    updateCurrentValue()
+                                })
+                                .onEnded({
+                                    _ in
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                            withAnimation(Animation.easeOut(duration: 0.5)) {
+                                                resetValues()
+                                            }
+                                        }
+                                })
+                            )}
                          if currentLabel.isEmpty {
-//                             Text(legend)
-//                                 .bold()
-//                                 .foregroundColor(.black)
-//                                 .padding(5)
-//                                 .background(RoundedRectangle(cornerRadius: 5).foregroundColor(.white).shadow(radius: 3))
                          } else {
-//                            VStack{
-//                                Text(currentLabel)
-//                                    .bold()
-//                                    .foregroundColor(.black)
-//                                Text(currentValue)
-//                                    .bold()
-//                                    .foregroundColor(.black)
-//                            }
-//                            .background(RoundedRectangle(cornerRadius: 5).foregroundColor(.white).shadow(radius: 3))
-//                            .animation(.easeIn)
-//                            .offset(x: labelOffset(in: geometry.frame(in: .local).width))
-//                            .animation(.easeIn)
                          }
                      }
             }
@@ -186,11 +136,6 @@ struct HomeAnalyticsCard: View {
             .frame(width: 1000)
             
         }
-        .frame(width: 1000, height: 700)
-        .background(Color.white)
-        .cornerRadius(16)
-        .clipped()
-        .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.15), radius: 4, x: 2, y: 2)
     }
     
     func normalizedValue(index: Int) -> Double {
@@ -247,8 +192,15 @@ struct HomeAnalyticsCard: View {
              let position = cellWidth * CGFloat(currentIndex) - actualWidth/2
              return position
     }
+    func setBarColor(index: Int) -> Color {
+        if Double(data[index].value) < 0 {
+            return Color("colorDown")
+        }
+        else{
+            return Color("AccentColor2")
+        }
+    }
 }
-
 
 struct HomeAnalyticsCard_Previews: PreviewProvider {
     static var previews: some View {
