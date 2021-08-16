@@ -36,7 +36,7 @@ struct MainView: View {
             .frame(width: 186)
             
             // INITIAL DETAIL VIEW
-            Text("Select option from the left")
+            InitialView()
         }
         .background(Color("MainColor"))
         .frame(minWidth: 1460, minHeight: 900)

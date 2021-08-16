@@ -18,7 +18,6 @@ struct SyncDataModal: View {
     
     @StateObject var transVM = TransactionViewModel.shared
     
-    
     var body: some View {
         VStack {
             HStack {
@@ -80,7 +79,7 @@ struct SyncDataModal: View {
                 if listTransTemp.count > 0 {
                     ScrollView (showsIndicators: true) {
                         ForEach(listTransTemp) { trans in
-                            if trans.productName != nil {
+                            if (true) {
                                 HStack {
                                     HStack {
                                         if trans.tdtemp_product != nil{
@@ -104,7 +103,7 @@ struct SyncDataModal: View {
                                         .frame(width: 380, alignment: .leading)
                                     Button(action: {
                                         chooseProduct = true
-                                        print(trans.productName)
+                                        print(trans.productName ?? "not found")
                                         transPicked = trans
                                     }, label: {
                                         if trans.tdtemp_product != nil {

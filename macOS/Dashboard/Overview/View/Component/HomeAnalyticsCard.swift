@@ -202,7 +202,6 @@ struct HomeAnalyticsCard: View {
     }
 }
 
-
 struct HomeAnalyticsCard_Previews: PreviewProvider {
     static var previews: some View {
         HomeAnalyticsCard(title: "Daily Net Income", legend: "IDR", barColor: .blue, data: chartDataSet)

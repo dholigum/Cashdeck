@@ -8,14 +8,16 @@
 import SwiftUI
 
 struct CardSummary: View {
-    @State var title: String
-    @State var value: String
+    
+    var title: String
+    var value: String
+    
     var body: some View {
         VStack {
-            Text("Total Product")
+            Text(title)
                 .font(.system(size: 18))
                 .fontWeight(.semibold)
-            Text("20")
+            Text(value)
                 .font(.system(size: 36))
                 .fontWeight(.semibold)
                 .foregroundColor(Color("AccentColor2"))

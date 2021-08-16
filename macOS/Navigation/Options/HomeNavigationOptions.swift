@@ -15,7 +15,7 @@ struct HomeNavigationOptions {
         (UUID(), "Overview", "home-overview", .overview),
         (UUID(), "Analytics", "home-analytics", .analytics),
         (UUID(), "Product List", "product-list", .productList),
-        (UUID(), "Product Sold", "product-sold", .productSold),
+        (UUID(), "Best Seller", "product-sold", .productSold),
     ]
     
     @ViewBuilder

@@ -34,9 +34,3 @@ struct ExpenseList: View {
 //        .padding(.horizontal, 4)
     }
 }
-
-struct ExpenseList_Previews: PreviewProvider {
-    static var previews: some View {
-        ExpenseList()
-    }
-}

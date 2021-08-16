@@ -104,8 +104,8 @@ class ExpenseViewModel: ObservableObject {
         amount = String(expense.price)
         name = expense.name!
         quantity = String(expense.quantity)
-        categoryIndex = K().categories.firstIndex(of: expense.category!)!
-        repeatIndex = K().repeats.firstIndex(of: expense.repeatEvery!)!
+        categoryIndex = K().categories.firstIndex(of: expense.category!) ?? 0
+        repeatIndex = K().repeats.firstIndex(of: expense.repeatEvery ?? "Never")!
         isNewData.toggle()
     }
     

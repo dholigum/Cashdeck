@@ -1,4 +1,5 @@
 PODS:
+  - CodableCSV (0.6.6)
   - CoreXLSX (0.14.1):
     - XMLCoder (~> 0.11.1)
     - ZIPFoundation (~> 0.9.11)
@@ -6,19 +7,22 @@ PODS:
   - ZIPFoundation (0.9.12)
 
 DEPENDENCIES:
+  - CodableCSV (~> 0.6.6)
   - CoreXLSX (~> 0.14.0)
 
 SPEC REPOS:
   trunk:
+    - CodableCSV
     - CoreXLSX
     - XMLCoder
     - ZIPFoundation
 
 SPEC CHECKSUMS:
+  CodableCSV: 1050e7edbc866b99bc1c6856835ee7070039ef41
   CoreXLSX: f9a7a70b509150ceb675b05877b7ac041a587030
   XMLCoder: c4638336674de7ba279cd23f2005817d69f538e0
   ZIPFoundation: e27423c004a5a1410c15933407747374e7c6cb6e
 
-PODFILE CHECKSUM: bb58f7d16a1f792cc2df43e574008faed5ed1a39
+PODFILE CHECKSUM: 8d31029c732d454ae9325326cb2222ec59fa06d8
 
 COCOAPODS: 1.10.1

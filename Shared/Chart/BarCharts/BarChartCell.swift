@@ -21,8 +21,8 @@ struct BarChartCell: View {
                 .scaleEffect(CGSize(width: 1, height: barHeight(val: value)), anchor: .bottom)
             Text(labels).font(.system(size: labelSize))
         }
-        
     }
+    
     func barHeight(val: Double) -> Double {
         if val<0 {
             print("Negative")
@@ -31,6 +31,7 @@ struct BarChartCell: View {
             return val
         }
     }
+    
 }
 
 struct BarChartCell_Previews: PreviewProvider {

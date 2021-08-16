@@ -13,7 +13,7 @@ struct ProductSoldCard: View {
     var body: some View {
         VStack (spacing: 20) {
             GeometryReader { geometry in
-                Text("Product Sold")
+                Text("Best Seller")
                     .font(Font.custom("SFProDisplay-Semibold", size: 18))
                     .foregroundColor(Color("AccentColor2"))
                     .frame(width: geometry.frame(in: .local).size.width, alignment: .leading)
@@ -51,16 +51,17 @@ struct ProductSoldCard: View {
                     VStack {
                         HStack {
                             Text(data.sku)
-                                .frame(width: 100, alignment: .leading)
+                                .padding(.leading, -1)
+                                .frame(minWidth: 105, alignment: .leading)
                                     .font(Font.custom("SFProDisplay-Regular", size: 12))
                             Text("\(data.quantity)")
-                                    .frame(minWidth: 72, alignment: .leading)
+                                    .frame(minWidth: 65, alignment: .leading)
                                     .font(Font.custom("SFProDisplay-Regular", size: 12))
                             Text(data.color)
                                     .frame(minWidth: 82, alignment: .leading)
                                     .font(Font.custom("SFProDisplay-Regular", size: 14))
                             Text(data.size)
-                                    .frame(minWidth: 77, alignment: .leading)
+                                    .frame(minWidth: 65, alignment: .leading)
                                     .font(Font.custom("SFProDisplay-Regular", size: 14))
                             Text("+Rp \(data.netIncome)")
                                     .frame(minWidth: 30, alignment: .leading)
