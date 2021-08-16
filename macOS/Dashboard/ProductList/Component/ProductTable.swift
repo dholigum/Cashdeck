@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ProductTable: View {
     
-    @ObservedObject var ProductsVM: ProductViewModel = ProductViewModel()
+    @StateObject var ProductsVM = ProductViewModel()
     
     var body: some View {
         VStack {
@@ -80,14 +80,6 @@ struct ProductTable: View {
                                     .font(Font.custom("SFProDisplay-Regular", size: 14))
                                     .frame(width: 100, alignment: .leading)
                                     .padding(.init(top: 4, leading: 10, bottom: 4, trailing: 10))
-                                Button(action: {}) {
-                                    Image(systemName: "square.and.pencil")
-                                        .resizable()
-                                        .frame(width: 17, height: 17)
-                                        .foregroundColor(Color("AccentColor2"))
-                                }
-                                .buttonStyle(PlainButtonStyle())
-                                .padding(.trailing, 10)
                                 Button(action: {
                                     ProductsVM.deleteProduct(product)
                                 }) {

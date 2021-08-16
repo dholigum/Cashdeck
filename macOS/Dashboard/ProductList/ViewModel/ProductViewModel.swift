@@ -34,9 +34,11 @@ class ProductViewModel: ObservableObject {
         newProduct.costPrice = Product.costPrice
         newProduct.size = Product.size
         newProduct.color = Product.color
+        newProduct.quantity = Product.quantity
         fetchProducts()
         do {
             try self.context.save()
+            listProducts.append(newProduct)
         }
         catch {
             print(error.localizedDescription)
