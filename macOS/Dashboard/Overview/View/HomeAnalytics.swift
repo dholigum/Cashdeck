@@ -72,7 +72,7 @@ struct HomeAnalytics: View {
             }
             .frame(width: geometry.frame(in: .global).size.width, height: geometry.frame(in: .global).size.height, alignment: .leading)
             .padding(.leading, 12)
-            .onAppear() { expenseVM.getAllExpense() }
+            .onAppear() { expenseVM.getAllMonthExpense() }
         }
     }
     

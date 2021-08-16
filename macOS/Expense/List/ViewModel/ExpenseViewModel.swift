@@ -144,12 +144,45 @@ class ExpenseViewModel: ObservableObject {
             groupedExpenseByMonthLabels = monthlyExpenses.groupedByMonth().map({
                 (expense: MonthlyExpenseModel) -> String in expense.month ?? "" })
             groupedExpenseByMonthValues = monthlyExpenses.groupedByMonth().map({
-                (expense: MonthlyExpenseModel) -> Double in expense.cost ?? 0 })
+                (expense: MonthlyExpenseModel) -> Double in expense.cost })
             
             groupedExpenseByMonth = structureGrouped(values: groupedExpenseByMonthValues, labels: groupedExpenseByMonthLabels)
             
             for item in groupedExpenseByMonth {
-                print(item.label, item.value)
+                print(item.label, item.value, item.day)
+            }
+            
+        } catch let error as NSError {
+            print("\(error)")
+        }
+    }
+    
+    func getAllMonthExpense() {
+        let fetchRequest: NSFetchRequest<Expense> = Expense.fetchRequest()
+        let sortByDate = NSSortDescriptor.init(key: "date", ascending: false)
+        fetchRequest.sortDescriptors = [sortByDate]
+        
+        do {
+            expenses = try context.fetch(fetchRequest)
+            totalExpense = Int(expenses.reduce(0) { $0 + $1.price })
+            
+            for expense in expenses {
+                let newMonthlyExpense = MonthlyExpenseModel(date: expense.date ?? Date(), cost: Double(expense.price), month: K().monthName[(expense.date?.month ?? 0) - 1])
+                
+                monthlyExpenses.append(newMonthlyExpense)
+            }
+            
+            let groupedExpenseByMonthLabels: [String]
+            let groupedExpenseByMonthValues: [Double]
+            groupedExpenseByMonthLabels = monthlyExpenses.groupedByMonth().map({
+                (expense: MonthlyExpenseModel) -> String in expense.month ?? "" })
+            groupedExpenseByMonthValues = monthlyExpenses.groupedByMonth().map({
+                (expense: MonthlyExpenseModel) -> Double in expense.cost })
+            
+            groupedExpenseByMonth = structureGrouped(values: groupedExpenseByMonthValues, labels: groupedExpenseByMonthLabels)
+            
+            for item in groupedExpenseByMonth {
+                print(item.label, item.value, item.day)
             }
             
         } catch let error as NSError {

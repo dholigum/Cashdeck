@@ -45,7 +45,7 @@ class CurrencyFormattedTextFieldDelegate: NSObject, NSTextFieldDelegate {
         
         guard let integerValue = Int(rawValue) else { return true }
         
-        var numberFormatter = NumberFormatter()
+        let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .currency
         numberFormatter.currencyCode = "Rp."
         formatted = numberFormatter.string(from: NSNumber(value: integerValue)) ?? ""
@@ -54,9 +54,6 @@ class CurrencyFormattedTextFieldDelegate: NSObject, NSTextFieldDelegate {
     }
     
     func textFieldShouldClear(_ textField: NSTextField) -> Bool {
-        
-        rawValue.popLast()
-        formatted.popLast()
         
         return true
     }

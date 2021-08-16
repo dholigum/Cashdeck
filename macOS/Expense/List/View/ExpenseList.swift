@@ -30,7 +30,5 @@ struct ExpenseList: View {
             .frame(width: geometry.frame(in: .global).size.width, height: geometry.frame(in: .global).size.height, alignment: .leading)
                         .padding(.leading, 12)
         }
-//        .padding(.top, -48)
-//        .padding(.horizontal, 4)
     }
 }
