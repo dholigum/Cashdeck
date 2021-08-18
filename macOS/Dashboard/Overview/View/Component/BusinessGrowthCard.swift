@@ -25,7 +25,7 @@ struct BusinessGrowthCard: View {
                 HStack (spacing: 4) {
                     Text(businessVM.getStatusName())
                         .font(Font.custom("SFProDisplay-Regular", size: 14))
-                    Text(businessVM.getStatusPercent())
+                    Text("\(businessVM.getStatusPercent())%")
                         .font(Font.custom("SFProDisplay-Regular", size: 14))
                         .foregroundColor(Color(businessVM.getColor()))
                     Image(systemName: "chevron.up")

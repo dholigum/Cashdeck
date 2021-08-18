@@ -92,13 +92,20 @@ class BusinessUpdateViewModel {
     }
     
     func calculateTodaysNet() -> Double {
+        
         let allNetIncome = calculateFixIncomePerDay()
+        if allNetIncome.count - 2 <= 0 {
+            return allNetIncome[allNetIncome.count - 1]
+        }
         let totalNetToday = allNetIncome[allNetIncome.count - 1] - allNetIncome[allNetIncome.count - 2]
         return totalNetToday
     }
     
     func getStatusPercent() -> String {
         let allNetIncome = calculateFixIncomePerDay()
+        if allNetIncome.count - 2 <= 0 {
+            return "100"
+        }
         let percent = (calculateTodaysNet()/allNetIncome[allNetIncome.count - 2]) * 100
         return String(format: "%.2f", percent)
     }
