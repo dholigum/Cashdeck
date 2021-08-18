@@ -33,9 +33,9 @@ class ProductSoldModel {
         CoreDataManager.sharedManager.saveContext()
     }
     
-    func insertTransaction(channel: Channel, orderId: String) -> Transaction {
+    func insertTransaction(channel: Channel, orderId: String, date: Date) -> Transaction {
         let newTransaction = Transaction(context: context)
-        newTransaction.date = Date()
+        newTransaction.date = date
         newTransaction.orderId = orderId
         newTransaction.transaction_channel = channel
         CoreDataManager.sharedManager.saveContext()

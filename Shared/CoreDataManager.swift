@@ -33,11 +33,11 @@ class CoreDataManager {
             ProductSoldModel.shared.insertProduct(name: "Uniqlo X Kaws Oversize Tee", SKU: "KAWSTEEW", color: "White", size: "L", costPrice: 70000, quantity: 100)
             ProductSoldModel.shared.insertProduct(name: "Bape Oversize Tee", SKU: "BAPEBLACK", color: "Black", size: "L", costPrice: 80000, quantity: 100)
             ProductSoldModel.shared.insertProduct(name: "Bape Oversize Tee", SKU: "BAPEWHITE", color: "White", size: "L", costPrice: 80000, quantity: 100)
-            let transaction1 = ProductSoldModel.shared.insertTransaction(channel: channelTokped, orderId: "ORD001")
-            let transaction2 = ProductSoldModel.shared.insertTransaction(channel: channelTokped, orderId: "ORD002")
-            let transaction3 = ProductSoldModel.shared.insertTransaction(channel: channelTokped, orderId: "ORD003")
-            let transaction4 = ProductSoldModel.shared.insertTransaction(channel: channelTokped, orderId: "ORD004")
-            let transaction5 = ProductSoldModel.shared.insertTransaction(channel: channelTokped, orderId: "ORD005")
+            let transaction1 = ProductSoldModel.shared.insertTransaction(channel: channelTokped, orderId: "ORD001", date: Date())
+            let transaction2 = ProductSoldModel.shared.insertTransaction(channel: channelTokped, orderId: "ORD002", date: Date())
+            let transaction3 = ProductSoldModel.shared.insertTransaction(channel: channelTokped, orderId: "ORD003", date: Date().dayBefore)
+            let transaction4 = ProductSoldModel.shared.insertTransaction(channel: channelTokped, orderId: "ORD004", date: Date())
+            let transaction5 = ProductSoldModel.shared.insertTransaction(channel: channelTokped, orderId: "ORD005", date: Date())
             ProductSoldModel.shared.insertTransactionDetail(price: 200000, qty: 2, product: ProductSoldModel.shared.getProduct(sku: "STEEBLACK"), transaction: transaction1)
             ProductSoldModel.shared.insertTransactionDetail(price: 200000, qty: 1, product: ProductSoldModel.shared.getProduct(sku: "STEEWHITE"), transaction: transaction1)
             ProductSoldModel.shared.insertTransactionDetail(price: 200000, qty: 2, product: ProductSoldModel.shared.getProduct(sku: "STEEBLACK"), transaction: transaction2)
@@ -85,4 +85,14 @@ class CoreDataManager {
             fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
         }
     }
+}
+
+
+extension Date {
+    var noon: Date {
+            return Calendar.current.date(bySettingHour: 12, minute: 0, second: 0, of: self)!
+        }
+    var dayBefore: Date {
+            return Calendar.current.date(byAdding: .day, value: -1, to: noon)!
+        }
 }
