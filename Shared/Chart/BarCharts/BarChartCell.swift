@@ -13,24 +13,37 @@ struct BarChartCell: View {
     var barColor: Color
     var labels: String
     var labelSize: CGFloat
-    
+        
     var body: some View {
-        VStack(spacing: 5){
-            RoundedRectangle(cornerRadius: 5)
-                .fill(barColor)
-                .scaleEffect(CGSize(width: 1, height: barHeight(val: value)), anchor: .bottom)
+        VStack(spacing: 0){
+            if value < 0 {
+                RoundedRectangle(cornerRadius: 5)
+                    .fill(barColor)
+                    .scaleEffect(CGSize(width: 0.8, height: 0), anchor: .bottom)
+                RoundedRectangle(cornerRadius: 5)
+                    .fill(Color("colorDown"))
+                    .scaleEffect(CGSize(width: 0.8, height: barHeight(val: value)), anchor: .top)
+            } else {
+                RoundedRectangle(cornerRadius: 5)
+                    .fill(barColor)
+                    .scaleEffect(CGSize(width: 0.8, height: barHeight(val: value)), anchor: .bottom)
+                RoundedRectangle(cornerRadius: 5)
+                    .fill(Color("colorDown"))
+                    .scaleEffect(CGSize(width: 0.8, height: 0), anchor: .top)
+            }
+            
             Text(labels).font(.system(size: labelSize))
         }
     }
     
     func barHeight(val: Double) -> Double {
         if val<0 {
-            print("Negative")
             return val * -1
         } else {
             return val
         }
     }
+    
 }
 
 struct BarChartCell_Previews: PreviewProvider {
