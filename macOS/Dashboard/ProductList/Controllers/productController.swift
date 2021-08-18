@@ -35,17 +35,4 @@ extension ModalAddProduct {
             }
         }
     }
-    
-    func writeCSVTemplate() {
-        let input = [
-            ["numA", "numB", "name"        ],
-            ["1"   , "2"   , "Marcos"      ],
-            ["4"   , "5"   , "Marine-Anaïs"]
-        ]
-        let writer = try! CSVWriter(fileURL: URL(string: "file:///Users/syahrulappledeveloperbinus/Documents/Test.csv")!, append: false)
-        for row in input {
-            try! writer.write(row: row)
-        }
-        try! writer.endEncoding()
-    }
 }

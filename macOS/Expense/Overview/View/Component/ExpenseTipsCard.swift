@@ -28,10 +28,11 @@ struct ExpenseTipsCard: View {
                         HStack(alignment: .top) {
                             Circle()
                                 .frame(width: 4, height: 4)
-                                .padding(.top, 4)
+                                .padding(.top, 5)
                             Text(tips)
                                 .font(Font.custom("SFProDisplay-Reguler", size: 16))
                                 .padding(.vertical, 2)
+                                .lineSpacing(6)
                         }
                     }
                 }

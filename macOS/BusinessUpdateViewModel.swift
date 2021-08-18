@@ -50,7 +50,11 @@ class BusinessUpdateViewModel {
     
     func detailThisMonth() -> [TransactionDetail] {
         let lastMonth = Calendar.current.date(byAdding: .month, value: -1, to: Date())
-        let details = businessUpdateModel.getDetail().filter{ ($0.td_transaction?.date!)! >= lastMonth! }
+        
+        let details = businessUpdateModel.getDetail().filter{
+            guard let trans = $0.td_transaction, let date = trans.date, let lastMonth = lastMonth else { return false}
+            return date >= lastMonth
+        }
         return details
     }
     
@@ -81,6 +85,30 @@ class BusinessUpdateViewModel {
             fixIncome.append(TransModel(netIncome: income, month: convertDateToMonth(date: data)))
         }
         return calculateTotalIncomePerDay(income: fixIncome)
+    }
+    
+    func getTodaysNetIncome() -> String {
+        return String(calculateTodaysNet()).currencyFormatting()
+    }
+    
+    func calculateTodaysNet() -> Double {
+        let allNetIncome = calculateFixIncomePerDay()
+        let totalNetToday = allNetIncome[allNetIncome.count - 1] - allNetIncome[allNetIncome.count - 2]
+        return totalNetToday
+    }
+    
+    func getStatusPercent() -> String {
+        let allNetIncome = calculateFixIncomePerDay()
+        let percent = (calculateTodaysNet()/allNetIncome[allNetIncome.count - 2]) * 100
+        return String(format: "%.2f", percent)
+    }
+    
+    func getStatusName() -> String {
+        return calculateTodaysNet() <= 0 ? "Decrease" : "Increase"
+    }
+    
+    func getColor() -> String {
+        return calculateTodaysNet() <= 0 ? "colorDown" : "colorUp"
     }
     
     func calculateTotalIncomePerDay(income: [TransModel]) -> [Double] {
