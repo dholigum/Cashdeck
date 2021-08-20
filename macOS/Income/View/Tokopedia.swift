@@ -46,7 +46,7 @@ struct Tokopedia: View {
                 Spacer()
             }
             HStack {
-                primaryBtn(imageName: "dollarsign.circle.fill", title: "Edit Fee", width: 120)
+                primaryBtn(imageName: "centsign.circle", title: "Edit Fee", width: 120)
                     .onTapGesture {
                         showModalFee.toggle()
                     }
@@ -70,11 +70,10 @@ struct Tokopedia: View {
                         })
                 }
                 Spacer()
-            } .padding(.top, 30)
+            } .padding(.top, 10)
             HStack {
                 transactionsTable(date: Date(), transVM: transVM)
             }
-            .padding(.top, 20)
             Spacer()
         }
         .frame(minWidth: window!.width / 1.8)
