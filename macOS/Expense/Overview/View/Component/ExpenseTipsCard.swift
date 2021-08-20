@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ExpenseTipsCard: View {
     
-    @StateObject var overviewExpenseVM = OverviewExpenseViewModel()
+    @StateObject var overviewExpenseVM: OverviewExpenseViewModel
     
     var body: some View {
         HStack {
@@ -28,10 +28,11 @@ struct ExpenseTipsCard: View {
                         HStack(alignment: .top) {
                             Circle()
                                 .frame(width: 4, height: 4)
-                                .padding(.top, 4)
+                                .padding(.top, 5)
                             Text(tips)
                                 .font(Font.custom("SFProDisplay-Reguler", size: 16))
                                 .padding(.vertical, 2)
+                                .lineSpacing(6)
                         }
                     }
                 }
@@ -47,11 +48,5 @@ struct ExpenseTipsCard: View {
         .cornerRadius(16)
         .clipped()
         .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.15), radius: 4, x: 2, y: 2)
-    }
-}
-
-struct ExpenseTipsCard_Previews: PreviewProvider {
-    static var previews: some View {
-        ExpenseTipsCard()
     }
 }

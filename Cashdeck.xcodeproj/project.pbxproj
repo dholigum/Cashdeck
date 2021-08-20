@@ -25,6 +25,8 @@
 		2F2B3B1826C4DFCD006FF7F2 /* ProductList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2B3B0A26C4DFCD006FF7F2 /* ProductList.swift */; };
 		2F2B3B1926C4DFCD006FF7F2 /* productController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2B3B0C26C4DFCD006FF7F2 /* productController.swift */; };
 		2F2B3B1A26C4DFCD006FF7F2 /* productController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2B3B0C26C4DFCD006FF7F2 /* productController.swift */; };
+		2F39D68726CF57230085C96E /* TableHeaderComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F39D68626CF57230085C96E /* TableHeaderComponent.swift */; };
+		2F39D68826CF57230085C96E /* TableHeaderComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F39D68626CF57230085C96E /* TableHeaderComponent.swift */; };
 		2F4066AC26BBCD1000F9B456 /* SamplePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4066AB26BBCD1000F9B456 /* SamplePage.swift */; };
 		2F4066AD26BBCD1000F9B456 /* SamplePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4066AB26BBCD1000F9B456 /* SamplePage.swift */; };
 		2F52F2EC26B7950D0046A1AA /* CashdeckData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2F52F2EA26B7950D0046A1AA /* CashdeckData.xcdatamodeld */; };
@@ -121,8 +123,8 @@
 		2FC7541926C6BBFC00036064 /* TransactionByMonthCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC7541726C6BBFC00036064 /* TransactionByMonthCalendar.swift */; };
 		2FC7541C26C7846C00036064 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC7541B26C7846C00036064 /* DateExtension.swift */; };
 		2FC7541D26C7846C00036064 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC7541B26C7846C00036064 /* DateExtension.swift */; };
-		2FF3829826CA043F00C54666 /* ExpenseChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF3829726CA043F00C54666 /* ExpenseChartData.swift */; };
-		2FF3829926CA043F00C54666 /* ExpenseChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF3829726CA043F00C54666 /* ExpenseChartData.swift */; };
+		2FF3829B26CA206300C54666 /* MonthlyExpenseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF3829A26CA206300C54666 /* MonthlyExpenseModel.swift */; };
+		2FF3829C26CA206300C54666 /* MonthlyExpenseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF3829A26CA206300C54666 /* MonthlyExpenseModel.swift */; };
 		2FF3EE8326BB9CDB001AFAC7 /* CurrencyFormattedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF3EE8226BB9CDB001AFAC7 /* CurrencyFormattedTextField.swift */; };
 		2FF3EE8426BB9CDB001AFAC7 /* CurrencyFormattedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF3EE8226BB9CDB001AFAC7 /* CurrencyFormattedTextField.swift */; };
 		3E1C911C6AE4A4DB272D605F /* Pods_Cashdeck__iOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C335E609120D79D88B31498D /* Pods_Cashdeck__iOS_.framework */; };
@@ -240,6 +242,7 @@
 		2F2B3B0826C4DFCD006FF7F2 /* ProductModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
 		2F2B3B0A26C4DFCD006FF7F2 /* ProductList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductList.swift; sourceTree = "<group>"; };
 		2F2B3B0C26C4DFCD006FF7F2 /* productController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = productController.swift; sourceTree = "<group>"; };
+		2F39D68626CF57230085C96E /* TableHeaderComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHeaderComponent.swift; sourceTree = "<group>"; };
 		2F4066AB26BBCD1000F9B456 /* SamplePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplePage.swift; sourceTree = "<group>"; };
 		2F52F2EB26B7950D0046A1AA /* CashdeckData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CashdeckData.xcdatamodel; sourceTree = "<group>"; };
 		2F52F2F726B7A4910046A1AA /* ExpenseOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseOverview.swift; sourceTree = "<group>"; };
@@ -298,7 +301,7 @@
 		2FC7540926C5861B00036064 /* InitialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialView.swift; sourceTree = "<group>"; };
 		2FC7541726C6BBFC00036064 /* TransactionByMonthCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionByMonthCalendar.swift; sourceTree = "<group>"; };
 		2FC7541B26C7846C00036064 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
-		2FF3829726CA043F00C54666 /* ExpenseChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseChartData.swift; sourceTree = "<group>"; };
+		2FF3829A26CA206300C54666 /* MonthlyExpenseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyExpenseModel.swift; sourceTree = "<group>"; };
 		2FF3EE8226BB9CDB001AFAC7 /* CurrencyFormattedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormattedTextField.swift; sourceTree = "<group>"; };
 		3AD247E402BE1F80A3C3B01C /* Pods-Cashdeck (macOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cashdeck (macOS).debug.xcconfig"; path = "Target Support Files/Pods-Cashdeck (macOS)/Pods-Cashdeck (macOS).debug.xcconfig"; sourceTree = "<group>"; };
 		3F360569D5ED17213BB12E8E /* Pods-Cashdeck (iOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cashdeck (iOS).debug.xcconfig"; path = "Target Support Files/Pods-Cashdeck (iOS)/Pods-Cashdeck (iOS).debug.xcconfig"; sourceTree = "<group>"; };
@@ -755,6 +758,7 @@
 			isa = PBXGroup;
 			children = (
 				2F57B83A26BD7B7900472B74 /* SimpleExpense.swift */,
+				2FF3829A26CA206300C54666 /* MonthlyExpenseModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -807,6 +811,7 @@
 				2FB41BC326B8F1F60035B62B /* CashInformationCard.swift */,
 				2FB41BC626B8F2130035B62B /* ProductInformationCard.swift */,
 				2FB41BC926B8F2200035B62B /* ActionButtonCard.swift */,
+				2F39D68626CF57230085C96E /* TableHeaderComponent.swift */,
 			);
 			path = SharedComponent;
 			sourceTree = "<group>";
@@ -863,7 +868,6 @@
 				51E27EB226BB9838009D0CB6 /* BarChartCell.swift */,
 				51E27EB426BB9838009D0CB6 /* BarView.swift */,
 				51E27EB326BB9838009D0CB6 /* ChartData.swift */,
-				2FF3829726CA043F00C54666 /* ExpenseChartData.swift */,
 			);
 			path = BarCharts;
 			sourceTree = "<group>";
@@ -1254,7 +1258,6 @@
 				2F52F32F26B82FDD0046A1AA /* RecentExpenseOverviewCard.swift in Sources */,
 				2F52F30B26B7CC780046A1AA /* HomeOverview.swift in Sources */,
 				2F832EF726B271EA00426643 /* MainView.swift in Sources */,
-				2FF3829826CA043F00C54666 /* ExpenseChartData.swift in Sources */,
 				F7FC2E8926BFBBF300AD3ACB /* LineView.swift in Sources */,
 				51E27EBC26BCCDC8009D0CB6 /* BusinessGrowthCard.swift in Sources */,
 				F7FC2E8D26BFBBF300AD3ACB /* Legend.swift in Sources */,
@@ -1262,6 +1265,7 @@
 				2F832F1026B3E70500426643 /* ExpenseNavigationOptions.swift in Sources */,
 				2F832F0026B31A6800426643 /* CardMenuButton.swift in Sources */,
 				F73F69C426B99F0C00CD9642 /* TotalSold.swift in Sources */,
+				2F39D68726CF57230085C96E /* TableHeaderComponent.swift in Sources */,
 				2F52F31426B7CCD30046A1AA /* PieSliceView.swift in Sources */,
 				51E27EBE26BCCDDF009D0CB6 /* BusinessUpdateCard.swift in Sources */,
 				51F8CDB826C0BCFC00DC017D /* HomeAnalytics.swift in Sources */,
@@ -1288,6 +1292,7 @@
 				2F52F32726B81ECD0046A1AA /* PieChartLegend.swift in Sources */,
 				2F57B85526BDCEE500472B74 /* Constant.swift in Sources */,
 				2F2B3B1126C4DFCD006FF7F2 /* ProductTable.swift in Sources */,
+				2FF3829B26CA206300C54666 /* MonthlyExpenseModel.swift in Sources */,
 				2F2B3B0F26C4DFCD006FF7F2 /* ModalAddProduct.swift in Sources */,
 				F73F69AC26B8E90800CD9642 /* CoreDataManager.swift in Sources */,
 				F7AA51E126BA4E8200BE00B6 /* ProductSoldModel.swift in Sources */,
@@ -1347,6 +1352,7 @@
 				F73F69C226B99B8800CD9642 /* TotalNetIncome.swift in Sources */,
 				2F2B3B1A26C4DFCD006FF7F2 /* productController.swift in Sources */,
 				F302B03A26BBA9CD00B3B83A /* EditFeeModal.swift in Sources */,
+				2F39D68826CF57230085C96E /* TableHeaderComponent.swift in Sources */,
 				F7FC2E8E26BFBBF300AD3ACB /* Legend.swift in Sources */,
 				2F52F33026B82FDD0046A1AA /* RecentExpenseOverviewCard.swift in Sources */,
 				51E27EBA26BB984B009D0CB6 /* ChartData.swift in Sources */,
@@ -1358,6 +1364,7 @@
 				2F57B86426BEAE2E00472B74 /* PieChartComplexLegend.swift in Sources */,
 				2F52F32126B7EB940046A1AA /* NetIncomeCard.swift in Sources */,
 				2F57B84126BD82E100472B74 /* GroupingData.swift in Sources */,
+				2FF3829C26CA206300C54666 /* MonthlyExpenseModel.swift in Sources */,
 				2F2B3B1226C4DFCD006FF7F2 /* ProductTable.swift in Sources */,
 				F7FC2E8426BFBBF300AD3ACB /* Path+QuadCurve.swift in Sources */,
 				84ACCDC626C6D1C4009938D8 /* tokopediaViewModel.swift in Sources */,
@@ -1390,7 +1397,6 @@
 				2F57B84B26BDC17A00472B74 /* MonthlyExpenseChart.swift in Sources */,
 				F7FC2E2A26BE733700AD3ACB /* ProductSold.swift in Sources */,
 				2F52F32226B7EB970046A1AA /* MonthlyExpenseCard.swift in Sources */,
-				2FF3829926CA043F00C54666 /* ExpenseChartData.swift in Sources */,
 				2F57B83626BD553700472B74 /* ExpenseViewModel.swift in Sources */,
 				F7761FD826BD85CC00324C2E /* FeeModel.swift in Sources */,
 				2F57B83C26BD7B7900472B74 /* SimpleExpense.swift in Sources */,
@@ -1582,7 +1588,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.team-kon10.Cashdeck";
+				PRODUCT_BUNDLE_IDENTIFIER = com.teamkon10.Cashdeck;
 				PRODUCT_NAME = Cashdeck;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
@@ -1605,7 +1611,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.team-kon10.Cashdeck";
+				PRODUCT_BUNDLE_IDENTIFIER = com.teamkon10.Cashdeck;
 				PRODUCT_NAME = Cashdeck;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
@@ -1632,7 +1638,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.team-kon10.Cashdeck";
+				PRODUCT_BUNDLE_IDENTIFIER = com.teamkon10.Cashdeck;
 				PRODUCT_NAME = Cashdeck;
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
@@ -1657,7 +1663,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.team-kon10.Cashdeck";
+				PRODUCT_BUNDLE_IDENTIFIER = com.teamkon10.Cashdeck;
 				PRODUCT_NAME = Cashdeck;
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;

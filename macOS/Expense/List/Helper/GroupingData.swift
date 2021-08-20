@@ -21,3 +21,18 @@ extension Array where Element: SimpleExpense {
         return items.map{$0.1}.sorted{$0.cost > $1.cost}
     }
 }
+
+extension Array where Element: MonthlyExpenseModel {
+    
+    func groupedByMonth() -> [MonthlyExpenseModel] {
+        
+        var items = [String: MonthlyExpenseModel]()
+        
+        for i in self {
+            if let month = i.month, let date = i.date {
+                items[month] = (items[month] ?? MonthlyExpenseModel(date: date, cost: 0, month: month)) + i
+            }
+        }
+        return items.map{$0.1}.sorted{$0.cost > $1.cost}
+    }
+}

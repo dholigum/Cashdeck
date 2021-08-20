@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RecentExpenseOverviewCard: View {
     
-    @StateObject var expenseVM = ExpenseViewModel()
+    @StateObject var expenseVM: ExpenseViewModel
     
     var body: some View {
         VStack(alignment: .leading) {

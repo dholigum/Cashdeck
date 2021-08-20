@@ -31,7 +31,6 @@ struct MainView: View {
                     .onAppear() { selectedTabButton = "Expense" }) {
                         SideBarButton(iconImg: "dollarsign.circle", title: "Expense", selectedTabButton: $selectedTabButton) }
             }
-            .listStyle(SidebarListStyle())
             .background(Color("AccentColor"))
             .frame(width: 186)
             

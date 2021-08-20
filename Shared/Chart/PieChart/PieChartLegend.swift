@@ -17,7 +17,7 @@ struct PieChartLegend: View {
         return self.values.map { String(format: "%.2f%%", $0 * 100 / values.reduce(0, +)) }
     }
     
-    public init(values: [Double], names: [String], colors: [Color] = [Color.blue, Color.green, Color.orange, Color.purple, Color.gray, Color.yellow, Color.red, Color.blue, Color.green, Color.orange, Color.purple, Color.gray, Color.yellow, Color.red]){
+    public init(values: [Double], names: [String], colors: [Color] = K().pieChartColor){
         
         self.values = values
         self.names = names
@@ -28,17 +28,19 @@ struct PieChartLegend: View {
         if values.count != 0 {
             VStack(alignment: .leading) {
                 ForEach(0..<self.values.count){ i in
-                    HStack {
-                        Circle()
-                            .foregroundColor(self.colors[i])
-                            .frame(width: 16, height: 16)
-                            .padding(3)
-                        Text(self.percents[i])
-                            .font(Font.custom("SFProDisplay-Semibold", size: 16))
-                        Text(self.names[i])
-                            .font(Font.custom("SFProDisplay-Regular", size: 16))
+                    if self.percents[i] != "0.00%" {
+                        HStack {
+                            Circle()
+                                .foregroundColor(self.colors[i])
+                                .frame(width: 16, height: 16)
+                                .padding(3)
+                            Text(self.percents[i])
+                                .font(Font.custom("SFProDisplay-Semibold", size: 16))
+                            Text(self.names[i])
+                                .font(Font.custom("SFProDisplay-Regular", size: 16))
+                        }
+                        .padding(.vertical, 4)
                     }
-                    .padding(.vertical, 4)
                 }
             }
         } else {
