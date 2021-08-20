@@ -32,11 +32,7 @@ struct RecentExpenseTableCard: View {
             }
             .padding(.trailing, 16)
             
-            
             ExpenseTableHeader()
-            CustomDivider(width: 920)
-                .padding(EdgeInsets(top: -8, leading: 22, bottom: 0, trailing: 0))
-            
             
             ScrollView(.vertical, showsIndicators: true, content: {
                 LazyVStack {

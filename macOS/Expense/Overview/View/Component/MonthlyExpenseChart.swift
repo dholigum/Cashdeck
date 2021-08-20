@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MonthlyExpenseChart: View {
     
-    @StateObject var overviewExpenseVM = OverviewExpenseViewModel()
+    @StateObject var overviewExpenseVM:  OverviewExpenseViewModel
     
     var body: some View {
         VStack(alignment: .center) {
@@ -62,11 +62,5 @@ struct MonthlyExpenseChart: View {
             overviewExpenseVM.showPieChart.toggle()
             overviewExpenseVM.showPieChartLegend.toggle()
         }
-    }
-}
-
-struct MonthlyExpenseChart_Previews: PreviewProvider {
-    static var previews: some View {
-        MonthlyExpenseChart()
     }
 }
