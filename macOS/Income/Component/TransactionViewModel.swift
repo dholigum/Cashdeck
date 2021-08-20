@@ -21,6 +21,10 @@ class TransactionViewModel: ObservableObject {
     }
     
     func fetchData() {
+        let filteredListTrans = ProductSoldModel.shared.getAllDetail().filter() { $0.td_transaction?.date?.year == (yearIndex + 2000) && $0.td_transaction?.date?.month == (monthIndex + 1)}
+        let sortedListTrans = filteredListTrans.sorted(by: {
+            $0.td_transaction?.date?.compare(($1.td_transaction?.date)!) == .orderedDescending })
+        self.listTrans = sortedListTrans
         do {
             
             let filteredListTrans = ProductSoldModel.shared.getAllDetail().filter() { $0.td_transaction?.date?.year == (yearIndex + 2000) && $0.td_transaction?.date?.month == (monthIndex + 1)}

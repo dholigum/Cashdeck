@@ -13,7 +13,7 @@ class FeeViewModel: ObservableObject {
     @Published var productFee: String = ""
     @Published var shippingFee: String = ""
     @Published var maxShippingFee: String = ""
-    
+    @StateObject var transVM = TransactionViewModel.shared
     init() {
         let channel =  FeeModel.shared.getChannel(name: "Tokopedia")
         productFee = String(channel.productFee)
@@ -24,6 +24,7 @@ class FeeViewModel: ObservableObject {
     func editFee() {
         let channel = FeeModel.shared.getChannel(name: "Tokopedia")
         FeeModel.shared.editFee(choosedChannel: channel, productFee: Double(productFee)!, shippingFee: Double(shippingFee)!, maxShippingFee: Int64(maxShippingFee)!)
+        transVM.fetchData()
     }
     
 }

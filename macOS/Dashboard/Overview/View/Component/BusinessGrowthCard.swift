@@ -19,17 +19,17 @@ struct BusinessGrowthCard: View {
             VStack (alignment: .trailing, spacing: 6) {
                 Text("Daily Update")
                     .font(Font.custom("SFProDisplay-Semibold", size: 11))
-                Text("+Rp. 20.000")
+                Text(businessVM.getTodaysNetIncome())
                     .font(Font.custom("SFProDisplay-Semibold", size: 24))
                     .foregroundColor(Color("AccentColor3"))
                 HStack (spacing: 4) {
-                    Text("Increase")
+                    Text(businessVM.getStatusName())
                         .font(Font.custom("SFProDisplay-Regular", size: 14))
-                    Text("10%")
+                    Text("\(businessVM.getStatusPercent())%")
                         .font(Font.custom("SFProDisplay-Regular", size: 14))
-                        .foregroundColor(Color("colorUp"))
+                        .foregroundColor(Color(businessVM.getColor()))
                     Image(systemName: "chevron.up")
-                        .foregroundColor(Color("colorUp"))
+                        .foregroundColor(Color(businessVM.getColor()))
                 }
                 .padding(.top, 8)
             }

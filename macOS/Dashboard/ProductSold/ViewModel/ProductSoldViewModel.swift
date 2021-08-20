@@ -14,10 +14,11 @@ class ProductSoldViewModel {
         let products = ProductSoldModel.shared.getAllProduct()
         for product in products {
             var newProductSold = ProductSold()
-            newProductSold.sku = product.sku!
-            newProductSold.name = product.name!
-            newProductSold.color = product.color!
-            newProductSold.size = product.size!
+            guard let sku = product.sku, let name = product.name, let color = product.color, let size = product.size else { continue }
+            newProductSold.sku = sku
+            newProductSold.name = name
+            newProductSold.color = color
+            newProductSold.size = size
             if calculateQty(product: product) == 0 { continue }
             newProductSold.quantity = calculateQty(product: product)
             newProductSold.netIncome = getNetIncome(product: product)

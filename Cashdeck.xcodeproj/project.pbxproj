@@ -121,8 +121,6 @@
 		2FC7541926C6BBFC00036064 /* TransactionByMonthCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC7541726C6BBFC00036064 /* TransactionByMonthCalendar.swift */; };
 		2FC7541C26C7846C00036064 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC7541B26C7846C00036064 /* DateExtension.swift */; };
 		2FC7541D26C7846C00036064 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC7541B26C7846C00036064 /* DateExtension.swift */; };
-		2FF3829826CA043F00C54666 /* ExpenseChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF3829726CA043F00C54666 /* ExpenseChartData.swift */; };
-		2FF3829926CA043F00C54666 /* ExpenseChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF3829726CA043F00C54666 /* ExpenseChartData.swift */; };
 		2FF3829B26CA206300C54666 /* MonthlyExpenseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF3829A26CA206300C54666 /* MonthlyExpenseModel.swift */; };
 		2FF3829C26CA206300C54666 /* MonthlyExpenseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF3829A26CA206300C54666 /* MonthlyExpenseModel.swift */; };
 		2FF3EE8326BB9CDB001AFAC7 /* CurrencyFormattedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF3EE8226BB9CDB001AFAC7 /* CurrencyFormattedTextField.swift */; };
@@ -300,7 +298,6 @@
 		2FC7540926C5861B00036064 /* InitialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialView.swift; sourceTree = "<group>"; };
 		2FC7541726C6BBFC00036064 /* TransactionByMonthCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionByMonthCalendar.swift; sourceTree = "<group>"; };
 		2FC7541B26C7846C00036064 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
-		2FF3829726CA043F00C54666 /* ExpenseChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseChartData.swift; sourceTree = "<group>"; };
 		2FF3829A26CA206300C54666 /* MonthlyExpenseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyExpenseModel.swift; sourceTree = "<group>"; };
 		2FF3EE8226BB9CDB001AFAC7 /* CurrencyFormattedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormattedTextField.swift; sourceTree = "<group>"; };
 		3AD247E402BE1F80A3C3B01C /* Pods-Cashdeck (macOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cashdeck (macOS).debug.xcconfig"; path = "Target Support Files/Pods-Cashdeck (macOS)/Pods-Cashdeck (macOS).debug.xcconfig"; sourceTree = "<group>"; };
@@ -867,7 +864,6 @@
 				51E27EB226BB9838009D0CB6 /* BarChartCell.swift */,
 				51E27EB426BB9838009D0CB6 /* BarView.swift */,
 				51E27EB326BB9838009D0CB6 /* ChartData.swift */,
-				2FF3829726CA043F00C54666 /* ExpenseChartData.swift */,
 			);
 			path = BarCharts;
 			sourceTree = "<group>";
@@ -1258,7 +1254,6 @@
 				2F52F32F26B82FDD0046A1AA /* RecentExpenseOverviewCard.swift in Sources */,
 				2F52F30B26B7CC780046A1AA /* HomeOverview.swift in Sources */,
 				2F832EF726B271EA00426643 /* MainView.swift in Sources */,
-				2FF3829826CA043F00C54666 /* ExpenseChartData.swift in Sources */,
 				F7FC2E8926BFBBF300AD3ACB /* LineView.swift in Sources */,
 				51E27EBC26BCCDC8009D0CB6 /* BusinessGrowthCard.swift in Sources */,
 				F7FC2E8D26BFBBF300AD3ACB /* Legend.swift in Sources */,
@@ -1396,7 +1391,6 @@
 				2F57B84B26BDC17A00472B74 /* MonthlyExpenseChart.swift in Sources */,
 				F7FC2E2A26BE733700AD3ACB /* ProductSold.swift in Sources */,
 				2F52F32226B7EB970046A1AA /* MonthlyExpenseCard.swift in Sources */,
-				2FF3829926CA043F00C54666 /* ExpenseChartData.swift in Sources */,
 				2F57B83626BD553700472B74 /* ExpenseViewModel.swift in Sources */,
 				F7761FD826BD85CC00324C2E /* FeeModel.swift in Sources */,
 				2F57B83C26BD7B7900472B74 /* SimpleExpense.swift in Sources */,
@@ -1580,7 +1574,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UFNNYX499Q;
+				DEVELOPMENT_TEAM = PKF8ACHM24;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1603,7 +1597,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UFNNYX499Q;
+				DEVELOPMENT_TEAM = PKF8ACHM24;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1629,7 +1623,7 @@
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = UFNNYX499Q;
+				DEVELOPMENT_TEAM = PKF8ACHM24;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = macOS/Info.plist;
@@ -1654,7 +1648,7 @@
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = UFNNYX499Q;
+				DEVELOPMENT_TEAM = PKF8ACHM24;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = macOS/Info.plist;
