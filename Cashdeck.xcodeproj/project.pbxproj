@@ -25,6 +25,8 @@
 		2F2B3B1826C4DFCD006FF7F2 /* ProductList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2B3B0A26C4DFCD006FF7F2 /* ProductList.swift */; };
 		2F2B3B1926C4DFCD006FF7F2 /* productController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2B3B0C26C4DFCD006FF7F2 /* productController.swift */; };
 		2F2B3B1A26C4DFCD006FF7F2 /* productController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2B3B0C26C4DFCD006FF7F2 /* productController.swift */; };
+		2F39D68726CF57230085C96E /* TableHeaderComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F39D68626CF57230085C96E /* TableHeaderComponent.swift */; };
+		2F39D68826CF57230085C96E /* TableHeaderComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F39D68626CF57230085C96E /* TableHeaderComponent.swift */; };
 		2F4066AC26BBCD1000F9B456 /* SamplePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4066AB26BBCD1000F9B456 /* SamplePage.swift */; };
 		2F4066AD26BBCD1000F9B456 /* SamplePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4066AB26BBCD1000F9B456 /* SamplePage.swift */; };
 		2F52F2EC26B7950D0046A1AA /* CashdeckData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2F52F2EA26B7950D0046A1AA /* CashdeckData.xcdatamodeld */; };
@@ -240,6 +242,7 @@
 		2F2B3B0826C4DFCD006FF7F2 /* ProductModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
 		2F2B3B0A26C4DFCD006FF7F2 /* ProductList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductList.swift; sourceTree = "<group>"; };
 		2F2B3B0C26C4DFCD006FF7F2 /* productController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = productController.swift; sourceTree = "<group>"; };
+		2F39D68626CF57230085C96E /* TableHeaderComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHeaderComponent.swift; sourceTree = "<group>"; };
 		2F4066AB26BBCD1000F9B456 /* SamplePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplePage.swift; sourceTree = "<group>"; };
 		2F52F2EB26B7950D0046A1AA /* CashdeckData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CashdeckData.xcdatamodel; sourceTree = "<group>"; };
 		2F52F2F726B7A4910046A1AA /* ExpenseOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseOverview.swift; sourceTree = "<group>"; };
@@ -808,6 +811,7 @@
 				2FB41BC326B8F1F60035B62B /* CashInformationCard.swift */,
 				2FB41BC626B8F2130035B62B /* ProductInformationCard.swift */,
 				2FB41BC926B8F2200035B62B /* ActionButtonCard.swift */,
+				2F39D68626CF57230085C96E /* TableHeaderComponent.swift */,
 			);
 			path = SharedComponent;
 			sourceTree = "<group>";
@@ -1261,6 +1265,7 @@
 				2F832F1026B3E70500426643 /* ExpenseNavigationOptions.swift in Sources */,
 				2F832F0026B31A6800426643 /* CardMenuButton.swift in Sources */,
 				F73F69C426B99F0C00CD9642 /* TotalSold.swift in Sources */,
+				2F39D68726CF57230085C96E /* TableHeaderComponent.swift in Sources */,
 				2F52F31426B7CCD30046A1AA /* PieSliceView.swift in Sources */,
 				51E27EBE26BCCDDF009D0CB6 /* BusinessUpdateCard.swift in Sources */,
 				51F8CDB826C0BCFC00DC017D /* HomeAnalytics.swift in Sources */,
@@ -1347,6 +1352,7 @@
 				F73F69C226B99B8800CD9642 /* TotalNetIncome.swift in Sources */,
 				2F2B3B1A26C4DFCD006FF7F2 /* productController.swift in Sources */,
 				F302B03A26BBA9CD00B3B83A /* EditFeeModal.swift in Sources */,
+				2F39D68826CF57230085C96E /* TableHeaderComponent.swift in Sources */,
 				F7FC2E8E26BFBBF300AD3ACB /* Legend.swift in Sources */,
 				2F52F33026B82FDD0046A1AA /* RecentExpenseOverviewCard.swift in Sources */,
 				51E27EBA26BB984B009D0CB6 /* ChartData.swift in Sources */,
@@ -1574,7 +1580,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PKF8ACHM24;
+				DEVELOPMENT_TEAM = UFNNYX499Q;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1597,7 +1603,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PKF8ACHM24;
+				DEVELOPMENT_TEAM = UFNNYX499Q;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1623,7 +1629,7 @@
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = PKF8ACHM24;
+				DEVELOPMENT_TEAM = UFNNYX499Q;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = macOS/Info.plist;
@@ -1648,7 +1654,7 @@
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = PKF8ACHM24;
+				DEVELOPMENT_TEAM = UFNNYX499Q;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = macOS/Info.plist;

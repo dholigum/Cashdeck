@@ -17,7 +17,7 @@ struct PieChartLegend: View {
         return self.values.map { String(format: "%.2f%%", $0 * 100 / values.reduce(0, +)) }
     }
     
-    public init(values: [Double], names: [String], colors: [Color] = [Color.blue, Color.green, Color.orange, Color.purple, Color.gray, Color.yellow, Color.red, Color.blue, Color.green, Color.orange, Color.purple, Color.gray, Color.yellow, Color.red]){
+    public init(values: [Double], names: [String], colors: [Color] = K().pieChartColor){
         
         self.values = values
         self.names = names
