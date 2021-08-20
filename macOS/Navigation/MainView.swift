@@ -10,34 +10,40 @@ import SwiftUI
 struct MainView: View {
     
     @State var selectedTabButton: String = ""
+    @State private var mainOption: MainNavigationOptions.Option = (id:UUID(), "Home", "home", .home)
+    @State private var showDetail: Bool = false
     
     var body: some View {
         NavigationView {
-            List {
-                Text("CashDeck")
-                    .font(Font.custom("SFProDisplay-Bold", size: 24))
-                    .padding(.vertical)
-                    .foregroundColor(Color("AccentColor2"))
-                
-                NavigationLink(destination: MiddleBarMenu(seletedBar: "Home")
-                    .onAppear() { selectedTabButton = "Home" }) {
-                        SideBarButton(iconImg: "house", title: "Home", selectedTabButton: $selectedTabButton) }
-                
-                NavigationLink(destination: MiddleBarMenu(seletedBar: "Income")
-                    .onAppear() { selectedTabButton = "Income" }) {
-                        SideBarButton(iconImg: "scroll", title: "Income", selectedTabButton: $selectedTabButton) }
-                
-                NavigationLink(destination: MiddleBarMenu(seletedBar: "Expense")
-                    .onAppear() { selectedTabButton = "Expense" }) {
-                        SideBarButton(iconImg: "dollarsign.circle", title: "Expense", selectedTabButton: $selectedTabButton) }
+            ScrollView {
+                VStack (alignment:.leading) {
+                    Text("CashDeck")
+                        .font(Font.custom("SFProDisplay-Bold", size: 24))
+                        .padding(.leading)
+                        .padding(.vertical)
+                        .foregroundColor(Color("AccentColor2"))
+                    
+                    ForEach(MainNavigationOptions.options, id: \.id) { option in
+                        SideBarButton(iconImg: option.image, title: option.value, selectedTabButton: $selectedTabButton)
+                            .onTapGesture {
+                                selectedTabButton = option.value
+                                mainOption = option
+                                showDetail = true
+                            }
+                            .buttonStyle(PlainButtonStyle())
+                    }
+                    Spacer()
+                    NavigationLink("", destination: MainNavigationOptions.buildView(for: mainOption), isActive: $showDetail)
+                        .opacity(0)
+                }
             }
-            .background(Color("AccentColor"))
             .frame(width: 186)
+            .padding(.all, 10)
+            .background(Color("AccentColor"))
             
             // INITIAL DETAIL VIEW
             InitialView()
         }
-        .background(Color("MainColor"))
         .frame(minWidth: 1460, minHeight: 900)
     }
 }
