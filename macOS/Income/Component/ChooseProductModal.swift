@@ -45,13 +45,6 @@ struct ChooseProductModal: View {
                 Spacer()
                 
                 Text("\t\t\t")
-//                Button(action: {
-//                }, label: {
-//                    Text("Save")
-//                        .font(Font.custom("SFProDisplay-Semibold", size: 16))
-//                })
-//                .buttonStyle(PlainButtonStyle())
-//                .padding(.horizontal)
                 
             } // Sheet Header
             .frame(height: 50)
@@ -109,11 +102,3 @@ struct ChooseProductModal: View {
         .background(Color("MainColor"))
     }
 }
-
-
-
-//struct ChooseProductModal_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ChooseProductModal(chooseProductt: .constant(true), transDetaill: TransactionDetailTemp)
-//    }
-//}
