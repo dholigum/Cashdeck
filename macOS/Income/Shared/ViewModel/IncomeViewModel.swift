@@ -9,7 +9,7 @@ import Foundation
 
 import SwiftUI
 
-class tokopediaViewModel {
+class IncomeViewModel {
     
     let context = CoreDataManager.sharedManager.persistentContainer.viewContext
     

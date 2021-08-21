@@ -14,6 +14,7 @@ class FeeViewModel: ObservableObject {
     @Published var shippingFee: String = ""
     @Published var maxShippingFee: String = ""
     @StateObject var transVM = TransactionViewModel.shared
+    
     init() {
         let channel =  FeeModel.shared.getChannel(name: "Tokopedia")
         productFee = String(channel.productFee)

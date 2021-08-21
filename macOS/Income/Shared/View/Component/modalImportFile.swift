@@ -9,6 +9,8 @@ import SwiftUI
 import CoreXLSX
 
 struct modalImportFile: View {
+    
+    let channel: String
     @Binding var isVisible: Bool
     @Binding var showmodalSync: Bool
     @StateObject var TransDetailVM = TransDetailViewModel.shared
@@ -51,7 +53,7 @@ struct modalImportFile: View {
             .background(Color.white)
             .cornerRadius(15)
             .padding(.init(top: 25, leading: 0, bottom: 30, trailing: 0))
-            Button(action: {btnImportPressed()
+            Button(action: {btnImportPressed(channel: channel)
                 TransDetailVM.fetchDataTrans()
             }, label: {
                 Text("Import")
@@ -72,48 +74,52 @@ struct modalImportFile: View {
 }
 
 extension modalImportFile {
-    func btnImportPressed () {
+    func btnImportPressed(channel: String) {
         let panel = NSOpenPanel()
         panel.allowsMultipleSelection = false
         panel.allowedFileTypes = ["xlsx", "xls"]
-        if panel.runModal() == .OK {
-            do {
+        
+        if channel == "Tokopedia" {
+            if panel.runModal() == .OK {
+                do {
 
-            var tmp = "\(panel.url!)".split(separator: "/")
-            tmp.removeFirst()
-            let path = tmp.joined(separator: "/")
-            let file = XLSXFile(filepath: "/\(path)")
+                var tmp = "\(panel.url!)".split(separator: "/")
+                tmp.removeFirst()
+                let path = tmp.joined(separator: "/")
+                let file = XLSXFile(filepath: "/\(path)")
 
-            let sharedString = try file!.parseSharedStrings()
-            var i = 0
-            for wbk in try file!.parseWorkbooks() {
-                for (_, path) in try file!.parseWorksheetPathsAndNames(workbook: wbk) {
-                        let worksheet = try file!.parseWorksheet(at: path)
-                        for row in worksheet.data?.rows ?? [] {
-                            if i > 3 {
-                                let isoDate = row.cells[3].stringValue(sharedString!)!
-                                let dateFormatter = DateFormatter()
-                                dateFormatter.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
-                                dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
-                                let date = dateFormatter.date(from:isoDate)
-                                let productName = row.cells[6].stringValue(sharedString!)!
-                                let qyt = Int64(row.cells[7].stringValue(sharedString!)!)
-                                let price = Int64(row.cells[10].stringValue(sharedString!)!)
-                                let productId = row.cells[5].stringValue(sharedString!)!
-                                let SKU = row.cells[8].stringValue(sharedString!)
-                                let orderId = row.cells[1].stringValue(sharedString!)
-                                let newTrans = transactionModel(date: date!, productName: productName, qyt: qyt!, price: price!, SKU: SKU ?? productId, orderId: orderId!)
-                                TransDetailVM.addTransTemp(newTrans)
+                let sharedString = try file!.parseSharedStrings()
+                var i = 0
+                
+                for wbk in try file!.parseWorkbooks() {
+                    for (_, path) in try file!.parseWorksheetPathsAndNames(workbook: wbk) {
+                            let worksheet = try file!.parseWorksheet(at: path)
+                            for row in worksheet.data?.rows ?? [] {
+                                if i > 3 {
+                                    let isoDate = row.cells[3].stringValue(sharedString!)!
+                                    let dateFormatter = DateFormatter()
+                                    dateFormatter.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
+                                    dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
+                                    let date = dateFormatter.date(from:isoDate)
+                                    let productName = row.cells[6].stringValue(sharedString!)!
+                                    let qyt = Int64(row.cells[7].stringValue(sharedString!)!)
+                                    let price = Int64(row.cells[10].stringValue(sharedString!)!)
+                                    let productId = row.cells[5].stringValue(sharedString!)!
+                                    let SKU = row.cells[8].stringValue(sharedString!)
+                                    let orderId = row.cells[1].stringValue(sharedString!)
+                                    let newTrans = transactionModel(date: date!, productName: productName, qyt: qyt!, price: price!, SKU: SKU ?? productId, orderId: orderId!)
+                                    TransDetailVM.addTransTemp(newTrans)
+                                }
+                                i += 1
                             }
-                            i += 1
                         }
                     }
+                    try context.save()
+                    isVisible = false
+                    showmodalSync = true
+                } catch {
+                  print(error)
                 }
-                try context.save()
-                isVisible = false
-                showmodalSync = true
-            } catch {
-              print(error)
             }
         }
     }
