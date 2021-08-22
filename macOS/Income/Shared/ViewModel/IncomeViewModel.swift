@@ -23,7 +23,7 @@ class IncomeViewModel {
         }
     }
     
-    func totalNetIncome(_ monthIndex: Int, yearIndex: Int) -> Int64 {
+    func totalNetIncome(_ monthIndex: Int, yearIndex: Int, channel: String) -> Int64 {
         var transDetailList: [TransactionDetail] = [TransactionDetail]()
         do {
             transDetailList = try context.fetch(TransactionDetail.fetchRequest())
@@ -32,7 +32,7 @@ class IncomeViewModel {
         }
         
         let transListFilterd = transDetailList.filter() {
-            $0.td_transaction?.date?.year == (yearIndex) && $0.td_transaction?.date?.month == (monthIndex)
+            $0.td_transaction?.date?.year == (yearIndex) && $0.td_transaction?.date?.month == (monthIndex) && $0.td_transaction?.transaction_channel?.name == channel
         }
         
         var totalNetIncome:Int64 = 0
@@ -44,15 +44,15 @@ class IncomeViewModel {
         return totalNetIncome
     }
     
-    func increaseNetIncome(_ monthIndex: Int, yearIndex: Int) -> Int {
+    func increaseNetIncome(_ monthIndex: Int, yearIndex: Int, channel: String) -> Int {
         var netIncome1: Int64
         var netIncome2: Int64
         if monthIndex == 1 {
-            netIncome1 = totalNetIncome(12, yearIndex: yearIndex-1)
-            netIncome2 = totalNetIncome(monthIndex, yearIndex: yearIndex)
+            netIncome1 = totalNetIncome(12, yearIndex: yearIndex-1, channel: channel)
+            netIncome2 = totalNetIncome(monthIndex, yearIndex: yearIndex, channel: channel)
         } else {
-            netIncome1 = totalNetIncome(monthIndex-1, yearIndex: yearIndex)
-            netIncome2 = totalNetIncome(monthIndex, yearIndex: yearIndex)
+            netIncome1 = totalNetIncome(monthIndex-1, yearIndex: yearIndex, channel: channel)
+            netIncome2 = totalNetIncome(monthIndex, yearIndex: yearIndex, channel: channel)
         }
         if netIncome1 == 0{
             return 100
@@ -63,7 +63,7 @@ class IncomeViewModel {
         }
     }
     
-    func totalProductSold(_ monthIndex: Int, yearIndex: Int) -> Int {
+    func totalProductSold(_ monthIndex: Int, yearIndex: Int, channel: String) -> Int {
         var transDetailList: [TransactionDetail] = [TransactionDetail]()
         do {
             transDetailList = try context.fetch(TransactionDetail.fetchRequest())
@@ -72,7 +72,7 @@ class IncomeViewModel {
         }
         
         let transListFilterd = transDetailList.filter() {
-            $0.td_transaction?.date?.year == (yearIndex) && $0.td_transaction?.date?.month == (monthIndex)
+            $0.td_transaction?.date?.year == (yearIndex) && $0.td_transaction?.date?.month == (monthIndex) && $0.td_transaction?.transaction_channel?.name == channel
         }
         
         var totalProductSold:Int = 0
@@ -84,15 +84,15 @@ class IncomeViewModel {
         return totalProductSold
     }
     
-    func increaseProductSold(_ monthIndex: Int, yearIndex: Int) -> Int {
+    func increaseProductSold(_ monthIndex: Int, yearIndex: Int, channel: String) -> Int {
         var prodSold1: Int
         var prodSold2: Int
         if monthIndex == 1 {
-            prodSold1 = totalProductSold(12, yearIndex: yearIndex-1)
-            prodSold2 = totalProductSold(monthIndex, yearIndex: yearIndex)
+            prodSold1 = totalProductSold(12, yearIndex: yearIndex-1, channel: channel)
+            prodSold2 = totalProductSold(monthIndex, yearIndex: yearIndex, channel: channel)
         } else {
-            prodSold1 = totalProductSold(monthIndex-1, yearIndex: yearIndex)
-            prodSold2 = totalProductSold(monthIndex, yearIndex: yearIndex)
+            prodSold1 = totalProductSold(monthIndex-1, yearIndex: yearIndex, channel: channel)
+            prodSold2 = totalProductSold(monthIndex, yearIndex: yearIndex, channel: channel)
         }
         if prodSold1 == 0{
             return 100
@@ -103,7 +103,7 @@ class IncomeViewModel {
         }
     }
     
-    func totalOrder(_ monthIndex: Int, yearIndex: Int) -> Int {
+    func totalOrder(_ monthIndex: Int, yearIndex: Int, channel: String) -> Int {
         var transList: [Transaction] = [Transaction]()
         do {
             transList = try context.fetch(Transaction.fetchRequest())
@@ -112,21 +112,21 @@ class IncomeViewModel {
         }
         
         let transListFilterd = transList.filter() {
-            $0.date?.year == (yearIndex) && $0.date?.month == (monthIndex)
+            $0.date?.year == (yearIndex) && $0.date?.month == (monthIndex) && $0.transaction_channel?.name == channel
         }
         
         return transListFilterd.count
     }
     
-    func increaseTotalOrder(_ monthIndex: Int, yearIndex: Int) -> Int {
+    func increaseTotalOrder(_ monthIndex: Int, yearIndex: Int, channel: String) -> Int {
         var totalOrd1: Int
         var totalOrd2: Int
         if monthIndex == 1 {
-            totalOrd1 = totalProductSold(12, yearIndex: yearIndex-1)
-            totalOrd2 = totalProductSold(monthIndex, yearIndex: yearIndex)
+            totalOrd1 = totalProductSold(12, yearIndex: yearIndex-1, channel: channel)
+            totalOrd2 = totalProductSold(monthIndex, yearIndex: yearIndex, channel: channel)
         } else {
-            totalOrd1 = totalProductSold(monthIndex-1, yearIndex: yearIndex)
-            totalOrd2 = totalProductSold(monthIndex, yearIndex: yearIndex)
+            totalOrd1 = totalProductSold(monthIndex-1, yearIndex: yearIndex, channel: channel)
+            totalOrd2 = totalProductSold(monthIndex, yearIndex: yearIndex, channel: channel)
         }
         if totalOrd1 == 0{
             return 100

@@ -33,11 +33,11 @@ struct Shopee: View {
                 Spacer()
             }
             HStack {
-                CardReports(title: "Net Income", value: String(shopeeVM.totalNetIncome(transVM.monthIndex+1, yearIndex: transVM.yearIndex+2000)).currencyFormatting(), percent: shopeeVM.increaseNetIncome(transVM.monthIndex+1, yearIndex: transVM.yearIndex+2000), width: 306)
+                CardReports(title: "Net Income", value: String(shopeeVM.totalNetIncome(transVM.monthIndex+1, yearIndex: transVM.yearIndex+2000, channel: "Shopee")).currencyFormatting(), percent: shopeeVM.increaseNetIncome(transVM.monthIndex+1, yearIndex: transVM.yearIndex+2000, channel: "Shopee"), width: 306)
                     .padding(.leading, 10)
-                CardReports(title: "Product Sold", value: "\(shopeeVM.totalProductSold(transVM.monthIndex+1, yearIndex: transVM.yearIndex+2000))", percent: shopeeVM.increaseProductSold(transVM.monthIndex+1, yearIndex: transVM.yearIndex+2000), width: 227)
+                CardReports(title: "Product Sold", value: "\(shopeeVM.totalProductSold(transVM.monthIndex+1, yearIndex: transVM.yearIndex+2000, channel: "Shopee"))", percent: shopeeVM.increaseProductSold(transVM.monthIndex+1, yearIndex: transVM.yearIndex+2000, channel: "Shopee"), width: 227)
                     .padding(.leading, 10)
-                CardReports(title: "Total Orders", value: "\(shopeeVM.totalOrder(transVM.monthIndex+1, yearIndex: transVM.yearIndex+2000))", percent: shopeeVM.increaseTotalOrder(transVM.monthIndex+1, yearIndex: transVM.yearIndex+2000), width: 227)
+                CardReports(title: "Total Orders", value: "\(shopeeVM.totalOrder(transVM.monthIndex+1, yearIndex: transVM.yearIndex+2000, channel: "Shopee"))", percent: shopeeVM.increaseTotalOrder(transVM.monthIndex+1, yearIndex: transVM.yearIndex+2000, channel: "Shopee"), width: 227)
                     .padding(.leading, 10)
                 Spacer()
             }
@@ -47,7 +47,7 @@ struct Shopee: View {
                         showModalFee.toggle()
                     }
                     .sheet(isPresented: $showModalFee, content: {
-                        EditFeeModal(isPresented: $showModalFee)
+                        ShopeeEditFeeModal(isPresented: $showModalFee)
                     })
                 primaryBtn(imageName: "square.and.arrow.down", title: "Import Data", width: 147)
                     .onTapGesture {
@@ -68,7 +68,7 @@ struct Shopee: View {
                 Spacer()
             } .padding(.top, 10)
             HStack {
-                transactionsTable(date: Date(), transVM: transVM)
+                transactionsTable(channel: "Shopee", date: Date(), transVM: transVM)
             }
             Spacer()
         }

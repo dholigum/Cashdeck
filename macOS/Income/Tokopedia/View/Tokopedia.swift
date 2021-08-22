@@ -33,11 +33,11 @@ struct Tokopedia: View {
                 Spacer()
             }
             HStack {
-                CardReports(title: "Net Income", value: String(tokopediaVM.totalNetIncome(transVM.monthIndex+1, yearIndex: transVM.yearIndex+2000)).currencyFormatting(), percent: tokopediaVM.increaseNetIncome(transVM.monthIndex+1, yearIndex: transVM.yearIndex+2000), width: 306)
+                CardReports(title: "Net Income", value: String(tokopediaVM.totalNetIncome(transVM.monthIndex+1, yearIndex: transVM.yearIndex+2000, channel: "Tokopedia")).currencyFormatting(), percent: tokopediaVM.increaseNetIncome(transVM.monthIndex+1, yearIndex: transVM.yearIndex+2000, channel: "Tokopedia"), width: 306)
                     .padding(.leading, 10)
-                CardReports(title: "Product Sold", value: "\(tokopediaVM.totalProductSold(transVM.monthIndex+1, yearIndex: transVM.yearIndex+2000))", percent: tokopediaVM.increaseProductSold(transVM.monthIndex+1, yearIndex: transVM.yearIndex+2000), width: 227)
+                CardReports(title: "Product Sold", value: "\(tokopediaVM.totalProductSold(transVM.monthIndex+1, yearIndex: transVM.yearIndex+2000, channel: "Tokopedia"))", percent: tokopediaVM.increaseProductSold(transVM.monthIndex+1, yearIndex: transVM.yearIndex+2000, channel: "Tokopedia"), width: 227)
                     .padding(.leading, 10)
-                CardReports(title: "Total Orders", value: "\(tokopediaVM.totalOrder(transVM.monthIndex+1, yearIndex: transVM.yearIndex+2000))", percent: tokopediaVM.increaseTotalOrder(transVM.monthIndex+1, yearIndex: transVM.yearIndex+2000), width: 227)
+                CardReports(title: "Total Orders", value: "\(tokopediaVM.totalOrder(transVM.monthIndex+1, yearIndex: transVM.yearIndex+2000, channel: "Tokopedia"))", percent: tokopediaVM.increaseTotalOrder(transVM.monthIndex+1, yearIndex: transVM.yearIndex+2000, channel: "Tokopedia"), width: 227)
                     .padding(.leading, 10)
                 Spacer()
             }
@@ -47,7 +47,7 @@ struct Tokopedia: View {
                         showModalFee.toggle()
                     }
                     .sheet(isPresented: $showModalFee, content: {
-                        EditFeeModal(isPresented: $showModalFee)
+                        TokopediaEditFeeModal(isPresented: $showModalFee)
                     })
                 primaryBtn(imageName: "square.and.arrow.down", title: "Import Data", width: 147)
                     .onTapGesture {
@@ -68,7 +68,7 @@ struct Tokopedia: View {
                 Spacer()
             } .padding(.top, 10)
             HStack {
-                transactionsTable(date: Date(), transVM: transVM)
+                transactionsTable(channel: "Tokopedia", date: Date(), transVM: transVM)
             }
             Spacer()
         }

@@ -43,7 +43,7 @@ struct SyncDataModal: View {
                     
                     showModalSync = false
                     showModal = false
-                    transVM.fetchData()
+                    transVM.fetchData(channel: "Tokopedia")
                     
                 }, label: {
                     Text("Sync")
