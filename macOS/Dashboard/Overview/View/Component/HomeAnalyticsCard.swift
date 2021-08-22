@@ -42,7 +42,7 @@ struct HomeAnalyticsCard: View {
                              //Cells
                             VStack{
                                 ForEach(0..<rightLegend.count, id: \.self){ i in
-                                    Text("\(ChartLegend(index: i))")
+                                    Text("\(String(format: "%.0f", ChartLegend(index: i)))")
                                         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .trailing)
                                 }
                             }
@@ -222,9 +222,10 @@ struct HomeAnalyticsCard: View {
             }
             return val
         }
-        guard let max = AllValues.max() else {
+        guard let cmax = AllValues.max() else {
             return 1
         }
+        let max = ceil(cmax)
         switch index {
         case 0:
             return max

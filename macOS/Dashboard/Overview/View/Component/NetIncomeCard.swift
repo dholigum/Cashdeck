@@ -29,6 +29,7 @@ struct NetIncomeCard: View {
     
     @State private var durationOptions = "Income"
     var duration = ["Daily","Weekly","Monthly","Yearly"]
+    let rightLegend = ["1.000.000","750.000","500.000","250.000","0","-250.000","-500.000","-750.000","-1.000.000"]
     
     
     var body: some View {
@@ -62,65 +63,59 @@ struct NetIncomeCard: View {
                          HStack {
                              //Cells
                             VStack{
-                                Text("1.000.000")
-                                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .top)
-                                Text("750.000")
-                                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .top)
-                                Text("500.000")
-                                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .top)
-                                Text("250.000")
-                                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .top)
+                                ForEach(0..<rightLegend.count, id: \.self){ i in
+                                    Text("\(String(format: "%.0f", ChartLegend(index: i)))")
+                                        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .trailing)
+                                }
                             }
                             .frame(width: 77, height: 175, alignment: .leading)
                             .padding()
                             
-                            ForEach(0..<data.count, id: \.self) { i in
-                                BarChartCell(
-                                    value: normalizedValue(index: i),
-                                    barColor: barColor,
-                                    labels: "\(horizontalLabels(index: i))",
-                                    labelSize: 9)
-                                    
-                                    .opacity(barIsTouched(index: i) ? 1 : 0.7)
-                                    .scaleEffect(barIsTouched(index: i) ? CGSize(width: 1.05, height: 1) : CGSize(width: 1, height: 1), anchor: .bottom)
-                                    .animation(.spring())
-                                    .padding(.top)
+                            ZStack{
+                                VStack{
+                                    ForEach(rightLegend, id: \.self){ legend in
+                                        Rectangle()
+                                            .fill(Color(.gray))
+                                            .offset(y: 2.0)
+                                            .frame(height: 1)
+                                    }.frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, maxWidth: .infinity, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, maxHeight: .infinity, alignment: .center)
+                                }
+                                .frame(height:175)
+                                
+                                HStack{
+                                    ForEach(0..<data.count, id: \.self) { i in
+                                        BarChartCell(
+                                            value: normalizedValue(index: i),
+                                            barColor: barColor,
+                                            labels: "\(horizontalLabels(index: i))",
+                                            labelSize: 9)
+                                            
+                                            .opacity(barIsTouched(index: i) ? 1 : 0.7)
+                                            .scaleEffect(barIsTouched(index: i) ? CGSize(width: 1.05, height: 1) : CGSize(width: 1, height: 1), anchor: .bottom)
+                                            .animation(.spring())
+                                            .padding(.top)
+                                    }
+                                    .gesture(DragGesture(minimumDistance: 0)
+                                                .onChanged({
+                                                    position in
+                                                    let touchPosition = position.location.x/geometry.frame(in: .local).width
+                                                    touchLocation = touchPosition
+                                                    updateCurrentValue()
+                                                })
+                                                .onEnded({
+                                                    _ in
+                                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                                            withAnimation(Animation.easeOut(duration: 0.5)) {
+                                                                resetValues()
+                                                            }
+                                                        }
+                                                })
+                                 )
+                                }
                             }
-                            .gesture(DragGesture(minimumDistance: 0)
-                                        .onChanged({
-                                            position in
-                                            let touchPosition = position.location.x/geometry.frame(in: .local).width
-                                            touchLocation = touchPosition
-                                            updateCurrentValue()
-                                        })
-                                        .onEnded({
-                                            _ in
-                                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                                                    withAnimation(Animation.easeOut(duration: 0.5)) {
-                                                        resetValues()
-                                                    }
-                                                }
-                                        })
-                         )}
+                            }
                          if currentLabel.isEmpty {
-//                             Text(legend)
-//                                 .bold()
-//                                 .foregroundColor(.black)
-//                                 .padding(5)
-//                                 .background(RoundedRectangle(cornerRadius: 5).foregroundColor(.white).shadow(radius: 3))
                          } else {
-//                            VStack{
-//                                Text(currentLabel)
-//                                    .bold()
-//                                    .foregroundColor(.black)
-//                                Text(currentValue)
-//                                    .bold()
-//                                    .foregroundColor(.black)
-//                            }
-//                            .background(RoundedRectangle(cornerRadius: 5).foregroundColor(.white).shadow(radius: 3))
-//                            .animation(.easeIn)
-//                            .offset(x: labelOffset(in: geometry.frame(in: .local).width))
-//                            .animation(.easeIn)
                          }
                      }
             }
@@ -212,6 +207,41 @@ struct NetIncomeCard: View {
              let actualWidth = width -    cellWidth
              let position = cellWidth * CGFloat(currentIndex) - actualWidth/2
              return position
+    }
+    func ChartLegend(index: Int) -> Double {
+        var AllValues: [Double]{
+            var val = [Double]()
+            for data in data {
+                val.append(data.value)
+            }
+            return val
+        }
+        guard let cmax = AllValues.max() else {
+            return 1
+        }
+        let max = ceil(cmax)
+        switch index {
+        case 0:
+            return max
+        case 1:
+            return max * 0.75
+        case 2:
+            return max * 0.5
+        case 3:
+            return max * 0.25
+        case 4:
+            return 0
+        case 5:
+            return max * -0.25
+        case 6:
+            return max * -0.5
+        case 7:
+            return max * -0.75
+        case 8:
+            return max * -1
+        default:
+            return 0
+        }
     }
 }
 
