@@ -16,18 +16,10 @@ class TransactionViewModel: ObservableObject {
     @Published var yearIndex = Calendar.current.component(.year, from: Date()) - 2000
     @Published var monthIndex = Calendar.current.component(.month, from: Date()) - 1 
     
-    init() {
-        fetchData()
-    }
-    
-    func fetchData() {
-        let filteredListTrans = ProductSoldModel.shared.getAllDetail().filter() { $0.td_transaction?.date?.year == (yearIndex + 2000) && $0.td_transaction?.date?.month == (monthIndex + 1)}
-        let sortedListTrans = filteredListTrans.sorted(by: {
-            $0.td_transaction?.date?.compare(($1.td_transaction?.date)!) == .orderedDescending })
-        self.listTrans = sortedListTrans
+    func fetchData(channel: String) {
+
         do {
-            
-            let filteredListTrans = ProductSoldModel.shared.getAllDetail().filter() { $0.td_transaction?.date?.year == (yearIndex + 2000) && $0.td_transaction?.date?.month == (monthIndex + 1)}
+            let filteredListTrans = ProductSoldModel.shared.getAllDetail().filter() { $0.td_transaction?.date?.year == (yearIndex + 2000) && $0.td_transaction?.date?.month == (monthIndex + 1) && $0.td_transaction?.transaction_channel?.name == channel}
             let sortedListTrans = filteredListTrans.sorted(by: {
                 $0.td_transaction?.date?.compare(($1.td_transaction?.date)!) == .orderedDescending })
             self.listTrans = sortedListTrans

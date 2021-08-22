@@ -29,6 +29,8 @@
 		2F39D68826CF57230085C96E /* TableHeaderComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F39D68626CF57230085C96E /* TableHeaderComponent.swift */; };
 		2F39D68A26CF6C720085C96E /* MainNavigationOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F39D68926CF6C720085C96E /* MainNavigationOptions.swift */; };
 		2F39D68B26CF6C720085C96E /* MainNavigationOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F39D68926CF6C720085C96E /* MainNavigationOptions.swift */; };
+		2F39D69826D088180085C96E /* Shopee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F39D69726D088180085C96E /* Shopee.swift */; };
+		2F39D69926D088180085C96E /* Shopee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F39D69726D088180085C96E /* Shopee.swift */; };
 		2F4066AC26BBCD1000F9B456 /* SamplePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4066AB26BBCD1000F9B456 /* SamplePage.swift */; };
 		2F4066AD26BBCD1000F9B456 /* SamplePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4066AB26BBCD1000F9B456 /* SamplePage.swift */; };
 		2F52F2EC26B7950D0046A1AA /* CashdeckData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2F52F2EA26B7950D0046A1AA /* CashdeckData.xcdatamodeld */; };
@@ -85,6 +87,10 @@
 		2F764DBE26A7C254005B0513 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F764D9226A7C254005B0513 /* Assets.xcassets */; };
 		2F764DD926A92152005B0513 /* BlurWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F764DD826A92152005B0513 /* BlurWindow.swift */; };
 		2F764DDA26A921A3005B0513 /* BlurWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F764DD826A92152005B0513 /* BlurWindow.swift */; };
+		2F81B9DB26D2835A00C9E942 /* ShopeeFeeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F81B9DA26D2835A00C9E942 /* ShopeeFeeViewModel.swift */; };
+		2F81B9DC26D2835A00C9E942 /* ShopeeFeeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F81B9DA26D2835A00C9E942 /* ShopeeFeeViewModel.swift */; };
+		2F81B9E026D2864600C9E942 /* ShopeeEditFeeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F81B9DF26D2864600C9E942 /* ShopeeEditFeeModel.swift */; };
+		2F81B9E126D2864600C9E942 /* ShopeeEditFeeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F81B9DF26D2864600C9E942 /* ShopeeEditFeeModel.swift */; };
 		2F82F12F26BC20A3004E4ADF /* ExpenseTableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F82F12E26BC20A3004E4ADF /* ExpenseTableHeader.swift */; };
 		2F82F13026BC20C0004E4ADF /* ExpenseTableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F82F12E26BC20A3004E4ADF /* ExpenseTableHeader.swift */; };
 		2F82F13226BC2137004E4ADF /* CustomDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F82F13126BC2137004E4ADF /* CustomDivider.swift */; };
@@ -144,8 +150,8 @@
 		51F8CDB926C0BCFC00DC017D /* HomeAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F8CDB726C0BCFC00DC017D /* HomeAnalytics.swift */; };
 		51F8CDBB26C0C09F00DC017D /* HomeAnalyticsCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F8CDBA26C0C09F00DC017D /* HomeAnalyticsCard.swift */; };
 		51F8CDBC26C0C09F00DC017D /* HomeAnalyticsCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F8CDBA26C0C09F00DC017D /* HomeAnalyticsCard.swift */; };
-		84ACCDC526C6D1C4009938D8 /* tokopediaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACCDC426C6D1C4009938D8 /* tokopediaViewModel.swift */; };
-		84ACCDC626C6D1C4009938D8 /* tokopediaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACCDC426C6D1C4009938D8 /* tokopediaViewModel.swift */; };
+		84ACCDC526C6D1C4009938D8 /* IncomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACCDC426C6D1C4009938D8 /* IncomeViewModel.swift */; };
+		84ACCDC626C6D1C4009938D8 /* IncomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACCDC426C6D1C4009938D8 /* IncomeViewModel.swift */; };
 		ACC8A41D7D9E95F6BEF05EB6 /* Pods_Cashdeck__macOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F2CB752ADBED017B126FD31 /* Pods_Cashdeck__macOS_.framework */; };
 		F302B02C26BB82D700B3B83A /* TransDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F302B02B26BB82D700B3B83A /* TransDetailViewModel.swift */; };
 		F302B02D26BB82D700B3B83A /* TransDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F302B02B26BB82D700B3B83A /* TransDetailViewModel.swift */; };
@@ -153,8 +159,8 @@
 		F302B03426BB992800B3B83A /* productViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F302B03226BB992800B3B83A /* productViewModel.swift */; };
 		F302B03626BBA9BA00B3B83A /* ChooseProductModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F302B03526BBA9BA00B3B83A /* ChooseProductModal.swift */; };
 		F302B03726BBA9BA00B3B83A /* ChooseProductModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F302B03526BBA9BA00B3B83A /* ChooseProductModal.swift */; };
-		F302B03926BBA9CD00B3B83A /* EditFeeModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F302B03826BBA9CD00B3B83A /* EditFeeModal.swift */; };
-		F302B03A26BBA9CD00B3B83A /* EditFeeModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F302B03826BBA9CD00B3B83A /* EditFeeModal.swift */; };
+		F302B03926BBA9CD00B3B83A /* TokopediaEditFeeModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F302B03826BBA9CD00B3B83A /* TokopediaEditFeeModal.swift */; };
+		F302B03A26BBA9CD00B3B83A /* TokopediaEditFeeModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F302B03826BBA9CD00B3B83A /* TokopediaEditFeeModal.swift */; };
 		F32412AC26BA6E590022E95D /* modalImportFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32412AB26BA6E590022E95D /* modalImportFile.swift */; };
 		F32412AE26BA88400022E95D /* SyncDataModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32412AD26BA88400022E95D /* SyncDataModal.swift */; };
 		F346178D26B8A53F0005136B /* CardReports.swift in Sources */ = {isa = PBXBuildFile; fileRef = F346178C26B8A53F0005136B /* CardReports.swift */; };
@@ -169,8 +175,8 @@
 		F73F69C226B99B8800CD9642 /* TotalNetIncome.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73F69C026B99B8800CD9642 /* TotalNetIncome.swift */; };
 		F73F69C426B99F0C00CD9642 /* TotalSold.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73F69C326B99F0C00CD9642 /* TotalSold.swift */; };
 		F73F69C526B99F0C00CD9642 /* TotalSold.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73F69C326B99F0C00CD9642 /* TotalSold.swift */; };
-		F74758DB26BE44F900740DAE /* FeeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74758DA26BE44F900740DAE /* FeeViewModel.swift */; };
-		F74758DC26BE44F900740DAE /* FeeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74758DA26BE44F900740DAE /* FeeViewModel.swift */; };
+		F74758DB26BE44F900740DAE /* TokopediaFeeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74758DA26BE44F900740DAE /* TokopediaFeeViewModel.swift */; };
+		F74758DC26BE44F900740DAE /* TokopediaFeeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74758DA26BE44F900740DAE /* TokopediaFeeViewModel.swift */; };
 		F760C61326BC30B200CF95E0 /* SFProDisplay-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F760C61226BC30B200CF95E0 /* SFProDisplay-Regular.ttf */; };
 		F760C61426BC30B200CF95E0 /* SFProDisplay-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F760C61226BC30B200CF95E0 /* SFProDisplay-Regular.ttf */; };
 		F7611CD526BA8EDC00CD3169 /* ProductSoldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7611CD426BA8EDC00CD3169 /* ProductSoldViewModel.swift */; };
@@ -246,6 +252,7 @@
 		2F2B3B0C26C4DFCD006FF7F2 /* productController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = productController.swift; sourceTree = "<group>"; };
 		2F39D68626CF57230085C96E /* TableHeaderComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHeaderComponent.swift; sourceTree = "<group>"; };
 		2F39D68926CF6C720085C96E /* MainNavigationOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationOptions.swift; sourceTree = "<group>"; };
+		2F39D69726D088180085C96E /* Shopee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shopee.swift; sourceTree = "<group>"; };
 		2F4066AB26BBCD1000F9B456 /* SamplePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplePage.swift; sourceTree = "<group>"; };
 		2F52F2EB26B7950D0046A1AA /* CashdeckData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CashdeckData.xcdatamodel; sourceTree = "<group>"; };
 		2F52F2F726B7A4910046A1AA /* ExpenseOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseOverview.swift; sourceTree = "<group>"; };
@@ -284,6 +291,8 @@
 		2F764DB626A7C254005B0513 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		2F764DB826A7C254005B0513 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F764DD826A92152005B0513 /* BlurWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurWindow.swift; sourceTree = "<group>"; };
+		2F81B9DA26D2835A00C9E942 /* ShopeeFeeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopeeFeeViewModel.swift; sourceTree = "<group>"; };
+		2F81B9DF26D2864600C9E942 /* ShopeeEditFeeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopeeEditFeeModel.swift; sourceTree = "<group>"; };
 		2F82F12E26BC20A3004E4ADF /* ExpenseTableHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseTableHeader.swift; sourceTree = "<group>"; };
 		2F82F13126BC2137004E4ADF /* CustomDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDivider.swift; sourceTree = "<group>"; };
 		2F832EF626B271EA00426643 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -315,14 +324,14 @@
 		51E27EBD26BCCDDF009D0CB6 /* BusinessUpdateCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessUpdateCard.swift; sourceTree = "<group>"; };
 		51F8CDB726C0BCFC00DC017D /* HomeAnalytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAnalytics.swift; sourceTree = "<group>"; };
 		51F8CDBA26C0C09F00DC017D /* HomeAnalyticsCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAnalyticsCard.swift; sourceTree = "<group>"; };
-		84ACCDC426C6D1C4009938D8 /* tokopediaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = tokopediaViewModel.swift; path = macOS/Income/Model/tokopediaViewModel.swift; sourceTree = SOURCE_ROOT; };
+		84ACCDC426C6D1C4009938D8 /* IncomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = IncomeViewModel.swift; path = macOS/Income/Shared/ViewModel/IncomeViewModel.swift; sourceTree = SOURCE_ROOT; };
 		9F2CB752ADBED017B126FD31 /* Pods_Cashdeck__macOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cashdeck__macOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A28AAB82F35EB1EFE815F97A /* Pods-Cashdeck (macOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cashdeck (macOS).release.xcconfig"; path = "Target Support Files/Pods-Cashdeck (macOS)/Pods-Cashdeck (macOS).release.xcconfig"; sourceTree = "<group>"; };
 		C335E609120D79D88B31498D /* Pods_Cashdeck__iOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cashdeck__iOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F302B02B26BB82D700B3B83A /* TransDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransDetailViewModel.swift; sourceTree = SOURCE_ROOT; };
-		F302B03226BB992800B3B83A /* productViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = productViewModel.swift; sourceTree = SOURCE_ROOT; };
+		F302B02B26BB82D700B3B83A /* TransDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TransDetailViewModel.swift; path = macOS/Income/Shared/ViewModel/TransDetailViewModel.swift; sourceTree = SOURCE_ROOT; };
+		F302B03226BB992800B3B83A /* productViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = productViewModel.swift; path = macOS/Income/Shared/ViewModel/productViewModel.swift; sourceTree = SOURCE_ROOT; };
 		F302B03526BBA9BA00B3B83A /* ChooseProductModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseProductModal.swift; sourceTree = "<group>"; };
-		F302B03826BBA9CD00B3B83A /* EditFeeModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFeeModal.swift; sourceTree = "<group>"; };
+		F302B03826BBA9CD00B3B83A /* TokopediaEditFeeModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokopediaEditFeeModal.swift; sourceTree = "<group>"; };
 		F32412AB26BA6E590022E95D /* modalImportFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = modalImportFile.swift; sourceTree = "<group>"; };
 		F32412AD26BA88400022E95D /* SyncDataModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncDataModal.swift; sourceTree = "<group>"; };
 		F346178C26B8A53F0005136B /* CardReports.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardReports.swift; sourceTree = "<group>"; };
@@ -333,7 +342,7 @@
 		F73F69B626B996E600CD9642 /* ProductSoldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSoldView.swift; sourceTree = "<group>"; };
 		F73F69C026B99B8800CD9642 /* TotalNetIncome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalNetIncome.swift; sourceTree = "<group>"; };
 		F73F69C326B99F0C00CD9642 /* TotalSold.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalSold.swift; sourceTree = "<group>"; };
-		F74758DA26BE44F900740DAE /* FeeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FeeViewModel.swift; path = macOS/Income/Model/FeeViewModel.swift; sourceTree = SOURCE_ROOT; };
+		F74758DA26BE44F900740DAE /* TokopediaFeeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TokopediaFeeViewModel.swift; path = macOS/Income/Tokopedia/ViewModel/TokopediaFeeViewModel.swift; sourceTree = SOURCE_ROOT; };
 		F760C61226BC30B200CF95E0 /* SFProDisplay-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Regular.ttf"; sourceTree = "<group>"; };
 		F7611CD426BA8EDC00CD3169 /* ProductSoldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSoldViewModel.swift; sourceTree = "<group>"; };
 		F76A1A5626BA318C00CDADFB /* ProductSoldList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSoldList.swift; sourceTree = "<group>"; };
@@ -341,7 +350,7 @@
 		F76D0EAD26C61FDE00601A66 /* BusinessUpdateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BusinessUpdateModel.swift; path = macOS/BusinessUpdateModel.swift; sourceTree = SOURCE_ROOT; };
 		F76D0EB026C6B71A00601A66 /* BusinessGrowthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BusinessGrowthModel.swift; path = macOS/BusinessGrowthModel.swift; sourceTree = SOURCE_ROOT; };
 		F7761FD726BD85CC00324C2E /* FeeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeeModel.swift; sourceTree = "<group>"; };
-		F78F5F8026C0F6DD00CB5D6D /* TransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TransactionViewModel.swift; path = macOS/Income/Component/TransactionViewModel.swift; sourceTree = SOURCE_ROOT; };
+		F78F5F8026C0F6DD00CB5D6D /* TransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TransactionViewModel.swift; path = macOS/Income/Shared/ViewModel/TransactionViewModel.swift; sourceTree = SOURCE_ROOT; };
 		F7AA51E026BA4E8200BE00B6 /* ProductSoldModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSoldModel.swift; sourceTree = "<group>"; };
 		F7FC2E2826BE733700AD3ACB /* ProductSold.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSold.swift; sourceTree = "<group>"; };
 		F7FC2E7826BFBBF200AD3ACB /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
@@ -404,11 +413,9 @@
 		2F18857226B250E40067E82D /* Income */ = {
 			isa = PBXGroup;
 			children = (
-				2FC7541A26C7845200036064 /* Helper */,
-				F346179726B8BB230005136B /* ViewModel */,
-				F346179626B8BB1C0005136B /* Model */,
-				F346179526B8BB0C0005136B /* View */,
-				F346178E26B8AD200005136B /* Component */,
+				2F39D68E26D06BCE0085C96E /* Shared */,
+				2F39D68C26D06AF80085C96E /* Tokopedia */,
+				2F39D68F26D06BD50085C96E /* Shopee */,
 			);
 			path = Income;
 			sourceTree = "<group>";
@@ -487,6 +494,79 @@
 				2F2B3B0C26C4DFCD006FF7F2 /* productController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		2F39D68C26D06AF80085C96E /* Tokopedia */ = {
+			isa = PBXGroup;
+			children = (
+				F346179526B8BB0C0005136B /* View */,
+				2F39D69A26D088E40085C96E /* ViewModel */,
+			);
+			path = Tokopedia;
+			sourceTree = "<group>";
+		};
+		2F39D68E26D06BCE0085C96E /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				F346179626B8BB1C0005136B /* Model */,
+				2F39D69526D087F50085C96E /* View */,
+				2F39D69426D087D60085C96E /* ViewModel */,
+				2FC7541A26C7845200036064 /* Helper */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		2F39D68F26D06BD50085C96E /* Shopee */ = {
+			isa = PBXGroup;
+			children = (
+				2F39D69626D0880B0085C96E /* View */,
+				2F39D69B26D088EB0085C96E /* ViewModel */,
+			);
+			path = Shopee;
+			sourceTree = "<group>";
+		};
+		2F39D69426D087D60085C96E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F302B02B26BB82D700B3B83A /* TransDetailViewModel.swift */,
+				F302B03226BB992800B3B83A /* productViewModel.swift */,
+				F78F5F8026C0F6DD00CB5D6D /* TransactionViewModel.swift */,
+				84ACCDC426C6D1C4009938D8 /* IncomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2F39D69526D087F50085C96E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F346178E26B8AD200005136B /* Component */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2F39D69626D0880B0085C96E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2F81B9DE26D2861A00C9E942 /* Component */,
+				2F39D69726D088180085C96E /* Shopee.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2F39D69A26D088E40085C96E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F74758DA26BE44F900740DAE /* TokopediaFeeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2F39D69B26D088EB0085C96E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2F81B9DA26D2835A00C9E942 /* ShopeeFeeViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		2F52F30926B7CC640046A1AA /* Overview */ = {
@@ -729,6 +809,22 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		2F81B9DD26D2861000C9E942 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				F302B03826BBA9CD00B3B83A /* TokopediaEditFeeModal.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		2F81B9DE26D2861A00C9E942 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				2F81B9DF26D2864600C9E942 /* ShopeeEditFeeModel.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
 		2F82F12D26BC2089004E4ADF /* Table */ = {
 			isa = PBXGroup;
 			children = (
@@ -892,7 +988,6 @@
 				F32412AB26BA6E590022E95D /* modalImportFile.swift */,
 				F32412AD26BA88400022E95D /* SyncDataModal.swift */,
 				F302B03526BBA9BA00B3B83A /* ChooseProductModal.swift */,
-				F302B03826BBA9CD00B3B83A /* EditFeeModal.swift */,
 				2FC7541726C6BBFC00036064 /* TransactionByMonthCalendar.swift */,
 			);
 			path = Component;
@@ -901,6 +996,7 @@
 		F346179526B8BB0C0005136B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2F81B9DD26D2861000C9E942 /* Component */,
 				2F52F2FA26B7A49C0046A1AA /* Tokopedia.swift */,
 			);
 			path = View;
@@ -913,18 +1009,6 @@
 				F7761FD726BD85CC00324C2E /* FeeModel.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		F346179726B8BB230005136B /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				F74758DA26BE44F900740DAE /* FeeViewModel.swift */,
-				F302B02B26BB82D700B3B83A /* TransDetailViewModel.swift */,
-				F302B03226BB992800B3B83A /* productViewModel.swift */,
-				F78F5F8026C0F6DD00CB5D6D /* TransactionViewModel.swift */,
-				84ACCDC426C6D1C4009938D8 /* tokopediaViewModel.swift */,
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		F73F69AE26B910C000CD9642 /* ProductSold */ = {
@@ -1242,7 +1326,7 @@
 				F7FC2E8B26BFBBF300AD3ACB /* MagnifierRect.swift in Sources */,
 				2F764DD926A92152005B0513 /* BlurWindow.swift in Sources */,
 				51E27EB626BB9838009D0CB6 /* ChartData.swift in Sources */,
-				F74758DB26BE44F900740DAE /* FeeViewModel.swift in Sources */,
+				F74758DB26BE44F900740DAE /* TokopediaFeeViewModel.swift in Sources */,
 				2FC7541C26C7846C00036064 /* DateExtension.swift in Sources */,
 				2F82F12F26BC20A3004E4ADF /* ExpenseTableHeader.swift in Sources */,
 				2F57B84A26BDC17A00472B74 /* MonthlyExpenseChart.swift in Sources */,
@@ -1293,6 +1377,8 @@
 				2FB41BBC26B8F1330035B62B /* ExpenseList.swift in Sources */,
 				2F1701B526C79B4F00C18EFB /* CardSummaryGroup.swift in Sources */,
 				2F57B83826BD68EE00472B74 /* TotalExpenseInfoCard.swift in Sources */,
+				2F39D69826D088180085C96E /* Shopee.swift in Sources */,
+				2F81B9E026D2864600C9E942 /* ShopeeEditFeeModel.swift in Sources */,
 				2F52F31F26B7E9870046A1AA /* NetIncomeCard.swift in Sources */,
 				2F52F32726B81ECD0046A1AA /* PieChartLegend.swift in Sources */,
 				2F57B85526BDCEE500472B74 /* Constant.swift in Sources */,
@@ -1302,10 +1388,11 @@
 				F73F69AC26B8E90800CD9642 /* CoreDataManager.swift in Sources */,
 				F7AA51E126BA4E8200BE00B6 /* ProductSoldModel.swift in Sources */,
 				2F52F33226B82FF00046A1AA /* ExpenseTipsCard.swift in Sources */,
+				2F81B9DB26D2835A00C9E942 /* ShopeeFeeViewModel.swift in Sources */,
 				2F18857D26B252370067E82D /* MiddleBarMenu.swift in Sources */,
 				F302B03326BB992800B3B83A /* productViewModel.swift in Sources */,
 				2F57B84026BD82E100472B74 /* GroupingData.swift in Sources */,
-				84ACCDC526C6D1C4009938D8 /* tokopediaViewModel.swift in Sources */,
+				84ACCDC526C6D1C4009938D8 /* IncomeViewModel.swift in Sources */,
 				2F832F0A26B3E6F000426643 /* HomeNavigationOptions.swift in Sources */,
 				2FB41BE126B9C9520035B62B /* StringFormatter.swift in Sources */,
 				51E27EB726BB9838009D0CB6 /* BarView.swift in Sources */,
@@ -1317,7 +1404,7 @@
 				F76D0EB126C6B71A00601A66 /* BusinessGrowthModel.swift in Sources */,
 				F76D0EAB26C61E9400601A66 /* BusinessUpdateViewModel.swift in Sources */,
 				2FB41BC426B8F1F60035B62B /* CashInformationCard.swift in Sources */,
-				F302B03926BBA9CD00B3B83A /* EditFeeModal.swift in Sources */,
+				F302B03926BBA9CD00B3B83A /* TokopediaEditFeeModal.swift in Sources */,
 				2F2B3B1326C4DFCD006FF7F2 /* CardSummary.swift in Sources */,
 				2F57B84326BDAD7B00472B74 /* MonthYearCalendar.swift in Sources */,
 				2F57B85926BDE34C00472B74 /* OverviewExpenseViewModel.swift in Sources */,
@@ -1335,11 +1422,12 @@
 				51E27EB926BB9848009D0CB6 /* BarView.swift in Sources */,
 				2FC7540B26C5861B00036064 /* InitialView.swift in Sources */,
 				2FB41BD126B8F63E0035B62B /* RecentExpenseTableCard.swift in Sources */,
+				2F39D69926D088180085C96E /* Shopee.swift in Sources */,
 				F32412AE26BA88400022E95D /* SyncDataModal.swift in Sources */,
 				2FB41BC826B8F2130035B62B /* ProductInformationCard.swift in Sources */,
 				2F832F1526B4439400426643 /* SideBarButton.swift in Sources */,
 				F32412AC26BA6E590022E95D /* modalImportFile.swift in Sources */,
-				F74758DC26BE44F900740DAE /* FeeViewModel.swift in Sources */,
+				F74758DC26BE44F900740DAE /* TokopediaFeeViewModel.swift in Sources */,
 				2F2B3B1626C4DFCD006FF7F2 /* ProductModel.swift in Sources */,
 				2F764DDA26A921A3005B0513 /* BlurWindow.swift in Sources */,
 				2F52F2ED26B7950D0046A1AA /* CashdeckData.xcdatamodeld in Sources */,
@@ -1356,7 +1444,7 @@
 				F7FC2E9026BFBBF300AD3ACB /* Helpers.swift in Sources */,
 				F73F69C226B99B8800CD9642 /* TotalNetIncome.swift in Sources */,
 				2F2B3B1A26C4DFCD006FF7F2 /* productController.swift in Sources */,
-				F302B03A26BBA9CD00B3B83A /* EditFeeModal.swift in Sources */,
+				F302B03A26BBA9CD00B3B83A /* TokopediaEditFeeModal.swift in Sources */,
 				2F39D68826CF57230085C96E /* TableHeaderComponent.swift in Sources */,
 				F7FC2E8E26BFBBF300AD3ACB /* Legend.swift in Sources */,
 				2F52F33026B82FDD0046A1AA /* RecentExpenseOverviewCard.swift in Sources */,
@@ -1373,7 +1461,7 @@
 				2FF3829C26CA206300C54666 /* MonthlyExpenseModel.swift in Sources */,
 				2F2B3B1226C4DFCD006FF7F2 /* ProductTable.swift in Sources */,
 				F7FC2E8426BFBBF300AD3ACB /* Path+QuadCurve.swift in Sources */,
-				84ACCDC626C6D1C4009938D8 /* tokopediaViewModel.swift in Sources */,
+				84ACCDC626C6D1C4009938D8 /* IncomeViewModel.swift in Sources */,
 				2F57B84826BDBB3A00472B74 /* MonthSelector.swift in Sources */,
 				F73F69C526B99F0C00CD9642 /* TotalSold.swift in Sources */,
 				2F57B83526BD54F200472B74 /* ExpenseSheet.swift in Sources */,
@@ -1417,6 +1505,7 @@
 				F302B02D26BB82D700B3B83A /* TransDetailViewModel.swift in Sources */,
 				F7AA51E226BA4E8200BE00B6 /* ProductSoldModel.swift in Sources */,
 				F76D0EAF26C61FDE00601A66 /* BusinessUpdateModel.swift in Sources */,
+				2F81B9E126D2864600C9E942 /* ShopeeEditFeeModel.swift in Sources */,
 				2F52F33326B82FF00046A1AA /* ExpenseTipsCard.swift in Sources */,
 				2F52F31826B7CE670046A1AA /* PieChartView.swift in Sources */,
 				2F1701B626C79B4F00C18EFB /* CardSummaryGroup.swift in Sources */,
@@ -1428,6 +1517,7 @@
 				2FB41BE226B9C9520035B62B /* StringFormatter.swift in Sources */,
 				2F764DBA26A7C254005B0513 /* CashdeckApp.swift in Sources */,
 				2FB41BC526B8F1F60035B62B /* CashInformationCard.swift in Sources */,
+				2F81B9DC26D2835A00C9E942 /* ShopeeFeeViewModel.swift in Sources */,
 				F7FC2E8C26BFBBF300AD3ACB /* MagnifierRect.swift in Sources */,
 				F7FC2E8226BFBBF300AD3ACB /* Line.swift in Sources */,
 				2FB41BDC26B9C5490035B62B /* WithTopLabelTextField.swift in Sources */,
@@ -1635,7 +1725,7 @@
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = H9X3B7ZFUK;
+				DEVELOPMENT_TEAM = UFNNYX499Q;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = macOS/Info.plist;
@@ -1660,7 +1750,7 @@
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = H9X3B7ZFUK;
+				DEVELOPMENT_TEAM = UFNNYX499Q;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = macOS/Info.plist;
