@@ -38,5 +38,6 @@ struct ExpenseOverview: View {
 struct ExpenseOverview_Previews: PreviewProvider {
     static var previews: some View {
         ExpenseOverview()
+            .environment(\.sizeCategory, .large)
     }
 }

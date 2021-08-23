@@ -21,11 +21,11 @@ struct BarChartCell: View {
                     .fill(barColor)
                     .scaleEffect(CGSize(width: 0.8, height: 0), anchor: .bottom)
                 RoundedRectangle(cornerRadius: 5)
-                    .fill(Color("colorDown"))
+                    .fill(LinearGradient(gradient: Gradient(colors: [Color("colorDown"), Color("DividerColor")]), startPoint: .top, endPoint: .bottom))
                     .scaleEffect(CGSize(width: 0.8, height: barHeight(val: value)), anchor: .top)
             } else {
                 RoundedRectangle(cornerRadius: 5)
-                    .fill(barColor)
+                    .fill(LinearGradient(gradient: Gradient(colors: [barColor, Color("DividerColor")]), startPoint: .bottom, endPoint: .top))
                     .scaleEffect(CGSize(width: 0.8, height: barHeight(val: value)), anchor: .bottom)
                 RoundedRectangle(cornerRadius: 5)
                     .fill(Color("colorDown"))
