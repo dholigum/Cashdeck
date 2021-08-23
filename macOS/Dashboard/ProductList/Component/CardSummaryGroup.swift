@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CardSummaryGroup: View {
     
-    @StateObject var productVM: ProductViewModel
+    @StateObject var productVM = ProductViewModel.shared
     
     var body: some View {
         HStack {

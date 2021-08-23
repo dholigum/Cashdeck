@@ -9,14 +9,24 @@ import SwiftUI
 
 class ProductViewModel: ObservableObject {
     
+    static let shared: ProductViewModel = ProductViewModel()
     @Published var listProducts: [Products] = [Products]()
     @Published var totalProducts: Int = 0
     @Published var totalQuantity: Int = 0
+    @Published var sku: String = ""
+    @Published var name: String = ""
+    @Published var color: String = ""
+    @Published var size: String = ""
+    @Published var qty: String = ""
+    @Published var cost: String = ""
+    @Published var isPresented: Bool = false
+    @Published var choosedProduct = Products()
+    
     
     let context = CoreDataManager.sharedManager.persistentContainer.viewContext
     
     
-    public func fetchProducts() {
+    func fetchProducts() {
         do {
             listProducts = try context.fetch(Products.fetchRequest())
             totalProducts = listProducts.count
@@ -27,7 +37,32 @@ class ProductViewModel: ObservableObject {
         }
     }
     
-    public func addProduct(_ Product: ProductModel) {
+    func showEdit(product: Products) {
+        choosedProduct = product
+        guard let pSKU = product.sku, let pName = product.name, let pColor = product.color, let pSize = product.size else { return }
+        sku = pSKU
+        name = pName
+        color = pColor
+        size = pSize
+        qty = String(product.quantity)
+        cost = String(product.costPrice)
+        isPresented.toggle()
+    }
+    
+    func editProduct() {
+        let data = choosedProduct
+        data.sku = sku
+        data.name = name
+        data.color = color
+        data.size = size
+        data.quantity = Int64(qty) ?? 0
+        data.costPrice = Int64(cost) ?? 0
+        fetchProducts()
+        
+        CoreDataManager.sharedManager.saveContext()
+    }
+    
+    func addProduct(_ Product: ProductModel) {
         let newProduct = Products(context: self.context)
         newProduct.sku = Product.SKU
         newProduct.name = Product.name
@@ -45,7 +80,7 @@ class ProductViewModel: ObservableObject {
         }
     }
     
-    public func deleteProduct(_ product: Products) {
+    func deleteProduct(_ product: Products) {
         
         totalProducts -= 1
         totalQuantity -= Int(product.quantity)

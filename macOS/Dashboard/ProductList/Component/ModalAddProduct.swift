@@ -11,7 +11,7 @@ import CodableCSV
 struct ModalAddProduct: View {
     
     @Binding var isVisible: Bool
-    @StateObject var ProductVM: ProductViewModel
+    @StateObject var ProductVM = ProductViewModel.shared
     
     var body: some View {
         VStack {

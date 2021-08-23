@@ -64,9 +64,10 @@ struct ProductSoldCard: View {
                                     .frame(minWidth: 65, alignment: .leading)
                                     .font(Font.custom("SFProDisplay-Regular", size: 14))
                             Text("+Rp \(data.netIncome)")
-                                    .frame(minWidth: 30, alignment: .leading)
+                                    .frame(width: 110, alignment: .leading)
                                     .font(Font.custom("SFProDisplay-Regular", size: 14))
                         }
+                        .padding(.leading, 25)
                         line
                     }
                 }
