@@ -87,6 +87,7 @@ extension modalImportFile {
                 tmp.removeFirst()
                 let path = tmp.joined(separator: "/")
                 let file = XLSXFile(filepath: "/\(path)")
+                print(file)
 
                 let sharedString = try file!.parseSharedStrings()
                 var i = 0
@@ -107,6 +108,49 @@ extension modalImportFile {
                                     let productId = row.cells[5].stringValue(sharedString!)!
                                     let SKU = row.cells[8].stringValue(sharedString!)
                                     let orderId = row.cells[1].stringValue(sharedString!)
+                                    let newTrans = transactionModel(date: date!, productName: productName, qyt: qyt!, price: price!, SKU: SKU ?? productId, orderId: orderId!)
+                                    TransDetailVM.addTransTemp(newTrans)
+                                }
+                                i += 1
+                            }
+                        }
+                    }
+                    try context.save()
+                    isVisible = false
+                    showmodalSync = true
+                } catch {
+                  print(error)
+                }
+            }
+        } else if channel == "Shopee" {
+            if panel.runModal() == .OK {
+                do {
+
+                var tmp = "\(panel.url!)".split(separator: "/")
+                tmp.removeFirst()
+                let path = tmp.joined(separator: "/")
+                let file = XLSXFile(filepath: "/\(path)")
+                print(file)
+
+                let sharedString = try file!.parseSharedStrings()
+                var i = 0
+                
+                for wbk in try file!.parseWorkbooks() {
+                    for (_, path) in try file!.parseWorksheetPathsAndNames(workbook: wbk) {
+                            let worksheet = try file!.parseWorksheet(at: path)
+                            for row in worksheet.data?.rows ?? [] {
+                                if i > 3 {
+                                    let isoDate = row.cells[7].stringValue(sharedString!)!
+                                    let dateFormatter = DateFormatter()
+                                    dateFormatter.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
+                                    dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
+                                    let date = dateFormatter.date(from:isoDate)
+                                    let productName = row.cells[12].stringValue(sharedString!)!
+                                    let qyt = Int64(row.cells[23].stringValue(sharedString!)!)
+                                    let price = Int64(row.cells[10].stringValue(sharedString!)!)
+                                    let productId = row.cells[0].stringValue(sharedString!)!
+                                    let SKU = row.cells[11].stringValue(sharedString!)
+                                    let orderId = row.cells[0].stringValue(sharedString!)
                                     let newTrans = transactionModel(date: date!, productName: productName, qyt: qyt!, price: price!, SKU: SKU ?? productId, orderId: orderId!)
                                     TransDetailVM.addTransTemp(newTrans)
                                 }
