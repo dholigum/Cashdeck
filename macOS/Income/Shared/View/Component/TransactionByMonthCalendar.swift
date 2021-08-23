@@ -120,7 +120,7 @@ struct TransactionByMonthCalendar: View {
             
             Button(action: {
                 transVM.isOpenCalendar = false
-                transVM.fetchData()
+                transVM.fetchData(channel: "Tokopedia")
                 NSApp.mainWindow?.endSheet(NSApp.keyWindow!)
                 
             }, label: {
