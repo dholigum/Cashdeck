@@ -10,7 +10,7 @@ import CoreXLSX
 
 struct ProductList: View {
     @State var showModal = false
-    @StateObject var productVM = ProductViewModel()
+    @StateObject var productVM = ProductViewModel.shared
     
     var window = NSScreen.main?.visibleFrame
     var body: some View {

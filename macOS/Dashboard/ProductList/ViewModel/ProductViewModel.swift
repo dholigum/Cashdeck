@@ -9,14 +9,22 @@ import SwiftUI
 
 class ProductViewModel: ObservableObject {
     
+    static let shared: ProductViewModel = ProductViewModel()
     @Published var listProducts: [Products] = [Products]()
     @Published var totalProducts: Int = 0
     @Published var totalQuantity: Int = 0
+    var sku: String = ""
+    var name: String = ""
+    var color: String = ""
+    var size: String = ""
+    var qty: Int = 0
+    var cost: Int = 0
+    
     
     let context = CoreDataManager.sharedManager.persistentContainer.viewContext
     
     
-    public func fetchProducts() {
+    func fetchProducts() {
         do {
             listProducts = try context.fetch(Products.fetchRequest())
             totalProducts = listProducts.count
@@ -27,7 +35,7 @@ class ProductViewModel: ObservableObject {
         }
     }
     
-    public func addProduct(_ Product: ProductModel) {
+    func addProduct(_ Product: ProductModel) {
         let newProduct = Products(context: self.context)
         newProduct.sku = Product.SKU
         newProduct.name = Product.name
@@ -45,7 +53,7 @@ class ProductViewModel: ObservableObject {
         }
     }
     
-    public func deleteProduct(_ product: Products) {
+    func deleteProduct(_ product: Products) {
         
         totalProducts -= 1
         totalQuantity -= Int(product.quantity)
