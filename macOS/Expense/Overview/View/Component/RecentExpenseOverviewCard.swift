@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RecentExpenseOverviewCard: View {
     
-    @StateObject var expenseVM = ExpenseViewModel()
+    @StateObject var expenseVM: ExpenseViewModel
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -20,8 +20,6 @@ struct RecentExpenseOverviewCard: View {
                 .padding(EdgeInsets(top: 22, leading: 16, bottom: 24, trailing: 0))
             
             ExpenseTableHeader(dateWidth: 80, categoryWidth: 80, nameWidth: 250, priceWidth: 120, actionWidrh: 0, leadingPadding: 16)
-            CustomDivider(width: 560)
-                .padding(EdgeInsets(top: -8, leading: 16, bottom: 0, trailing: 0))
             
             ScrollView(.vertical, showsIndicators: true, content: {
                 LazyVStack {

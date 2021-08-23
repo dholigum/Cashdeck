@@ -21,7 +21,7 @@ struct IncomeNavigationOptions {
         case .tokopedia:
             Tokopedia()
         case .shopee:
-            Text("Main Option selected\n\(option.value)")
+            Shopee()
         }
     }
 }

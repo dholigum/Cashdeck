@@ -10,6 +10,8 @@ import SwiftUI
 
 struct transactionsTable: View {
     
+    var channel: String
+    
     @State var date: Date
     @StateObject var transVM = TransactionViewModel.shared
     
@@ -28,33 +30,40 @@ struct transactionsTable: View {
                     .sheet(isPresented: $transVM.isOpenCalendar) {
                         TransactionByMonthCalendar()
                     }
-                    .padding()
+                    .padding(.trailing, 20)
+                    .padding(.top, 20)
             }
             HStack {
                 Text("Date")
                     .fontWeight(.semibold)
-                    .padding(20)
+                    .padding(.horizontal, 20)
+                    .padding(.vertical, 10)
                     .frame(width: 130, alignment: .leading)
                 Text("Product Name")
                     .fontWeight(.semibold)
                     .frame(width: 270, alignment: .leading)
-                    .padding(20)
+                    .padding(.horizontal, 20)
+                    .padding(.vertical, 10)
                 Text("Quantity")
                     .fontWeight(.semibold)
                     .frame(width: 55, alignment: .leading)
-                    .padding(20)
+                    .padding(.horizontal, 20)
+                    .padding(.vertical, 10)
                 Text("Price")
                     .fontWeight(.semibold)
                     .frame(width: 100, alignment: .leading)
-                    .padding(20)
+                    .padding(.horizontal, 20)
+                    .padding(.vertical, 10)
                 Text("Fee")
                     .fontWeight(.semibold)
                     .frame(width: 100, alignment: .leading)
-                    .padding(20)
+                    .padding(.horizontal, 20)
+                    .padding(.vertical, 10)
                 Text("Net Income")
                     .fontWeight(.semibold)
                     .frame(width: 100, alignment: .leading)
-                    .padding(20)
+                    .padding(.horizontal, 20)
+                    .padding(.vertical, 10)
                 Spacer()
             }
             Divider()
@@ -108,7 +117,7 @@ struct transactionsTable: View {
         .cornerRadius(10)
         .padding(10)
         .onAppear(perform: {
-            transVM.fetchData()
+            transVM.fetchData(channel: channel)
         })
     }
 }

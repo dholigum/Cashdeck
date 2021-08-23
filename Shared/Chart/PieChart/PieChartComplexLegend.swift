@@ -32,7 +32,7 @@ struct PieChartComplexLegend: View {
             else { return 0.0 } }
     }
     
-    public init(values: [Double], oldValues: [Double], names: [String], colors: [Color] = [Color.blue, Color.green, Color.orange, Color.purple, Color.gray, Color.yellow, Color.red, Color.blue, Color.green, Color.orange, Color.purple, Color.gray, Color.yellow, Color.red]){
+    public init(values: [Double], oldValues: [Double], names: [String], colors: [Color] = K().pieChartColor){
         
         self.values = values
         self.oldValues = oldValues
@@ -73,6 +73,7 @@ struct PieChartComplexLegend: View {
                                 }
                             }
                         }
+                        .padding(.vertical, 6)
                     }
                 }
             }
