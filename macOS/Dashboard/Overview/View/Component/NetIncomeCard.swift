@@ -92,7 +92,7 @@ struct NetIncomeCard: View {
                                             labels: "\(horizontalLabels(index: i))",
                                             labelSize: 9)
                                             
-                                            .opacity(barIsTouched(index: i) ? 1 : 0.7)
+                                            .opacity(barIsTouched(index: i) ? 1 : 1)
                                             .scaleEffect(barIsTouched(index: i) ? CGSize(width: 1.05, height: 1) : CGSize(width: 1, height: 1), anchor: .bottom)
                                             .animation(.spring())
                                             .padding(.top)
