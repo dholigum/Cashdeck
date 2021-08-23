@@ -116,8 +116,38 @@ class BusinessUpdateViewModel {
         for data in income {
             let total = data.netIncome - (calculateExpense(date: data.month) / 30)
             totalNetIncome.append(Double(total))
+            
+            print(data.netIncome, (calculateExpense(date: data.month) / 30), total)
         }
         return totalNetIncome
+    }
+    
+    func getTodayIncomeExpenseNetIncome() -> Dictionary<String, Double> {
+        
+        var listDate = [Int64]()
+        var listMonth = [Int64]()
+        var fixIncome = [TransModel]()
+        for data in businessGrowthModel.getSortedDetail(){
+            if let data = data.td_transaction, let date = data.date {
+                listDate.append(convertDateToDay(date: date))
+                listMonth.append(convertDateToMonth(date: date))
+            }
+        }
+        
+        let clearDate = Array(NSOrderedSet(array: listDate))
+        for date in clearDate {
+            let temp = filteringDetails(details: businessGrowthModel.getSortedDetail(), date: date as! Int64)
+            let income = getNetIncomeTrans(detail: temp)
+            guard let data = temp[0].td_transaction?.date else { continue }
+            fixIncome.append(TransModel(netIncome: income, month: convertDateToMonth(date: data)))
+        }
+        
+        let todayIncome = Double(fixIncome.last?.netIncome ?? 0)
+        let todayExpense = Double(calculateExpense(date: fixIncome.last?.month ?? 0) / 30)
+        let todayNetIncome = todayIncome - todayExpense
+        
+        let legendDesc = ["income": todayIncome, "expense": todayExpense, "netIncome": todayNetIncome]
+        return legendDesc
     }
     
     func convertDateToDay(date: Date) -> Int64 {

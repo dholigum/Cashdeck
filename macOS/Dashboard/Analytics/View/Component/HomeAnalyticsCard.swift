@@ -9,6 +9,8 @@ import SwiftUI
 
 struct HomeAnalyticsCard: View {
     
+    let businessUpdateVM = BusinessUpdateViewModel.shared
+    
     var title: String
     var legend: String
     var barColor: Color

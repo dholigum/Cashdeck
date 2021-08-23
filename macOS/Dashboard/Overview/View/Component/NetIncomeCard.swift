@@ -9,6 +9,8 @@ import SwiftUI
 
 struct NetIncomeCard: View {
     
+    let businessUpdateVM = BusinessUpdateViewModel.shared
+    
     var title: String
     var legend: String
     var barColor: Color
@@ -124,21 +126,21 @@ struct NetIncomeCard: View {
             HStack{
                 VStack (alignment: .leading, spacing: 1){
                     Text("Total Income")
-                    Text("Rp. 1.000.000")
+                    Text(String(businessUpdateVM.getTodayIncomeExpenseNetIncome()["income"] ?? 0).currencyFormatting())
                         .font(Font.custom("SFProDisplay-Bold", size: 20))
                         .foregroundColor(Color("colorUp"))
                     
                 }.frame(maxWidth: .infinity)
                 VStack (alignment: .leading, spacing: 1){
                     Text("Total Expense")
-                    Text("Rp. 400.000")
+                    Text(String(businessUpdateVM.getTodayIncomeExpenseNetIncome()["expense"] ?? 0).currencyFormatting())
                         .font(Font.custom("SFProDisplay-Bold", size: 20))
                         .foregroundColor(Color("ExpenseColor"))
                     
                 }.frame(maxWidth: .infinity)
                 VStack (alignment: .leading, spacing: 1){
                     Text("Total Net Income")
-                    Text("Rp. 600.000")
+                    Text(String(businessUpdateVM.getTodayIncomeExpenseNetIncome()["netIncome"] ?? 0).currencyFormatting())
                         .font(Font.custom("SFProDisplay-Bold", size: 20))
                         .foregroundColor(Color("OrangeColor"))
                     
