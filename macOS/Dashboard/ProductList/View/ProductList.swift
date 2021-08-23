@@ -14,31 +14,35 @@ struct ProductList: View {
     
     var window = NSScreen.main?.visibleFrame
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            HStack {
-                Text("Product List")
-                    .font(Font.custom("SFProDisplay-Bold", size: 24))
-                    .padding(.init(top: 19, leading: 10, bottom: 10, trailing: 0))
-                    .foregroundColor(Color("AccentColor2"))
-            }
-            
-            CardSummaryGroup(productVM: productVM)
-            
-            HStack {
-                primaryBtn(imageName: "square.and.arrow.down", title: "Import Product", width: 170)
-                    .onTapGesture {
-                        showModal.toggle()
-                    }
-                    .sheet(isPresented: $showModal, content: {
-                        ModalAddProduct(isVisible: $showModal, ProductVM: productVM)
-                    })
+        GeometryReader { geometry in
+            VStack(alignment: .leading, spacing: 10) {
+                HStack {
+                    Text("Product List")
+                        .font(Font.custom("SFProDisplay-Bold", size: 24))
+                        .padding(.init(top: 19, leading: 10, bottom: 10, trailing: 0))
+                        .foregroundColor(Color("AccentColor2"))
+                }
+                
+                CardSummaryGroup(productVM: productVM)
+                
+                HStack {
+                    primaryBtn(imageName: "square.and.arrow.down", title: "Import Product", width: 170)
+                        .onTapGesture {
+                            showModal.toggle()
+                        }
+                        .sheet(isPresented: $showModal, content: {
+                            ModalAddProduct(isVisible: $showModal, ProductVM: productVM)
+                        })
+                    Spacer()
+                } .padding(.top, 10)
+                
+                ProductTable(ProductsVM: productVM)
                 Spacer()
-            } .padding(.top, 10)
-            
-            ProductTable(ProductsVM: productVM)
-            Spacer()
+            }
+//            .padding(.horizontal, 16)
+            .frame(width: geometry.frame(in: .global).size.width, height: geometry.frame(in: .global).size.height, alignment: .leading)
+            .padding(.leading, 12)
+            .padding(.top, 45)
         }
-        .padding(.horizontal, 16)
-        .frame(minWidth: window!.width / 1.8)
     }
 }

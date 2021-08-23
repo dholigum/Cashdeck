@@ -70,6 +70,19 @@ struct ProductTable: View {
                                     Text("\(product.costPrice)")
                                         .font(Font.custom("SFProDisplay-Regular", size: 14))
                                         .frame(minWidth: 100, alignment: .leading)
+                                    
+                                    Button(action: {
+                                        ProductsVM.showEdit(product: product)
+                                    }, label: {
+                                        Image(systemName: "square.and.pencil")
+                                            .font(.system(size: 18))
+                                            .foregroundColor(Color("AccentColor2"))
+                                    })
+                                    .buttonStyle(PlainButtonStyle())
+                                    .sheet(isPresented: $ProductsVM.isPresented) {
+                                        ModalEditProduct(productVM: ProductsVM)
+                                    }
+                                    
                                     Button(action: {
                                         ProductsVM.deleteProduct(product)
                                     }) {
@@ -102,9 +115,10 @@ struct ProductTable: View {
                         .padding(.top, 36)
                     }
                 }
-                .padding(.leading, 52)
+                .padding(.leading, 54)
             Spacer()
         }
+        .frame(minWidth: 1009, maxWidth: 1009, minHeight: 650.94, maxHeight: 700)
         .background(Color.white)
         .cornerRadius(15)
         .padding(10)

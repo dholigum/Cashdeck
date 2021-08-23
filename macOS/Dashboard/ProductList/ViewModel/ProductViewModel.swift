@@ -13,12 +13,14 @@ class ProductViewModel: ObservableObject {
     @Published var listProducts: [Products] = [Products]()
     @Published var totalProducts: Int = 0
     @Published var totalQuantity: Int = 0
-    var sku: String = ""
-    var name: String = ""
-    var color: String = ""
-    var size: String = ""
-    var qty: Int = 0
-    var cost: Int = 0
+    @Published var sku: String = ""
+    @Published var name: String = ""
+    @Published var color: String = ""
+    @Published var size: String = ""
+    @Published var qty: String = ""
+    @Published var cost: String = ""
+    @Published var isPresented: Bool = false
+    @Published var choosedProduct = Products()
     
     
     let context = CoreDataManager.sharedManager.persistentContainer.viewContext
@@ -33,6 +35,31 @@ class ProductViewModel: ObservableObject {
         catch {
             print(error.localizedDescription)
         }
+    }
+    
+    func showEdit(product: Products) {
+        choosedProduct = product
+        guard let pSKU = product.sku, let pName = product.name, let pColor = product.color, let pSize = product.size else { return }
+        sku = pSKU
+        name = pName
+        color = pColor
+        size = pSize
+        qty = String(product.quantity)
+        cost = String(product.costPrice)
+        isPresented.toggle()
+    }
+    
+    func editProduct() {
+        let data = choosedProduct
+        data.sku = sku
+        data.name = name
+        data.color = color
+        data.size = size
+        data.quantity = Int64(qty) ?? 0
+        data.costPrice = Int64(cost) ?? 0
+        fetchProducts()
+        
+        CoreDataManager.sharedManager.saveContext()
     }
     
     func addProduct(_ Product: ProductModel) {
