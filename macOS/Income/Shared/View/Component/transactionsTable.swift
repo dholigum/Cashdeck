@@ -10,6 +10,8 @@ import SwiftUI
 
 struct transactionsTable: View {
     
+    var channel: String
+    
     @State var date: Date
     @StateObject var transVM = TransactionViewModel.shared
     
@@ -115,7 +117,7 @@ struct transactionsTable: View {
         .cornerRadius(10)
         .padding(10)
         .onAppear(perform: {
-            transVM.fetchData()
+            transVM.fetchData(channel: channel)
         })
     }
 }

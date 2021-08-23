@@ -53,12 +53,12 @@ class ProductSoldModel {
         CoreDataManager.sharedManager.saveContext()
     }
     
-    func insertChannel() -> Channel {
+    func insertChannel(name: String, maxShippingFee: Int, productFee: Double, shippingFee: Double) -> Channel {
         let newChannel = Channel(context: context)
-        newChannel.name = "Tokopedia"
-        newChannel.maxShippingFee = 10000
-        newChannel.productFee = 1.5
-        newChannel.shippingFee = 2.5
+        newChannel.name = name
+        newChannel.maxShippingFee = Int64(maxShippingFee)
+        newChannel.productFee = productFee
+        newChannel.shippingFee = shippingFee
         CoreDataManager.sharedManager.saveContext()
         return newChannel
     }

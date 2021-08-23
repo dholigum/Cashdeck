@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct EditFeeModal: View {
+struct TokopediaEditFeeModal: View {
     @Binding var isPresented: Bool
-    @ObservedObject var feeVM = FeeViewModel()
+    @ObservedObject var feeVM = TokopediaFeeViewModel()
     
     var body: some View {
         VStack(spacing: 16) {
@@ -78,11 +78,5 @@ struct EditFeeModal: View {
         }
         .frame(width: 400, height: 461)
         .background(Color("MainColor"))
-    }
-}
-
-struct EditFeeModal_Previews: PreviewProvider {
-    static var previews: some View {
-        EditFeeModal(isPresented: .constant(true))
     }
 }
