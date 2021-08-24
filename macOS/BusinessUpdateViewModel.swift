@@ -122,7 +122,7 @@ class BusinessUpdateViewModel {
         return totalNetIncome
     }
     
-    func getTodayIncomeExpenseNetIncome() -> Dictionary<String, Double> {
+    func getFixIncomeFromTransaction() -> [TransModel] {
         
         var listDate = [Int64]()
         var listMonth = [Int64]()
@@ -142,12 +142,127 @@ class BusinessUpdateViewModel {
             fixIncome.append(TransModel(netIncome: income, month: convertDateToMonth(date: data)))
         }
         
+        return fixIncome
+    }
+    
+    func getTodayIncomeExpenseNetIncome() -> Dictionary<String, Double> {
+        
+        let fixIncome = getFixIncomeFromTransaction()
+        
         let todayIncome = Double(fixIncome.last?.netIncome ?? 0)
         let todayExpense = Double(calculateExpense(date: fixIncome.last?.month ?? 0) / 30)
         let todayNetIncome = todayIncome - todayExpense
         
         let legendDesc = ["income": todayIncome, "expense": todayExpense, "netIncome": todayNetIncome]
         return legendDesc
+    }
+    
+    func getIncomeDifferences() -> Double {
+        let fixIncome = getFixIncomeFromTransaction()
+        let todayYesterdayFixIncome = fixIncome.suffix(2)
+        
+        let todayIncome = todayYesterdayFixIncome[1].netIncome
+        let yesterdayIncome = todayYesterdayFixIncome[0].netIncome
+        
+        return Double(todayIncome - yesterdayIncome)
+    }
+    
+    func getExpenseDifferences() -> Double {
+        let fixIncome = getFixIncomeFromTransaction()
+        let todayYesterdayFixIncome = fixIncome.suffix(2)
+        
+        let todayExpense = calculateExpense(date: todayYesterdayFixIncome[1].month ) / 30
+        let yesterdayExpense = calculateExpense(date: todayYesterdayFixIncome[0].month ) / 30
+        
+        return Double(todayExpense - yesterdayExpense)
+    }
+    
+    func getNetIncomeDifferences() -> Double {
+        let fixIncome = getFixIncomeFromTransaction()
+        let todayYesterdayFixIncome = fixIncome.suffix(2)
+        
+        let todayIncome = todayYesterdayFixIncome[1].netIncome
+        let yesterdayIncome = todayYesterdayFixIncome[0].netIncome
+        let todayExpense = calculateExpense(date: todayYesterdayFixIncome[1].month ) / 30
+        let yesterdayExpense = calculateExpense(date: todayYesterdayFixIncome[0].month ) / 30
+        let todayNetIncome = todayIncome - todayExpense
+        let yesterdayNetIncome = yesterdayIncome - yesterdayExpense
+        
+        return Double(todayNetIncome - yesterdayNetIncome)
+    }
+    
+    func getIncomePercentage() -> Double {
+        let fixIncome = getFixIncomeFromTransaction()
+        let todayYesterdayFixIncome = fixIncome.suffix(2)
+        
+        let yesterdayIncome = todayYesterdayFixIncome[0].netIncome
+        
+        return Double(getIncomeDifferences() / Double(yesterdayIncome) * 100)
+    }
+    
+    func getExpensePercentage() -> Double {
+        let fixIncome = getFixIncomeFromTransaction()
+        let todayYesterdayFixIncome = fixIncome.suffix(2)
+        
+        let yesterdayExpense = calculateExpense(date: todayYesterdayFixIncome[0].month ) / 30
+        
+        return Double(getExpenseDifferences() / Double(yesterdayExpense) * 100)
+    }
+    
+    func getNetIncomePercentage() -> Double {
+        let fixIncome = getFixIncomeFromTransaction()
+        let todayYesterdayFixIncome = fixIncome.suffix(2)
+        
+        let yesterdayIncome = todayYesterdayFixIncome[0].netIncome
+        let yesterdayExpense = calculateExpense(date: todayYesterdayFixIncome[0].month ) / 30
+        let yesterdayNetIncome = yesterdayIncome - yesterdayExpense
+        
+        return Double(getNetIncomeDifferences() / Double(yesterdayNetIncome) * 100)
+    }
+    
+    func getIsIncomeIncreased() -> Bool {
+        return getIncomeDifferences() > 0
+    }
+    
+    func getIsExpenseIncreased() -> Bool {
+        return getExpenseDifferences() > 0
+    }
+    
+    func getIsNetIncomeIncreased() -> Bool {
+        return getNetIncomeDifferences() > 0
+    }
+    
+    func getDifferencesTodayAndYesterday() -> Dictionary<String, Double> {
+        
+        let fixIncome = getFixIncomeFromTransaction()
+        let todayYesterdayFixIncome = fixIncome.suffix(2)
+        
+        let todayIncome = todayYesterdayFixIncome[1].netIncome
+        let yesterdayIncome = todayYesterdayFixIncome[0].netIncome
+        let todayExpense = calculateExpense(date: todayYesterdayFixIncome[1].month ) / 30
+        let yesterdayExpense = calculateExpense(date: todayYesterdayFixIncome[0].month ) / 30
+        let todayNetIncome = todayIncome - todayExpense
+        let yesterdayNetIncome = yesterdayIncome - yesterdayExpense
+        
+        let incomeDiff = Double(todayIncome - yesterdayIncome)
+        let expenseDiff = Double(todayExpense - yesterdayExpense)
+        let netIncomeDiff = Double(todayNetIncome - yesterdayNetIncome)
+        
+        let incomePerc = Double(incomeDiff / Double(yesterdayIncome) * 100)
+        let expensePerc = Double(expenseDiff / Double(yesterdayExpense) * 100)
+        let netIncomePerc = Double(netIncomeDiff / Double(yesterdayNetIncome) * 100)
+        
+        let complexLegendDesc = [
+            "income-diff": incomeDiff,
+            "expense-diff": expenseDiff,
+            "netIncome-diff": netIncomeDiff,
+            "income-perc": incomePerc,
+            "expense-perc": expensePerc,
+            "netIncome-perc": netIncomePerc,
+        ]
+        
+        return complexLegendDesc
+        
     }
     
     func convertDateToDay(date: Date) -> Int64 {
