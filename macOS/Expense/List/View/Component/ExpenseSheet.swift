@@ -16,6 +16,7 @@ struct ExpenseSheet: View {
             HStack {
                 Button(action: {
                     expenseVM.isNewData = false
+                    expenseVM.resetExpenseData()
                     NSApp.mainWindow?.endSheet(NSApp.keyWindow!)
                 }, label: {
                     Text("Cancel")

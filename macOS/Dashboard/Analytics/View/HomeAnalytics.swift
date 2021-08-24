@@ -15,7 +15,10 @@ struct HomeAnalytics: View {
     var duration = ["Daily","Weekly","Monthly","Yearly"]
     
     @StateObject var expenseVM = ExpenseViewModel()
+    @StateObject var overviewExpenseVM =  OverviewExpenseViewModel()
     
+    let businessUpdateVM = BusinessUpdateViewModel.shared
+
     var body: some View {
         GeometryReader { geometry in
             VStack(alignment: .leading, spacing: 18){
@@ -44,23 +47,15 @@ struct HomeAnalytics: View {
                         .pickerStyle(SegmentedPickerStyle())
                         .frame(width: 426)
                         .padding(.leading,250)
-                        
-                        Picker("",selection:$durationOptions){
-                            ForEach(duration, id:\.self){
-                                Text($0)
-                            }
-                        }
-                        .pickerStyle(DefaultPickerStyle())
-                        .frame(width: 100)
-                        .padding(.leading,120)
+
                     }
                     
                     if chartOptions == "Income" {
-                        HomeAnalyticsCard(title: "Chart", legend: "IDR", barColor: Color("AccenColor2"), data: chartDataSet)
+                        HomeAnalyticsCard(title: "Chart", legend: "IDR", barColor: Color("AccenColor2"), data: businessUpdateVM.getIncomePerDayData())
                     } else if chartOptions == "Expense" {
                         HomeAnalyticsCard(title: "Expense", legend: "IDR", barColor: Color("AccenColor2"), data: expenseVM.groupedExpenseByMonth)
                     } else {
-                        HomeAnalyticsCard(title: "Expense", legend: "IDR", barColor: Color("AccenColor2"), data: netIncomeDataSet)
+                        HomeAnalyticsCard(title: "Expense", legend: "IDR", barColor: Color("AccenColor2"), data: businessUpdateVM.getNetIncomeValuesPerDay())
                     }
                     
                 }

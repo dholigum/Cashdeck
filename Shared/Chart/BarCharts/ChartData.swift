@@ -19,7 +19,7 @@ let chartDataSet =
     ChartData(label: "February 2021", value: 750000, day: "Tuesday"),
     ChartData(label: "March 2021", value: 500000, day: "Wednesday"),
     ChartData(label: "April 2021", value: 250000, day: "Thursday"),
-    ChartData(label: "May 2021", value: 0, day: "Friday"),
+    ChartData(label: "May 2021", value: 1500000, day: "Friday"),
     ChartData(label: "June 2021", value: -500000, day: "Saturday"),
     ChartData(label: "July 2021", value: -1000000, day: "Sunday")
 ]

@@ -51,10 +51,11 @@ struct MonthlyExpenseChart: View {
             Spacer()
             
         }
-        .frame(width: 375, height: 784)
+        .frame(width: 375)
         .background(Color.white)
         .cornerRadius(16)
         .clipped()
+        .padding(.bottom, 8)
         .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.15), radius: 4, x: 2, y: 2)
         .padding(.horizontal, 2)
         .onAppear() {

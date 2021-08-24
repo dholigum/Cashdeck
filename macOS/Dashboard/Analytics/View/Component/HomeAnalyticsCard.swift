@@ -9,6 +9,8 @@ import SwiftUI
 
 struct HomeAnalyticsCard: View {
     
+    let businessUpdateVM = BusinessUpdateViewModel.shared
+    
     var title: String
     var legend: String
     var barColor: Color
@@ -42,7 +44,7 @@ struct HomeAnalyticsCard: View {
                              //Cells
                             VStack{
                                 ForEach(0..<rightLegend.count, id: \.self){ i in
-                                    Text("\(ChartLegend(index: i))")
+                                    Text("\(String(format: "%.0f", ChartLegend(index: i)))")
                                         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .trailing)
                                 }
                             }
@@ -104,44 +106,44 @@ struct HomeAnalyticsCard: View {
                 VStack (alignment: .leading, spacing: 1){
                     Text("Total Income")
                         .font(Font.custom("SFProDisplay-Regular",size: 18))
-                    Text("Rp. 1.000.000")
+                    Text(String(businessUpdateVM.getTodayIncomeExpenseNetIncome()["income"] ?? 0).currencyFormatting())
                         .font(Font.custom("SFProDisplay-Bold", size: 24))
                         .foregroundColor(Color("colorUp"))
-                    Text("-Rp. 90.000")
+                    Text(String(businessUpdateVM.getIncomeDifferences()).currencyFormatting())
                         .font(Font.custom("SFProDisplay-Regular", size: 14))
-                        .foregroundColor(Color("colorDown"))
+                        .foregroundColor(businessUpdateVM.getIsIncomeIncreased() ? Color("colorUp") : Color("colorDown"))
                     HStack{
-                        Text("-10.45%").foregroundColor(Color("colorDown"))
-                        Text(" from Yesterday")
+                        Text("\(String(format: "%.2f", businessUpdateVM.getIncomePercentage()))%").foregroundColor(businessUpdateVM.getIsIncomeIncreased() ? Color("colorUp") : Color("colorDown"))
+                        Text("from Yesterday")
                     }.font(Font.custom("SFProDisplay-Regular", size: 14))
                     
                 }.frame(minWidth: 200,maxWidth: .infinity)
                 VStack (alignment: .leading, spacing: 1){
                     Text("Total Expense")
                         .font(Font.custom("SFProDisplay-Regular",size: 18))
-                    Text("Rp. 400.000")
+                    Text(String(businessUpdateVM.getTodayIncomeExpenseNetIncome()["expense"] ?? 0).currencyFormatting())
                         .font(Font.custom("SFProDisplay-Bold", size: 24))
                         .foregroundColor(Color("ExpenseColor"))
-                    Text("+Rp. 87.000")
+                    Text(String(businessUpdateVM.getExpenseDifferences()).currencyFormatting())
                         .font(Font.custom("SFProDisplay-Regular", size: 12))
-                        .foregroundColor(Color("colorDown"))
+                        .foregroundColor(businessUpdateVM.getIsExpenseIncreased() ? Color("colorDown") : Color("colorUp"))
                     HStack{
-                        Text("+10.12%").foregroundColor(Color("colorDown"))
-                        Text(" from Yesterday")
+                        Text("\(String(format: "%.2f", businessUpdateVM.getExpensePercentage()))%").foregroundColor(businessUpdateVM.getIsExpenseIncreased() ? Color("colorDown") : Color("colorUp"))
+                        Text("from Yesterday")
                     }.font(Font.custom("SFProDisplay-Regular", size: 14))
                 }.frame(minWidth: 200,maxWidth: .infinity)
                 VStack (alignment: .leading, spacing: 1){
                     Text("Total Net Income")
                         .font(Font.custom("SFProDisplay-Regular",size: 18))
-                    Text("Rp. 600.000")
+                    Text(String(businessUpdateVM.getTodayIncomeExpenseNetIncome()["netIncome"] ?? 0).currencyFormatting())
                         .font(Font.custom("SFProDisplay-Bold", size: 24))
                         .foregroundColor(Color("OrangeColor"))
-                    Text("+Rp. 121.000")
+                    Text(String(businessUpdateVM.getNetIncomeDifferences()).currencyFormatting())
                         .font(Font.custom("SFProDisplay-Regular", size: 12))
-                        .foregroundColor(Color("colorUp"))
+                        .foregroundColor(businessUpdateVM.getIsNetIncomeIncreased() ? Color("colorUp") : Color("colorDown"))
                     HStack{
-                        Text("+12.12%").foregroundColor(Color("colorUp"))
-                        Text(" from Yesterday")
+                        Text("\(String(format: "%.2f", businessUpdateVM.getNetIncomePercentage()))%").foregroundColor(businessUpdateVM.getIsNetIncomeIncreased() ? Color("colorUp") : Color("colorDown"))
+                        Text("from Yesterday")
                     }.font(Font.custom("SFProDisplay-Regular", size: 14))
                 }.frame(minWidth: 200,maxWidth: .infinity)
             }
@@ -222,9 +224,10 @@ struct HomeAnalyticsCard: View {
             }
             return val
         }
-        guard let max = AllValues.max() else {
+        guard let cmax = AllValues.max() else {
             return 1
         }
+        let max = ceil(cmax)
         switch index {
         case 0:
             return max

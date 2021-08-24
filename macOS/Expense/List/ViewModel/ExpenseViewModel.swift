@@ -177,10 +177,6 @@ class ExpenseViewModel: ObservableObject {
             
             groupedExpenseByMonth = structureGrouped(values: groupedExpenseByMonthValues, labels: groupedExpenseByMonthLabels)
             
-            for item in groupedExpenseByMonth {
-                print(item.label, item.value, item.day)
-            }
-            
         } catch let error as NSError {
             print("\(error)")
         }

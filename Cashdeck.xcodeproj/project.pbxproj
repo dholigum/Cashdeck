@@ -596,7 +596,6 @@
 			children = (
 				2F52F31926B7E94D0046A1AA /* Component */,
 				2F52F30A26B7CC780046A1AA /* HomeOverview.swift */,
-				51F8CDB726C0BCFC00DC017D /* HomeAnalytics.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -639,7 +638,6 @@
 				2F52F32326B7EBC70046A1AA /* ProductSoldCard.swift */,
 				51E27EBB26BCCDC8009D0CB6 /* BusinessGrowthCard.swift */,
 				51E27EBD26BCCDDF009D0CB6 /* BusinessUpdateCard.swift */,
-				51F8CDBA26C0C09F00DC017D /* HomeAnalyticsCard.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -720,6 +718,31 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		2F71E5FA26D3516400D588A9 /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				2F71E5FB26D3516B00D588A9 /* View */,
+			);
+			path = Analytics;
+			sourceTree = "<group>";
+		};
+		2F71E5FB26D3516B00D588A9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				51F8CDB726C0BCFC00DC017D /* HomeAnalytics.swift */,
+				2F71E5FC26D3517400D588A9 /* Component */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2F71E5FC26D3517400D588A9 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				51F8CDBA26C0C09F00DC017D /* HomeAnalyticsCard.swift */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 		2F764D8A26A7C251005B0513 = {
@@ -947,8 +970,8 @@
 		2FEF63C626AC6C5C0073CE75 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				2F71E5FA26D3516400D588A9 /* Analytics */,
 				2F2B3B0026C4DFCD006FF7F2 /* ProductList */,
-				51E27EC126BEBA99009D0CB6 /* Analytics */,
 				F73F69AE26B910C000CD9642 /* ProductSold */,
 				2F52F30926B7CC640046A1AA /* Overview */,
 			);
@@ -974,13 +997,6 @@
 				51E27EB326BB9838009D0CB6 /* ChartData.swift */,
 			);
 			path = BarCharts;
-			sourceTree = "<group>";
-		};
-		51E27EC126BEBA99009D0CB6 /* Analytics */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Analytics;
 			sourceTree = "<group>";
 		};
 		F346178E26B8AD200005136B /* Component */ = {
@@ -1682,7 +1698,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PKF8ACHM24;
+				DEVELOPMENT_TEAM = UFNNYX499Q;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1705,7 +1721,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PKF8ACHM24;
+				DEVELOPMENT_TEAM = UFNNYX499Q;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1731,7 +1747,7 @@
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = PKF8ACHM24;
+				DEVELOPMENT_TEAM = UFNNYX499Q;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = macOS/Info.plist;
@@ -1756,7 +1772,7 @@
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = PKF8ACHM24;
+				DEVELOPMENT_TEAM = UFNNYX499Q;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = macOS/Info.plist;
