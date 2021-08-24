@@ -35,7 +35,7 @@ struct RecentExpenseTableCard: View {
             ExpenseTableHeader()
             
             ScrollView(.vertical, showsIndicators: true, content: {
-                LazyVStack {
+                LazyVStack(alignment: .leading) {
                     if expenseVM.expenses.count > 0 {
                         ForEach(expenseVM.expenses, id: \.self) { expense in
                             VStack(alignment: .leading) {
@@ -106,10 +106,11 @@ struct RecentExpenseTableCard: View {
             .padding(EdgeInsets(top: 0, leading: 22, bottom: 0, trailing: 0))
             
         }
-        .frame(width: 1012, height: 597)
         .background(Color.white)
         .cornerRadius(16)
         .clipped()
+        .padding(.trailing, 8)
+        .padding(.bottom, 8)
         .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.15), radius: 4, x: 2, y: 2)
         .onAppear() { expenseVM.getAllExpense() }
     }

@@ -35,10 +35,10 @@ struct BusinessGrowthCard: View {
             }
         }
         .padding()
-        .frame(width: 410, height: 200)
         .background(Color.white)
         .cornerRadius(16)
         .clipped()
+        .padding(.trailing, 16)
         .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.15), radius: 4, x: 2, y: 2)
 
     }

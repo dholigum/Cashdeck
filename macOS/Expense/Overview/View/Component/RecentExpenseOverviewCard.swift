@@ -22,7 +22,7 @@ struct RecentExpenseOverviewCard: View {
             ExpenseTableHeader(dateWidth: 80, categoryWidth: 80, nameWidth: 250, priceWidth: 120, actionWidrh: 0, leadingPadding: 16)
             
             ScrollView(.vertical, showsIndicators: true, content: {
-                LazyVStack {
+                LazyVStack(alignment: .leading) {
                     if expenseVM.expenses.count > 0 {
                         ForEach(expenseVM.expenses, id: \.self) { expense in
                             VStack(alignment: .leading) {
@@ -65,13 +65,14 @@ struct RecentExpenseOverviewCard: View {
                     }
                 }
             })
-            .padding(EdgeInsets(top: 0, leading: -8, bottom: 0, trailing: 0))
+            .padding(EdgeInsets(top: 0, leading: 16, bottom: 16, trailing: 0))
             
         }
-        .frame(width: 600, height: 380)
         .background(Color.white)
         .cornerRadius(16)
         .clipped()
+        .padding(.trailing, 8)
+        .padding(.bottom, 8)
         .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.15), radius: 4, x: 2, y: 2)
         .onAppear() { expenseVM.getAllExpense() }
     }

@@ -40,10 +40,11 @@ struct MonthlyExpenseCard: View {
             
             Spacer()
         }
-        .frame(width: 490, height: 380)
+        .frame(width: 490)
         .background(Color.white)
         .cornerRadius(16)
         .clipped()
+        .padding(.bottom, 16)
         .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.15), radius: 4, x: 2, y: 2)
         .padding(.horizontal, 2)
         .onAppear() {

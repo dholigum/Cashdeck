@@ -8,29 +8,32 @@
 import SwiftUI
 
 struct HomeOverview: View {
+    
+    var window = NSScreen.main?.visibleFrame
+    
     var body: some View {
-        GeometryReader { geometry in
-            VStack(alignment: .leading, spacing: 18) {
-                Text("Overview")
-                    .font(Font.custom("SFProDisplay-Bold", size: 24))
-                    .foregroundColor(Color("AccentColor2"))
-                
-                HStack {
-                    NetIncomeCard(title: "Daily Net Income", legend: "IDR", barColor: Color("AccentColor2"), data: chartDataSet)
-                    VStack (alignment: .leading, spacing: 18){
-                        BusinessGrowthCard()
-                        BusinessUpdateCard()
-                    }.padding()
-                }
-                
-                HStack(spacing: 24) {
-                    MonthlyExpenseCard()
-                    ProductSoldCard()
-                } // Expense and Product
+        VStack(alignment: .leading, spacing: 18) {
+            Text("Overview")
+                .font(Font.custom("SFProDisplay-Bold", size: 24))
+                .padding(.top, 20)
+                .foregroundColor(Color("AccentColor2"))
+            
+            HStack {
+                NetIncomeCard(title: "Daily Net Income", legend: "IDR", barColor: Color("AccentColor2"), data: chartDataSet)
+                VStack (alignment: .leading, spacing: 18){
+                    BusinessGrowthCard()
+                    BusinessUpdateCard()
+                }.padding()
             }
-            .frame(width: geometry.frame(in: .global).size.width, height: geometry.frame(in: .global).size.height, alignment: .leading)
-            .padding(.leading, 12)
+            
+            HStack(spacing: 18) {
+                MonthlyExpenseCard()
+                ProductSoldCard()
+            } // Expense and Product
         }
+        .frame(minWidth: window!.width / 1.8, alignment: .leading)
+        .padding(.leading, 12)
+        
         
     }
 }
