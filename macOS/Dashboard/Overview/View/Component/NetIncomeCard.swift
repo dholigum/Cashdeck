@@ -58,6 +58,7 @@ struct NetIncomeCard: View {
                             VStack{
                                 ForEach(0..<rightLegend.count, id: \.self){ i in
                                     Text("\(String(format: "%.0f", ChartLegend(index: i)))")
+                                        .font(Font.custom("SFProDisplay", size: 14))
                                         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .trailing)
                                 }
                             }
@@ -119,21 +120,21 @@ struct NetIncomeCard: View {
                     Text("Total Income")
                     Text(String(businessUpdateVM.getTodayIncomeExpenseNetIncome()["income"] ?? 0).currencyFormatting())
                         .font(Font.custom("SFProDisplay-Bold", size: 20))
-                        .foregroundColor(Color("colorUp"))
+                        .foregroundColor(.black)
                     
                 }.frame(maxWidth: .infinity)
                 VStack (alignment: .leading, spacing: 1){
                     Text("Total Expense")
                     Text(String(businessUpdateVM.getTodayIncomeExpenseNetIncome()["expense"] ?? 0).currencyFormatting())
                         .font(Font.custom("SFProDisplay-Bold", size: 20))
-                        .foregroundColor(Color("ExpenseColor"))
+                        .foregroundColor(.black)
                     
                 }.frame(maxWidth: .infinity)
                 VStack (alignment: .leading, spacing: 1){
                     Text("Total Net Income")
                     Text(String(businessUpdateVM.getTodayIncomeExpenseNetIncome()["netIncome"] ?? 0).currencyFormatting())
                         .font(Font.custom("SFProDisplay-Bold", size: 20))
-                        .foregroundColor(Color("OrangeColor"))
+                        .foregroundColor(.black)
                     
                 }.frame(maxWidth: .infinity)
             }
