@@ -20,7 +20,7 @@ struct ExpenseSheet: View {
                     NSApp.mainWindow?.endSheet(NSApp.keyWindow!)
                 }, label: {
                     Text("Cancel")
-                        .font(Font.custom("SFProDisplay-Semibold", size: 16))
+                        .font(Font.custom("SFProDisplay-Regular", size: 16))
                 })
                 .buttonStyle(PlainButtonStyle())
                 .padding(.horizontal)
@@ -28,7 +28,7 @@ struct ExpenseSheet: View {
                 Spacer()
                 
                 Text(expenseVM.updateItem != nil ? "Edit Expense" : "Add Expense")
-                    .foregroundColor(Color("OrangeColor"))
+                    .foregroundColor(Color("AccentColor2"))
                     .font(Font.custom("SFProDisplay-Semibold", size: 18))
                 
                 Spacer()
@@ -54,16 +54,16 @@ struct ExpenseSheet: View {
             .background(Color("AccentColor"))
             
             VStack(spacing: 8) {
-                TextField("Rp ..........", text: $expenseVM.amount)
+                TextField("Input Amount", text: $expenseVM.amount)
                     .textFieldStyle(PlainTextFieldStyle())
-                    .font(Font.custom("SFProDisplay-Semibold", size: 28))
+                    .font(Font.custom("SFProDisplay-Semibold", size: 24))
                     .foregroundColor(Color("OrangeColor"))
                     .modifier(WithTopLabelTextField(labelName: "Amount", frameHeight: 74))
                     .padding(.top)
                 
-                TextField("Expense Name", text: $expenseVM.name)
+                TextField("Input Expense Name", text: $expenseVM.name)
                     .textFieldStyle(PlainTextFieldStyle())
-                    .font(Font.custom("SFProDisplay-Semibold", size: 24).weight(.light))
+                    .font(Font.custom("SFProDisplay-Semibold", size: 24))
                     .modifier(WithTopLabelTextField(labelName: "Name", frameHeight: 74))
                 
                 Picker("", selection: $expenseVM.categoryIndex) {

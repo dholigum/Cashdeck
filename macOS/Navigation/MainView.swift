@@ -17,7 +17,7 @@ struct MainView: View {
         NavigationView {
             ScrollView {
                 VStack (alignment:.leading) {
-                    Text("CashDeck")
+                    Text("Cashdeck")
                         .font(Font.custom("SFProDisplay-Bold", size: 24))
                         .padding(.leading)
                         .padding(.vertical)

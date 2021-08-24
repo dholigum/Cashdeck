@@ -22,12 +22,14 @@ struct ExpenseList: View {
                 .foregroundColor(Color("AccentColor2"))
             
             TotalExpenseInfoCard(expenseVM: expenseVM)
+                .padding(.bottom, 15.94)
             
             ActionButtonCard(icon: "plus.circle", title: "Add Expense", isPressed: $expenseVM.isNewData)
                 .onTapGesture { expenseVM.isNewData.toggle() }
                 .sheet(isPresented: $expenseVM.isNewData) { ExpenseSheet(expenseVM: expenseVM) }
             
             RecentExpenseTableCard(expenseVM: expenseVM)
+                .padding(.top, 16)
         }
         .frame(minWidth: window!.width / 1.8, alignment: .leading)
         .padding(.leading, 12)

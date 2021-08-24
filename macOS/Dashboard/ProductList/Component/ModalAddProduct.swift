@@ -23,8 +23,8 @@ struct ModalAddProduct: View {
                         .frame(width: 100, alignment: .leading)
                 })
                 .buttonStyle(PlainButtonStyle())
-                Text("New Product")
-                    .font(.system(size: 18))
+                Text("New Data")
+                    .font(.custom("SFProDisplay-Semibold", size: 18))
                     .foregroundColor(Color("AccentColor2"))
                     .frame(width: 192, alignment: .center)
                 Text(" ")
@@ -32,7 +32,7 @@ struct ModalAddProduct: View {
             }
             .background(Color("AccentColor"))
             HStack {
-                primaryBtn(imageName: "square.and.arrow.down", title: "Download Template", width: 359)
+                primaryBtnNoShadow(imageName: "square.and.arrow.down", title: "Download Template", width: 359)
                     .onTapGesture {
                         downloadTemplate()
                     }
@@ -54,7 +54,7 @@ struct ModalAddProduct: View {
             .frame(width: 359, height: 180, alignment: .center)
             .background(Color.white)
             .cornerRadius(15)
-            .padding(.init(top: 25, leading: 0, bottom: 30, trailing: 0))
+            .padding(.init(top: 16, leading: 0, bottom: 40, trailing: 0))
             Button(action: {importCSVPressed()}, label: {
                 Text("Import")
                     .font(.system(size: 18))
@@ -66,6 +66,7 @@ struct ModalAddProduct: View {
             })
             .buttonStyle(PlainButtonStyle())
             .padding(.bottom, 27)
+            .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.15), radius: 4, x: 2, y: 2)
             Spacer()
         }
         .frame(width: 392, height: 447)

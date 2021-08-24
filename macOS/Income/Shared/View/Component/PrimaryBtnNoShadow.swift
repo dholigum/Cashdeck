@@ -1,13 +1,13 @@
 //
-//  primaryBtn.swift
-//  Cashdeck (macOS)
+//  PrimaryBtnNoShadow.swift
+//  Cashdeck
 //
-//  Created by Azrullah Kainage on 03/08/21.
+//  Created by Revarino Putra on 24/08/21.
 //
 
 import SwiftUI
 
-struct primaryBtn: View {
+struct primaryBtnNoShadow: View {
     var imageName: String
     var title: String
     var width: CGFloat
@@ -29,7 +29,6 @@ struct primaryBtn: View {
         .background(Color.white)
         .cornerRadius(10)
         .clipped()
-        .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.15), radius: 4, x: 2, y: 2)
-        .padding(.leading, 10)
     }
 }
+
