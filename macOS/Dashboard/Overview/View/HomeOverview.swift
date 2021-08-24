@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeOverview: View {
     
     var window = NSScreen.main?.visibleFrame
+    let businessUpdateVM = BusinessUpdateViewModel.shared
     
     var body: some View {
         VStack(alignment: .leading, spacing: 18) {
@@ -19,7 +20,7 @@ struct HomeOverview: View {
                 .foregroundColor(Color("AccentColor2"))
             
             HStack {
-                NetIncomeCard(title: "Daily Net Income", legend: "IDR", barColor: Color("AccentColor2"), data: chartDataSet)
+                NetIncomeCard(title: "Daily Net Income", legend: "IDR", barColor: Color("AccentColor2"), data: businessUpdateVM.getIncomePerDayData())
                 VStack (alignment: .leading, spacing: 18){
                     BusinessGrowthCard()
                     BusinessUpdateCard()

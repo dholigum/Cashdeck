@@ -43,15 +43,6 @@ struct NetIncomeCard: View {
                     .foregroundColor(Color("AccentColor2"))
                     .padding(.top, 4)
                     .padding(.leading, 20)
-                
-//                Picker(selection:$durationOptions, label: Text("")){
-//                    ForEach(duration, id:\.self){
-//                        Text($0)
-//                    }
-//                }
-//                .pickerStyle(DefaultPickerStyle())
-//                .frame(width: 100)
-//                .padding(.leading,250)
             }
             
             

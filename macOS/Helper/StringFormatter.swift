@@ -37,4 +37,10 @@ extension Date {
         formatter.dateFormat = "dd/MM/yy"
         return formatter.string(from: self)
     }
+    
+    func dayNameFormatting() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "EEEE"
+        return formatter.string(from: self)
+    }
 }

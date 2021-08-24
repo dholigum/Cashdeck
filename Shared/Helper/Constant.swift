@@ -10,6 +10,8 @@ import SwiftUI
 public struct K {
     
     let monthName: [String] = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Des"]
+    let dayName: [String] = [
+        "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
     let categories: [String] = ["Utilities", "Shipping", "Packaging", "Rent", "Finance", "Marketing", "Other"]
     let repeats: [String] = ["Never", "Every Week", "Every Month"]
     let pieChartColor: [Color] = [Color("PieChart-1"), Color("PieChart-2"), Color("PieChart-3"), Color("PieChart-4"), Color("PieChart-5"), Color("PieChart-6"), Color("PieChart-7")]

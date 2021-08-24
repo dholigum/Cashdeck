@@ -116,10 +116,73 @@ class BusinessUpdateViewModel {
         for data in income {
             let total = data.netIncome - (calculateExpense(date: data.month) / 30)
             totalNetIncome.append(Double(total))
-            
-            print(data.netIncome, (calculateExpense(date: data.month) / 30), total)
         }
         return totalNetIncome
+    }
+    
+    func structureGrouped(values: [Double], labels: [String]) -> [ChartData] {
+        K().dayName.map({ (day: String) -> ChartData in
+            if labels.firstIndex(of: day) != nil {
+                return ChartData(label: "\(day) \(Date().year)", value: values[labels.firstIndex(of: day) ?? 0], day: day)
+            }
+            return ChartData(label: "\(day) \(Date().year)", value: 0, day: day)
+        })
+    }
+    
+    func getIncomePerDayData() -> [ChartData] {
+        var listDate = [Int64]()
+        var listMonth = [Int64]()
+        var incomeValuesPerDay = [Double]()
+        var incomeLabelsPerDay = [String]()
+        
+        for data in businessGrowthModel.getSortedDetail(){
+            if let data = data.td_transaction, let date = data.date {
+                listDate.append(convertDateToDay(date: date))
+                listMonth.append(convertDateToMonth(date: date))
+            }
+        }
+        
+        let clearDate = Array(NSOrderedSet(array: listDate))
+        for date in clearDate {
+            let temp = filteringDetails(details: businessGrowthModel.getSortedDetail(), date: date as! Int64)
+            let income = getNetIncomeTrans(detail: temp)
+            guard let data = temp[0].td_transaction?.date else { continue }
+            let expense = Double(calculateExpense(date: convertDateToMonth(date: data)) / 30)
+            let netIncome = Double(income) - expense
+            incomeValuesPerDay.append(Double(income))
+            incomeLabelsPerDay.append(data.dayNameFormatting())
+        }
+        
+        return structureGrouped(values: incomeValuesPerDay, labels: incomeLabelsPerDay)
+    }
+    
+    func getNetIncomeValuesPerDay() -> [ChartData] {
+        var listDate = [Int64]()
+        var listMonth = [Int64]()
+        var incomeLabelsPerDay = [String]()
+        var netIncomeValuesPerDay = [Double]()
+        
+        for data in businessGrowthModel.getSortedDetail(){
+            if let data = data.td_transaction, let date = data.date {
+                listDate.append(convertDateToDay(date: date))
+                listMonth.append(convertDateToMonth(date: date))
+            }
+        }
+        
+        let clearDate = Array(NSOrderedSet(array: listDate))
+        for date in clearDate {
+            let temp = filteringDetails(details: businessGrowthModel.getSortedDetail(), date: date as! Int64)
+            let income = getNetIncomeTrans(detail: temp)
+            guard let data = temp[0].td_transaction?.date else { continue }
+            let expense = Double(calculateExpense(date: convertDateToMonth(date: data)) / 30)
+            let netIncome = Double(income) - expense
+
+            incomeLabelsPerDay.append(data.dayNameFormatting())
+            netIncomeValuesPerDay.append(Double(netIncome))
+            
+        }
+        
+        return structureGrouped(values: netIncomeValuesPerDay, labels: incomeLabelsPerDay)
     }
     
     func getFixIncomeFromTransaction() -> [TransModel] {
@@ -141,7 +204,6 @@ class BusinessUpdateViewModel {
             guard let data = temp[0].td_transaction?.date else { continue }
             fixIncome.append(TransModel(netIncome: income, month: convertDateToMonth(date: data)))
         }
-        
         return fixIncome
     }
     
@@ -230,39 +292,6 @@ class BusinessUpdateViewModel {
     
     func getIsNetIncomeIncreased() -> Bool {
         return getNetIncomeDifferences() > 0
-    }
-    
-    func getDifferencesTodayAndYesterday() -> Dictionary<String, Double> {
-        
-        let fixIncome = getFixIncomeFromTransaction()
-        let todayYesterdayFixIncome = fixIncome.suffix(2)
-        
-        let todayIncome = todayYesterdayFixIncome[1].netIncome
-        let yesterdayIncome = todayYesterdayFixIncome[0].netIncome
-        let todayExpense = calculateExpense(date: todayYesterdayFixIncome[1].month ) / 30
-        let yesterdayExpense = calculateExpense(date: todayYesterdayFixIncome[0].month ) / 30
-        let todayNetIncome = todayIncome - todayExpense
-        let yesterdayNetIncome = yesterdayIncome - yesterdayExpense
-        
-        let incomeDiff = Double(todayIncome - yesterdayIncome)
-        let expenseDiff = Double(todayExpense - yesterdayExpense)
-        let netIncomeDiff = Double(todayNetIncome - yesterdayNetIncome)
-        
-        let incomePerc = Double(incomeDiff / Double(yesterdayIncome) * 100)
-        let expensePerc = Double(expenseDiff / Double(yesterdayExpense) * 100)
-        let netIncomePerc = Double(netIncomeDiff / Double(yesterdayNetIncome) * 100)
-        
-        let complexLegendDesc = [
-            "income-diff": incomeDiff,
-            "expense-diff": expenseDiff,
-            "netIncome-diff": netIncomeDiff,
-            "income-perc": incomePerc,
-            "expense-perc": expensePerc,
-            "netIncome-perc": netIncomePerc,
-        ]
-        
-        return complexLegendDesc
-        
     }
     
     func convertDateToDay(date: Date) -> Int64 {
