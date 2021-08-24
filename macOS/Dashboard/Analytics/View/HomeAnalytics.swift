@@ -15,6 +15,8 @@ struct HomeAnalytics: View {
     var duration = ["Daily","Weekly","Monthly","Yearly"]
     
     @StateObject var expenseVM = ExpenseViewModel()
+    @StateObject var overviewExpenseVM =  OverviewExpenseViewModel()
+
     
     var body: some View {
         GeometryReader { geometry in
@@ -45,14 +47,24 @@ struct HomeAnalytics: View {
                         .frame(width: 426)
                         .padding(.leading,250)
                         
-                        Picker("",selection:$durationOptions){
-                            ForEach(duration, id:\.self){
-                                Text($0)
+//                        Picker("",selection:$durationOptions){
+//                            ForEach(duration, id:\.self){
+//                                Text($0)
+//                            }
+//                        }
+//                        .pickerStyle(DefaultPickerStyle())
+//                        .frame(width: 100)
+//                        .padding(.leading,120)
+                        
+                        ActionButtonCard(icon: "calendar", title: overviewExpenseVM.formatedMonthYear(), defaultColor: Color("MainColor"), isPressed: $overviewExpenseVM.isOpenCalendar )
+                            .onTapGesture {
+                                overviewExpenseVM.isOpenCalendar.toggle()
                             }
-                        }
-                        .pickerStyle(DefaultPickerStyle())
-                        .frame(width: 100)
-                        .padding(.leading,120)
+                            .sheet(isPresented: $overviewExpenseVM.isOpenCalendar) {
+                                MonthYearCalendar(overviewExpenseVM: overviewExpenseVM)
+                            }
+                            .padding(.leading,120)
+
                     }
                     
                     if chartOptions == "Income" {
