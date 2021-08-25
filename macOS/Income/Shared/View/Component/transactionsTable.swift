@@ -66,7 +66,6 @@ struct transactionsTable: View {
                     .padding(.vertical, 10)
                 Spacer()
             }
-            Divider()
             if transVM.listTrans.count < 1 {
                 HStack {
                     Image("noTransactionIllustration")

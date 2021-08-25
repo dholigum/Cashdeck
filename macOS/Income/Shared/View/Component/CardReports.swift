@@ -21,7 +21,7 @@ struct CardReports: View {
                 .font(.system(size: 36))
                 .foregroundColor(Color("AccentColor2"))
                 .fontWeight(.semibold)
-            HStack {
+            HStack (spacing: 5) {
                 if percent < 0 {
                     Text("\(percent)%")
                         .font(.system(size: 14))

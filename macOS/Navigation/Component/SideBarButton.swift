@@ -29,7 +29,7 @@ struct SideBarButton: View {
             
             Spacer()
         }
-        .frame(width: 167, height: 28)
+        .frame(width: 186, height: 28)
         .background(selectedTabButton == title ? Color("MainColor") : Color("AccentColor") )
         .cornerRadius(4)
         .clipped()

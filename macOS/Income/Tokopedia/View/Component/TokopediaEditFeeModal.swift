@@ -19,7 +19,7 @@ struct TokopediaEditFeeModal: View {
                     NSApp.mainWindow?.endSheet(NSApp.keyWindow!)
                 }, label: {
                     Text("Cancel")
-                        .font(Font.custom("SFProDisplay-Semibold", size: 16))
+                        .font(Font.custom("SFProDisplay-Regular", size: 16))
                 })
                 .buttonStyle(PlainButtonStyle())
                 .padding(.horizontal)
@@ -64,7 +64,7 @@ struct TokopediaEditFeeModal: View {
                 feeVM.editFee()
                 NSApp.mainWindow?.endSheet(NSApp.keyWindow!)
             }, label: {
-                Text("Save Expense")
+                Text("Save Fee")
                     .foregroundColor(Color("AccentColor2"))
                     .font(Font.custom("SFProDisplay-Semibold", size: 16))
                     .frame(width: 358, height: 50)
@@ -72,7 +72,7 @@ struct TokopediaEditFeeModal: View {
                     .clipped()
                     .cornerRadius(16)
                     .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.15), radius: 4, x: 2, y: 2)
-                    .padding(.bottom)
+                    .padding(.bottom, 33)
             })
             .buttonStyle(PlainButtonStyle())
         }

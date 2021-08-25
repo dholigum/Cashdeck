@@ -47,11 +47,11 @@ struct HomeAnalyticsCard: View {
                              //Cells
                             VStack{
                                 ForEach(0..<rightLegend.count, id: \.self){ i in
-                                    Text("\(String(format: "%.0f", ChartLegend(index: i)))")
+                                    Text("\(String(format: "%.0f", ChartLegend(index: i)).currencyFormatting())")
                                         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .trailing)
                                 }
                             }
-                            .frame(width: 77, height: 450, alignment: .leading)
+                            .frame(width: 90, height: 450, alignment: .leading)
                             .padding()
                             
                             ZStack{
@@ -61,6 +61,7 @@ struct HomeAnalyticsCard: View {
                                             .fill(Color(.gray))
                                             .offset(y: -1.0)
                                             .frame(height: 1)
+                                            .opacity(0.15)
                                     }.frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, maxWidth: .infinity, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, maxHeight: .infinity, alignment: .center)
                                 }
                                 .frame(height:450)
@@ -117,13 +118,19 @@ struct HomeAnalyticsCard: View {
                     Text("Total Income")
                         .font(Font.custom("SFProDisplay-Regular",size: 18))
                     Text(String(businessUpdateVM.getTodayIncomeExpenseNetIncome()["income"] ?? 0).currencyFormatting())
-                        .font(Font.custom("SFProDisplay-Bold", size: 24))
-                        .foregroundColor(.black)
-                    Text(String(businessUpdateVM.getIncomeDifferences()).currencyFormatting())
-                        .font(Font.custom("SFProDisplay-Regular", size: 14))
-                        .foregroundColor(businessUpdateVM.getIsIncomeIncreased() ? Color("colorUp") : Color("colorDown"))
+                        .font(Font.custom("SFProDisplay-Semibold", size: 24))
+                    HStack {
+                        Image(systemName: "arrow.up")
+                            .resizable()
+                            .frame(width: 10,height: 10)
+                            .foregroundColor(businessUpdateVM.getIsIncomeIncreased() ? Color("colorUp") : Color("colorDown"))
+                        Text(String(businessUpdateVM.getIncomeDifferences()).currencyFormatting())
+                            .font(Font.custom("SFProDisplay-Regular", size: 14))
+                            .foregroundColor(businessUpdateVM.getIsIncomeIncreased() ? Color("colorUp") : Color("colorDown"))
+                    }
+                    
                     HStack{
-                        Text("\(String(format: "%.2f", businessUpdateVM.getIncomePercentage()))%").foregroundColor(businessUpdateVM.getIsIncomeIncreased() ? Color("colorUp") : Color("colorDown"))
+                        Text("\(businessUpdateVM.getIsIncomeIncreased() ? "+" : "-") \(String(format: "%.2f", businessUpdateVM.getIncomePercentage()))%").foregroundColor(businessUpdateVM.getIsIncomeIncreased() ? Color("colorUp") : Color("colorDown"))
                         Text("from Yesterday")
                     }.font(Font.custom("SFProDisplay-Regular", size: 14))
                     
@@ -132,13 +139,19 @@ struct HomeAnalyticsCard: View {
                     Text("Total Expense")
                         .font(Font.custom("SFProDisplay-Regular",size: 18))
                     Text(String(businessUpdateVM.getTodayIncomeExpenseNetIncome()["expense"] ?? 0).currencyFormatting())
-                        .font(Font.custom("SFProDisplay-Bold", size: 24))
-                        .foregroundColor(.black)
-                    Text(String(businessUpdateVM.getExpenseDifferences()).currencyFormatting())
-                        .font(Font.custom("SFProDisplay-Regular", size: 14))
-                        .foregroundColor(businessUpdateVM.getIsExpenseIncreased() ? Color("colorDown") : Color("colorUp"))
+                        .font(Font.custom("SFProDisplay-Semibold", size: 24))
+                    HStack {
+                        Image(systemName: "arrow.up")
+                            .resizable()
+                            .frame(width: 10,height: 10)
+                            .foregroundColor(businessUpdateVM.getIsIncomeIncreased() ? Color("colorUp") : Color("colorDown"))
+                        Text(String(businessUpdateVM.getExpenseDifferences()).currencyFormatting())
+                            .font(Font.custom("SFProDisplay-Regular", size: 12))
+                            .foregroundColor(businessUpdateVM.getIsExpenseIncreased() ? Color("colorDown") : Color("colorUp"))
+                    }
+            
                     HStack{
-                        Text("\(String(format: "%.2f", businessUpdateVM.getExpensePercentage()))%").foregroundColor(businessUpdateVM.getIsExpenseIncreased() ? Color("colorDown") : Color("colorUp"))
+                        Text("\(businessUpdateVM.getIsIncomeIncreased() ? "+" : "-") \(String(format: "%.2f", businessUpdateVM.getExpensePercentage()))%").foregroundColor(businessUpdateVM.getIsExpenseIncreased() ? Color("colorDown") : Color("colorUp"))
                         Text("from Yesterday")
                     }.font(Font.custom("SFProDisplay-Regular", size: 14))
                 }.frame(minWidth: 200,maxWidth: .infinity)
@@ -146,13 +159,20 @@ struct HomeAnalyticsCard: View {
                     Text("Total Net Income")
                         .font(Font.custom("SFProDisplay-Regular",size: 18))
                     Text(String(businessUpdateVM.getTodayIncomeExpenseNetIncome()["netIncome"] ?? 0).currencyFormatting())
-                        .font(Font.custom("SFProDisplay-Bold", size: 24))
-                        .foregroundColor(.black)
-                    Text(String(businessUpdateVM.getNetIncomeDifferences()).currencyFormatting())
-                        .font(Font.custom("SFProDisplay-Regular", size: 14))
-                        .foregroundColor(businessUpdateVM.getIsNetIncomeIncreased() ? Color("colorUp") : Color("colorDown"))
+                        .font(Font.custom("SFProDisplay-Semibold", size: 24))
+                    HStack {
+                        Image(systemName: "arrow.up")
+                            .resizable()
+                            .frame(width: 10,height: 10)
+                            .foregroundColor(businessUpdateVM.getIsIncomeIncreased() ? Color("colorUp") : Color("colorDown"))
+                        
+                        Text(String(businessUpdateVM.getNetIncomeDifferences()).currencyFormatting())
+                            .font(Font.custom("SFProDisplay-Regular", size: 12))
+                            .foregroundColor(businessUpdateVM.getIsNetIncomeIncreased() ? Color("colorUp") : Color("colorDown"))
+                    }
+                    
                     HStack{
-                        Text("\(String(format: "%.2f", businessUpdateVM.getNetIncomePercentage()))%").foregroundColor(businessUpdateVM.getIsNetIncomeIncreased() ? Color("colorUp") : Color("colorDown"))
+                        Text("\(businessUpdateVM.getIsIncomeIncreased() ? "+" : "-") \(String(format: "%.2f", businessUpdateVM.getNetIncomePercentage()))%").foregroundColor(businessUpdateVM.getIsNetIncomeIncreased() ? Color("colorUp") : Color("colorDown"))
                         Text("from Yesterday")
                     }.font(Font.custom("SFProDisplay-Regular", size: 14))
                 }.frame(minWidth: 200,maxWidth: .infinity)

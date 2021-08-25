@@ -34,7 +34,7 @@ struct ProductList: View {
                             ModalAddProduct(isVisible: $showModal, ProductVM: productVM)
                         })
                     Spacer()
-                } .padding(.top, 10)
+                }
                 
                 ProductTable(ProductsVM: productVM)
                 Spacer()
