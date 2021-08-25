@@ -31,9 +31,12 @@ struct HomeAnalyticsCard: View {
     @State private var touchLocation: CGFloat = -1
     @State private var phase: CGFloat = 0
     
+    @GestureState var isDetectingLongPress = false
+        @State var completedLongPress = false
+    
     var body: some View {
         VStack(alignment: .leading) {
-            Text("\(currentValue)")
+            Text("\(currentDay) : \(currentValue)")
                 .foregroundColor(Color("AccentColor2"))
                 .padding(.leading, 20)
             
@@ -74,23 +77,30 @@ struct HomeAnalyticsCard: View {
                                             .scaleEffect(barIsTouched(index: i) ? CGSize(width: 1.05, height: 1) : CGSize(width: 1, height: 1), anchor: .bottom)
                                             .animation(.spring())
                                             .padding(.top)
+                                            .onTapGesture {
+                                                print("\(i) tapped")
+                                                tappedValue(index: i)
+                                                
+                                            }
                                     }
-                                    .gesture(DragGesture(minimumDistance: 0)
-                                        .onChanged({
-                                            position in
-                                            let touchPosition = position.location.x/geometry.frame(in: .local).width
-                                            touchLocation = touchPosition
-                                            updateCurrentValue()
-                                        })
-                                        .onEnded({
-                                            _ in
-                                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                                                    withAnimation(Animation.easeOut(duration: 0.5)) {
-                                                        resetValues()
-                                                    }
-                                                }
-                                        })
-                                    )
+                                    
+//                                    .gesture(DragGesture(minimumDistance: 0)
+//                                        .onChanged({
+//                                            position in
+//                                            let touchPosition = position.location.x/geometry.frame(in: .local).width
+//                                            touchLocation = touchPosition
+//                                            updateCurrentValue()
+//                                        })
+//                                        .onEnded({
+//                                            _ in
+//                                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+//                                                    withAnimation(Animation.easeOut(duration: 0.5)) {
+//                                                        resetValues()
+//                                                    }
+//                                                }
+//                                        })
+                                             
+//                                    )
                                 }
                             
                             }
@@ -153,7 +163,17 @@ struct HomeAnalyticsCard: View {
             
         }
     }
-    
+    func tappedValue(index: Int) {
+        guard index < data.count && index >= 0 else {
+            currentValue = ""
+            currentLabel = ""
+            currentDay = ""
+            return
+        }
+        currentValue = "Rp. \(data[index].value)"
+        currentLabel = data[index].label
+        currentDay = data[index].day
+    }
     func normalizedValue(index: Int) -> Double {
         var allValues: [Double] {
             var values = [Double]()

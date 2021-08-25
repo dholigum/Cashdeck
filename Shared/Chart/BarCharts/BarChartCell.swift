@@ -23,6 +23,7 @@ struct BarChartCell: View {
                 RoundedRectangle(cornerRadius: 5)
                     .fill(Color("colorDown"))
                     .scaleEffect(CGSize(width: 0.8, height: barHeight(val: value)), anchor: .top)
+                    .help("Test")
             } else {
                 RoundedRectangle(cornerRadius: 5)
                     .fill(barColor)
