@@ -16,13 +16,13 @@ struct NetIncomeCard: View {
     var barColor: Color
     var data: [ChartData]
     let barLabel = [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday"]
+        "MON",
+        "TUE",
+        "WED",
+        "THU",
+        "FRI",
+        "SAT",
+        "SUN"]
     
     @State private var currentValue = ""
     @State private var currentLabel = ""
@@ -57,12 +57,13 @@ struct NetIncomeCard: View {
                              //Cells
                             VStack{
                                 ForEach(0..<rightLegend.count, id: \.self){ i in
-                                    Text("\(String(format: "%.0f", ChartLegend(index: i)))")
+                                    Text("\(String(format: "%.0f", ChartLegend(index: i)).currencyFormatting())")
                                         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .trailing)
+                                        .opacity(0.5)
                                 }
                             }
-                            .frame(width: 77, height: 175, alignment: .leading)
-                            .padding()
+                            .frame(width: 100, height: 175, alignment: .leading)
+                            .padding(.trailing, 10)
                             
                             ZStack{
                                 VStack{
@@ -70,6 +71,7 @@ struct NetIncomeCard: View {
                                         Rectangle()
                                             .fill(Color(.gray))
                                             .offset(y: 2.0)
+                                            .opacity(0.15)
                                             .frame(height: 1)
                                     }.frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, maxWidth: .infinity, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, maxHeight: .infinity, alignment: .center)
                                 }
@@ -118,22 +120,22 @@ struct NetIncomeCard: View {
                 VStack (alignment: .leading, spacing: 1){
                     Text("Total Income")
                     Text(String(businessUpdateVM.getTodayIncomeExpenseNetIncome()["income"] ?? 0).currencyFormatting())
-                        .font(Font.custom("SFProDisplay-Bold", size: 20))
-                        .foregroundColor(Color("colorUp"))
+                        .font(Font.custom("SFProDisplay-Semibold", size: 16))
+                        .opacity(0.8)
                     
                 }.frame(maxWidth: .infinity)
                 VStack (alignment: .leading, spacing: 1){
                     Text("Total Expense")
                     Text(String(businessUpdateVM.getTodayIncomeExpenseNetIncome()["expense"] ?? 0).currencyFormatting())
-                        .font(Font.custom("SFProDisplay-Bold", size: 20))
-                        .foregroundColor(Color("ExpenseColor"))
+                        .font(Font.custom("SFProDisplay-Semibold", size: 16))
+                        .opacity(0.8)
                     
                 }.frame(maxWidth: .infinity)
                 VStack (alignment: .leading, spacing: 1){
                     Text("Total Net Income")
                     Text(String(businessUpdateVM.getTodayIncomeExpenseNetIncome()["netIncome"] ?? 0).currencyFormatting())
-                        .font(Font.custom("SFProDisplay-Bold", size: 20))
-                        .foregroundColor(Color("OrangeColor"))
+                        .font(Font.custom("SFProDisplay-Semibold", size: 16))
+                        .opacity(0.8)
                     
                 }.frame(maxWidth: .infinity)
             }
