@@ -47,6 +47,15 @@ struct HomeAnalytics: View {
                         .pickerStyle(SegmentedPickerStyle())
                         .frame(width: 426)
                         .padding(.leading,250)
+                        
+                        ActionButtonCard(icon: "calendar", title: overviewExpenseVM.formatedMonthYear(), defaultColor: Color("MainColor"), isPressed: $overviewExpenseVM.isOpenCalendar )
+                            .onTapGesture {
+                                overviewExpenseVM.isOpenCalendar.toggle()
+                            }
+                            .sheet(isPresented: $overviewExpenseVM.isOpenCalendar) {
+                                MonthYearCalendar(overviewExpenseVM: overviewExpenseVM)
+                            }
+                            .padding(.leading,90)
 
                     }
                     

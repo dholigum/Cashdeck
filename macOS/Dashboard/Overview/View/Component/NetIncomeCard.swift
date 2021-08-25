@@ -89,23 +89,27 @@ struct NetIncomeCard: View {
                                             .scaleEffect(barIsTouched(index: i) ? CGSize(width: 1.05, height: 1) : CGSize(width: 1, height: 1), anchor: .bottom)
                                             .animation(.spring())
                                             .padding(.top)
+                                            .onTapGesture {
+                                                print("\(i) tapped")
+                                                tappedValue(index: i)
+                                            }
                                     }
-                                    .gesture(DragGesture(minimumDistance: 0)
-                                                .onChanged({
-                                                    position in
-                                                    let touchPosition = position.location.x/geometry.frame(in: .local).width
-                                                    touchLocation = touchPosition
-                                                    updateCurrentValue()
-                                                })
-                                                .onEnded({
-                                                    _ in
-                                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                                                            withAnimation(Animation.easeOut(duration: 0.5)) {
-                                                                resetValues()
-                                                            }
-                                                        }
-                                                })
-                                 )
+//                                    .gesture(DragGesture(minimumDistance: 0)
+//                                                .onChanged({
+//                                                    position in
+//                                                    let touchPosition = position.location.x/geometry.frame(in: .local).width
+//                                                    touchLocation = touchPosition
+//                                                    updateCurrentValue()
+//                                                })
+//                                                .onEnded({
+//                                                    _ in
+//                                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+//                                                            withAnimation(Animation.easeOut(duration: 0.5)) {
+//                                                                resetValues()
+//                                                            }
+//                                                        }
+//                                                })
+//                                 )
                                 }
                             }
                             }
@@ -147,7 +151,17 @@ struct NetIncomeCard: View {
         .clipped()
         .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.15), radius: 4, x: 2, y: 2)
     }
-    
+    func tappedValue(index: Int) {
+        guard index < data.count && index >= 0 else {
+            currentValue = ""
+            currentLabel = ""
+            currentDay = ""
+            return
+        }
+        currentValue = "Rp. \(data[index].value)"
+        currentLabel = data[index].label
+        currentDay = data[index].day
+    }
     func normalizedValue(index: Int) -> Double {
         var allValues: [Double] {
             var values = [Double]()
