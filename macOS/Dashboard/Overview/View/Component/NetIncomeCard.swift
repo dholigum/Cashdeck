@@ -90,7 +90,6 @@ struct NetIncomeCard: View {
                                             .animation(.spring())
                                             .padding(.top)
                                             .onTapGesture {
-                                                print("\(i) tapped")
                                                 tappedValue(index: i)
                                             }
                                     }
