@@ -36,7 +36,7 @@ struct HomeAnalyticsCard: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("\(currentDay) : \(currentValue)")
+            Text("\(currentValue)")
                 .foregroundColor(Color("AccentColor2"))
                 .padding(.leading, 20)
             
@@ -79,7 +79,6 @@ struct HomeAnalyticsCard: View {
                                             .animation(.spring())
                                             .padding(.top)
                                             .onTapGesture {
-                                                print("\(i) tapped")
                                                 tappedValue(index: i)
                                                 
                                             }
