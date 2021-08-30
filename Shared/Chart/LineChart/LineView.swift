@@ -50,6 +50,7 @@ public struct LineView: View {
                         Text(self.title!)
                             .font(Font.custom("SFProText-Bold", size: 17))
                             .foregroundColor(Color("AccentColor2"))
+                            .padding(.top, -15)
                     }
                     if (self.legend != nil){
                         Text(self.legend!)
