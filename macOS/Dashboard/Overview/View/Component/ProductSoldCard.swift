@@ -65,6 +65,7 @@ struct ProductSoldCard: View {
                         }
                         .padding(.leading, 25)
                         line
+                            .frame(maxWidth: 300)
                     }
                 }
             }
