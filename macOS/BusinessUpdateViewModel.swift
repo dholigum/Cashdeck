@@ -147,8 +147,6 @@ class BusinessUpdateViewModel {
             let temp = filteringDetails(details: businessGrowthModel.getSortedDetail(), date: date as! Int64)
             let income = getNetIncomeTrans(detail: temp)
             guard let data = temp[0].td_transaction?.date else { continue }
-            let expense = Double(calculateExpense(date: convertDateToMonth(date: data)) / 30)
-            let netIncome = Double(income) - expense
             incomeValuesPerDay.append(Double(income))
             incomeLabelsPerDay.append(data.dayNameFormatting())
         }
@@ -221,32 +219,29 @@ class BusinessUpdateViewModel {
     
     func getIncomeDifferences() -> Double {
         let fixIncome = getFixIncomeFromTransaction()
-        let todayYesterdayFixIncome = fixIncome.suffix(2)
         
-        let todayIncome = todayYesterdayFixIncome[1].netIncome
-        let yesterdayIncome = todayYesterdayFixIncome[0].netIncome
+        let todayIncome = fixIncome[fixIncome.count-1].netIncome
+        let yesterdayIncome = fixIncome[fixIncome.count-2].netIncome
         
         return Double(todayIncome - yesterdayIncome)
     }
     
     func getExpenseDifferences() -> Double {
         let fixIncome = getFixIncomeFromTransaction()
-        let todayYesterdayFixIncome = fixIncome.suffix(2)
         
-        let todayExpense = calculateExpense(date: todayYesterdayFixIncome[1].month ) / 30
-        let yesterdayExpense = calculateExpense(date: todayYesterdayFixIncome[0].month ) / 30
+        let todayExpense = calculateExpense(date: fixIncome[fixIncome.count-1].month ) / 30
+        let yesterdayExpense = calculateExpense(date: fixIncome[fixIncome.count-2].month ) / 30
         
         return Double(todayExpense - yesterdayExpense)
     }
     
     func getNetIncomeDifferences() -> Double {
         let fixIncome = getFixIncomeFromTransaction()
-        let todayYesterdayFixIncome = fixIncome.suffix(2)
         
-        let todayIncome = todayYesterdayFixIncome[1].netIncome
-        let yesterdayIncome = todayYesterdayFixIncome[0].netIncome
-        let todayExpense = calculateExpense(date: todayYesterdayFixIncome[1].month ) / 30
-        let yesterdayExpense = calculateExpense(date: todayYesterdayFixIncome[0].month ) / 30
+        let todayIncome = fixIncome[fixIncome.count-1].netIncome
+        let yesterdayIncome = fixIncome[fixIncome.count-2].netIncome
+        let todayExpense = calculateExpense(date: fixIncome[fixIncome.count-1].month ) / 30
+        let yesterdayExpense = calculateExpense(date: fixIncome[fixIncome.count-2].month ) / 30
         let todayNetIncome = todayIncome - todayExpense
         let yesterdayNetIncome = yesterdayIncome - yesterdayExpense
         
@@ -255,28 +250,26 @@ class BusinessUpdateViewModel {
     
     func getIncomePercentage() -> Double {
         let fixIncome = getFixIncomeFromTransaction()
-        let todayYesterdayFixIncome = fixIncome.suffix(2)
+//        let todayYesterdayFixIncome = fixIncome.suffix(2)
         
-        let yesterdayIncome = todayYesterdayFixIncome[0].netIncome
+        let yesterdayIncome = fixIncome[fixIncome.count-2].netIncome
         
         return Double(getIncomeDifferences() / Double(yesterdayIncome) * 100)
     }
     
     func getExpensePercentage() -> Double {
         let fixIncome = getFixIncomeFromTransaction()
-        let todayYesterdayFixIncome = fixIncome.suffix(2)
         
-        let yesterdayExpense = calculateExpense(date: todayYesterdayFixIncome[0].month ) / 30
+        let yesterdayExpense = calculateExpense(date: fixIncome[fixIncome.count-2].month ) / 30
         
         return Double(getExpenseDifferences() / Double(yesterdayExpense) * 100)
     }
     
     func getNetIncomePercentage() -> Double {
         let fixIncome = getFixIncomeFromTransaction()
-        let todayYesterdayFixIncome = fixIncome.suffix(2)
         
-        let yesterdayIncome = todayYesterdayFixIncome[0].netIncome
-        let yesterdayExpense = calculateExpense(date: todayYesterdayFixIncome[0].month ) / 30
+        let yesterdayIncome = fixIncome[fixIncome.count-2].netIncome
+        let yesterdayExpense = calculateExpense(date: fixIncome[fixIncome.count-2].month ) / 30
         let yesterdayNetIncome = yesterdayIncome - yesterdayExpense
         
         return Double(getNetIncomeDifferences() / Double(yesterdayNetIncome) * 100)
