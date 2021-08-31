@@ -81,7 +81,11 @@ extension ModalAddProduct {
         panel.allowedFileTypes = ["csv"]
         if panel.runModal() == .OK {
             do {
-                let reader = try CSVReader(input: URL(resolvingAliasFileAt: panel.url!)) { $0.headerStrategy = .firstLine }
+                let reader = try CSVReader(input: URL(resolvingAliasFileAt: panel.url!)) { $0.headerStrategy = .firstLine
+                    $0.delimiters.row = "\r\n"
+                    $0.delimiters.field = ";"
+                    $0.encoding = .utf8
+                }
                 for row in reader {
                     let sku = row[0]
                     let name = row[1]

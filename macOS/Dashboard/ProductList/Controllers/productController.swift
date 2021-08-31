@@ -24,7 +24,11 @@ extension ModalAddProduct {
                     ["STEENAVY", "Champion X Reverse Weave Script Tee Japan Market", "Navy", "XL", "15", "100000"]
                 ]
                 
-                let writer = try! CSVWriter(fileURL: savePanel.url!, append: false)
+                let writer = try! CSVWriter(fileURL: savePanel.url!, append: false) {
+                    $0.delimiters.row = "\r\n"
+                    $0.delimiters.field = ";"
+                    $0.encoding = .utf8
+                }
                 for row in input {
                     try! writer.write(row: row)
                 }
