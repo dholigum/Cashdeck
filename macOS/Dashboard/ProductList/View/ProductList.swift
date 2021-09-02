@@ -37,6 +37,7 @@ struct ProductList: View {
                 }
                 
                 ProductTable(ProductsVM: productVM)
+                    .padding(.bottom, 30)
                 Spacer()
             }
             .frame(width: geometry.frame(in: .global).size.width, height: geometry.frame(in: .global).size.height, alignment: .leading)
