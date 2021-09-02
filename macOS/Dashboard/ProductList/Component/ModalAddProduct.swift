@@ -47,7 +47,7 @@ struct ModalAddProduct: View {
                 Text("Upload excel file")
                     .font(.system(size: 18))
                     .padding(10)
-                Text("Allowed file extensions .xlsm .xlsx")
+                Text("Allowed file extensions .csv")
                     .font(.system(size: 14))
                     .foregroundColor(Color.black.opacity(0.2))
             }
